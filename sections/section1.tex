@@ -1,0 +1,37 @@
+\section{同変コホモロジー}
+\subsection{Borel構成}
+
+$X$を位相空間, $G$をコンパクトLie群とする.
+
+\begin{fact}
+  ある主$G$束$\pi:EG\rightarrow BG$が存在して、任意の主$G$束$E\rightarrow X$に対してある連続写像$f:X\rightarrow BG$があって$E=f^*(EG)$がなりたつ。さらに$EG$は可縮であり、$G$は$EG$に自由に(右から)作用する。
+\end{fact}
+
+\begin{defin}
+  $G$が$X$に左から作用しているとき、$G$の$X\times EG$への左作用を
+  \[
+  g(x, e) := (gx, e\inv{g}) \quad \text{for } g\in G, x\in X, e\in EG 
+  \]
+  によって定める。$X\times_GEG:=(X\times EG)/G$とし、これを$X$のhomotopy quotient という。このとき
+  $H^*_G(X):=H^*(X\times_GEG)$を$X$の同変コホモロジーという。
+\end{defin}
+
+写像$p:X\times EG\rightarrow X\times_GEG$と $p_X:X\times_GEG\rightarrow BG$を
+\begin{align*}
+  &p(x, e):=[x,e]\\
+  &p_X([x,e]):=\pi(e)
+\end{align*}
+によって定める。
+
+\begin{prop}
+  \:
+  \begin{enumerate}
+    \item $p:X\times EG\rightarrow X\times_GEG$は主$G$束である
+    \item $p_X:X\times_GEG\rightarrow BG$は$X$をファイバーとするファイバー束である
+  \end{enumerate}
+\end{prop}
+
+
+\subsection{Weil/Cartanモデル}
+
+\subsection{localization theorem}
