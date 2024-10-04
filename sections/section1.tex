@@ -3,35 +3,109 @@
 
 $X$を位相空間, $G$をコンパクトLie群とする.
 
-\begin{fact}
-  ある主$G$束$\pi:EG\rightarrow BG$が存在して、任意の主$G$束$E\rightarrow X$に対してある連続写像$f:X\rightarrow BG$があって$E=f^*(EG)$がなりたつ。さらに$EG$は可縮であり、$G$は$EG$に自由に(右から)作用する。
+\begin{fact}\label{universal G bundle}
+  ある主$G$束$\pi\colon EG\rightarrow BG$が存在して,任意の主$G$束$E\rightarrow X$に対してある連続写像$f\colon X\rightarrow BG$があって$E=f^*(EG)$がなりたつ.さらに$EG$は弱可縮であり,$G$は$EG$に自由に(右から)作用する.
 \end{fact}
 
+\begin{eg}
+  $T=\complex^*$に対して$S^\infty\rightarrow \mathbb{CP}^\infty$は事実\ref{universal G bundle}の主$G$束である。
+\end{eg}
+
 \begin{defin}
-  $G$が$X$に左から作用しているとき、$G$の$X\times EG$への左作用を
+  $G$が$X$に左から作用しているとき,$G$の$X\times EG$への左作用を
   \[
   g(x, e) := (gx, e\inv{g}) \quad \text{for } g\in G, x\in X, e\in EG 
   \]
-  によって定める。$X\times_GEG:=(X\times EG)/G$とし、これを$X$のhomotopy quotient という。このとき
-  $H^*_G(X):=H^*(X\times_GEG)$を$X$の同変コホモロジーという。
+  によって定める.$X\times_GEG\colon=(X\times EG)/G$とし,これを$X$のhomotopy quotient という.このとき
+  $H^*_G(X)\colon=H^*(X\times_GEG)$を$X$の$G$同変コホモロジーという.
 \end{defin}
 
-写像$p:X\times EG\rightarrow X\times_GEG$と $p_X:X\times_GEG\rightarrow BG$を
+\begin{eg}
+  1点集合$\text{pt}$の$G$同変コホモロジーは
+  \[
+  \text{pt}\times_GEG=(\text{pt}\times EG)/G\approx BG
+  \]
+  より
+  \[
+  H^*_G(\text{pt})\simeq H^*(BG)
+  \]
+  である。よって
+  \[
+  H^*_{C^*}(\text{pt})\simeq H^*(\mathbb{CP}^\infty)\simeq \integer[y]
+  \]
+\end{eg}
+
+
+$X$の$G$同変コホモロジーは主$G$束$EG\rightarrow BG$の取り方に拠らないことを示そう.
+写像$p\colon X\times EG\rightarrow X\times_GEG$と $p_X\colon X\times_GEG\rightarrow BG$を
 \begin{align*}
   &p(x, e):=[x,e]\\
   &p_X([x,e]):=\pi(e)
 \end{align*}
-によって定める。
+によって定める.
 
 \begin{prop}
-  \:
   \begin{enumerate}
-    \item $p:X\times EG\rightarrow X\times_GEG$は主$G$束である
-    \item $p_X:X\times_GEG\rightarrow BG$は$X$をファイバーとするファイバー束である
+    \item $p\colon X\times EG\rightarrow X\times_GEG$は主$G$束である
+    \item $p_X\colon X\times_GEG\rightarrow BG$は$X$をファイバーとするファイバー束である
   \end{enumerate}
 \end{prop}
 
+\begin{proof}
+  \begin{enumerate}
+    \item $EG\rightarrow BG$は主$G$束であるので,
+  \end{enumerate}
+\end{proof}
+
+連続写像$f\colon X\rightarrow Y$がホモトピー群の同型
+\[
+f_*\colon\pi_q(X, x)\rightarrow \pi_q(Y, f(x))\quad\text{for} x\in X, q>0 
+\]
+を誘導するとき、$f$を弱ホモトピー同値という。
+
+\begin{lemm}
+  $E$を弱可縮な$G$空間とし、$P\rightarrow B$を主$G$束とする。このとき$(E\times P)/G\rightarrow B$は弱ホモトピー同値である。
+\end{lemm}
+
+\begin{theo}\label{existance weak homotopy eq}
+  $M$を$G$空間, $E\rightarrow B$, $E'\rightarrow B'$を主$G$束で$E,E'$はともに弱可縮であるとする。このとき弱ホモトピー同値$E\times_GM\rightarrow E'\times_GM$が存在する
+\end{theo}
+
+\cite{hatcher}より、次が成り立つ 
+\begin{fact}\label{weak homotopy to cohomology}
+  弱ホモトピー同値$f\colon X\rightarrow Y$は同型$f^*\colon H^*(Y)\rightarrow H^*(X)$を誘導する
+\end{fact}
+
+定理\ref{existance weak homotopy eq}と事実\ref{weak homotopy to cohomology}より, $EG\rightarrow BG$, $EG'\rightarrow BG'$が事実\ref{universal G bundle}の主$G$束であるとき、
+\[
+H^*(X\times_GEG)\simeq H^*(X\times_GEG')
+\]
+であることがわかる。
+
+\subsection{$H^*_G(X)$の代数的構造}
+
+$X, Y$を$G$空間, $f\colon X\rightarrow Y$を$G$写像とする。$f_G\colon X\times_GEG\rightarrow Y\times_GEG$を
+\[
+f_G([x, e])=[f(x), e]
+\]
+によって定めると$f_G$はwell-definedな連続写像となる。したがって$f_G$は同変コホモロジーの準同型
+\[
+f_G^*\colon H^*_G(Y)\rightarrow H^*_G(X)
+\]
+を誘導する。通常のコホモロジーの関手性と同様、同変コホモロジーも関手性をもつ
+\begin{prop}\:
+  \begin{enumerate}
+    \item $(\id{X})_G^*=\id{H^*_G(X)}$
+    \item $f\colon X\rightarrow Y$, $g\colon Y\rightarrow Z$に対して$(g\circ f)_G^*=(f_G^*)\circ(g_G^*)$
+  \end{enumerate}
+\end{prop}
+
+任意の$G$空間$X$に対して、1点集合$\text{pt}$への自明な$G$写像は,準同型$H^*(BG)\simeq H^*_G(\text{pt})\rightarrow H^*_G(X)$を誘導するので、$H^*_G(X)$は$H^*(BG)$代数の構造を持つことがわかる
 
 \subsection{Weil/Cartanモデル}
+
+
+
+
 
 \subsection{localization theorem}
