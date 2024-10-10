@@ -1,15 +1,26 @@
 \section{同変Schubert計算}
-\subsection{(同変/非同変)Schubert計算}
+\subsection{Grassmann多様体の同変コホモロジー}
 $\text{Gr}_k(\complex^n)=\set{V\subset \complex^n}{\dim V = k}$をGrassmann多様体という。$T=\complex^n$とするとき、$T$は$\complex^n$に
 \[
 (t_1,\cdots,t_n)\cdot(x_1,\cdots,x_n)=(t_1x_1,\cdots,t_nx_n)
 \]
 によって左から作用する。この作用は自然に$\text{Gr}_k(\complex^n)$への作用を誘導し、$\text{Gr}_k(\complex^n)$は$T$空間となる。$\text{Gr}_k(\complex^n)$の$T$同変コホモロジーの構造は組み合わせ的に決定することができる。
+$\binom{n}{k}$を$0$と$1$からなる$n$文字の文字列のうち、$1$が$k$個使われている文字列の集合とする。$\lambda=\lambda_1\cdots \lambda_n\in\binom{n}{k}$に対して、
+\[
+\Omega_\lambda=\set{V\in \text{Gr}_k(\complex^n)}{\dim(V\cap F_i)\geq \dim(\complex^\lambda\cap F_i),\quad \forall i\in \set{1,\cdots n}{}}
+\]
+をSchubert cellという. ここで、$\complex^\lambda=<e_{\lambda_1},\cdots,e_{\lambda_n}>$, $F_i=<e_{n-i+1},\cdots,e_n>$である. 
 
-
+$\text{inv}(\lambda)=\#\set{(i,j)}{\lambda_i=1, \lambda_j=0, i<j}$とすると$\Omega_\lambda$は$\complex^{\text{inv}(\lambda)}$に同相であり
+\[
+\text{Gr}_k(\complex^n)=\bigsqcup_{\lambda\in\binom{n}{k}}\Omega_\lambda
+\]
+となる。したがって$H^*(\text{Gr}_k(\complex))$は$\Omega_\lambda$の定めるホモロジー類のPoincare双対$S_\lambda$たちで$\integer$上生成される. $\text{Gr}_k(\complex)$はequivariantly formalであるから$H^*_T(\text{Gr}_k(\complex^n))$は$H^*_T(\text{pt})=\integer[y_1,\cdots,y_n]$上$S_\lambda$たちで生成される.$S_\lambda$をSchubert classという。
 
 
 \subsection{GKM条件によるSchubert Classの特徴づけ}
+
+$\text{Gr}_k(\complex^n)$の$T$作用における固定点は$\{\complex^\lambda\}_{\lambda\in\binom{n}{k}}$であるから、[GKM]より$H^*_T(\text{Gr}_k(\complex^n))$は$\bigoplus_{\lambda\in\binom{n}{k}}H^*_T(\text{pt})$の部分代数である。GKMの定理を適用するために$\text{Gr}_k(\complex^n)$の$T$不変な$\mathbb{CP}^1$を計算する.
 
 
 
