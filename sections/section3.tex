@@ -1,36 +1,36 @@
 \section{同変Schubert計算}
 \subsection{Grassmann多様体の同変コホモロジー}
-$\text{Gr}_k(\complex^n)=\set{V\subset \complex^n}{\dim V = k}$をGrassmann多様体という。$T=\complex^n$とするとき、$T$は$\complex^n$に
+$\text{Gr}_k(\complex^n)=\set{V\subset \complex^n}{\dim V = k}$をGrassmann多様体という.$T=\complex^n$とするとき，$T$は$\complex^n$に
 \[
 (t_1,\cdots,t_n)\cdot(x_1,\cdots,x_n)=(t_1x_1,\cdots,t_nx_n)
 \]
-によって左から作用する。この作用は自然に$\text{Gr}_k(\complex^n)$への作用を誘導し、$\text{Gr}_k(\complex^n)$は$T$空間となる。$\text{Gr}_k(\complex^n)$の$T$同変コホモロジーの構造は組み合わせ的に決定することができる。
-$\binom{n}{k}$を$0$と$1$からなる$n$文字の文字列のうち、$1$が$k$個使われている文字列の集合とする。$\lambda=\lambda_1\cdots \lambda_n\in\binom{n}{k}$に対して置換$\sigma\in\mathfrak{S}_n$の$\binom{n}{k}$への作用を$\sigma\lambda=\lambda_{\inv{\sigma}(1)}\cdots\lambda_{\inv{\sigma}(n)}$で定める.
-$\lambda=\lambda_1\cdots \lambda_n\in\binom{n}{k}$に対して、
+によって左から作用する.この作用は自然に$\text{Gr}_k(\complex^n)$への作用を誘導し，$\text{Gr}_k(\complex^n)$は$T$空間となる.$\text{Gr}_k(\complex^n)$の$T$同変コホモロジーの構造は組み合わせ的に決定することができる.
+$\binom{n}{k}$を$0$と$1$からなる$n$文字の文字列のうち，$1$が$k$個使われている文字列の集合とする.$\lambda=\lambda_1\cdots \lambda_n\in\binom{n}{k}$に対して置換$\sigma\in\mathfrak{S}_n$の$\binom{n}{k}$への作用を$\sigma\lambda=\lambda_{\inv{\sigma}(1)}\cdots\lambda_{\inv{\sigma}(n)}$で定める.
+$\lambda=\lambda_1\cdots \lambda_n\in\binom{n}{k}$に対して，
 \[
-\Omega_\lambda=\set{V\in \text{Gr}_k(\complex^n)}{\dim(V\cap F_i)\geq \dim(\complex^\lambda\cap F_i),\quad \forall i\in \set{1,\cdots n}{}}
+\Omega_\lambda=\set{V\in \text{Gr}_k(\complex^n)}{\dim(V\cap F_i)= \dim(\complex^\lambda\cap F_i),\quad \forall i\in \set{1,\cdots n}{}}
 \]
-をSchubert cellという. ここで、$\complex^\lambda=<e_{\lambda_1},\cdots,e_{\lambda_n}>$, $F_i=<e_{n-i+1},\cdots,e_n>$である. 
+をSchubert cellという. ここで，$\complex^\lambda=<e_{\lambda_1},\cdots,e_{\lambda_n}>$， $F_i=<e_{n-i+1},\cdots,e_n>$である. 
 
-$\text{inv}(\lambda)=\set{(i,j)}{\lambda_i=1, \lambda_j=0, i<j}$とすると$\Omega_\lambda$は$\complex^{|\text{inv}(\lambda)|}$に同相であり
+$\text{inv}(\lambda)=\set{(i,j)}{\lambda_i=1, \lambda_j=0, i<j}$とすると$\Omega_\lambda$は$\complex^{|\text{inv}(\lambda)|}$に同相であり\footnote{リファレンスを入れるか証明を入れる}
 \[
 \text{Gr}_k(\complex^n)=\bigsqcup_{\lambda\in\binom{n}{k}}\Omega_\lambda
 \]
-となる。したがって$H^*(\text{Gr}_k(\complex))$は$\Omega_\lambda$の定めるホモロジー類のPoincare双対$S_\lambda$たちで$\integer$上生成される. $\text{Gr}_k(\complex)$はequivariantly formalであるから$H^*_T(\text{Gr}_k(\complex^n))$は$H^*_T(\text{pt})=\integer[y_1,\cdots,y_n]$上$S_\lambda$たちで生成される.$S_\lambda$をSchubert classという。
+となる.したがって$H^*(\text{Gr}_k(\complex))$は$\Omega_\lambda$の定めるホモロジー類のPoincare双対$S_\lambda$たちで$\integer$上生成される. $\text{Gr}_k(\complex)$はequivariantly formalであるから$H^*_T(\text{Gr}_k(\complex^n))$は$H^*_T(\text{pt})=\integer[y_1,\cdots,y_n]$上$S_\lambda$たちで生成される. $S_\lambda$をSchubert classという.
 
 $2$つのSchubert classの積$S_\lambda S_\mu$を$\{S_\nu\}_{\nu\in\binom{n}{k}}$の$\integer[y_1,\cdots,y_n]$係数の線形結合で
 \[
 S_\lambda S_\mu=\sum_{\nu\in\binom{n}{k}}C^\nu_{\lambda\mu}S_\nu
 \]
-このように表したとき、この係数$C^{\nu}_{\lambda\mu}$を計算する組み合わせ的手法を紹介することが本論文の目的である.
+このように表したとき，この係数$C^{\nu}_{\lambda\mu}$を計算する組み合わせ的手法を紹介することが本論文の目的である.
 
 
 \subsection{GKM条件によるSchubert Classの特徴づけ}
 
-$\text{Gr}_k(\complex^n)$の$T$作用における固定点は$\{\complex^\lambda\}_{\lambda\in\binom{n}{k}}$であるから、[GKM]より$H^*_T(\text{Gr}_k(\complex^n))$は$\bigoplus_{\lambda\in\binom{n}{k}}H^*_T(\text{pt})$の部分代数である。GKMの定理を適用するために$\text{Gr}_k(\complex^n)$の$T$不変な$\mathbb{CP}^1$を計算する.
+$\text{Gr}_k(\complex^n)$の$T$作用における固定点は$\{\complex^\lambda\}_{\lambda\in\binom{n}{k}}$であるから，[GKM]より$H^*_T(\text{Gr}_k(\complex^n))$は$\bigoplus_{\lambda\in\binom{n}{k}}H^*_T(\text{pt})$の部分代数である.GKMの定理を適用するために$\text{Gr}_k(\complex^n)$の$T$不変な$\mathbb{CP}^1$を計算する.
 
 \begin{prop}
-  $\lambda,\mu\in\binom{n}{k}$に対して$\complex^\lambda$と$\complex^\mu$を結ぶ$T$不変な$\mathbb{CP}^1$が存在するための必要十分条件は, ある$(i, j)\in\text{inv}(\lambda)$に対して$\mu = (i, j)\lambda$
+  $\lambda,\mu\in\binom{n}{k}$に対して$\complex^\lambda$と$\complex^\mu$を結ぶ$T$不変な$\mathbb{CP}^1$が存在するための必要十分条件は， ある$(i, j)\in\text{inv}(\lambda)$に対して$\mu = (i, j)\lambda$
   となっていることである.
 \end{prop}
 
@@ -41,17 +41,19 @@ $\text{Gr}_k(\complex^n)$の$T$作用における固定点は$\{\complex^\lambda
 
 
 
+
+
 \subsection{Schubert puzzleによる方法}
 
 
-\subsection{edge labeled tableuxによる方法}
+\subsection{edge labeled tableauxによる方法}
 
 \begin{defin}
-  $n$の分割$\lambda=(\lambda_1\geq\cdots\geq\lambda_k>0)$に対して、$1$行目に$\lambda_1$個の箱を, $2$行目に$\lambda_2$個の箱を,順に$k$行目まで左寄せで書いた図をYoung図形という。以降分割とYoung図形を同一視して同じ記号で表す. $\lambda$の各箱に、各行について左から右に単調増大, 各列について上から下に単調増大となるように相異なる数字を書き入れたものをstandard tableauxという. 
+  $n$の分割$\lambda=(\lambda_1\geq\cdots\geq\lambda_k>0)$に対して，$1$行目に$\lambda_1$個の箱を， $2$行目に$\lambda_2$個の箱を，順に$k$行目まで左寄せで書いた図をYoung図形という.以降分割とYoung図形を同一視して同じ記号で表す. $\lambda$の各箱に，各行について左から右に単調増大， 各列について上から下に単調増大となるように相異なる数字を書き入れたものをstandard tableauxという. 
 
 \[
 \ytableausetup{nobaseline}
-\ydiagram{4, 3, 3, 1},
+\ydiagram{4, 3, 3, 1}
 \quad\begin{ytableau}
     1&4&5&6\\
     2&3&8\\
@@ -63,11 +65,12 @@ $\text{Gr}_k(\complex^n)$の$T$作用における固定点は$\{\complex^\lambda
 \end{defin}
 
 \begin{defin}
-  分割$\lambda, \mu$に対して、$\lambda<\mu\Leftrightarrow \lambda_i<\mu_i \forall i$によって順序を定める. $\lambda<\mu$を満たすYoung図形に対して、$\mu$のYoung図形から$\lambda$に相当する部分を取り除いた図形を歪Young図形といい。$\mu/\lambda$で表す. 整数$n>0$を固定する.歪Young図形の各箱に$1$から$n$までの数字を書き入れ、水平方向の各辺に$\{1,\cdots,n\}$の部分集合(空でもよい)を書き入れたものを、equivariant fillingという.equivariant fillingのうち、ラベルに関して次の条件を満たすものをequivariant standard tableauxという.
+  分割$\lambda, \mu$に対して，$\lambda<\mu\Leftrightarrow \lambda_i<\mu_i\:(\forall i)$によって順序を定める. $\lambda<\mu$を満たすYoung図形に対して，$\mu$のYoung図形から$\lambda$に相当する部分を取り除いた図形を歪Young図形といい.$\mu/\lambda$で表す. 整数$n>0$を固定する. 歪Young図形の各箱に$1$から$n$までの数字を書き入れ，水平方向の各辺に$\{1,\cdots,n\}$の部分集合(空でもよい)を書き入れたものを， equivariant fillingという. equivariant fillingのうち，ラベルに関して次の条件を満たすものをequivariant standard tableauxという.
   \begin{itemize}
-    \item $1$から$n$までの数字が箱か辺のラベルとして$1$回以上重複なく現れる
-    \item 各箱のラベルについて,左隣の箱のラベルよりも大きく,真上の辺のラベルが空でないなら、その最大値よりも大きい, 空ならば、すぐ上の箱のラベルより大きい
-    \item 各辺のラベルについて, そのすべての数字が真上の箱に書かれたラベルよりも大きい
+    \item $1$から$n$までの各数字が，いずれかの箱のラベルに現れるか，またはいずれかの辺のラベルの要素になっている.また$1$から$n$までの各数字がちょうど1回しか現れない.
+    \item 各箱のラベルについて，左隣の箱のラベルよりも大きい
+    \item 各箱のラベルについて，上辺のラベルが空でないなら，その最大値よりも大きい. 空であるならば，すぐ上の箱のラベルより大きい
+    \item 各辺のラベルについて， そのすべての数字がすぐ上の箱に書かれたラベルよりも大きい
   \end{itemize}
   形が$\mu/\lambda$で$1$から$n$までの数字が書かれたequivariant standard tableauxの全体を$\text{EqSYT}(\mu/\lambda, n)$とする.
 \end{defin}
