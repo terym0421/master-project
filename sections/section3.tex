@@ -8,15 +8,23 @@ $\text{Gr}_k(\complex^n)=\set{V\subset \complex^n}{\dim V = k}$をGrassmann多�
 $\binom{n}{k}$を$0$と$1$からなる$n$文字の文字列のうち，$1$が$k$個使われている文字列の集合とする.$\lambda=\lambda_1\cdots \lambda_n\in\binom{n}{k}$に対して置換$\sigma\in\mathfrak{S}_n$の$\binom{n}{k}$への作用を$\sigma\lambda=\lambda_{\inv{\sigma}(1)}\cdots\lambda_{\inv{\sigma}(n)}$で定める.
 $\lambda=\lambda_1\cdots \lambda_n\in\binom{n}{k}$に対して，
 \[
-\Omega_\lambda=\set{V\in \text{Gr}_k(\complex^n)}{\dim(V\cap F_i)= \dim(\complex^\lambda\cap F_i),\quad \forall i\in \set{1,\cdots n}{}}
+\Omega_\lambda^\circ=\set{V\in \text{Gr}_k(\complex^n)}{\dim(V\cap F_i)= \dim(\complex^\lambda\cap F_i),\quad \forall i\in \set{1,\cdots n}{}}
 \]
-をSchubert cellという. ここで，$\complex^\lambda=<e_{\lambda_1},\cdots,e_{\lambda_n}>$， $F_i=<e_{n-i+1},\cdots,e_n>$である. 
+をSchubert cellという. ここで，$\complex^\lambda=<\lambda_1e_1,\cdots,\lambda_ne_n>$， $F_i=<e_{n-i+1},\cdots,e_n>$である. 
 
-$\text{inv}(\lambda)=\set{(i,j)}{\lambda_i=1, \lambda_j=0, i<j}$とすると$\Omega_\lambda$は$\complex^{|\text{inv}(\lambda)|}$に同相であり\footnote{リファレンスを入れるか証明を入れる}
+\begin{prop}
+  $\text{inv}(\lambda)=\set{(i,j)}{\lambda_i=1, \lambda_j=0, i<j}$とすると$\Omega_\lambda^\circ$は$\complex^{|\text{inv}(\lambda)|}$に同相であり
 \[
-\text{Gr}_k(\complex^n)=\bigsqcup_{\lambda\in\binom{n}{k}}\Omega_\lambda
+\text{Gr}_k(\complex^n)=\bigsqcup_{\lambda\in\binom{n}{k}}\Omega_\lambda^\circ
 \]
-となる.したがって$H^*(\text{Gr}_k(\complex))$は$\Omega_\lambda$の定めるホモロジー類のPoincare双対$S_\lambda$たちで$\integer$上生成される. $\text{Gr}_k(\complex)$はequivariantly formalであるから$H^*_T(\text{Gr}_k(\complex^n))$は$H^*_T(\text{pt})=\integer[y_1,\cdots,y_n]$上$S_\lambda$たちで生成される. $S_\lambda$をSchubert classという.
+となる.
+\end{prop}
+
+\begin{proof}
+  
+\end{proof}
+
+したがって$H^*(\text{Gr}_k(\complex))$は$\Omega_\lambda^\circ$の定めるホモロジー類のPoincare双対$S_\lambda$たちで$\integer$上生成される. $\text{Gr}_k(\complex)$はequivariantly formalであるから$H^*_T(\text{Gr}_k(\complex^n))$は$H^*_T(\text{pt})=\integer[y_1,\cdots,y_n]$上$S_\lambda$たちで生成される. $S_\lambda$をSchubert classという.
 
 $2$つのSchubert classの積$S_\lambda S_\mu$を$\{S_\nu\}_{\nu\in\binom{n}{k}}$の$\integer[y_1,\cdots,y_n]$係数の線形結合で
 \[
@@ -44,6 +52,26 @@ $\text{Gr}_k(\complex^n)$の$T$作用における固定点は$\{\complex^\lambda
 
 
 \subsection{Schubert puzzleによる方法}
+
+\begin{theo}
+  以下の$8$種類の図形をpuzzle pieceと呼ぶ．
+  \begin{align*}
+    \begin{tikzpicture}
+      \coordinate (A) at (0,0);
+      \coordinate (B) at (2,0);
+      \coordinate (C) at (1,1.7);
+      \draw (A)--(B)--(C)--cycle;
+      \coordinate(P) at (3,0);
+      \draw ($(A)+(P)$)--($(B)+(P)$)--($(C)+(P)$)--cycle;
+      \coordinate(Q) at (6,0);
+      \draw ($(A)+(Q)$)--($(B)+(Q)$)--($(C)+(Q)$)--cycle;
+    \end{tikzpicture}\\
+    \begin{tikzpicture}
+      \draw (0,0)--(2,0)--(1,1.7)--(-1,1.7)--cycle;
+    \end{tikzpicture}
+\end{align*}
+\end{theo}
+
 
 
 \subsection{edge labeled tableauxによる方法}
@@ -117,7 +145,20 @@ $\text{Gr}_k(\complex^n)$の$T$作用における固定点は$\{\complex^\lambda
   \end{enumerate}
 \end{defin}
 
+\begin{defin}
+  $T\in\text{EqSYT}(\mu/\lambda, n)$に対して
+  \[
+  \text{wt}(T)=\prod_{l:\text{edge label}}\text{factor}(l)
+  \]
+  とする．
+\end{defin}
 
+\begin{theo}
+  \[
+  C^{\nu}_{\lambda,\mu}=\sum_{T\in\text{EqSYT}(\nu/\lambda, |\mu|)}\text{wt}(T)
+  \]
+  が成り立つ．
+\end{theo}
 
 
 
