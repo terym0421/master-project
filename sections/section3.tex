@@ -70,13 +70,51 @@ $\text{Gr}_k(\complex^n)$の$T$作用における固定点は$\{\complex^\lambda
     \item $1$から$n$までの各数字が，いずれかの箱のラベルに現れるか，またはいずれかの辺のラベルの要素になっている.また$1$から$n$までの各数字がちょうど1回しか現れない.
     \item 各箱のラベルについて，左隣の箱のラベルよりも大きい
     \item 各箱のラベルについて，上辺のラベルが空でないなら，その最大値よりも大きい. 空であるならば，すぐ上の箱のラベルより大きい
-    \item 各辺のラベルについて， そのすべての数字がすぐ上の箱に書かれたラベルよりも大きい
+    \item 各辺のラベルについて，そのすべての数字がすぐ上の箱に書かれたラベルよりも大きい
   \end{itemize}
   形が$\mu/\lambda$で$1$から$n$までの数字が書かれたequivariant standard tableauxの全体を$\text{EqSYT}(\mu/\lambda, n)$とする.
 \end{defin}
 
 \begin{defin}
-  
+  $\lambda$の箱xが$T\in\text{EqSYT}(\mu/\lambda, n)$の内隅であるとは，$x$のすぐ右とすぐ下の箱が$\lambda$の箱でないことをいう．また$\mu/\lambda$の箱$x$が外隅であるとは，$x$のすぐ右とすぐ下の箱が存在しないことをいう．$T$の内隅$x$に対して，次の操作を考える：
+  \begin{enumerate}
+    \item $x$の下辺のラベル$l$が空でないなら，$l$の最小値を$x$のラベルに移す
+    \item $x$の下辺のラベルが空であるとし，$x$のすぐ右の箱を$y$，すぐ下の箱を$z$とする．$y$と$z$のうち，ラベルの小さい方の箱を$x$と交換する(このとき辺のラベルは交換しない)．
+  \end{enumerate}
+  (i)の操作が行われる，もしくは$x$が外隅になるまで(i),(ii)を繰り返してできるtableauxを$\text{EqJdt}_x(T)$とする．
+\end{defin}
+
+\begin{defin}
+  $\lambda$の箱を下から上，右から左に順番に数えて$x_1,\cdots,x_m$とする．$T\in\text{EqSYT}(\mu/\lambda, n)$に対して，$T$のequivariant rectificationを
+  \[
+  \text{EqRect}(T)=\text{EqJdt}_{x_m}(\text{EqJdt}_{x_{m-1}}(\cdots(\text{EqJdt}_{x_1}(T))\cdots))
+  \]
+  とする．
+\end{defin}
+
+次に$T\in\text{EdSYT}(\mu/\lambda, n)$に対してそのウェイトを定義する．
+
+\begin{defin}
+  正の整数$m, k$を$m>k$とする．$\Lambda=(m,\cdots,m)$とする．$\Lambda$の箱$x$に対して
+  \[
+  \beta(x)=t_{i+1}-t_i
+  \]
+  とする．ここで$i$は$\Lambda$の右上の隅の箱から$x$までのManhattan距離である．
+  \[
+  \begin{ytableau}
+    4 & 3 & 2 & 1\\
+    5 & 4 & 3 & 2\\
+    6 & 5 & 4 & 3
+  \end{ytableau}
+  \]
+\end{defin}
+
+\begin{defin}
+  $T\in\text{EqSYT}(\mu/\lambda, n)$を固定し，$l$を$T$の辺のラベルに含まれる要素とする．$\text{factor}(l)$を次のように定義する．
+  \begin{enumerate}
+    \item $l$が含まれる列をrectificationしたあとも$l$が辺のラベルであるなら$\text{factor}(l)=0$とする．
+    \item $l$が含まれる列のrectificationにおいて，$l$が通った箱を下から順に$x_1,\cdots,x_s$とする．$x_s$と同じ行で$x_s$の右側にある$T$の箱を左から順に$y_1,\cdots,y_t$とする．このとき$\text{factor}(l)=\beta(x_1)+\cdots+\beta(x_s)+\beta(y_1)+\cdots+\beta(y_t)$とする．
+  \end{enumerate}
 \end{defin}
 
 
