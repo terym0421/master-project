@@ -54,22 +54,34 @@ $\text{Gr}_k(\complex^n)$の$T$作用における固定点は$\{\complex^\lambda
 \subsection{Schubert puzzleによる方法}
 
 \begin{theo}
-  以下の$8$種類の図形をpuzzle pieceと呼ぶ．
-  \begin{align*}
+  以下の$8$種類のラベル付きの図形をpuzzle pieceと呼ぶ．
+  \begin{center}
     \begin{tikzpicture}
       \coordinate (A) at (0,0);
       \coordinate (B) at (2,0);
       \coordinate (C) at (1,1.7);
+
       \draw (A)--(B)--(C)--cycle;
+
       \coordinate(P) at (3,0);
       \draw ($(A)+(P)$)--($(B)+(P)$)--($(C)+(P)$)--cycle;
-      \coordinate(Q) at (6,0);
-      \draw ($(A)+(Q)$)--($(B)+(Q)$)--($(C)+(Q)$)--cycle;
-    \end{tikzpicture}\\
-    \begin{tikzpicture}
-      \draw (0,0)--(2,0)--(1,1.7)--(-1,1.7)--cycle;
+      \draw ()
+
+      \coordinate (Q) at (6,0);
+      \draw ($(A)+(Q)+(0,1.7)$)--($(B)+(Q)+(0,1.7)$)--($(C)+(Q)-(0,1.7)$)--cycle;
+
+      \coordinate (R) at (9,0);
+      \draw ($(A)+(R)+(0,1.7)$)--($(B)+(R)+(0,1.7)$)--($(C)+(R)-(0,1.7)$)--cycle;
+
+      \draw ($(A)-(0,3)$)--($(B)-(0,3)$)--($(C)-(0,3)$)--($(C)-(2,3)$)--cycle; 
+
+      \draw ($(A)-(-3,3)$)--($(B)-(-3,3)$)--($(C)-(-5,3)$)--($(C)-(-3,3)$)--cycle; 
+
+      \draw ($(A)+(6.5,-2.5)$)--($(C)+(6.5,-2.5)$)--($(B)+(6.5,-2.5)$)--($(C)+(6.5,-5.9)$)--cycle;
+
+      \draw ($(A)+(9.5,-2.5)$)--($(C)+(9.5,-2.5)$)--($(B)+(9.5,-2.5)$)--($(C)+(9.5,-5.9)$)--cycle;
     \end{tikzpicture}
-\end{align*}
+  \end{center}
 \end{theo}
 
 
