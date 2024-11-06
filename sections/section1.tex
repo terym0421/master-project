@@ -1,15 +1,55 @@
 \section{同変コホモロジー}
 \subsection{Borel構成}
 
-$G$をコンパクトLie群とする．
+$G$をコンパクトLie群とする．以下考える位相空間はすべて$CW$複体であるとする．
 
-\begin{theo}(Milnor \cite{milnor construction})\label{universal G bundle}
-  ある主$G$束$\pi\colon EG\rightarrow BG$が存在して，任意のCW複体$X$上の主$G$束$E\rightarrow X$に対してある連続写像$f\colon X\rightarrow BG$があって$E=f^*(EG)$がなりたつ．さらに$EG$は弱可縮であり，$G$は$EG$に自由に(右から)作用する．
+\begin{defin}
+  次の2つの条件を満たす主$G$束$f\colon EG\rightarrow BG$をuniversal $G$ bundleという．
+  \begin{enumerate}
+    \item 任意の主$G$束$h\colon E\rightarrow B$に対して連続写像$h\colon B\rightarrow EB$が存在して$E\simeq h^*EG$が成り立つ．
+    \item $h_0,h_1\colon B\rightarrow EB$に対して$h_0^*EG\simeq h_1^*EG$ならば$h_0,h_1$はホモトピックである．
+  \end{enumerate}
+\end{defin}
+
+\begin{theo}(Steenrod \cite{steenrod})
+  主$G$束$E\rightarrow B$がuniversal $G$ bundleであるための必要十分条件は$E$が弱可縮であることである．
 \end{theo}
 
 \begin{eg}
-  $T=\complex^*$に対して$S^\infty\rightarrow \mathbb{CP}^\infty$は事実\ref{universal G bundle}の主$G$束である。
+  $S^\infty$は可縮であるので，$T=\complex^*$に対して$S^\infty\rightarrow \mathbb{CP}^\infty$はuniversal $T$ bundleである．
 \end{eg}
+
+$G$がコンパクトLie群の場合，universal $G$ bundleは直交群$O(k)$のuniversal bundleから構成できる．
+
+$V_k(\real^n)$を$\real^n$の$k$個の正規直交なベクトル$(v_1,\cdots,v_k)$のなす空間とし，$\text{Gr}_k(\real^n)$を$\real^n$の$k$次元部分空間全体のなす空間とする．
+
+\begin{prop}
+  $V_k(\real^n)\rightarrow \text{Gr}_k(\real^n)$は主$O(k)$束であり，$\pi_i(V_k(\real^n))=0$ for $i=0,1,\cdots,n-k-1$である．
+\end{prop}
+
+\begin{proof}
+  
+\end{proof}
+
+$V_k(\real^\infty)=\lim_n V_k(\real^n)$, $\text{Gr}_k(\real^\infty)=\lim_n \text{Gr}_k(\real^n)$とする．
+
+\begin{prop}\label{universal O(k) bundle}
+  $V_k(\real^\infty)\rightarrow \text{Gr}_k(\real^\infty)$はuniversal $O(k)$ bundleである．
+\end{prop}
+
+\begin{proof}
+  
+\end{proof}
+
+\begin{theo}\label{universal bundle for subgroup}
+  $G$をLie群，$H$を$G$の閉部分群とする．$EG\rightarrow EG/H$はuniversal $H$ bundleである．
+\end{theo}
+
+\begin{proof}
+  
+\end{proof}
+
+任意のコンパクトLie群$G$は十分大きい$n$に対して$O(n)$に埋め込めることが知られている()．従って定理\ref{universal O(k) bundle}と定理\ref{universal bundle for subgroup}から，$V_n(\real^\infty)\rightarrow V_n(\real^\infty)/G$はuniversal $G$ bundleである．
 
 \begin{defin}
   $G$が$X$に左から作用しているとき，$G$の$X\times EG$への左作用を
@@ -80,12 +120,11 @@ f_*\colon\pi_q(X, x)\rightarrow \pi_q(Y, f(x))\quad\text{for } x\in X, q>0
   
 \end{proof}
 
-\cite{hatcher}より、次が成り立つ 
-\begin{fact}\label{weak homotopy to cohomology}
+\begin{theo}(Hatcher \cite{hatcher})\label{weak homotopy to cohomology}
   弱ホモトピー同値$f\colon X\rightarrow Y$は同型$f^*\colon H^*(Y)\rightarrow H^*(X)$を誘導する
-\end{fact}
+\end{theo}
 
-定理\ref{existance weak homotopy eq}と事実\ref{weak homotopy to cohomology}より， $EG\rightarrow BG$， $EG'\rightarrow BG'$が事実\ref{universal G bundle}の主$G$束であるとき、
+定理\ref{existance weak homotopy eq}と定理\ref{weak homotopy to cohomology}より， $EG\rightarrow BG$， $EG'\rightarrow BG'$が事実\ref{universal G bundle}の主$G$束であるとき、
 \[
 H^*(X\times_GEG)\simeq H^*(X\times_GEG')
 \]
