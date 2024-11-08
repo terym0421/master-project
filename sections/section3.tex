@@ -41,7 +41,7 @@ $\lambda=\lambda_1\cdots \lambda_n\in\binom{n}{k}$に対して，
   \end{array}\right)
 \end{equation}
   \normalsize
-  この形の行列で代表される$M(k,n)/\text{GL}_k(\complex)$の点の集合と同一視できる．ここで$*$は任意の複素数である．
+  この形の行列で代表される$M(k,n)/\text{GL}_k(\complex)$の点の集合と同一視できる．ここで$*$は任意の複素数である．また，各cellは$T$不変であることもわかる．
 
   次に(\ref{CW str of grassmannian})が$\text{Gr}_k(\complex^n)$のCW構造となることを示す．$E_\lambda\subset M(k, n)$を
   \small
@@ -106,10 +106,24 @@ $\text{Gr}_k(\complex^n)$の$T$作用における固定点は$\{\complex^\lambda
 \end{prop}
 
 \begin{proof}
-  
+  $\lambda\in\binom{n}{k}$, $\mu=(i, j)\lambda$ (for $(i,j)\in\text{inv}(\lambda))$に対して，$\phi\colon \mathbb{CP}^1\rightarrow \text{Gr}_k(\complex^n)$を
+  \[
+  \phi([x:y])=
+  \left(
+  \begin{array}{}
+    0 & \cdots & 0 & 1 & 0 & \cdots
+  \end{array}
+  \right)
+  \]
 \end{proof}
 
+次に
 
+
+[GKM]より
+\[
+H^*_T(\text{Gr}_k(\complex^n))=\set{(f_\lambda)_{\lambda\in\binom{n}{k}}\in\bigoplus_{\lambda\in\binom{n}{k}}H^*_T(\text{pt})}{f_\lambda-f_{\lambda'}}
+\]
 
 
 
