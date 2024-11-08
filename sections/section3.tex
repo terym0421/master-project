@@ -14,16 +14,17 @@ $\lambda=\lambda_1\cdots \lambda_n\in\binom{n}{k}$に対して，
 
 \begin{prop}
   $\text{inv}(\lambda)=\set{(i,j)}{\lambda_i=1, \lambda_j=0, i<j}$とすると$\Omega_\lambda^\circ$は$\complex^{\binom{n}{k}-|\text{inv}(\lambda)|}$に同相であり
-\[
+\begin{equation}\label{CW str of grassmannian}
 \text{Gr}_k(\complex^n)=\bigsqcup_{\lambda\in\binom{n}{k}}\Omega_\lambda^\circ
-\]
+\end{equation}
 　となる．またこれによって$\text{Gr}_k(\complex^n)$はCW-複体の構造をもつ．
 \end{prop}
 
 \begin{proof}
   $M(k,n)$をランク$k$の$k\times n$複素行列全体のなす集合とする．$\text{GL}_k(\complex)$は自然に$M(k, n)$に左作用するが$\text{Gr}_k(\complex^n)$は自然に$M(k,n)/\text{GL}_k(\complex)$と同一視される．$\lambda$を左から読んで$1\leq i_1<\cdots<i_k\leq n$番目に$1$が現れるとする．
   このとき$\Omega_\lambda^\circ$は
-  \[
+  \small
+  \begin{equation}\label{row echelon form}
   \left(\begin{array}{ccc}
     {\begin{array}{ccccccccccc}
     * & \cdots & * & \overbrace{1}^{i_1\text{-th column}} & 0 & \cdots & 0 & \overbrace{0}^{i_{2}\text{-th column}} & 0 & \cdots & 0\\
@@ -38,27 +39,58 @@ $\lambda=\lambda_1\cdots \lambda_n\in\binom{n}{k}$に対して，
     * & \cdots & * & 1 & 0 & \cdots & 0
     \end{array}}
   \end{array}\right)
-  \]
+\end{equation}
+  \normalsize
   この形の行列で代表される$M(k,n)/\text{GL}_k(\complex)$の点の集合と同一視できる．ここで$*$は任意の複素数である．
 
-  次に
+  次に(\ref{CW str of grassmannian})が$\text{Gr}_k(\complex^n)$のCW構造となることを示す．$E_\lambda\subset M(k, n)$を
+  \small
+  \begin{equation}\label{orthonormal form}
+  \left(\begin{array}{ccc}
+    {\begin{array}{ccccccccccc}
+    * & \cdots & * & \overbrace{x_1}^{i_1\text{-th column}} & 0 & \cdots & 0 & \overbrace{0}^{i_{2}\text{-th column}} & 0 & \cdots & 0\\
+    * & \cdots & * & * & * & \cdots & * & x_2 & 0 & \cdots & 0\\
+    \vdots & \ddots & \vdots & \vdots & \vdots & \ddots & \vdots & \vdots & \vdots & \ddots & \vdots\\
+    * & \cdots & * & * & * & \cdots & * & * & * & \cdots & * 
+    \end{array}} & \cdots & 
+    {\begin{array}{ccccccc}
+    0 & \cdots & 0 & \overbrace{0}^{i_{k}\text{-th column}} & 0 &\cdots & 0\\
+    \vdots & \ddots & \vdots & \vdots & \vdots & \ddots & \vdots\\
+    0 & \cdots & 0 & 0 & 0 & \cdots & 0\\
+    * & \cdots & * & x_k & 0 & \cdots & 0
+    \end{array}}
+  \end{array}\right)
+\end{equation}
+\normalsize
+  この形の行列のなす集合とする．ここで，$x_i\geq 0$であり，行ベクトルは正規直交であるとする．
+  
+  $E_\lambda$がclosed ballに同相であることを示す．$H_{a}=\set{(z_1,\cdots,z_{a},0,\cdots,0)\in\complex^n}{\sum|z_j|^2=1,z_{a}\geq 0}$とする．$\pi\colon E_\lambda\rightarrow H_{i_1}$を$1$行目を取り出す写像とし，
+  $v=(0,\cdots,0,\overbrace{1}^{i_1\text{-th}},0,\cdots,0)$とおく．このとき$E_\lambda\approx H_{i_1}\times\inv{\pi}(v)$が成り立つ．さらに$\lambda'\in\binom{n-1}{k-1}$を$i_2-1,\cdots,i_k-1$番目に$1$が現れる文字列とすると$\inv{\pi}(v)=E_{\lambda'}$であるから
+  \[
+  E_\lambda\approx H_{i_1}\times E_{\lambda'}
+  \]
+  となる．よって帰納的に$E_\lambda$がclosed ballに同相であるとわかる．
+
+  自然な写像$\varphi\colon E_\lambda\rightarrow\text{Gr}_k(\complex^n)$によって$E_\lambda^\circ$は$\Omega_\lambda^\circ$に写されるが，$\varphi\colon E_\lambda^\circ\rightarrow\Omega_\lambda^\circ$は全単射であるから同相である．また$\varphi(\partial E_\lambda)\subset \bigcup_{\mu < \lambda} \Omega_{\mu}^\circ$であることも明らか．ただし$\mu \leq \lambda \Leftrightarrow \sum_{i=1}^j\mu_i \leq \sum_{i=1}^j \lambda_i$である．
 \end{proof}
 
-したがって$H^*(\text{Gr}_k(\complex))$は$\overline{\Omega_\lambda^\circ}$の定めるホモロジー類$[\overline{\Omega}_\lambda]$のPoincare双対$\sigma_\lambda$たちで$\integer$上生成される\footnote{CW複体の構造について言及，closureの構造についても言及}．
+$\overline{\Omega_\lambda^\circ}$は既約な多様体となることが知られており，$H^*(\text{Gr}_k(\complex))$は$\overline{\Omega_\lambda^\circ}$の定めるホモロジー類$[\overline{\Omega}_\lambda]$のPoincare双対$\sigma_\lambda$たちで$\integer$上生成される\cite{fulton young tableaux}．
 
-$T$空間$X$に対して$H^*_T(X)$は$ET\times_TX$のコホモロジーであったが，$ET$は有限次元近似$ET_r$を持っている(§1.1)．そこで$H^*(ET_r\times_T\text{Gr}_k(\complex^n))$において$[\overline{\Omega}_\lambda]$のPoincare双対$\sigma_\lambda$をとれば，その極限によって$H^*(ET\times_T\text{Gr}_k(\complex^n))=H^*_T(\text{Gr}_k(\complex^n))$の元が定まる．これをSchubert classといい，$S_\lambda$とおく(?)．
+$T$空間$X$に対して$H^*_T(X)$は$ET\times_TX$のコホモロジーであったが，$ET$は有限次元近似$ET_r$を持っている(§1.1)．$\overline{\Omega_\lambda^\circ}$は$T$不変であるから，$ET_r\times_T\overline{\Omega_\lambda^\circ}$は$H^*(ET_r\times_T\text{Gr}_k(\complex^n))$においてホモロジー類$[\overline{\Omega}_\lambda]$を定める．このPoincare双対$\sigma_\lambda$の極限によって$H^*_T(\text{Gr}_k(\complex^n))$の元が定まる．これをSchubert classといい，$S_\lambda$とおく(?)．
 
 $\text{Gr}_k(\complex^n)$はequivariantly formalであるから同型
-$H^*_T(\text{Gr}_k(\complex^n))\simeq H^*(\text{Gr}_k(\complex^n))\otimes H^*_T(\text{pt})$が存在する．$S_\lambda\in H^*(ET\times_T\text{Gr}_k(\complex))$は各ファイバー$\text{Gr}_k(\complex)$に制限すると$\sigma_\lambda$に一致するから
+$H^*_T(\text{Gr}_k(\complex^n))\simeq H^*(\text{Gr}_k(\complex^n))\otimes H^*_T(\text{pt})$が存在する．$S_\lambda\in H^*(ET\times_T\text{Gr}_k(\complex))$は各ファイバーに制限すると$\sigma_\lambda$に一致するから
 \[
 S_\lambda = \sigma_\lambda + \sum_{I}c_Iy^I
 \]
 と展開できる．ここで$c_I\in H^*(\text{Gr}_k(\complex^n))$の次数は$|\lambda|$より小さい．よって帰納的に$\sigma_\lambda$が$\{S_\lambda\}_\lambda$の線形結合で表せることがわかるので，$\{S_\lambda\}_\lambda$は$H^*T(\text{Gr}_k(\complex^n))$の基底となる．
+
+
 $2$つのSchubert classの積$S_\lambda S_\mu$を$\{S_\nu\}_{\nu\in\binom{n}{k}}$の$\integer[y_1,\cdots,y_n]$係数の線形結合で
 \begin{equation}\label{LRcoeff}
   S_\lambda S_\mu=\sum_{\nu\in\binom{n}{k}}C^\nu_{\lambda\mu}S_\nu
 \end{equation}
-このように表したとき，この係数$C^{\nu}_{\lambda\mu}$を計算する組み合わせ的手法を紹介することが本論文の目的である.
+このように表したとき，係数$C^{\nu}_{\lambda\mu}$を計算する組み合わせ的手法を紹介することが本論文の目的である.
 
 
 
@@ -76,6 +108,8 @@ $\text{Gr}_k(\complex^n)$の$T$作用における固定点は$\{\complex^\lambda
 \begin{proof}
   
 \end{proof}
+
+
 
 
 
