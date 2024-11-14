@@ -5,7 +5,7 @@ $\text{Gr}_k(\complex^n)=\set{V\subset \complex^n}{\dim V = k}$をGrassmann多�
 (t_1,\cdots,t_n)\cdot(x_1,\cdots,x_n)=(t_1x_1,\cdots,t_nx_n)
 \]
 によって左から作用する.この作用は自然に$\text{Gr}_k(\complex^n)$への作用を誘導し，$\text{Gr}_k(\complex^n)$は$T$空間となる.$\text{Gr}_k(\complex^n)$の$T$同変コホモロジーの構造は組み合わせ的に決定することができる.
-$\binom{n}{k}$を$0$と$1$からなる$n$文字の文字列のうち，$1$が$k$個使われている文字列の集合とする．$\lambda=\lambda_1\cdots \lambda_n\in\binom{n}{k}$に対して置換$\sigma\in\mathfrak{S}_n$の$\binom{n}{k}$への作用を$\sigma\lambda=\lambda_{\inv{\sigma}(1)}\cdots\lambda_{\inv{\sigma}(n)}$で定める．
+$\binom{n}{k}$を$0$と$1$からなる$n$文字の文字列のうち，$1$が$k$個使われている文字列の集合とする．$\lambda=\lambda_1\cdots \lambda_n\in\binom{n}{k}$に対して置換$\sigma\in\mathfrak{S}_n$の作用を$\sigma\lambda=\lambda_{\inv{\sigma}(1)}\cdots\lambda_{\inv{\sigma}(n)}$で定める．
 $\lambda=\lambda_1\cdots \lambda_n\in\binom{n}{k}$に対して，
 \[
 \Omega_\lambda^\circ=\set{V\in \text{Gr}_k(\complex^n)}{\dim(V\cap F_i)= \dim(\complex^{\lambda}\cap F_i),\quad \forall i\in \{1,\cdots n\}}
@@ -22,7 +22,7 @@ $\lambda=\lambda_1\cdots \lambda_n\in\binom{n}{k}$に対して，
 
 \begin{proof}
   $M(k,n)$をランク$k$の$k\times n$複素行列全体のなす集合とする．$\text{GL}_k(\complex)$は自然に$M(k, n)$に左作用するが$\text{Gr}_k(\complex^n)$は自然に$M(k,n)/\text{GL}_k(\complex)$と同一視される．$\lambda$を左から読んで$1\leq i_1<\cdots<i_k\leq n$番目に$1$が現れるとする．
-  このとき$\Omega_\lambda^\circ$は
+  このとき$\Omega_\lambda^\circ$は次の形の行列で代表される$M(k,n)/\text{GL}_k(\complex)$の点の集合と同一視できる．
   \small
   \begin{equation}\label{row echelon form}
   \left(\begin{array}{ccc}
@@ -39,11 +39,11 @@ $\lambda=\lambda_1\cdots \lambda_n\in\binom{n}{k}$に対して，
     * & \cdots & * & 1 & 0 & \cdots & 0
     \end{array}}
   \end{array}\right)
-\end{equation}
+  \end{equation}
   \normalsize
-  この形の行列で代表される$M(k,n)/\text{GL}_k(\complex)$の点の集合と同一視できる．ここで$*$は任意の複素数である．また，各cellは$T$不変であることもわかる．
+  ここで$*$は任意の複素数である．また，各cellは$T$不変であることもわかる．
 
-  次に(\ref{CW str of grassmannian})が$\text{Gr}_k(\complex^n)$のCW構造となることを示す．$E_\lambda\subset M(k, n)$を
+  次に(\ref{CW str of grassmannian})が$\text{Gr}_k(\complex^n)$のCW構造となることを示す．$E_\lambda\subset M(k, n)$を次の形の行列のなす集合とする．
   \small
   \begin{equation}\label{orthonormal form}
   \left(\begin{array}{ccc}
@@ -62,28 +62,28 @@ $\lambda=\lambda_1\cdots \lambda_n\in\binom{n}{k}$に対して，
   \end{array}\right)
 \end{equation}
 \normalsize
-  この形の行列のなす集合とする．ここで，$x_i\geq 0$であり，行ベクトルは正規直交であるとする．
+  ここで，$x_i\geq 0$であり，行ベクトルは正規直交であるとする．
   
   $E_\lambda$がclosed ballに同相であることを示す．$H_{a}=\set{(z_1,\cdots,z_{a},0,\cdots,0)\in\complex^n}{\sum|z_j|^2=1,z_{a}\geq 0}$とする．$\pi\colon E_\lambda\rightarrow H_{i_1}$を$1$行目を取り出す写像とし，
-  $v=(0,\cdots,0,\overbrace{1}^{i_1\text{-th}},0,\cdots,0)$とおく．このとき$E_\lambda\approx H_{i_1}\times\inv{\pi}(v)$が成り立つ．さらに$\lambda'\in\binom{n-1}{k-1}$を$i_2-1,\cdots,i_k-1$番目に$1$が現れる文字列とすると$\inv{\pi}(v)=E_{\lambda'}$であるから
+  $v=(0,\cdots,0,\overbrace{1}^{i_1\text{-th}},0,\cdots,0)$とおく．このとき$E_\lambda\approx H_{i_1}\times\inv{\pi}(v)$が成り立つ(\cite{hatcher VB})．さらに$\lambda'\in\binom{n-1}{k-1}$を$i_2-1,\cdots,i_k-1$番目に$1$が現れる文字列とすると$\inv{\pi}(v)=E_{\lambda'}$であるから
   \[
   E_\lambda\approx H_{i_1}\times E_{\lambda'}
   \]
   となる．よって帰納的に$E_\lambda$がclosed ballに同相であるとわかる．
 
-  自然な写像$\varphi\colon E_\lambda\rightarrow\text{Gr}_k(\complex^n)$によって$E_\lambda^\circ$は$\Omega_\lambda^\circ$に写されるが，$\varphi\colon E_\lambda^\circ\rightarrow\Omega_\lambda^\circ$は全単射であるから同相である．また$\varphi(\partial E_\lambda)\subset \bigcup_{\mu < \lambda} \Omega_{\mu}^\circ$であることも明らか．ただし$\mu \leq \lambda \Leftrightarrow \sum_{i=1}^j\mu_i \leq \sum_{i=1}^j \lambda_i$である．
+  自然な写像$\varphi\colon E_\lambda\rightarrow\text{Gr}_k(\complex^n)$によって$E_\lambda^\circ$は$\Omega_\lambda^\circ$に写されるが，$\varphi\colon E_\lambda^\circ\rightarrow\Omega_\lambda^\circ$は全単射である\footnote{詳しく書く}から同相である．また$\varphi(\partial E_\lambda)\subset \bigcup_{\mu < \lambda} \Omega_{\mu}^\circ$であることも明らか．ただし$\mu \leq \lambda \Leftrightarrow \sum_{i=1}^j\mu_i \leq \sum_{i=1}^j \lambda_i$である．\footnote{CW条件について}
 \end{proof}
 
-$\overline{\Omega_\lambda^\circ}$は既約な多様体となることが知られており，$H^*(\text{Gr}_k(\complex))$は$\overline{\Omega_\lambda^\circ}$の定めるホモロジー類$[\overline{\Omega}_\lambda]$のPoincare双対$\sigma_\lambda$たちで$\integer$上生成される\cite{fulton young tableaux}．
+$\Omega_\lambda:=\overline{\Omega_\lambda^\circ}$は既約な代数多様体となることが知られており，$H^*(\text{Gr}_k(\complex))$は$\overline{\Omega_\lambda^\circ}$の定めるホモロジー類$[\overline{\Omega}]$のPoincare双対$\sigma_\lambda$たちで$\integer$上生成される\cite{fulton young tableaux}\footnote{$\Omega_\lambda^\circ$の定めるホモロジー類として問題ない?}．
 
-$T$空間$X$に対して$H^*_T(X)$は$ET\times_TX$のコホモロジーであったが，$ET$は有限次元近似$ET_r$を持っている(§1.1)．$\overline{\Omega_\lambda^\circ}$は$T$不変であるから，$ET_r\times_T\overline{\Omega_\lambda^\circ}$は$H^*(ET_r\times_T\text{Gr}_k(\complex^n))$においてホモロジー類$[\overline{\Omega}_\lambda]$を定める．このPoincare双対$\sigma_\lambda$の極限によって$H^*_T(\text{Gr}_k(\complex^n))$の元が定まる．これをSchubert classといい，$S_\lambda$とおく(?)．
+$T$空間$X$に対して$H^*_T(X)$は$ET\times_TX$のコホモロジーであったが，$ET$は有限次元近似$ET_r$を持っている(§1.1)．$\overline{\Omega_\lambda^\circ}$は$T$不変であるから，$ET_r\times_T\overline{\Omega_\lambda^\circ}$は$H^*(ET_r\times_T\text{Gr}_k(\complex^n))$においてホモロジー類$[\overline{\Omega}_\lambda]$を定める．このPoincare双対$\sigma_\lambda$の極限によって$H^*_T(\text{Gr}_k(\complex^n))$の元が定まる．これをSchubert classといい，$S_\lambda$とおく(?)\footnote{次数が一定でpull backする系列が定まる．それが極限を定める．各次数においてはコホモロジーはinductive limitになっている，poincare双対がpoincare双対に行くか}．
 
 $\text{Gr}_k(\complex^n)$はequivariantly formalであるから同型
-$H^*_T(\text{Gr}_k(\complex^n))\simeq H^*(\text{Gr}_k(\complex^n))\otimes H^*_T(\text{pt})$が存在する．$S_\lambda\in H^*(ET\times_T\text{Gr}_k(\complex))$は各ファイバーに制限すると$\sigma_\lambda$に一致するから
+$\phi\colon H^*_T(\text{Gr}_k(\complex^n))\simeq H^*(\text{Gr}_k(\complex^n))\otimes H^*_T(\text{pt})$が存在する．$S_\lambda\in H^*(ET\times_T\text{Gr}_k(\complex))$は各ファイバーに制限すると$\sigma_\lambda$に一致するから
 \[
-S_\lambda = \sigma_\lambda + \sum_{I}c_Iy^I
+\phi(S_\lambda) = \sigma_\lambda + \sum_{I}c_Iy^I
 \]
-と展開できる．ここで$c_I\in H^*(\text{Gr}_k(\complex^n))$の次数は$|\lambda|$より小さい．よって帰納的に$\sigma_\lambda$が$\{S_\lambda\}_\lambda$の線形結合で表せることがわかるので，$\{S_\lambda\}_\lambda$は$H^*T(\text{Gr}_k(\complex^n))$の基底となる．
+と展開できる．ここで$c_I\in H^*(\text{Gr}_k(\complex^n))$の次数は$|\lambda|$より小さい．よって帰納的に$\sigma_\lambda$が$\{S_\lambda\}_\lambda$の線形結合で表せることがわかるので，$\{S_\lambda\}_\lambda$は$H^*_T(\text{Gr}_k(\complex^n))$の基底となる．
 
 
 $2$つのSchubert classの積$S_\lambda S_\mu$を$\{S_\nu\}_{\nu\in\binom{n}{k}}$の$\integer[y_1,\cdots,y_n]$係数の線形結合で
@@ -107,14 +107,6 @@ $\text{Gr}_k(\complex^n)$の$T$作用における固定点は$\{\complex^\lambda
 
 \begin{proof}
   $\lambda\in\binom{n}{k}$, $\mu=(i, j)\lambda$ (for $(i,j)\in\text{inv}(\lambda))$に対して，$\phi\colon \mathbb{CP}^1\rightarrow \text{Gr}_k(\complex^n)$を
-  \[
-  \phi([x:y])=
-  \left(
-  \begin{array}{}
-    0 & \cdots & 0 & 1 & 0 & \cdots
-  \end{array}
-  \right)
-  \]
 \end{proof}
 
 次に
@@ -203,11 +195,7 @@ H^*_T(\text{Gr}_k(\complex^n))=\set{(f_\lambda)_{\lambda\in\binom{n}{k}}\in\bigo
 \end{defin}
 
 \begin{defin}
-  いくつかのpuzzle pieceを（同一種のpieceは何個用いてもよい）同じラベルを持つ辺に沿って貼り合わせ，一つの大きな正三角形を作ったものをpuzzleと呼ぶ．puzzle $P$を上向きの正三角形となるように見たとき，$P$の左上の辺上に存在するラベルたちを下から上に読んで得られる文字列を$\lambda$，$P$の右上の辺上に存在するラベルたちを上から下に読んで得られる文字列を$\mu$，下の辺上に存在するラベルたちを左から右に読んで得られる文字列を$\nu$とする．このとき
-  \[
-  \partial P = \Delta^{\nu}_{\lambda\mu}
-  \]
-  と書く．
+  いくつかのpuzzle pieceを（同一種のpieceは何個用いてもよい）同じラベルを持つ辺に沿って貼り合わせ，一つの大きな正三角形を作ったものをpuzzleと呼ぶ．puzzle $P$を上向きの正三角形となるように見たとき，$P$の左上の辺上に存在するラベルたちを下から上に読んで得られる文字列を$\lambda$，$P$の右上の辺上に存在するラベルたちを上から下に読んで得られる文字列を$\mu$，下の辺上に存在するラベルたちを左から右に読んで得られる文字列を$\nu$とする．このとき$\partial P = \Delta^{\nu}_{\lambda\mu}$と表す．
 \end{defin}
 
 \begin{eg}
@@ -1266,3 +1254,13 @@ i_a=m-\lambda_a+a,\quad \text{for }a=1,\cdots,k
 
 
 \subsection{weight preserving bijectionの構成}
+
+このセクションではセクション3.3と3.4で構成した計算方法が，本質的に同じものであることを証明する．すなわち，$\mathcal{P}^\nu_{\lambda\mu}=\set{P:\text{puzzle}}{\partial P = \Delta^\nu_{\lambda\mu}}$，$\mathcal{T}^\nu_{\lambda\mu}=\set{T\in\text{EqSYT(\nu/\lambda,|\mu|)}}{\text{EqRect}(T)=T_\mu}$とするとき，全単射$\varphi\colon \mathcal{P}^\nu_{\lambda\mu}\rightarrow \mathcal{T}^\nu_{\lambda\mu}$であって次の性質を満たすものを構成する．
+\begin{equation}
+  \text{wt}(\varphi(P))=\text{wt}(P)\quad\text{for all }P\in\mathcal{P}^\nu_{\lambda\mu}
+\end{equation}
+
+puzzle $P$は一般に次の形をしている(\cite{Kreiman})．
+
+\input{figure1.tex}
+

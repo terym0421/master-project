@@ -537,16 +537,26 @@ def allEdgeLabeledTableauxWithShape(largeShape, smallShape, n):
 
 
 
-def calculateAllEdgeLabeledTableaux(l, m, n):
+def calculateAllEdgeLabeledTableaux(l, m, n, numberOfColumn):
     tableauList = []
     for T,C in allEdgeLabeledTableauxWithShape(n, l, sum(m)):
         TCopy = T.copy()
-        weight = TCopy.equivariantRectification(l, n[0])
+        weight = TCopy.equivariantRectification(l, numberOfColumn)
         if TCopy.isSuperStandard() and TCopy.diagram == m and (not weight == 0):
             tableauList.append(T)
     return tableauList
 
 
+def equal(T, U):
+    if not T.diagram == U.diagram:
+        return False
+    for i in range(len(T.diagram)):
+        for j in range(T.diagram[i]):
+            if not T.elements[i][j].insideLabel == U.elements[i][j].insideLabel:
+                return False
+            if not T.elements[i][j].lowerEdge.edgeLabel == U.elements[i][j].lowerEdge.edgeLabel:
+                return False
+    return True
 
 
 

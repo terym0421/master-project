@@ -16,7 +16,7 @@ $G$をコンパクトLie群とする．以下考える位相空間はすべて$C
 \end{theo}
 
 \begin{eg}
-  $S^\infty$は可縮であるので，$T=\complex^*$に対して$S^\infty\rightarrow \mathbb{CP}^\infty$はuniversal $T$ bundleである．
+  $S^\infty$\footnote{入る位相について明記?}は可縮であるので，$T=\complex^*$に対して$S^\infty\rightarrow \mathbb{CP}^\infty$はuniversal $T$ bundleである．
 \end{eg}
 
 $G$がコンパクトLie群の場合，universal $G$ bundleは直交群$O(k)$のuniversal bundleから構成できる．
@@ -31,7 +31,7 @@ $V_k(\real^n)$を$\real^n$の$k$個の正規直交なベクトル$(v_1,\cdots,v_
   
 \end{proof}
 
-$V_k(\real^\infty)=\lim_n V_k(\real^n)$, $\text{Gr}_k(\real^\infty)=\lim_n \text{Gr}_k(\real^n)$とする．
+$V_k(\real^\infty)=\varinjlim V_k(\real^n)$, $\text{Gr}_k(\real^\infty)=\varinjlim \text{Gr}_k(\real^n)$とする．
 
 \begin{prop}\label{universal O(k) bundle}
   $V_k(\real^\infty)\rightarrow \text{Gr}_k(\real^\infty)$はuniversal $O(k)$ bundleである．
@@ -54,7 +54,7 @@ $V_k(\real^\infty)=\lim_n V_k(\real^n)$, $\text{Gr}_k(\real^\infty)=\lim_n \text
 \begin{defin}
   $G$が$X$に左から作用しているとき，$G$の$X\times EG$への左作用を
   \[
-  g(x, e) := (gx, e\inv{g}) \quad \text{for } g\in G, x\in X, e\in EG 
+  g(x, e):=(gx, e\inv{g}) \quad \text{for } g\in G, x\in X, e\in EG 
   \]
   によって定める．$X\times_GEG\colon=(X\times EG)/G$としこれを$X$のhomotopy quotient という．このとき
   $H^*_G(X):=H^*(X\times_GEG)$を$X$の$G$同変コホモロジーという．
@@ -102,7 +102,7 @@ $X$の$G$同変コホモロジーは主$G$束$EG\rightarrow BG$の取り方に�
 \[
 f_*\colon\pi_q(X, x)\rightarrow \pi_q(Y, f(x))\quad\text{for } x\in X, q>0 
 \]
-を誘導するとき、$f$を弱ホモトピー同値という。
+を誘導するとき、$f$を弱ホモトピー同値\footnote{弱可縮よりも先に書く?}という。
 
 \begin{lemm}
   $E$を弱可縮な$G$空間とし、$P\rightarrow B$を主$G$束とする。このとき$(E\times P)/G\rightarrow B$は弱ホモトピー同値である。
