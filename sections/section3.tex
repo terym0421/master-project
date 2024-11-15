@@ -1,6 +1,6 @@
 \section{同変Schubert計算}
 \subsection{Grassmann多様体の同変コホモロジー}
-$\text{Gr}_k(\complex^n)=\set{V\subset \complex^n}{\dim V = k}$をGrassmann多様体という．$T=\complex^n$とするとき，$T$は$\complex^n$に
+$\text{Gr}_k(\complex^n)=\set{V\subset \complex^n}{\dim V = k}$をGrassmann多様体という．$T=(\complex^*)^n$とするとき，$T$は$\complex^n$に
 \[
 (t_1,\cdots,t_n)\cdot(x_1,\cdots,x_n)=(t_1x_1,\cdots,t_nx_n)
 \]
@@ -78,6 +78,8 @@ $\lambda=\lambda_1\cdots \lambda_n\in\binom{n}{k}$に対して，
 
 $T$空間$X$に対して$H^*_T(X)$は$ET\times_TX$のコホモロジーであったが，$ET$は有限次元近似$ET_r$を持っている(§1.1)．$\Omega_\lambda=\overline{\Omega_\lambda^\circ}$は$T$不変な既約代数多様体であるから，$ET_r\times_T\overline{\Omega_\lambda^\circ}$は$H^*(ET_r\times_T\text{Gr}_k(\complex^n))$においてホモロジー類$[\overline{\Omega}_\lambda]$を定める(\cite{fulton young tableaux})．とくに$S_\lambda$の次数は$|\text{inv}(\lambda)|$で一定である．よってこのPoincare双対$\sigma_\lambda$の極限によって$H^*_T(\text{Gr}_k(\complex^n))$の元が定まる．これをSchubert classといい，$S_\lambda$とおく．
 
+\footnote{$\text{PD}[\Omega_\lambda]=S_{_\lambda,r}\in H^{{2|\text{inv}(\lambda)|}(ET_r\times_T\text{Gr}_r(\complex^n))}$とおき，$S_{\lambda,r+1}|_{ET_r\times_T\text{Gr}_k(\complex^n)}=S_{\lambda,r}$([ref])より極限$S_\lambda$が定まる}
+
 $\text{Gr}_k(\complex^n)$はequivariantly formalであるから同型
 $\phi\colon H^*_T(\text{Gr}_k(\complex^n))\simeq H^*(\text{Gr}_k(\complex^n))\otimes H^*_T(\text{pt})$が存在する．$S_\lambda\in H^*(ET\times_T\text{Gr}_k(\complex))$は各ファイバーに制限すると$\sigma_\lambda$に一致するから
 \[
@@ -102,7 +104,7 @@ $\text{Gr}_k(\complex^n)$の$T$作用における固定点は$\{\complex^\lambda
 
 \begin{prop}
   $\lambda,\mu\in\binom{n}{k}$に対して$\complex^\lambda$と$\complex^\mu$を結ぶ$T$不変な$\mathbb{CP}^1$が存在するための必要十分条件は，ある$(i, j)\in\text{inv}(\lambda)$に対して$\mu = (i, j)\lambda$
-  となっていることである．
+  となっていることである．\footnote{Grassmannの点を標準形で書いて，T-orbitが2次元以上になってしまう条件をみる}
 \end{prop}
 
 \begin{proof}
