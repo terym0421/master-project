@@ -71,19 +71,19 @@ $\lambda=\lambda_1\cdots \lambda_n\in\binom{n}{k}$に対して，
   \]
   となる．よって帰納的に$E_\lambda$がclosed ballに同相であるとわかる．
 
-  自然な写像$\varphi\colon E_\lambda\rightarrow\text{Gr}_k(\complex^n)$によって$E_\lambda^\circ$は$\Omega_\lambda^\circ$に写されるが，$\varphi\colon E_\lambda^\circ\rightarrow\Omega_\lambda^\circ$は全単射である\footnote{詳しく書く}から同相である．また$\varphi(\partial E_\lambda)\subset \bigcup_{\mu < \lambda} \Omega_{\mu}^\circ$であることも明らか．ただし$\mu \leq \lambda \Leftrightarrow \sum_{i=1}^j\mu_i \leq \sum_{i=1}^j \lambda_i$である．\footnote{CW条件について}
+  自然な写像$\varphi\colon E_\lambda\rightarrow\text{Gr}_k(\complex^n)$によって$E_\lambda^\circ$は$\Omega_\lambda^\circ$に写されるが，$\varphi\colon E_\lambda^\circ\rightarrow\Omega_\lambda^\circ$は全単射である．実際\ref{row echelon form}の行ベクトルにSchmidtの直交化法を施せば\ref{orthonormal form}の形が得られ，逆の手順を施せば\ref{orthonormal form}から\ref{row echelon form}が得られる．したがって$\varphi$は同相である．また$\varphi(\partial E_\lambda)\subset \bigcup_{\mu < \lambda} \Omega_{\mu}^\circ$であることも明らか．ただし$\mu \leq \lambda \Leftrightarrow \sum_{i=1}^j\mu_i \leq \sum_{i=1}^j \lambda_i$である．
 \end{proof}
 
-$\Omega_\lambda:=\overline{\Omega_\lambda^\circ}$は既約な代数多様体となることが知られており，$H^*(\text{Gr}_k(\complex))$は$\overline{\Omega_\lambda^\circ}$の定めるホモロジー類$[\overline{\Omega}]$のPoincare双対$\sigma_\lambda$たちで$\integer$上生成される\cite{fulton young tableaux}\footnote{$\Omega_\lambda^\circ$の定めるホモロジー類として問題ない?}．
+したがって$H^*(\text{Gr}_k(\complex^n))$はSchubert cellの定めるホモロジー類のPoincare双対$\sigma_\lambda$たちで$\integer$上生成される．
 
-$T$空間$X$に対して$H^*_T(X)$は$ET\times_TX$のコホモロジーであったが，$ET$は有限次元近似$ET_r$を持っている(§1.1)．$\overline{\Omega_\lambda^\circ}$は$T$不変であるから，$ET_r\times_T\overline{\Omega_\lambda^\circ}$は$H^*(ET_r\times_T\text{Gr}_k(\complex^n))$においてホモロジー類$[\overline{\Omega}_\lambda]$を定める．このPoincare双対$\sigma_\lambda$の極限によって$H^*_T(\text{Gr}_k(\complex^n))$の元が定まる．これをSchubert classといい，$S_\lambda$とおく(?)\footnote{次数が一定でpull backする系列が定まる．それが極限を定める．各次数においてはコホモロジーはinductive limitになっている，poincare双対がpoincare双対に行くか}．
+$T$空間$X$に対して$H^*_T(X)$は$ET\times_TX$のコホモロジーであったが，$ET$は有限次元近似$ET_r$を持っている(§1.1)．$\Omega_\lambda=\overline{\Omega_\lambda^\circ}$は$T$不変な既約代数多様体であるから，$ET_r\times_T\overline{\Omega_\lambda^\circ}$は$H^*(ET_r\times_T\text{Gr}_k(\complex^n))$においてホモロジー類$[\overline{\Omega}_\lambda]$を定める(\cite{fulton young tableaux})．とくに$S_\lambda$の次数は$|\text{inv}(\lambda)|$で一定である．よってこのPoincare双対$\sigma_\lambda$の極限によって$H^*_T(\text{Gr}_k(\complex^n))$の元が定まる．これをSchubert classといい，$S_\lambda$とおく．
 
 $\text{Gr}_k(\complex^n)$はequivariantly formalであるから同型
 $\phi\colon H^*_T(\text{Gr}_k(\complex^n))\simeq H^*(\text{Gr}_k(\complex^n))\otimes H^*_T(\text{pt})$が存在する．$S_\lambda\in H^*(ET\times_T\text{Gr}_k(\complex))$は各ファイバーに制限すると$\sigma_\lambda$に一致するから
 \[
 \phi(S_\lambda) = \sigma_\lambda + \sum_{I}c_Iy^I
 \]
-と展開できる．ここで$c_I\in H^*(\text{Gr}_k(\complex^n))$の次数は$|\lambda|$より小さい．よって帰納的に$\sigma_\lambda$が$\{S_\lambda\}_\lambda$の線形結合で表せることがわかるので，$\{S_\lambda\}_\lambda$は$H^*_T(\text{Gr}_k(\complex^n))$の基底となる．
+と展開できる．ここで$c_I\in H^*(\text{Gr}_k(\complex^n))$の次数は$|\lambda|$より小さい．よって帰納的に$\sigma_\lambda$が$\{\phi(S_\lambda)\}_\lambda$の線形結合で表せることがわかるので，$\{S_\lambda\}_\lambda$は$H^*_T(\text{Gr}_k(\complex^n))$の基底となる．
 
 
 $2$つのSchubert classの積$S_\lambda S_\mu$を$\{S_\nu\}_{\nu\in\binom{n}{k}}$の$\integer[y_1,\cdots,y_n]$係数の線形結合で
@@ -109,12 +109,38 @@ $\text{Gr}_k(\complex^n)$の$T$作用における固定点は$\{\complex^\lambda
   $\lambda\in\binom{n}{k}$, $\mu=(i, j)\lambda$ (for $(i,j)\in\text{inv}(\lambda))$に対して，$\phi\colon \mathbb{CP}^1\rightarrow \text{Gr}_k(\complex^n)$を
 \end{proof}
 
-次に
+$\lambda,\lambda'=(i,j)\lambda\in\binom{n}{k}$，$((i,j)\in\text{inv}(\lambda))$に対して，$\complex^\lambda$と$\complex^{\lambda'}$を結ぶ$T$不変な$\mathbb{CP}^1$を$Z$とする．$Z$における$\complex^\lambda$の接空間を$T_\lambda Z$とする．$T$の$T_\lambda Z$への作用のウェイトを$w_\lambda$とする．
+
+\begin{eg}
+  $n=4$，$k=2$，$\lambda=0110$，$\lambda'=0101$とする．このとき
+  \[
+  Z=\set{
+    \left(\begin{array}{cccc}
+      0 & 1 & 0 & 0\\
+      0 & 0 & u & v
+    \end{array}\right)\in\text{Gr}_2(\complex^4)
+  }{[u:v]\in\mathbb{CP}^1}
+  \]
+  である．$t=(t_1,t_2,t_3,t_4)\in T$に対して，
+  \[
+  t\cdot\left(\begin{array}{cccc}
+    0 & 1 & 0 & 0\\
+    0 & 0 & 1 & v
+  \end{array}\right)=\left(\begin{array}{cccc}
+    0 & 1 & 0 & 0\\
+    0 & 0 & t_3 & t_4v
+  \end{array}\right)=\left(\begin{array}{cccc}
+    0 & 1 & 0 & 0\\
+    0 & 0 & 1 & t_4t_3^{-1}v
+  \end{array}\right)
+  \]
+  $\Lie (T)$の基底$X_1,\cdots,X_4$を$\text{Exp}(X_i)=(0,\cdots,\overbrace{1}^{i\text{-th}},\cdots,0)$となるように取り，その双対基底を$y_1,\cdots,y_4$とする．このとき$w_\lambda=y_4-y_3$である．
+\end{eg}
 
 
-[GKM]より
+\cite{GKM}より
 \[
-H^*_T(\text{Gr}_k(\complex^n))=\set{(f_\lambda)_{\lambda\in\binom{n}{k}}\in\bigoplus_{\lambda\in\binom{n}{k}}H^*_T(\text{pt})}{f_\lambda-f_{\lambda'}}
+H^*_T(\text{Gr}_k(\complex^n))=\set{(f_\lambda)_{\lambda\in\binom{n}{k}}\in\bigoplus_{\lambda\in\binom{n}{k}}H^*_T(\text{pt})}{f_\lambda-f_{\lambda'}\text{ is divisible by $w_\lambda$ for $\lambda' = (i,j)\lambda$, $(i,j)\in$ inv$(\lambda)$}}
 \]
 
 
@@ -126,8 +152,10 @@ H^*_T(\text{Gr}_k(\complex^n))=\set{(f_\lambda)_{\lambda\in\binom{n}{k}}\in\bigo
 \subsection{Schubert puzzleによる方法}
 
 \begin{defin}
-  以下の$8$種類のラベル付きの図形をpuzzle pieceと呼ぶ．
-  \begin{center}
+  図\ref{puzzle piece}の$8$種類のラベル付きの図形をpuzzle pieceと呼ぶ．
+
+  \begin{figure}[htbp]\label{puzzle piece}
+    \centering
     \begin{tikzpicture}
       \coordinate (A) at (0,0);
       \coordinate (B) at (2,0);
@@ -181,7 +209,8 @@ H^*_T(\text{Gr}_k(\complex^n))=\set{(f_\lambda)_{\lambda\in\binom{n}{k}}\in\bigo
       \node[font=\large] at ($(R)+(2.2,-3.5)$) {$0$};
       \node[font=\large] at ($(R)+(0.8,-3.5)$) {$1$};
     \end{tikzpicture}
-  \end{center}
+    \caption{$8$種類のpuzzle piece．}
+  \end{figure}
   ただし，puzzle pieceのうち三角形のものは$1$辺の長さが$1$の正三角形であり，平行四辺形のものは$1$辺の長さが$1$で鋭角は$60$度であるとする．またpuzzle pieceのうち
     \begin{tikzpicture}[baseline=-1pt]
       \fill[cyan] (0,0)--(0.25,0.42)--(0.5,0)--(0.25,-0.42)--cycle;
@@ -199,9 +228,10 @@ H^*_T(\text{Gr}_k(\complex^n))=\set{(f_\lambda)_{\lambda\in\binom{n}{k}}\in\bigo
 \end{defin}
 
 \begin{eg}
-  $\partial P=\Delta^{1010}_{0110,1001}$をみたすpuzzleは
+  $\partial P=\Delta^{1010}_{0110,1001}$をみたすpuzzleは図\ref{0110,1001,1010}のpuzzleのみである．
 
-  \begin{center}
+  \begin{figure}[htbp]\label{0110,1001,1010}
+    \centering
     \begin{tikzpicture}
       \draw (0,0)--(8,0)--(4,6.8)--cycle;
       \draw (2,0)--(3,1.7)--(1,1.7);
@@ -253,8 +283,8 @@ H^*_T(\text{Gr}_k(\complex^n))=\set{(f_\lambda)_{\lambda\in\binom{n}{k}}\in\bigo
       \node[font=\large] at (3.5,4.3) {$1$};
       \node[font=\large] at (4.5,4.3) {$0$};
     \end{tikzpicture}
-  \end{center}
-  ただ一つである．
+    \caption{$\partial P=\Delta^{1010}_{0110,1001}$をみたすただ一つのpuzzle}
+  \end{figure}
 \end{eg}
 
 \begin{defin}
@@ -262,10 +292,11 @@ H^*_T(\text{Gr}_k(\complex^n))=\set{(f_\lambda)_{\lambda\in\binom{n}{k}}\in\bigo
   \[
   \text{wt}(p)=y_j-y_i
   \]
-  とする．
+  とする(図\ref{puzzle weight})．
 \end{defin}
 
-\begin{center}
+\begin{figure}[htbp]\label{puzzle weight}
+  \centering
   \begin{tikzpicture}
     \draw (0,0)--(8,0)--(4,6.8)--cycle;
     \fill[cyan] (3,3.4)--(3.5,2.6)--(4,3.4)--(3.5,4.2)--cycle;
@@ -284,9 +315,9 @@ H^*_T(\text{Gr}_k(\complex^n))=\set{(f_\lambda)_{\lambda\in\binom{n}{k}}\in\bigo
     \node[font=\large] at (6.5,-0.3) {$7$};
     \node[font=\large] at (7.5,-0.3) {$8$};
   \end{tikzpicture}
+  \caption{equivariant pieceのウェイトの定義．図のequivariant pieceについて$\text{wt}(p)=y_6-y_2$である．}
+\end{figure}
 
-  $\text{wt}(p)=y_6-y_2$
-\end{center}
 
 \begin{defin}
   puzzle $P$に対してそのウェイト$\text{wt}(P)$を
@@ -314,7 +345,6 @@ H^*_T(\text{Gr}_k(\complex^n))=\set{(f_\lambda)_{\lambda\in\binom{n}{k}}\in\bigo
 \end{defin}
 
 \begin{eg}
-$\lambda=(5,3,3,1)$のYoung図形とその上のstandard tableauxの例
 \[
 \ytableausetup{nobaseline}
 \ydiagram{5, 3, 3, 1}
@@ -325,6 +355,10 @@ $\lambda=(5,3,3,1)$のYoung図形とその上のstandard tableauxの例
     11
 \end{ytableau}
 \]
+\begin{figure}[htbp]
+  \centering
+  \caption{$\lambda=(5,3,3,1)$のYoung図形とその上のstandard tableauxの例}
+\end{figure}
 \end{eg}
 
 
@@ -1260,7 +1294,254 @@ i_a=m-\lambda_a+a,\quad \text{for }a=1,\cdots,k
   \text{wt}(\varphi(P))=\text{wt}(P)\quad\text{for all }P\in\mathcal{P}^\nu_{\lambda\mu}
 \end{equation}
 
-puzzle $P$は一般に次の形をしている(\cite{Kreiman})．
+$\lambda,\mu,\nu\in\binom{n}{k}$とする．puzzle $P\in\mathcal{P}^\nu_{\lambda\mu}$は一般に次の形をしている(figure 1, \cite{Kreiman})．
 
-\input{figure1.tex}
+\input{./sections/figure1.tex}
 
+ここで，水色の領域は
+\begin{tikzpicture}[baseline=-1pt]
+  \fill[cyan] (0,0)--(0.25,0.42)--(0.5,0)--(0.25,-0.42)--cycle;
+  \draw[thick] (0,0)--(0.25,0.42)--(0.5,0)--(0.25,-0.42)--cycle;
+  \node at (0,0.25) {$0$};
+  \node at (0.5,0.25) {$1$};
+  \node at (0,-0.25) {$1$};
+  \node at (0.5,-0.25) {$0$};
+\end{tikzpicture}
+，灰色の領域は
+\begin{tikzpicture}[baseline=2pt]
+  \fill[lightgray] (0,0)-- ++(0.5,0)-- ++(-0.25,0.42)-- ++(-0.5,0)--cycle;
+  \draw[thick](0,0)-- ++(0.5,0)-- ++(-0.25,0.42)-- ++(-0.5,0)--cycle;
+  \node at (-0.3,0.2) {$1$};
+  \node at (0.25,-0.18) {$0$};
+  \node at (0.5,0.2) {$1$};
+  \node at (0, 0.6) {$0$};
+\end{tikzpicture}
+，黄色の領域は
+\begin{tikzpicture}[baseline=2pt]
+  \fill[yellow] (0,0)-- ++(0.5,0)-- ++(0.25,0.42)-- ++(-0.5,0)--cycle;
+  \draw[thick](0,0)-- ++(0.5,0)-- ++(0.25,0.42)-- ++(-0.5,0)--cycle;
+  \node at (0,0.2) {$0$};
+  \node at (0.25,-0.18) {$1$};
+  \node at (0.8,0.2) {$0$};
+  \node at (0.4, 0.6) {$1$};
+\end{tikzpicture}
+，白色の領域は
+\begin{tikzpicture}[baseline=-1pt]
+  \draw[thick] (0,0)--(0.25,0.42)--(0.5,0)--(0.25,-0.42)--cycle;
+  \node at (0,0.25) {$1$};
+  \node at (0.5,0.25) {$0$};
+  \node at (0,-0.25) {$0$};
+  \node at (0.5,-0.25) {$1$};
+\end{tikzpicture}
+，黒色の領域は
+\begin{tikzpicture}[baseline=1pt]
+  \fill[black] (0,0)-- ++(0.5,0)-- ++(-0.25,0.5)--cycle;
+  \node at (0,0.3) {$1$};
+  \node at (0.5,0.3) {$1$};
+  \node at (0.25,-0.15) {$1$};
+\end{tikzpicture}
+\begin{tikzpicture}[baseline=2pt]
+  \fill[black] (0,0.5)-- ++(0.5,0)-- ++(-0.25,-0.5)--cycle;
+  \node at (0.25, 0.65) {$1$};
+  \node at (0,0.3) {$1$};
+  \node at (0.55,0.3) {$1$};
+\end{tikzpicture}
+，緑色の領域は
+\begin{tikzpicture}[baseline=1pt]
+  \fill[teal] (0,0)-- ++(0.5,0)-- ++(-0.25,0.5)--cycle;
+  \draw[thick] (0,0)-- ++(0.5,0)-- ++(-0.25,0.5)--cycle;
+  \node at (0,0.3) {$0$};
+  \node at (0.5,0.3) {$0$};
+  \node at (0.25,-0.15) {$0$};
+\end{tikzpicture}
+\begin{tikzpicture}[baseline=2pt]
+  \fill[teal] (0,0.5)-- ++(0.5,0)-- ++(-0.25,-0.5)--cycle;
+  \draw[thick] (0,0.5)-- ++(0.5,0)-- ++(-0.25,-0.5)--cycle;
+  \node at (0.25, 0.65) {$0$};
+  \node at (0,0.3) {$0$};
+  \node at (0.55,0.3) {$0$};
+\end{tikzpicture}
+のそれぞれのからなり，$a^i_j, b^i_j, c^i_j$は各puzzle pieceの個数を表す．
+
+$P$の
+\begin{tikzpicture}[baseline=-1pt]
+  \fill[cyan] (0,0)--(0.25,0.42)--(0.5,0)--(0.25,-0.42)--cycle;
+  \draw[thick] (0,0)--(0.25,0.42)--(0.5,0)--(0.25,-0.42)--cycle;
+\end{tikzpicture}
+\begin{tikzpicture}[baseline=2pt]
+  \fill[lightgray] (0,0)-- ++(0.5,0)-- ++(-0.25,0.42)-- ++(-0.5,0)--cycle;
+  \draw[thick](0,0)-- ++(0.5,0)-- ++(-0.25,0.42)-- ++(-0.5,0)--cycle;
+\end{tikzpicture}
+\begin{tikzpicture}[baseline=2pt]
+  \fill[yellow] (0,0)-- ++(0.5,0)-- ++(0.25,0.42)-- ++(-0.5,0)--cycle;
+  \draw[thick](0,0)-- ++(0.5,0)-- ++(0.25,0.42)-- ++(-0.5,0)--cycle;
+\end{tikzpicture}
+\begin{tikzpicture}[baseline=1pt]
+  \fill[black] (0,0)-- ++(0.5,0)-- ++(-0.25,0.5)--cycle;
+\end{tikzpicture}
+\begin{tikzpicture}[baseline=2pt]
+  \fill[black] (0,0.5)-- ++(0.5,0)-- ++(-0.25,-0.5)--cycle;
+\end{tikzpicture}
+のpuzzle pieceからなる連結領域をpath と呼び，
+\begin{tikzpicture}[baseline=2pt]
+  \fill[black] (0,0.5)-- ++(0.5,0)-- ++(-0.25,-0.5)--cycle;
+\end{tikzpicture}
+で挟まれた部分をsegmentと呼ぶ(figure2)．またsegmentに含まれる
+\begin{tikzpicture}[baseline=-1pt]
+  \fill[cyan] (0,0)--(0.25,0.42)--(0.5,0)--(0.25,-0.42)--cycle;
+  \draw[thick] (0,0)--(0.25,0.42)--(0.5,0)--(0.25,-0.42)--cycle;
+\end{tikzpicture}
+\begin{tikzpicture}[baseline=2pt]
+  \fill[lightgray] (0,0)-- ++(0.5,0)-- ++(-0.25,0.42)-- ++(-0.5,0)--cycle;
+  \draw[thick](0,0)-- ++(0.5,0)-- ++(-0.25,0.42)-- ++(-0.5,0)--cycle;
+\end{tikzpicture}
+\begin{tikzpicture}[baseline=2pt]
+  \fill[yellow] (0,0)-- ++(0.5,0)-- ++(0.25,0.42)-- ++(-0.5,0)--cycle;
+  \draw[thick](0,0)-- ++(0.5,0)-- ++(0.25,0.42)-- ++(-0.5,0)--cycle;
+\end{tikzpicture}
+のpuzzle pieceの個数をそのsegmentの長さと呼ぶ
+
+\input{./sections/figure2.tex}
+
+puzzle $P$の各path $p$に対して次の操作を行って得られるedge labeled tableauxを$\varphi(P)$とする．
+
+$p$のsegmentを上から順に$s_1,\cdots,s_a$, $(a\leq k)$とする．$s_1$に
+\begin{tikzpicture}[baseline=-1pt]
+  \fill[cyan] (0,0)--(0.25,0.42)--(0.5,0)--(0.25,-0.42)--cycle;
+  \draw[thick] (0,0)--(0.25,0.42)--(0.5,0)--(0.25,-0.42)--cycle;
+\end{tikzpicture}
+と
+\begin{tikzpicture}[baseline=2pt]
+  \fill[lightgray] (0,0)-- ++(0.5,0)-- ++(-0.25,0.42)-- ++(-0.5,0)--cycle;
+  \draw[thick](0,0)-- ++(0.5,0)-- ++(-0.25,0.42)-- ++(-0.5,0)--cycle;
+\end{tikzpicture}
+がそれぞれ$a_1,a_2,\cdots,a_u$個，$b_1,b_2,\cdots,b_u$個交互に現れ，
+\begin{tikzpicture}[baseline=2pt]
+  \fill[yellow] (0,0)-- ++(0.5,0)-- ++(0.25,0.42)-- ++(-0.5,0)--cycle;
+  \draw[thick](0,0)-- ++(0.5,0)-- ++(0.25,0.42)-- ++(-0.5,0)--cycle;
+\end{tikzpicture}
+が$c$個現れるとする．ただし$a_i,b_j,c\geq 0$であるとする．
+
+\begin{center}
+  \begin{tikzpicture}
+    \fill[cyan] (8+19/4,16-19/2)-- ++(-1/2,-1)-- ++(1/4,-1/2)-- ++(1/2,1)--cycle;
+    \node at (8+18/4+1/8,16-20/2-1/4) {$a_1$};
+    \fill[lightgray] (8+17/4,16-21/2)-- ++(-2,0)-- ++(1/4,-1/2)-- ++(2,0)--cycle;
+    \node at (8+14/4,16-21/2-1/4) {$b_1$};
+    \fill[cyan] (8+9/4,16-21/2)-- ++(-2/4,-2/2)-- ++(1/4,-1/2)-- ++(2/4,2/2)--cycle;
+    \node at (8+8/4+1/8,16-22/2-1/4) {$a_2$};
+    \fill[black] (8+7/4,16-23/2)-- ++(-1/4,-1/2)-- ++(1/2,0)--cycle;
+    \fill[yellow] (8+6/4,16-24/2)-- ++(-2/4,-2/2)-- ++(1/2,0)-- ++(1/2,1)--cycle;
+    \node at (8+5/4+2/8,16-25/2) {$c$};
+
+    \draw[thick](8+19/4,16-19/2)-- ++(-2/4,-1)-- ++(-4/2,0)-- ++(-5/4,-5/2)-- ++(1/2,0)-- ++(4/4,4/2)-- ++(4/2,0)-- ++(2/4,2/2)--cycle;
+  \end{tikzpicture}
+
+  $a_1=2,b_1=3,a_2=2,c=2$
+\end{center}
+
+$\Lambda=\overbrace{(n,\cdots,n)}^{k\text{-copies}}$の$k$行目に次のようにedge labelとbox labelを書き入れていく．まず左から$a_1$個のboxのedge labelに$1$から$a_1$を1つずつ，左から単調増大になるように入れる．次の右隣りの$b_1$個のboxには何もせず，次の$a_2$個のboxのedge labelに$a_1+1$から$a_1+a_2$を単調増大になるように入れていく．これを$b_u$まで行ったのち，$c$個のboxに$a_1+\cdots+a_u+1$から$a_1+\cdots+a_u+c$までを左から単調増大になるように入れる．
+
+\begin{center}
+  \begin{tikzpicture}
+    \begin{scope}
+    \fill[cyan] (0,0) rectangle (1.6, 0.8);
+    \fill[lightgray] (1.6,0) rectangle (4,0.8);
+    \fill[cyan] (4,0) rectangle (5.6,0.8);
+    \fill[yellow] (5.6,0) rectangle (7.2,0.8);
+    \draw (0,0) rectangle (7.2, 0.8);
+    \foreach \x in {1,...,8} {
+      \draw (\x * 0.8, 0) -- ++(0, 0.8);
+    }
+
+    \node at (0.4,0) {$1$};
+    \node at (1.2,0) {$2$};
+    \node at (4.4,0) {$3$};
+    \node at (5.2,0) {$4$};
+    \node at (6,0.4) {$5$};
+    \node at (6.8,0.4) {$6$};
+    \end{scope}
+  \end{tikzpicture}
+\end{center}
+
+次のsegment $s_2$に対して，$\Lambda$の$k-1$行目のedge labelとbox labelを同様の方法で書き入れていく．ただし$k$行目で最後に処理を行ったboxのすぐ右上のboxから処理を始める．また$s_1$の長さが$0$であった場合は，$k-1$行目の最も左にある箱から処理を行う．同様にしてすべてのsegmentに対してedge labelとbox labelを書き入れていく．$s_i$の長さが$0$であったなら，$k-i+1$行の処理はスキップして，$s_{i+1}$に対する処理は，直前に処理を行ったboxのすぐ右の列にある$k-i$行目のboxから始める．
+
+\begin{center}
+  \begin{tikzpicture}
+    \draw (0,0) rectangle (8 * 1/2, 1/2);
+    \draw (8 * 1/2,1/2) rectangle (16 * 1/2, 1);
+    \draw (16 * 1/2,3/2) rectangle (23 * 1/2, 2);
+
+    \fill[lightgray] (0,0) rectangle (1,1/2);
+    \draw (0,0) rectangle (1,1/2);
+    \fill[cyan] (1,0) rectangle (2,1/2);
+    \draw (1,0) rectangle (2,1/2);
+    \fill[lightgray] (2,0) rectangle (3,1/2);
+    \draw (2,0) rectangle (3,1/2);
+    \fill[yellow] (3,0) rectangle ++(1,1/2);
+    \draw (3,0) rectangle ++(1,1/2);
+    
+    \fill[cyan] (4,1/2) rectangle ++(4/2,1/2);
+    \draw (4,1/2) rectangle ++(4/2,1/2);
+    \fill[lightgray] (6,1/2) rectangle ++(1,1/2);
+    \draw (6,1/2) rectangle ++(1,1/2);
+    \fill[yellow] (7,1/2) rectangle ++(1,1/2);
+    \draw (7,1/2) rectangle ++(1,1/2);
+
+    \fill[lightgray] (8,3/2) rectangle ++(3/2,1/2);
+    \draw (8,3/2) rectangle ++(3/2,1/2);
+    \fill[cyan] (19/2,3/2) rectangle ++(1,1/2);
+    \draw (19/2,3/2) rectangle ++(1,1/2);
+    \fill[yellow] (21/2,3/2) rectangle ++(1,1/2);
+    \draw (21/2,3/2) rectangle ++(1,1/2);
+  \end{tikzpicture}
+\end{center}
+
+\begin{figure}[htbp]
+  \caption{
+  のpathに対する処理．
+  $s_3$の長さが$0$であるから，図のように$3$行目に対する処理をスキップする．}
+\end{figure}
+
+この処理をすべてのpathに対して行って得られるedge labeled tableauxを$\varphi(P)$とする．
+
+\begin{eg}
+  図\ref{eg of varphi}のpuzzle $P$に対して$\varphi(P)$を計算する．
+  \begin{figure}[htbp]\label{eg of varphi}
+    \centering
+    \begin{tikzpicture}
+      \fill[teal] (0,0)-- ++(8,0)-- ++(-4,8)--cycle;
+      \draw (0,0)-- ++(8,0)-- ++(-4,8)--cycle;
+
+      \fill[black] (2,2)--++(1,0)--++(1/2,1)-- ++(-1/2,1)--++(-1,0)-- ++(-1/2,-1)-- ++(-1/2,-1);
+      \fill[black] (1/2,1)-- ++(1,0)-- ++(-1/2,1)--cycle;
+
+      \foreach \x in {1,...,7}{
+        \draw[gray] (\x, 0) -- (\x/2, \x);
+        \draw[gray] (\x, 0) -- (4+\x/2, 8-\x);
+        \draw[gray] (\x/2,\x) -- (8-\x/2,\x);
+      }
+      
+      \fill[yellow] (0,0)-- ++(1,0)-- ++(1/2,1)--++(-1,0)--cycle;
+      \draw (0,0)-- ++(1,0)-- ++(1/2,1)--++(-1,0)--cycle;
+      \fill[cyan] (3/2,1)-- ++(1/2,1)-- ++(-1/2,1)-- ++(-1/2,-1);
+      \draw  (3/2,1)-- ++(1/2,1)-- ++(-1/2,1)-- ++(-1/2,-1);
+    \end{tikzpicture}
+  \end{figure}
+\end{eg}
+
+\begin{prop}
+  $P\in\mathcal{P}^\nu_{\lambda\mu}$に対して$\varphi(P)\in\text{EqSYT}(\nu/\lambda,|\mu|)$である．
+\end{prop}
+
+\begin{prop}
+  $P\in\mathcal{P}^\nu_{\lambda\mu}$に対して$\text{EqRect}(\varphi(P))=T_\mu$である．
+\end{prop}
+
+\begin{prop}
+  $\varphi\colon\mathcal{P}^\nu_{\lambda\mu}\rightarrow\mathcal{T}^\nu_{\lambda\mu}$は全単射である．
+\end{prop}
+
+\begin{prop}
+  $\text{wt}(\varphi(P))=\text{wt}(P)$である．
+\end{prop}
