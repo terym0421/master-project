@@ -1,5 +1,5 @@
 \documentclass{ltjsarticle}
-\input{../setting.tex}
+\input{../../setting.tex}
 
 \title{aaa}
 \author{}
@@ -9,7 +9,6 @@
 \begin{document}
 \maketitle
 
-\begin{center}
   \begin{tikzpicture}
 
 
@@ -58,7 +57,12 @@
     \draw[thick] (8+1/4,16-19/2)-- ++(-1,-2)-- ++(-1,0)-- ++(-3/4,-3/2)-- ++(1/2,0)-- ++(2/4,2/2)-- ++(1,0)-- ++(1,2)--cycle;
     \end{scope}
 
-    \begin{scope}[xshift=3cm, yshift=-2cm]
+    \begin{scope}[xshift=3cm, yshift=-1.5cm]
+      \fill[black] (8-10/4,16-26/2)-- ++(-1/4,-1/2)-- ++(1/2,0)--cycle;
+      \node at (8-9/4,16-26/2) {$s_3$};
+    \end{scope}
+
+    \begin{scope}[xshift=2cm, yshift=-3cm]
       \node at(8-9/4,16-26/2) {$s_4$};
       \fill[lightgray] (8-10/4,16-26/2)-- ++(-3/2,0)-- ++(1/4,-1/2)-- ++(3/2,0)--cycle;
     \fill[cyan] (8-16/4,16-26/2)-- ++(-2/4,-2/2)-- ++(1/4,-1/2)-- ++(2/4,2/2)--cycle;
@@ -69,10 +73,5 @@
     \draw[thick] (8-10/4,16-26/2)-- ++(1/4,-1/2)-- ++(-1.5,0)-- ++(-4/4,-4/2);
     \end{scope}
   \end{tikzpicture}
-
-  figure 2
-
-  path $p$ とそのsegment $s_1,s_2,s_4$，$s_3$は長さ$0$である．
-\end{center}
 
 \end{document}

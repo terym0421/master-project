@@ -1,0 +1,50 @@
+\documentclass{ltjsarticle}
+\input{../../setting.tex}
+
+\title{aaa}
+\author{}
+\date{}
+
+
+\begin{document}
+\maketitle
+
+\begin{figure}[H]
+  \centering
+  \begin{tikzpicture}
+    \draw (0,0) rectangle ++(2,1/2);
+    \node at (1,1/4) {$|s_{11}^{\text{bg}}|$};
+    \filldraw[fill=yellow] (2,0) rectangle ++(1,1/2);
+    \node at (2.5,1/4) {$|s_{11}^{\text{y}}|$};
+    \filldraw[fill=yellow] (3,0) rectangle ++(1,1/2);
+    \node at (3.5,1/4) {$|s_{21}^{\text{y}}|$};
+    \filldraw[fill=yellow] (4,0) rectangle ++(1,1/2);
+    \node at (4.5,1/4) {$|s_{31}^{\text{y}}|$};
+    \filldraw[fill=yellow] (5,0) rectangle ++(1/2,1/2);
+    \node at (5.5,-0.25) {$|s_{41}^{\text{y}}|$};
+
+    \draw (3,1/2) rectangle ++(5/2,1/2);
+    \node at (8/2+1/4,3/4) {$|s_{12}^{\text{bg}}|$};
+    \filldraw[fill=yellow] (11/2, 1/2) rectangle ++(3/2,1/2);
+    \node at (12/2+1/4,3/4) {$|s_{12}^{\text{y}}|$};
+    \filldraw[fill=yellow] (14/2, 1/2) rectangle ++(2/2,1/2);
+    \node at (15/2,3/4) {$|s_{22}^{\text{y}}|$};
+    \filldraw[fill=yellow] (16/2, 1/2) rectangle ++(3/2,1/2);
+    \node at (17/2+1/4,3/4) {$|s_{32}^{\text{y}}|$};
+
+    \draw (14/2,1) rectangle ++(3/2,1/2);
+    \node at (15/2 + 1/4,5/4) {$|s_{13}^{\text{bg}}|$};
+    \filldraw[fill=yellow] (17/2,1) rectangle ++(5/2,1/2);
+    \node at (19/2 + 1/4, 5/4) {$|s_{13}^{\text{y}}|$};
+    \filldraw[fill=yellow] (22/2,1) rectangle ++(2/2,1/2);
+    \node at (23/2, 5/4) {$|s_{23}^{\text{y}}|$};
+
+    \draw (22/2,3/2) rectangle ++(3/2,1/2);
+    \node at (23/2 + 1/4, 7/4) {$|s_{14}^{\text{bg}}|$};
+    \filldraw[fill=yellow] (25/2,3/2) rectangle ++(1/2,1/2);
+    \node at (26/2, 5/4) {$|s_{14}^{\text{y}}|$};
+  \end{tikzpicture}
+  \caption{図\ref{generic puzzle}のpuzzle $P$に対する$\varphi(P)$．黄色のboxにはbox labelが入っており，白いboxにはbox labelは入っていない．}\label{varphi of generic puzzle}
+\end{figure}
+
+\end{document}

@@ -156,7 +156,7 @@ H^*_T(\text{Gr}_k(\complex^n))=\set{(f_\lambda)_{\lambda\in\binom{n}{k}}\in\bigo
 \begin{defin}
   図\ref{puzzle piece}の$8$種類のラベル付きの図形をpuzzle pieceと呼ぶ．
 
-  \begin{figure}[htbp]\label{puzzle piece}
+  \begin{figure}[htbp]
     \centering
     \begin{tikzpicture}
       \coordinate (A) at (0,0);
@@ -211,7 +211,7 @@ H^*_T(\text{Gr}_k(\complex^n))=\set{(f_\lambda)_{\lambda\in\binom{n}{k}}\in\bigo
       \node[font=\large] at ($(R)+(2.2,-3.5)$) {$0$};
       \node[font=\large] at ($(R)+(0.8,-3.5)$) {$1$};
     \end{tikzpicture}
-    \caption{$8$種類のpuzzle piece．}
+    \caption{$8$種類のpuzzle piece．}\label{puzzle piece}
   \end{figure}
   ただし，puzzle pieceのうち三角形のものは$1$辺の長さが$1$の正三角形であり，平行四辺形のものは$1$辺の長さが$1$で鋭角は$60$度であるとする．またpuzzle pieceのうち
     \begin{tikzpicture}[baseline=-1pt]
@@ -232,7 +232,7 @@ H^*_T(\text{Gr}_k(\complex^n))=\set{(f_\lambda)_{\lambda\in\binom{n}{k}}\in\bigo
 \begin{eg}
   $\partial P=\Delta^{1010}_{0110,1001}$をみたすpuzzleは図\ref{0110,1001,1010}のpuzzleのみである．
 
-  \begin{figure}[htbp]\label{0110,1001,1010}
+  \begin{figure}[htbp]
     \centering
     \begin{tikzpicture}
       \draw (0,0)--(8,0)--(4,6.8)--cycle;
@@ -285,7 +285,7 @@ H^*_T(\text{Gr}_k(\complex^n))=\set{(f_\lambda)_{\lambda\in\binom{n}{k}}\in\bigo
       \node[font=\large] at (3.5,4.3) {$1$};
       \node[font=\large] at (4.5,4.3) {$0$};
     \end{tikzpicture}
-    \caption{$\partial P=\Delta^{1010}_{0110,1001}$をみたすただ一つのpuzzle}
+    \caption{$\partial P=\Delta^{1010}_{0110,1001}$をみたすただ一つのpuzzle}\label{0110,1001,1010}
   \end{figure}
 \end{eg}
 
@@ -297,7 +297,7 @@ H^*_T(\text{Gr}_k(\complex^n))=\set{(f_\lambda)_{\lambda\in\binom{n}{k}}\in\bigo
   とする(図\ref{puzzle weight})．
 \end{defin}
 
-\begin{figure}[htbp]\label{puzzle weight}
+\begin{figure}[htbp]
   \centering
   \begin{tikzpicture}
     \draw (0,0)--(8,0)--(4,6.8)--cycle;
@@ -317,7 +317,7 @@ H^*_T(\text{Gr}_k(\complex^n))=\set{(f_\lambda)_{\lambda\in\binom{n}{k}}\in\bigo
     \node[font=\large] at (6.5,-0.3) {$7$};
     \node[font=\large] at (7.5,-0.3) {$8$};
   \end{tikzpicture}
-  \caption{equivariant pieceのウェイトの定義．図のequivariant pieceについて$\text{wt}(p)=y_6-y_2$である．}
+  \caption{equivariant pieceのウェイトの定義．図のequivariant pieceについて$\text{wt}(p)=y_6-y_2$である．}\label{puzzle weight}
 \end{figure}
 
 
@@ -364,7 +364,7 @@ H^*_T(\text{Gr}_k(\complex^n))=\set{(f_\lambda)_{\lambda\in\binom{n}{k}}\in\bigo
 \end{eg}
 
 
-\begin{defin}
+\begin{defin}\label{label condition}
   分割$\lambda, \mu$に対して，$\lambda\leq\mu\Leftrightarrow \lambda_i\leq\mu_i\:(\forall i)$によって順序を定める．$\lambda<\mu$を満たすYoung図形に対して，$\mu$のYoung図形から$\lambda$に相当する部分を取り除いた図形を歪Young図形といい$\mu/\lambda$で表す．整数$n>0$を固定する. 歪Young図形の各箱に$1$から$n$までの数字を書き入れ，水平方向の各辺に$\{1,\cdots,n\}$の部分集合(空でもよい)を書き入れたものを， equivariant fillingという．equivariant fillingのうち，次の条件を満たすものをequivariant standard tableauxという．
   \begin{itemize}
     \item $1$から$n$までの各数字が，いずれかの箱のラベルに現れるか，またはいずれかの辺のラベルの要素になっている．また$1$から$n$までの各数字がちょうど1回現れる．
@@ -376,8 +376,9 @@ H^*_T(\text{Gr}_k(\complex^n))=\set{(f_\lambda)_{\lambda\in\binom{n}{k}}\in\bigo
 \end{defin}
 
 \begin{eg}\label{example of EqSYT}
-  $(4,3,3,1)/(2,2,1)$上のequivariant standard tableauxの例(左図)と$(4,4,2)/(3,3,1)$上のequivariant standard tableauxの例(右図)
-  \begin{center}
+  図\ref{eg of 4331/221}は$(4,3,3,1)/(2,2,1)$上のequivariant standard tableauxの例と$(4,4,2)/(3,3,1)$上のequivariant standard tableauxの例である．
+  \begin{figure}
+    \centering
     \begin{tikzpicture}
       \begin{scope}
         \fill[gray] (0,0)--(1.6,0)--(1.6,-1.6)--(0.8,-1.6)--(0.8,-2.4)--(0,-2.4)--cycle;
@@ -416,7 +417,8 @@ H^*_T(\text{Gr}_k(\complex^n))=\set{(f_\lambda)_{\lambda\in\binom{n}{k}}\in\bigo
         \node at (2,-1.6) {$3$};
       \end{scope}
     \end{tikzpicture}
-  \end{center}
+    \caption{$(4,3,3,1)/(2,2,1)$上のequivariant standard tableauxの例(左)と$(4,4,2)/(3,3,1)$上のequivariant standard tableauxの例(右)}\label{eg of 4331/221}
+  \end{figure}
 \end{eg}
 
 \begin{defin}
@@ -437,8 +439,9 @@ H^*_T(\text{Gr}_k(\complex^n))=\set{(f_\lambda)_{\lambda\in\binom{n}{k}}\in\bigo
 \end{defin}
 
 \begin{eg}\label{fst calculation}
-  例\ref{example of EqSYT}左図のtableauxのequivariant rectificationを図示する．
-  \begin{center}
+  図\ref{eg of 4331/221}左のtableauxのequivariant rectificationを図示する(図\ref{rect of 4331/221})．
+  \begin{figure}[H]
+    \centering
     \begin{tikzpicture}
       \begin{scope}
         \fill[gray] (0,0)--(1.6,0)--(1.6,-1.6)--(0.8,-1.6)--(0.8,-2.4)--(0,-2.4)--cycle;
@@ -820,8 +823,9 @@ H^*_T(\text{Gr}_k(\complex^n))=\set{(f_\lambda)_{\lambda\in\binom{n}{k}}\in\bigo
         \node at (0.4,-0.4) {$1$};
       \end{scope}
     \end{tikzpicture}
-  \end{center}
-\end{eg}
+    \caption{図\ref{eg of 4331/221}左のtableauxのrectification．}\label{rect of 4331/221}
+  \end{figure}
+  \end{eg}
 
 次に$T\in\text{EdSYT}(\mu/\lambda, n)$に対してそのウェイトを定義する．
 
@@ -830,7 +834,7 @@ H^*_T(\text{Gr}_k(\complex^n))=\set{(f_\lambda)_{\lambda\in\binom{n}{k}}\in\bigo
   \[
   \beta(x)=y_{i+1}-y_i\in \integer[y_1,\cdots,y_{m+k}]
   \]
-  とする．ここで$i$は$\Lambda$の右上の隅の箱から$x$までのManhattan距離である．図は$k=3,m=4$における$\Lambda$の各箱のManhattan距離である．
+  とする．ここで$i$は$\Lambda$の右上の隅の箱から$x$までのManhattan距離である(図\ref{manhattan})．
   \[
   \begin{ytableau}
     4 & 3 & 2 & 1\\
@@ -838,6 +842,10 @@ H^*_T(\text{Gr}_k(\complex^n))=\set{(f_\lambda)_{\lambda\in\binom{n}{k}}\in\bigo
     6 & 5 & 4 & 3
   \end{ytableau}
   \]
+  \begin{figure}[H]
+    \centering
+    \caption{$k=3,m=4$における$\Lambda$の各箱のManhattan距離．}\label{manhattan}
+  \end{figure}
 \end{defin}
 
 \begin{defin}
@@ -888,8 +896,9 @@ H^*_T(\text{Gr}_k(\complex^n))=\set{(f_\lambda)_{\lambda\in\binom{n}{k}}\in\bigo
 \end{eg}
 
 \begin{eg}
-  例\ref{example of EqSYT}右図のtableauxのequivariant rectificationを図示する．
-  \begin{center}
+  図\ref{eg of 4331/221}右のtableauxのequivariant rectificationを図示する(図\ref{rect of 442})．
+  \begin{figure}[H]
+    \centering
     \begin{tikzpicture}
       \begin{scope}
         \fill[gray] (0,0)--(2.4,0)--(2.4,-1.6)--(0.8,-1.6)--(0.8,-2.4)--(0,-2.4)--cycle;
@@ -1245,7 +1254,8 @@ H^*_T(\text{Gr}_k(\complex^n))=\set{(f_\lambda)_{\lambda\in\binom{n}{k}}\in\bigo
         \node at (0.4,-0.4) {$1$};
       \end{scope}
     \end{tikzpicture}
-  \end{center}
+    \caption{図\ref{eg of 4331/221}右のtableauxのrectification．}\label{rect of 442}
+  \end{figure}
   $T\leq (4,4,4)$とみなして$\text{wt}(T)$を計算すると，上記の計算過程より
 \begin{align*}
   &\text{factor}(3)=y_4-y_1\\
@@ -1260,16 +1270,31 @@ H^*_T(\text{Gr}_k(\complex^n))=\set{(f_\lambda)_{\lambda\in\binom{n}{k}}\in\bigo
 \end{eg}
 
 
-分割$\mu$に対して，$1$行目の箱に左から順に$1,2,\cdots,\mu_1$を書き入れ，$2$行目の箱に左から順に$\mu_1+1,\mu_1+2,\cdots,\mu_1+\mu_2$を書き入れ，と続けて得られるstandard tableauxを$T_\mu$とする．
-\[
-T_{(4,3,3,1)}=
-\begin{ytableau}
-  1&2&3&4\\
-  5&6&7\\
-  8&9&10\\
-  11
-\end{ytableau}
-\]
+分割$\mu$に対して，$1$行目の箱に左から順に$1,2,\cdots,\mu_1$を書き入れ，$2$行目の箱に左から順に$\mu_1+1,\mu_1+2,\cdots,\mu_1+\mu_2$を書き入れ，と続けて得られるstandard tableauxを$T_\mu$とする(図\ref{superstandard})．
+\begin{figure}
+  \centering
+  \begin{tikzpicture}
+    \draw (0,0)-- ++(3.2,0)-- ++(0,-0.8)-- ++(-0.8,0)-- ++(0,-1.6)-- ++(-1.6,0)-- ++(0,-0.8)-- ++(-0.8,0)-- ++(0,3.2);
+    \draw (0,-0.8)-- ++(2.4,0);
+    \draw (0,-1.6)-- ++(2.4,0);
+    \draw (0,-2.4)-- ++(0.8,0);
+    \draw (0.8,0)-- ++(0,-2.4);
+    \draw (1.6,0)-- ++(0,-2.4);
+    \draw (2.4,0)-- ++(0,-0.8);
+
+    \foreach \x in {1,2,3,4} {
+      \node[font=\large] at (0.8 * \x - 0.4, -0.4) {$\x$};
+    };
+    \foreach \x in {5,6,7} {
+      \node[font=\large] at (0.8 * \x - 3.6, -1.2) {$\x$};
+    };
+    \foreach \x in {8,9,10} {
+      \node[font=\large] at (0.8 * \x - 6, -2) {$\x$};
+    };
+    \node[font=\large] at (0.4,-2.8) {$11$};
+  \end{tikzpicture}
+  \caption{$T_{(4,3,3,1)}$の図示．}\label{superstandard}
+\end{figure}
 
 正の整数$m,k$を固定する．分割$\lambda\leq\Lambda=\overbrace{(m,\cdots,m)}^{k\text{-copies}}$に対して，
 \[
@@ -1296,74 +1321,79 @@ i_a=m-\lambda_a+a,\quad \text{for }a=1,\cdots,k
   \text{wt}(\varphi(P))=\text{wt}(P)\quad\text{for all }P\in\mathcal{P}^\nu_{\lambda\mu}
 \end{equation}
 
-$\lambda,\mu,\nu\in\binom{n}{k}$とする．puzzle $P\in\mathcal{P}^\nu_{\lambda\mu}$は一般に次の形をしている(figure 1, \cite{Kreiman})．
+$\lambda,\mu,\nu\in\binom{n}{k}$とする．puzzle $P\in\mathcal{P}^\nu_{\lambda\mu}$は一般に図\ref{generic puzzle}の形をしている(\cite{Kreiman})．
 
-\input{./sections/figure1.tex}
+\begin{figure}
+  \centering
+  \input{./sections/figures/figure1.tex}
+  \caption{puzzleの一般形\cite{Kreiman}．
+  ここで，水色の領域は
+  \begin{tikzpicture}[baseline=-1pt]
+    \fill[cyan] (0,0)--(0.25,0.42)--(0.5,0)--(0.25,-0.42)--cycle;
+    \protect\draw[thick] (0,0)--(0.25,0.42)--(0.5,0)--(0.25,-0.42)--cycle;
+    \protect\node at (0,0.25) {$0$};
+    \protect\node at (0.5,0.25) {$1$};
+    \protect\node at (0,-0.25) {$1$};
+    \protect\node at (0.5,-0.25) {$0$};
+  \end{tikzpicture}
+  ，灰色の領域は
+  \begin{tikzpicture}[baseline=2pt]
+    \fill[lightgray] (0,0)-- ++(0.5,0)-- ++(-0.25,0.42)-- ++(-0.5,0)--cycle;
+    \protect\draw[thick](0,0)-- ++(0.5,0)-- ++(-0.25,0.42)-- ++(-0.5,0)--cycle;
+    \protect\node at (-0.3,0.2) {$1$};
+    \protect\node at (0.25,-0.18) {$0$};
+    \protect\node at (0.5,0.2) {$1$};
+    \protect\node at (0, 0.6) {$0$};
+  \end{tikzpicture}
+  ，黄色の領域は
+  \begin{tikzpicture}[baseline=2pt]
+    \fill[yellow] (0,0)-- ++(0.5,0)-- ++(0.25,0.42)-- ++(-0.5,0)--cycle;
+    \protect\draw[thick](0,0)-- ++(0.5,0)-- ++(0.25,0.42)-- ++(-0.5,0)--cycle;
+    \protect\node at (0,0.2) {$0$};
+    \protect\node at (0.25,-0.18) {$1$};
+    \protect\node at (0.8,0.2) {$0$};
+    \protect\node at (0.4, 0.6) {$1$};
+  \end{tikzpicture}
+  ，白色の領域は
+  \begin{tikzpicture}[baseline=-1pt]
+    \protect\draw[thick] (0,0)--(0.25,0.42)--(0.5,0)--(0.25,-0.42)--cycle;
+    \protect\node at (0,0.25) {$1$};
+    \protect\node at (0.5,0.25) {$0$};
+    \protect\node at (0,-0.25) {$0$};
+    \protect\node at (0.5,-0.25) {$1$};
+  \end{tikzpicture}
+  ，黒色の領域は
+  \begin{tikzpicture}[baseline=1pt]
+    \fill[black] (0,0)-- ++(0.5,0)-- ++(-0.25,0.5)--cycle;
+    \protect\node at (0,0.3) {$1$};
+    \protect\node at (0.5,0.3) {$1$};
+    \protect\node at (0.25,-0.15) {$1$};
+  \end{tikzpicture}
+  \begin{tikzpicture}[baseline=2pt]
+    \fill[black] (0,0.5)-- ++(0.5,0)-- ++(-0.25,-0.5)--cycle;
+    \protect\node at (0.25, 0.65) {$1$};
+    \protect\node at (0,0.3) {$1$};
+    \protect\node at (0.55,0.3) {$1$};
+  \end{tikzpicture}
+  ，緑色の領域は
+  \begin{tikzpicture}[baseline=1pt]
+    \fill[teal] (0,0)-- ++(0.5,0)-- ++(-0.25,0.5)--cycle;
+    \protect\draw[thick] (0,0)-- ++(0.5,0)-- ++(-0.25,0.5)--cycle;
+    \protect\node at (0,0.3) {$0$};
+    \protect\node at (0.5,0.3) {$0$};
+    \protect\node at (0.25,-0.15) {$0$};
+  \end{tikzpicture}
+  \begin{tikzpicture}[baseline=2pt]
+    \fill[teal] (0,0.5)-- ++(0.5,0)-- ++(-0.25,-0.5)--cycle;
+    \protect\draw[thick] (0,0.5)-- ++(0.5,0)-- ++(-0.25,-0.5)--cycle;
+    \protect\node at (0.25, 0.65) {$0$};
+    \protect\node at (0,0.3) {$0$};
+    \protect\node at (0.55,0.3) {$0$};
+  \end{tikzpicture}
+  のそれぞれのからなり，$a^i_j, b^i_j, c^i_j$は各puzzle pieceの個数を表す．$l_i,m_i,n_i$はそれぞれの部分における$0$の個数である．
+  }\label{generic puzzle}
+\end{figure}
 
-ここで，水色の領域は
-\begin{tikzpicture}[baseline=-1pt]
-  \fill[cyan] (0,0)--(0.25,0.42)--(0.5,0)--(0.25,-0.42)--cycle;
-  \draw[thick] (0,0)--(0.25,0.42)--(0.5,0)--(0.25,-0.42)--cycle;
-  \node at (0,0.25) {$0$};
-  \node at (0.5,0.25) {$1$};
-  \node at (0,-0.25) {$1$};
-  \node at (0.5,-0.25) {$0$};
-\end{tikzpicture}
-，灰色の領域は
-\begin{tikzpicture}[baseline=2pt]
-  \fill[lightgray] (0,0)-- ++(0.5,0)-- ++(-0.25,0.42)-- ++(-0.5,0)--cycle;
-  \draw[thick](0,0)-- ++(0.5,0)-- ++(-0.25,0.42)-- ++(-0.5,0)--cycle;
-  \node at (-0.3,0.2) {$1$};
-  \node at (0.25,-0.18) {$0$};
-  \node at (0.5,0.2) {$1$};
-  \node at (0, 0.6) {$0$};
-\end{tikzpicture}
-，黄色の領域は
-\begin{tikzpicture}[baseline=2pt]
-  \fill[yellow] (0,0)-- ++(0.5,0)-- ++(0.25,0.42)-- ++(-0.5,0)--cycle;
-  \draw[thick](0,0)-- ++(0.5,0)-- ++(0.25,0.42)-- ++(-0.5,0)--cycle;
-  \node at (0,0.2) {$0$};
-  \node at (0.25,-0.18) {$1$};
-  \node at (0.8,0.2) {$0$};
-  \node at (0.4, 0.6) {$1$};
-\end{tikzpicture}
-，白色の領域は
-\begin{tikzpicture}[baseline=-1pt]
-  \draw[thick] (0,0)--(0.25,0.42)--(0.5,0)--(0.25,-0.42)--cycle;
-  \node at (0,0.25) {$1$};
-  \node at (0.5,0.25) {$0$};
-  \node at (0,-0.25) {$0$};
-  \node at (0.5,-0.25) {$1$};
-\end{tikzpicture}
-，黒色の領域は
-\begin{tikzpicture}[baseline=1pt]
-  \fill[black] (0,0)-- ++(0.5,0)-- ++(-0.25,0.5)--cycle;
-  \node at (0,0.3) {$1$};
-  \node at (0.5,0.3) {$1$};
-  \node at (0.25,-0.15) {$1$};
-\end{tikzpicture}
-\begin{tikzpicture}[baseline=2pt]
-  \fill[black] (0,0.5)-- ++(0.5,0)-- ++(-0.25,-0.5)--cycle;
-  \node at (0.25, 0.65) {$1$};
-  \node at (0,0.3) {$1$};
-  \node at (0.55,0.3) {$1$};
-\end{tikzpicture}
-，緑色の領域は
-\begin{tikzpicture}[baseline=1pt]
-  \fill[teal] (0,0)-- ++(0.5,0)-- ++(-0.25,0.5)--cycle;
-  \draw[thick] (0,0)-- ++(0.5,0)-- ++(-0.25,0.5)--cycle;
-  \node at (0,0.3) {$0$};
-  \node at (0.5,0.3) {$0$};
-  \node at (0.25,-0.15) {$0$};
-\end{tikzpicture}
-\begin{tikzpicture}[baseline=2pt]
-  \fill[teal] (0,0.5)-- ++(0.5,0)-- ++(-0.25,-0.5)--cycle;
-  \draw[thick] (0,0.5)-- ++(0.5,0)-- ++(-0.25,-0.5)--cycle;
-  \node at (0.25, 0.65) {$0$};
-  \node at (0,0.3) {$0$};
-  \node at (0.55,0.3) {$0$};
-\end{tikzpicture}
-のそれぞれのからなり，$a^i_j, b^i_j, c^i_j$は各puzzle pieceの個数を表す．
 
 $P$の
 \begin{tikzpicture}[baseline=-1pt]
@@ -1388,7 +1418,7 @@ $P$の
 \begin{tikzpicture}[baseline=2pt]
   \fill[black] (0,0.5)-- ++(0.5,0)-- ++(-0.25,-0.5)--cycle;
 \end{tikzpicture}
-で挟まれた部分をsegmentと呼ぶ(figure2)．またsegmentに含まれる
+で挟まれた部分をsegmentと呼ぶ．またsegmentに含まれる
 \begin{tikzpicture}[baseline=-1pt]
   \fill[cyan] (0,0)--(0.25,0.42)--(0.5,0)--(0.25,-0.42)--cycle;
   \draw[thick] (0,0)--(0.25,0.42)--(0.5,0)--(0.25,-0.42)--cycle;
@@ -1401,13 +1431,18 @@ $P$の
   \fill[yellow] (0,0)-- ++(0.5,0)-- ++(0.25,0.42)-- ++(-0.5,0)--cycle;
   \draw[thick](0,0)-- ++(0.5,0)-- ++(0.25,0.42)-- ++(-0.5,0)--cycle;
 \end{tikzpicture}
-のpuzzle pieceの個数をそのsegmentの長さと呼ぶ
+のpuzzle pieceの個数をそのsegmentの長さと呼ぶ(図\ref{path,segment})．segment $s$に対してその長さを$|s|$と書く．
 
-\input{./sections/figure2.tex}
+\begin{figure}
+  \centering
+  \input{./sections/figures/figure2.tex}
+  \caption{path $p$とそのsegment $s_1,s_2,s_3,s_4$．$s_3$の長さは$0$である．}\label{path,segment}
+\end{figure}
 
-puzzle $P$の各path $p$に対して次の操作を行って得られるedge labeled tableauxを$\varphi(P)$とする．
+\newpage
+puzzle $P$のpathを左側から順に$p_1,\cdots,p_t$とする．次の操作を行って得られるedge labeled tableauxを$\varphi(P)$とする．
 
-$p$のsegmentを上から順に$s_1,\cdots,s_a$, $(a\leq k)$とする．$s_1$に
+$p_1$のsegmentを上から順に$s_1,\cdots,s_a$, $(a\leq k)$とする．$s_1$に
 \begin{tikzpicture}[baseline=-1pt]
   \fill[cyan] (0,0)--(0.25,0.42)--(0.5,0)--(0.25,-0.42)--cycle;
   \draw[thick] (0,0)--(0.25,0.42)--(0.5,0)--(0.25,-0.42)--cycle;
@@ -1424,7 +1459,10 @@ $p$のsegmentを上から順に$s_1,\cdots,s_a$, $(a\leq k)$とする．$s_1$に
 \end{tikzpicture}
 が$c$個現れるとする．ただし$a_i,b_j,c\geq 0$であるとする．
 
-\begin{center}
+$\Lambda=\overbrace{(n,\cdots,n)}^{k\text{-copies}}$の$k$行目に次のようにedge labelとbox labelを書き入れていく．まず左から$a_1$個のboxの下辺のedge labelに$1$から$a_1$を1つずつ，左から単調増大になるように入れる．次の右隣りの$b_1$個のboxには何もせず，次の$a_2$個のboxのedge labelに$a_1+1$から$a_1+a_2$を単調増大になるように入れていく．これを$b_u$まで行ったのち，$c$個のboxに$a_1+\cdots+a_u+1$から$a_1+\cdots+a_u+c$までを左から単調増大になるように入れる(図\ref{process for segment})．
+
+\begin{figure}[H]
+  \centering
   \begin{tikzpicture}
     \fill[cyan] (8+19/4,16-19/2)-- ++(-1/2,-1)-- ++(1/4,-1/2)-- ++(1/2,1)--cycle;
     \node at (8+18/4+1/8,16-20/2-1/4) {$a_1$};
@@ -1438,37 +1476,31 @@ $p$のsegmentを上から順に$s_1,\cdots,s_a$, $(a\leq k)$とする．$s_1$に
 
     \draw[thick](8+19/4,16-19/2)-- ++(-2/4,-1)-- ++(-4/2,0)-- ++(-5/4,-5/2)-- ++(1/2,0)-- ++(4/4,4/2)-- ++(4/2,0)-- ++(2/4,2/2)--cycle;
   \end{tikzpicture}
-
-  $a_1=2,b_1=3,a_2=2,c=2$
-\end{center}
-
-$\Lambda=\overbrace{(n,\cdots,n)}^{k\text{-copies}}$の$k$行目に次のようにedge labelとbox labelを書き入れていく．まず左から$a_1$個のboxのedge labelに$1$から$a_1$を1つずつ，左から単調増大になるように入れる．次の右隣りの$b_1$個のboxには何もせず，次の$a_2$個のboxのedge labelに$a_1+1$から$a_1+a_2$を単調増大になるように入れていく．これを$b_u$まで行ったのち，$c$個のboxに$a_1+\cdots+a_u+1$から$a_1+\cdots+a_u+c$までを左から単調増大になるように入れる．
-
-\begin{center}
   \begin{tikzpicture}
-    \begin{scope}
-    \fill[cyan] (0,0) rectangle (1.6, 0.8);
-    \fill[lightgray] (1.6,0) rectangle (4,0.8);
-    \fill[cyan] (4,0) rectangle (5.6,0.8);
-    \fill[yellow] (5.6,0) rectangle (7.2,0.8);
-    \draw (0,0) rectangle (7.2, 0.8);
-    \foreach \x in {1,...,8} {
-      \draw (\x * 0.8, 0) -- ++(0, 0.8);
-    }
-
-    \node at (0.4,0) {$1$};
-    \node at (1.2,0) {$2$};
-    \node at (4.4,0) {$3$};
-    \node at (5.2,0) {$4$};
-    \node at (6,0.4) {$5$};
-    \node at (6.8,0.4) {$6$};
-    \end{scope}
+    \fill[cyan] (0,0) rectangle (1, 0.5);
+      \fill[lightgray] (1,0) rectangle (2.5,0.5);
+      \fill[cyan] (2.5,0) rectangle (3.5,0.5);
+      \fill[yellow] (3.5,0) rectangle (4.5,0.5);
+      \draw (0,0) rectangle (4.5, 0.5);
+      \foreach \x in {1,...,8} {
+        \draw (\x * 0.5, 0) -- ++(0, 0.5);
+      }
+  
+      \node at (0.25,0) {$1$};
+      \node at (0.75,0) {$2$};
+      \node at (2.75,0) {$3$};
+      \node at (3.25,0) {$4$};
+      \node at (3.75,0.25) {$5$};
+      \node at (4.25,0.25) {$6$};
   \end{tikzpicture}
-\end{center}
+  \caption{$a_1=2,b_1=3,a_2=2,c=2$の場合のsegmentに対する処理．}\label{process for segment}
+\end{figure}
 
-次のsegment $s_2$に対して，$\Lambda$の$k-1$行目のedge labelとbox labelを同様の方法で書き入れていく．ただし$k$行目で最後に処理を行ったboxのすぐ右上のboxから処理を始める．また$s_1$の長さが$0$であった場合は，$k-1$行目の最も左にある箱から処理を行う．同様にしてすべてのsegmentに対してedge labelとbox labelを書き入れていく．$s_i$の長さが$0$であったなら，$k-i+1$行の処理はスキップして，$s_{i+1}$に対する処理は，直前に処理を行ったboxのすぐ右の列にある$k-i$行目のboxから始める．
+次のsegment $s_2$に対して，$\Lambda$の$k-1$行目のedge labelとbox labelを同様の方法で書き入れていく．ただし$k$行目で最後に処理を行ったboxのすぐ右上のboxから処理を始める．また$s_1$の長さが$0$であった場合は，$k-1$行目の最も左にある箱から処理を行う．同様にしてすべてのsegmentに対してedge labelとbox labelを書き入れていく．$s_i$の長さが$0$であったなら，$k-i+1$行の処理はスキップして，$s_{i+1}$に対する処理は，直前に処理を行ったboxのすぐ右の列にある$k-i$行目のboxから始める(図\ref{process for path})．
 
-\begin{center}
+
+\begin{figure}[H]
+  \centering
   \begin{tikzpicture}
     \draw (0,0) rectangle (8 * 1/2, 1/2);
     \draw (8 * 1/2,1/2) rectangle (16 * 1/2, 1);
@@ -1497,45 +1529,234 @@ $\Lambda=\overbrace{(n,\cdots,n)}^{k\text{-copies}}$の$k$行目に次のよう�
     \fill[yellow] (21/2,3/2) rectangle ++(1,1/2);
     \draw (21/2,3/2) rectangle ++(1,1/2);
   \end{tikzpicture}
-\end{center}
-
-\begin{figure}[htbp]
   \caption{
-  のpathに対する処理．
-  $s_3$の長さが$0$であるから，図のように$3$行目に対する処理をスキップする．}
+  図\ref{path,segment}のpathに対する処理．青い領域のboxの下辺にedge labelが入り，黄色い領域のboxにはbox labelが入っている．灰色の領域のboxには何も書かれていない．また，$s_3$の長さが$0$であるから，図のように下から$3$行目に対する処理をスキップする．}\label{process for path}
 \end{figure}
 
-この処理をすべてのpathに対して行って得られるedge labeled tableauxを$\varphi(P)$とする．
+次に$p_2$に対して同じ操作を行う．ただし$p_1$に対する操作で最後に書き入れたラベルを$l$とすると，$p_2$に対する操作で書き入れるlabelは$l+1$から始める．すべてのpathに対して同様の操作を行い，box labelの入った領域を含む左上の部分を$\varphi(P)$とする．作り方から$\varphi(P)$が定義\ref{label condition}にあるラベルに関する条件を満たすことは明らかである．
 
 \begin{eg}
   図\ref{eg of varphi}のpuzzle $P$に対して$\varphi(P)$を計算する．
-  \begin{figure}[htbp]\label{eg of varphi}
+  \begin{figure}[H]
+    \centering
+    \input{./sections/figures/figure3.tex}
+    \caption{puzzle $P\in\mathcal{P}^{11010000}_{01010100,01001100}$}\label{eg of varphi}
+  \end{figure}
+  $P$のpathは図$\ref{paths of P}$の$p_1,p_2,p_3$の3つである．
+  \input{./sections/figures/figure4.tex}
+  $p_1,p_2,p_3$に対して操作を行う(図\ref{eg of process})と$\varphi(P)\in \text{EqSYT}((5,5,4)/(4,3,2), 8)$であることがわかる(図\ref{varphi P})．
+  \begin{figure}[H]
     \centering
     \begin{tikzpicture}
-      \fill[teal] (0,0)-- ++(8,0)-- ++(-4,8)--cycle;
-      \draw (0,0)-- ++(8,0)-- ++(-4,8)--cycle;
+      \begin{scope}
+        \fill[cyan] (0,0) rectangle ++(0.8,0.8);
+        \fill[lightgray] (0.8,0) rectangle ++(0.8,0.8);
+        \fill[yellow] (1.6,0) rectangle ++(0.8,0.8);
 
-      \fill[black] (2,2)--++(1,0)--++(1/2,1)-- ++(-1/2,1)--++(-1,0)-- ++(-1/2,-1)-- ++(-1/2,-1);
-      \fill[black] (1/2,1)-- ++(1,0)-- ++(-1/2,1)--cycle;
+        \fill[cyan] (2.4,1.6) rectangle ++(0.8,0.8);
+        \fill[yellow] (3.2,1.6) rectangle ++(0.8,0.8);
 
-      \foreach \x in {1,...,7}{
-        \draw[gray] (\x, 0) -- (\x/2, \x);
-        \draw[gray] (\x, 0) -- (4+\x/2, 8-\x);
-        \draw[gray] (\x/2,\x) -- (8-\x/2,\x);
-      }
-      
-      \fill[yellow] (0,0)-- ++(1,0)-- ++(1/2,1)--++(-1,0)--cycle;
-      \draw (0,0)-- ++(1,0)-- ++(1/2,1)--++(-1,0)--cycle;
-      \fill[cyan] (3/2,1)-- ++(1/2,1)-- ++(-1/2,1)-- ++(-1/2,-1);
-      \draw  (3/2,1)-- ++(1/2,1)-- ++(-1/2,1)-- ++(-1/2,-1);
+        \draw (0,0) rectangle (4, 2.4);
+        \foreach \x in {1,...,4} {
+          \draw (\x * 0.8, 0) -- (\x * 0.8, 2.4);
+        };
+        \foreach \x in {1,2} {
+          \draw (0, \x * 0.8) -- (4, \x * 0.8);
+        };
+
+        \node at (0.4,0) {$1$};
+        \node at (2, 0.4) {$2$};
+        \node at (2.8, 1.6) {$3$};
+        \node at (3.6, 2) {$4$};
+        
+        \node at (4.5, 1.2) {$\rightarrow$};
+      \end{scope}
+      \begin{scope}[xshift=5cm]
+        \fill[lightgray] (0,0) rectangle ++(0.8,0.8);
+        \fill[lightgray] (0.8,0) rectangle ++(0.8,0.8);
+        \fill[lightgray] (1.6,0) rectangle ++(0.8,0.8);
+
+        \fill[yellow] (2.4,0.8) rectangle ++(0.8,0.8);
+        \fill[yellow] (3.2,0.8) rectangle ++(0.8,0.8);
+
+        \draw (0,0) rectangle (4, 2.4);
+        \foreach \x in {1,...,4} {
+          \draw (\x * 0.8, 0) -- (\x * 0.8, 2.4);
+        };
+        \foreach \x in {1,2} {
+          \draw (0, \x * 0.8) -- (4, \x * 0.8);
+        };
+
+        \node at (0.4,0) {$1$};
+        \node at (2, 0.4) {$2$};
+        \node at (2.8, 1.6) {$3$};
+        \node at (3.6, 2) {$4$};
+        \node at (2.8,1.2) {$5$};
+        \node at (3.6,1.2) {$6$};
+
+        \node at (4.5, 1.2) {$\rightarrow$};
+      \end{scope}
+      \begin{scope}[xshift=10cm]
+        \fill[cyan] (0,0) rectangle ++(0.8,0.8);
+        \fill[lightgray] (0.8,0) rectangle ++(0.8,0.8);
+        \fill[lightgray] (1.6,0) rectangle ++(0.8,0.8);
+        \fill[yellow] (2.4,0) rectangle ++(0.8,0.8);
+
+        \draw (0,0) rectangle (4, 2.4);
+        \foreach \x in {1,...,4} {
+          \draw (\x * 0.8, 0) -- (\x * 0.8, 2.4);
+        };
+        \foreach \x in {1,2} {
+          \draw (0, \x * 0.8) -- (4, \x * 0.8);
+        };
+
+        \node at (0.4,0) {$1,7$};
+        \node at (2, 0.4) {$2$};
+        \node at (2.8, 1.6) {$3$};
+        \node at (3.6, 2) {$4$};
+        \node at (2.8,1.2) {$5$};
+        \node at (3.6,1.2) {$6$};
+        \node at (2.8,0.4) {$8$};
+      \end{scope}
     \end{tikzpicture}
-    \caption{}
+    \caption{左から順に$p_1,p_2,p_3$に対して操作を行った結果．}\label{eg of process}
+  \end{figure}
+  \begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+      \fill[gray] (0,0)-- ++(3.2,0)-- ++(0,-0.8)-- ++(-0.8,0)-- ++(0,-0.8)-- ++(-0.8,0)-- ++(0,-0.8)-- ++(-1.6,0)--cycle;
+      \draw (0,0)-- ++(4,0)-- ++(0,-1.6)-- ++(-0.8,0)-- ++(0,-0.8)-- ++(-3.2,0)--cycle;
+      \draw (0.8,0) -- ++(0,-2.4);
+      \draw (1.6,0) -- ++(0,-2.4);
+      \draw (2.4,0) -- ++(0,-2.4);
+      \draw (3.2,0) -- ++(0,-2.4);
+      \draw (0,-0.8) -- ++(4,0);
+      \draw (0,-1.6) -- ++(4,0);
+
+      \node at (0.4,-2.4) {$1,7$};
+        \node at (2, -2) {$2$};
+        \node at (2.8, -0.8) {$3$};
+        \node at (3.6, -0.4) {$4$};
+        \node at (2.8,-1.2) {$5$};
+        \node at (3.6,-1.2) {$6$};
+        \node at (2.8,-2) {$8$};
+    \end{tikzpicture}
+    \caption{$\varphi(P)\in\text{EqSYT}((5,5,4)/(4,3,2), 8)$}\label{varphi P}
   \end{figure}
 \end{eg}
 
 \begin{prop}
+  $\lambda,\mu,\nu\in\binom{n}{k}$とする．
   $P\in\mathcal{P}^\nu_{\lambda\mu}$に対して$\varphi(P)\in\text{EqSYT}(\nu/\lambda,|\mu|)$である．
 \end{prop}
+
+\begin{proof}
+  文字列$\lambda$は左から読んで$i_1,\cdots,i_k$番目に$1$が現れるとする．このとき
+  \begin{align*}
+    &l_j = i_{j+1} - i_{j} - 1,\quad (j=1,\cdots,k-1)\\
+    &l_k = n - i_k
+  \end{align*}
+  とおく．同様に$\mu$に対しても$m_1,\cdots,m_{k}$，$\nu$に対しても$n_1,\cdots,n_{k}$を定義する．
+
+  puzzle $P\in\mathcal{P}^\nu_{\lambda\mu}$のpathを左から順に$p_1,\cdots,p_k$，$p_i$のsegmentを上から順に$s_{i1},\cdots,s_{i,k-i+1}$，さらに$s_{ij}$の
+  \begin{tikzpicture}[baseline=2pt]
+    \fill[yellow] (0,0)-- ++(0.5,0)-- ++(0.25,0.42)-- ++(-0.5,0)--cycle;
+    \protect\draw[thick](0,0)-- ++(0.5,0)-- ++(0.25,0.42)-- ++(-0.5,0)--cycle;
+  \end{tikzpicture}
+  の部分を$s_{ij}^{\text{y}}$，
+  \begin{tikzpicture}[baseline=-1pt]
+    \fill[cyan] (0,0)--(0.25,0.42)--(0.5,0)--(0.25,-0.42)--cycle;
+    \protect\draw[thick] (0,0)--(0.25,0.42)--(0.5,0)--(0.25,-0.42)--cycle;
+  \end{tikzpicture}
+  ，
+  \begin{tikzpicture}[baseline=2pt]
+    \fill[lightgray] (0,0)-- ++(0.5,0)-- ++(-0.25,0.42)-- ++(-0.5,0)--cycle;
+    \protect\draw[thick](0,0)-- ++(0.5,0)-- ++(-0.25,0.42)-- ++(-0.5,0)--cycle;
+  \end{tikzpicture}
+  の部分を$s_{i,j}^{\text{bg}}$とおく．
+  このとき
+  \begin{align}
+    &|s_{i,j}| = |s_{i+1,j}^{\text{bg}}| + |s_{i+1,j-1}^{\text{y}}| \quad \text{if } 1 < j < k-i+1\label{segment condition 1}\\
+    &|s_{i,1}| = |s_{i+1,1}^{\text{bg}}|\label{segment condition 2}\quad \text{if } i < k\\
+    &|s_{i,k-i+1}| = n_i + |s_{i+1, k-i}^{\text{y}}| \quad \text{if } i < k\label{segment condition 3}\\
+    &|s_{k,1}| = n_k\label{segment condition 4}\\
+    &|s_{1,i}^{\text{bg}}| + |s_{1,i-1}^{\text{y}}| = l_{k-i+1}\quad \text{if i > 1}\label{segment condition 5}\\
+    &|s_{1,1}^{\text{bg}}| = l_{k} 
+  \end{align}
+  である(図\ref{generic puzzle})．
+
+  式(\ref{segment condition 1})，(\ref{segment condition 2})より$\varphi(P)$は図\ref{varphi of generic puzzle}のような形をしている．
+  \input{./sections/figures/figure5.tex}
+
+  $\varphi(P)$の形が$\nu/\lambda$であることを示す．$\varphi(P)$のbox labelが入った領域の$k$行目の長さを計算すると
+
+  \begin{align*}
+    |s_{11}^{\text{bg}}| + |s_{11}^{\text{y}}| + |s_{21}^{\text{y}}| + \cdots + |s_{k,1}^{\text{y}}|
+    &=|s_{11}| + |s_{21}^{\text{y}}| + \cdots + |s_{k,1}^{\text{y}}|\\
+    &=|s_{21}^{\text{bg}}| + |s_{21}^{\text{y}}| + \cdots + |s_{k,1}^{\text{y}}|\\
+    &=|s_{21}| + |s_{31}^{\text{y}}| + \cdots + |s_{k,1}^{\text{y}}|\\
+    &\vdots\\
+    &=|s_{k,1}|\\
+    &=n_k
+  \end{align*}
+  であり，$k-1$行目は
+
+  \begin{align*}
+    &(|s_{12}^{\text{bg}}| + |s_{12}^{\text{y}}| + |s_{22}^{\text{y}}| + \cdots + |s_{k-1,2}^{\text{y}}|)
+    - (|s_{21}^{\text{y}}|+|s_{31}^{\text{y}}|+\cdots+|s_{k1}^{\text{y}}|)\\
+    &=(|s_{22}^{\text{bg}}| + |s_{22}^{\text{y}}| + \cdots + |s_{k-1,2}^{\text{y}}|) - (|s_{31}^{\text{y}}|+\cdots+|s_{k1}^{\text{y}}|)\\
+    &\vdots\\
+    &=(|s_{k-1,2}^{\text{bg}}|+|s_{k-1,2}^{\text{y}}|)-(|s_{k,1}^{\text{y}}|)\\
+    &=|s_{k-1,2}| - |s_{k,1}^{\text{y}}|\\
+    &=n_{k-1}
+  \end{align*}
+
+  同様に$i$行目の長さは$n_{i}$になっていることがわかる．また式(\ref{segment condition 5})と(\ref{segment condition 6})より$\varphi(P)$のbox labelの入っていない領域の形が$\lambda$になっていることもわかる(図\ref{shape of phi P})．
+  \input{./sections/figures/figure6.tex}
+
+  次に$\varphi(P)$のラベルが$1$から$|\mu|$までであることを示す．$\varphi(P)$の構成方法から，$P$が
+  \begin{tikzpicture}[baseline=2pt]
+    \fill[yellow] (0,0)-- ++(0.5,0)-- ++(0.25,0.42)-- ++(-0.5,0)--cycle;
+    \protect\draw[thick](0,0)-- ++(0.5,0)-- ++(0.25,0.42)-- ++(-0.5,0)--cycle;
+  \end{tikzpicture}
+  と
+  \begin{tikzpicture}[baseline=-1pt]
+    \fill[cyan] (0,0)--(0.25,0.42)--(0.5,0)--(0.25,-0.42)--cycle;
+    \protect\draw[thick] (0,0)--(0.25,0.42)--(0.5,0)--(0.25,-0.42)--cycle;
+  \end{tikzpicture}
+  を$|\mu|$個含んでいることを示せばよい．
+
+  path $p_i$に含まれる
+  \begin{tikzpicture}[baseline=2pt]
+    \fill[yellow] (0,0)-- ++(0.5,0)-- ++(0.25,0.42)-- ++(-0.5,0)--cycle;
+    \protect\draw[thick](0,0)-- ++(0.5,0)-- ++(0.25,0.42)-- ++(-0.5,0)--cycle;
+  \end{tikzpicture}
+  と
+  \begin{tikzpicture}[baseline=-1pt]
+    \fill[cyan] (0,0)--(0.25,0.42)--(0.5,0)--(0.25,-0.42)--cycle;
+    \protect\draw[thick] (0,0)--(0.25,0.42)--(0.5,0)--(0.25,-0.42)--cycle;
+  \end{tikzpicture}
+  の個数は$m_{i}+\cdots+m_{k}$に等しい(図\ref{})から，$P$に含まれる
+  \begin{tikzpicture}[baseline=2pt]
+    \fill[yellow] (0,0)-- ++(0.5,0)-- ++(0.25,0.42)-- ++(-0.5,0)--cycle;
+    \protect\draw[thick](0,0)-- ++(0.5,0)-- ++(0.25,0.42)-- ++(-0.5,0)--cycle;
+  \end{tikzpicture}
+  と
+  \begin{tikzpicture}[baseline=-1pt]
+    \fill[cyan] (0,0)--(0.25,0.42)--(0.5,0)--(0.25,-0.42)--cycle;
+    \protect\draw[thick] (0,0)--(0.25,0.42)--(0.5,0)--(0.25,-0.42)--cycle;
+  \end{tikzpicture}
+  の個数は$|\mu|$である．
+  \input{./sections/figures/figure7.tex}
+\end{proof}
+
+\begin{proposition}
+  $\varphi$は単射である．
+\end{proposition}
+
+\begin{proof}
+  $P,P'\in\mathcal{P}^\nu_{\lambda\mu}$に対して，$\varphi(P)=\varphi(P')$である場合，
+\end{proof}
 
 \begin{prop}
   $P\in\mathcal{P}^\nu_{\lambda\mu}$に対して$\text{EqRect}(\varphi(P))=T_\mu$である．

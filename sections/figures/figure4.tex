@@ -1,0 +1,65 @@
+\documentclass{ltjsarticle}
+\input{../../setting.tex}
+
+\title{aaa}
+\author{}
+\date{}
+
+
+\begin{document}
+\maketitle
+
+\begin{figure}[H]
+  \centering
+  \begin{tikzpicture}
+    \begin{scope}
+      \node at (5/4, -1/2) {$p_1$};
+      \fill[yellow] (0,0)-- ++(1/2,0)-- ++(1/4,1/2)-- ++(-1/2,0)--cycle;
+      \draw[thick,gray] (0,0)-- ++(1/2,0)-- ++(1/4,1/2)-- ++(-1/2,0)--cycle;
+
+      \filldraw[fill=black, draw=gray,thick] (1/4,1/2)-- ++(1/2,0)-- ++(-1/4,1/2)--cycle;
+
+      \filldraw[fill=cyan, draw=gray,thick] (1/2,1)-- ++(1/4,-1/2)-- ++(1/4,1/2)-- ++(-1/4,1/2)--cycle;
+
+      \fill[black] (1,1)-- ++(1/4,1/2)-- ++(-1/2,0)--cycle;
+      \draw[thick,gray] (1,1)-- ++(1/4,1/2)-- ++(-1/2,0)--cycle;
+
+      \fill[black] (3/4,1+1/2)-- ++(1/2,0)-- ++(-1/4,1/2)--cycle;
+      \draw[thick,gray] (3/4,1+1/2)-- ++(1/2,0)-- ++(-1/4,1/2)--cycle;
+
+      \fill[black] (1+1/4,1+1/2)-- ++(1/4,1/2)-- ++(-1/2,0)--cycle;
+      \draw[thick,gray] (1+1/4,1+1/2)-- ++(1/4,1/2)-- ++(-1/2,0)--cycle;
+
+      \filldraw[fill=yellow, draw=gray,thick] (1,2)-- ++(1/2,0)-- ++(1/4,1/2)-- ++(-1/2,0)--cycle;
+
+      \filldraw[fill=black, draw=gray,thick] (5/4,5/2)-- ++(1/2,0)-- ++(-1/4,1/2)--cycle;
+
+      \filldraw[fill=lightgray, draw=gray,thick] (6/4,6/2)-- ++(1/2,0)-- ++(1/4,-1/2)-- ++(-1/2,0)--cycle;
+
+      \filldraw[fill=cyan, draw=gray,thick] (8/4,6/2)-- ++(1/4,-1/2)-- ++(1/4,1/2)-- ++(-1/4,1/2)--cycle;
+    \end{scope}
+    \begin{scope}[xshift=3cm, yshift=0.5cm]
+      \node at (5/4, -1/2) {$p_2$};
+      \filldraw[fill=yellow, draw=gray,thick] (0,0)-- ++(1/2,0)-- ++(1/4,1/2)-- ++(-1/2,0)--cycle;
+      \filldraw[fill=yellow, draw=gray,thick] (1/4,1/2)-- ++(1/2,0)-- ++(1/4,1/2)-- ++(-1/2,0)--cycle;
+      \filldraw[fill=black, draw=gray,thick] (1/2,1)-- ++(1/2,0)-- ++(-1/4,1/2)--cycle;
+      %
+      \filldraw[fill=black, draw=gray,thick] (3/4,3/2)-- ++(1/2,0)-- ++(-1/4,-1/2)--cycle;
+      \filldraw[fill=black, draw=gray,thick] (3/4,3/2)-- ++(1/2,0)-- ++(-1/4,1/2)--cycle;
+      \filldraw[fill=lightgray, draw=gray,thick] (4/4,4/2)-- ++(1/2,0)-- ++(1/4,-1/2)-- ++(-1/2,0)--cycle;
+      \filldraw[fill=lightgray, draw=gray,thick] (6/4,4/2)-- ++(1/2,0)-- ++(1/4,-1/2)-- ++(-1/2,0)--cycle;
+      \filldraw[fill=lightgray, draw=gray,thick] (8/4,4/2)-- ++(1/2,0)-- ++(1/4,-1/2)-- ++(-1/2,0)--cycle;
+    \end{scope}
+    \begin{scope}[xshift=6cm, yshift=1cm]
+      \node at (4/4, -1/2) {$p_3$};
+      \filldraw[fill=yellow, draw=gray,thick] (0,0)-- ++(1/2,0)-- ++(1/4,1/2)-- ++(-1/2,0)--cycle;
+      \filldraw[fill=black, draw=gray,thick] (1/4,1/2)-- ++(1/2,0)-- ++(-1/4,1/2)--cycle;
+      \filldraw[fill=lightgray, draw=gray,thick] (2/4,2/2)-- ++(1/2,0)-- ++(1/4,-1/2)-- ++(-1/2,0)--cycle;
+      \filldraw[fill=lightgray, draw=gray,thick] (4/4,2/2)-- ++(1/2,0)-- ++(1/4,-1/2)-- ++(-1/2,0)--cycle;
+      \filldraw[fill=cyan, draw=gray,thick] (6/4,2/2)-- ++(1/4,-1/2)-- ++(1/4,1/2)-- ++(-1/4,1/2)--cycle;
+    \end{scope}
+  \end{tikzpicture}
+  \caption{$P$のpath $p_1,p_2,p_3$．}\label{paths of P}
+\end{figure}
+
+\end{document}

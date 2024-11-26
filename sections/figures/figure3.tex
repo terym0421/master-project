@@ -1,0 +1,67 @@
+\documentclass{ltjsarticle}
+\input{../../setting.tex}
+
+\title{aaa}
+\author{}
+\date{}
+
+
+\begin{document}
+\maketitle
+
+  \begin{tikzpicture}
+    \fill[teal] (0,0)-- ++(8,0)-- ++(-4,8)--cycle;
+    \draw (0,0)-- ++(8,0)-- ++(-4,8)--cycle;
+
+    \fill[black] (2,2)--++(1,0)--++(1/2,1)-- ++(-1/2,1)--++(-1,0)-- ++(-1/2,-1)-- ++(-1/2,-1);
+    \fill[black] (1/2,1)-- ++(1,0)-- ++(-1/2,1)--cycle;
+    \fill[black] (2.5, 5)-- ++(1,0)-- ++(-1/2,1)--cycle;
+    \fill[black] (4,2)-- ++(1/2,-1)-- ++(-1,0)--cycle;
+
+    \foreach \x in {1,...,7}{
+      \draw[gray,thick] (\x, 0) -- (\x/2, \x);
+      \draw[gray,thick] (\x, 0) -- (4+\x/2, 8-\x);
+      \draw[gray,thick] (\x/2,\x) -- (8-\x/2,\x);
+    };
+    
+    \fill[yellow] (0,0)-- ++(1,0)-- ++(1/2,1)--++(-1,0)--cycle;
+    \draw[gray,thick](0,0)-- ++(1,0)-- ++(1/2,1)--++(-1,0)--cycle;
+    \fill[cyan] (3/2,1)-- ++(1/2,1)-- ++(-1/2,1)-- ++(-1/2,-1);
+    \draw[gray,thick](3/2,1)-- ++(1/2,1)-- ++(-1/2,1)-- ++(-1/2,-1);
+    \fill[yellow] (2,4)-- ++(1,0)-- ++(1/2,1)-- ++(-1,0)--cycle;
+    \draw[gray,thick](2,4)-- ++(1,0)-- ++(1/2,1)-- ++(-1,0)--cycle;
+    \fill[lightgray] (3,6)-- ++(1,0)-- ++(1/2,-1)-- ++(-1,0)--cycle;
+    \draw[gray,thick](3,6)-- ++(1,0)-- ++(1/2,-1)-- ++(-1,0)--cycle;
+    \fill[cyan] (4,6)-- ++(1/2,-1)-- ++(1/2,1)-- ++(-1/2,1)--cycle;
+    \draw[gray,thick](4,6)-- ++(1/2,-1)-- ++(1/2,1)-- ++(-1/2,1)--cycle;
+    \fill[yellow] (1,0)-- ++(1,0)-- ++(1/2,1)--++(-1,0)--cycle;
+    \draw[gray,thick](1,0)-- ++(1,0)-- ++(1/2,1)--++(-1,0)--cycle;
+    \fill[yellow] (3/2,1)-- ++(1,0)-- ++(1/2,1)--++(-1,0)--cycle;
+    \draw[gray,thick](3/2,1)-- ++(1,0)-- ++(1/2,1)--++(-1,0)--cycle;
+
+    \fill[lightgray](3,4)-- ++(1,0)-- ++(1/2,-1)-- ++(-1,0)--cycle;
+    \draw[gray,thick](3,4)-- ++(1,0)-- ++(1/2,-1)-- ++(-1,0)--cycle;
+
+    \fill[lightgray](4,4)-- ++(1,0)-- ++(1/2,-1)-- ++(-1,0)--cycle;
+    \draw[gray,thick](4,4)-- ++(1,0)-- ++(1/2,-1)-- ++(-1,0)--cycle;
+
+    \fill[lightgray](5,4)-- ++(1,0)-- ++(1/2,-1)-- ++(-1,0)--cycle;
+    \draw[gray,thick](5,4)-- ++(1,0)-- ++(1/2,-1)-- ++(-1,0)--cycle;
+
+    \fill[white] (3,2)-- ++(1/2,1)-- ++(1/2,-1)-- ++(-1/2,-1)--cycle;
+    \draw[gray,thick](3,2)-- ++(1/2,1)-- ++(1/2,-1)-- ++(-1/2,-1)--cycle;
+
+    \fill[yellow] (3,0)-- ++(1,0)-- ++(1/2,1)--++(-1,0)--cycle;
+    \draw[thick,gray] (3,0)-- ++(1,0)-- ++(1/2,1)--++(-1,0)--cycle;
+
+    \fill[lightgray] (4,2)-- ++(1,0)-- ++(1/2,-1)-- ++(-1,0)--cycle;
+    \draw[gray, thick] (4,2)-- ++(1,0)-- ++(1/2,-1)-- ++(-1,0)--cycle;
+
+    \fill[lightgray] (5,2)-- ++(1,0)-- ++(1/2,-1)-- ++(-1,0)--cycle;
+    \draw[gray, thick] (5,2)-- ++(1,0)-- ++(1/2,-1)-- ++(-1,0)--cycle;
+
+    \fill[cyan] (6,2)-- ++(1/2,-1)-- ++(1/2,1)-- ++(-1/2,1)--cycle;
+    \draw[gray,thick] (6,2)-- ++(1/2,-1)-- ++(1/2,1)-- ++(-1/2,1)--cycle;
+  \end{tikzpicture}
+
+\end{document}
