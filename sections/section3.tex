@@ -1,156 +1,4 @@
-\section{同変Schubert計算}
-\subsection{Grassmann多様体の同変コホモロジー}
-$\text{Gr}_k(\complex^n)=\set{V\subset \complex^n}{\dim V = k}$をGrassmann多様体という．$T=(\complex^*)^n$とするとき，$T$は$\complex^n$に
-\[
-(t_1,\cdots,t_n)\cdot(x_1,\cdots,x_n)=(t_1x_1,\cdots,t_nx_n)
-\]
-によって左から作用する.この作用は自然に$\text{Gr}_k(\complex^n)$への作用を誘導し，$\text{Gr}_k(\complex^n)$は$T$空間となる.$\text{Gr}_k(\complex^n)$の$T$同変コホモロジーの構造は組み合わせ的に決定することができる.
-$\binom{n}{k}$を$0$と$1$からなる$n$文字の文字列のうち，$1$が$k$個使われている文字列の集合とする．$\lambda=\lambda_1\cdots \lambda_n\in\binom{n}{k}$に対して置換$\sigma\in\mathfrak{S}_n$の作用を$\sigma\lambda=\lambda_{\inv{\sigma}(1)}\cdots\lambda_{\inv{\sigma}(n)}$で定める．
-$\lambda=\lambda_1\cdots \lambda_n\in\binom{n}{k}$に対して，
-\[
-\Omega_\lambda^\circ=\set{V\in \text{Gr}_k(\complex^n)}{\dim(V\cap F_i)= \dim(\complex^{\lambda}\cap F_i),\quad \forall i\in \{1,\cdots n\}}
-\]
-をSchubert cellという．ここで，$\complex^{\lambda}=\langle\lambda_{1}e_{1},\cdots,\lambda_ne_n\rangle$， $F_i=\langle e_{1},\cdots,e_i\rangle$である. 
-
-\begin{prop}
-  $\text{inv}(\lambda)=\set{(i,j)}{\lambda_i=1, \lambda_j=0, i<j}$とすると$\Omega_\lambda^\circ$は$\complex^{\binom{n}{k}-|\text{inv}(\lambda)|}$に同相であり
-\begin{equation}\label{CW str of grassmannian}
-\text{Gr}_k(\complex^n)=\bigsqcup_{\lambda\in\binom{n}{k}}\Omega_\lambda^\circ
-\end{equation}
-　となる．またこれによって$\text{Gr}_k(\complex^n)$はCW-複体の構造をもつ．
-\end{prop}
-
-\begin{proof}
-  $M(k,n)$をランク$k$の$k\times n$複素行列全体のなす集合とする．$\text{GL}_k(\complex)$は自然に$M(k, n)$に左作用するが$\text{Gr}_k(\complex^n)$は自然に$M(k,n)/\text{GL}_k(\complex)$と同一視される．$\lambda$を左から読んで$1\leq i_1<\cdots<i_k\leq n$番目に$1$が現れるとする．
-  このとき$\Omega_\lambda^\circ$は次の形の行列で代表される$M(k,n)/\text{GL}_k(\complex)$の点の集合と同一視できる．
-  \small
-  \begin{equation}\label{row echelon form}
-  \left(\begin{array}{ccc}
-    {\begin{array}{ccccccccccc}
-    * & \cdots & * & \overbrace{1}^{i_1\text{-th column}} & 0 & \cdots & 0 & \overbrace{0}^{i_{2}\text{-th column}} & 0 & \cdots & 0\\
-    * & \cdots & * & 0 & * & \cdots & * & 1 & 0 & \cdots & 0\\
-    \vdots & \ddots & \vdots & \vdots & \vdots & \ddots & \vdots & \vdots & \vdots & \ddots & \vdots\\
-    * & \cdots & * & 0 & * & \cdots & * & 0 & * & \cdots & * 
-    \end{array}} & \cdots & 
-    {\begin{array}{ccccccc}
-    0 & \cdots & 0 & \overbrace{0}^{i_{k}\text{-th column}} & 0 &\cdots & 0\\
-    \vdots & \ddots & \vdots & \vdots & \vdots & \ddots & \vdots\\
-    0 & \cdots & 0 & 0 & 0 & \cdots & 0\\
-    * & \cdots & * & 1 & 0 & \cdots & 0
-    \end{array}}
-  \end{array}\right)
-  \end{equation}
-  \normalsize
-  ここで$*$は任意の複素数である．また，各cellは$T$不変であることもわかる．
-
-  次に(\ref{CW str of grassmannian})が$\text{Gr}_k(\complex^n)$のCW構造となることを示す．$E_\lambda\subset M(k, n)$を次の形の行列のなす集合とする．
-  \small
-  \begin{equation}\label{orthonormal form}
-  \left(\begin{array}{ccc}
-    {\begin{array}{ccccccccccc}
-    * & \cdots & * & \overbrace{x_1}^{i_1\text{-th column}} & 0 & \cdots & 0 & \overbrace{0}^{i_{2}\text{-th column}} & 0 & \cdots & 0\\
-    * & \cdots & * & * & * & \cdots & * & x_2 & 0 & \cdots & 0\\
-    \vdots & \ddots & \vdots & \vdots & \vdots & \ddots & \vdots & \vdots & \vdots & \ddots & \vdots\\
-    * & \cdots & * & * & * & \cdots & * & * & * & \cdots & * 
-    \end{array}} & \cdots & 
-    {\begin{array}{ccccccc}
-    0 & \cdots & 0 & \overbrace{0}^{i_{k}\text{-th column}} & 0 &\cdots & 0\\
-    \vdots & \ddots & \vdots & \vdots & \vdots & \ddots & \vdots\\
-    0 & \cdots & 0 & 0 & 0 & \cdots & 0\\
-    * & \cdots & * & x_k & 0 & \cdots & 0
-    \end{array}}
-  \end{array}\right)
-\end{equation}
-\normalsize
-  ここで，$x_i\geq 0$であり，行ベクトルは正規直交であるとする．
-  
-  $E_\lambda$がclosed ballに同相であることを示す．$H_{a}=\set{(z_1,\cdots,z_{a},0,\cdots,0)\in\complex^n}{\sum|z_j|^2=1,z_{a}\geq 0}$とする．$\pi\colon E_\lambda\rightarrow H_{i_1}$を$1$行目を取り出す写像とし，
-  $v=(0,\cdots,0,\overbrace{1}^{i_1\text{-th}},0,\cdots,0)$とおく．このとき$E_\lambda\approx H_{i_1}\times\inv{\pi}(v)$が成り立つ(\cite{hatcher VB})．さらに$\lambda'\in\binom{n-1}{k-1}$を$i_2-1,\cdots,i_k-1$番目に$1$が現れる文字列とすると$\inv{\pi}(v)=E_{\lambda'}$であるから
-  \[
-  E_\lambda\approx H_{i_1}\times E_{\lambda'}
-  \]
-  となる．よって帰納的に$E_\lambda$がclosed ballに同相であるとわかる．
-
-  自然な写像$\varphi\colon E_\lambda\rightarrow\text{Gr}_k(\complex^n)$によって$E_\lambda^\circ$は$\Omega_\lambda^\circ$に写されるが，$\varphi\colon E_\lambda^\circ\rightarrow\Omega_\lambda^\circ$は全単射である．実際\ref{row echelon form}の行ベクトルにSchmidtの直交化法を施せば\ref{orthonormal form}の形が得られ，逆の手順を施せば\ref{orthonormal form}から\ref{row echelon form}が得られる．したがって$\varphi$は同相である．また$\varphi(\partial E_\lambda)\subset \bigcup_{\mu < \lambda} \Omega_{\mu}^\circ$であることも明らか．ただし$\mu \leq \lambda \Leftrightarrow \sum_{i=1}^j\mu_i \leq \sum_{i=1}^j \lambda_i$である．
-\end{proof}
-
-したがって$H^*(\text{Gr}_k(\complex^n))$はSchubert cellの定めるホモロジー類のPoincare双対$\sigma_\lambda$たちで$\integer$上生成される．
-
-$T$空間$X$に対して$H^*_T(X)$は$ET\times_TX$のコホモロジーであったが，$ET$は有限次元近似$ET_r$を持っている(§1.1)．$\Omega_\lambda=\overline{\Omega_\lambda^\circ}$は$T$不変な既約代数多様体であるから，$ET_r\times_T\overline{\Omega_\lambda^\circ}$は$H^*(ET_r\times_T\text{Gr}_k(\complex^n))$においてホモロジー類$[\overline{\Omega}_\lambda]$を定める(\cite{fulton young tableaux})．とくに$S_\lambda$の次数は$|\text{inv}(\lambda)|$で一定である．よってこのPoincare双対$\sigma_\lambda$の極限によって$H^*_T(\text{Gr}_k(\complex^n))$の元が定まる．これをSchubert classといい，$S_\lambda$とおく．
-
-\footnote{$\text{PD}[\Omega_\lambda]=S_{_\lambda,r}\in H^{{2|\text{inv}(\lambda)|}(ET_r\times_T\text{Gr}_r(\complex^n))}$とおき，$S_{\lambda,r+1}|_{ET_r\times_T\text{Gr}_k(\complex^n)}=S_{\lambda,r}$([ref])より極限$S_\lambda$が定まる}
-
-$\text{Gr}_k(\complex^n)$はequivariantly formalであるから同型
-$\phi\colon H^*_T(\text{Gr}_k(\complex^n))\simeq H^*(\text{Gr}_k(\complex^n))\otimes H^*_T(\text{pt})$が存在する．$S_\lambda\in H^*(ET\times_T\text{Gr}_k(\complex))$は各ファイバーに制限すると$\sigma_\lambda$に一致するから
-\[
-\phi(S_\lambda) = \sigma_\lambda + \sum_{I}c_Iy^I
-\]
-と展開できる．ここで$c_I\in H^*(\text{Gr}_k(\complex^n))$の次数は$|\lambda|$より小さい．よって帰納的に$\sigma_\lambda$が$\{\phi(S_\lambda)\}_\lambda$の線形結合で表せることがわかるので，$\{S_\lambda\}_\lambda$は$H^*_T(\text{Gr}_k(\complex^n))$の基底となる．
-
-
-$2$つのSchubert classの積$S_\lambda S_\mu$を$\{S_\nu\}_{\nu\in\binom{n}{k}}$の$\integer[y_1,\cdots,y_n]$係数の線形結合で
-\begin{equation}\label{LRcoeff}
-  S_\lambda S_\mu=\sum_{\nu\in\binom{n}{k}}C^\nu_{\lambda\mu}S_\nu
-\end{equation}
-このように表したとき，係数$C^{\nu}_{\lambda\mu}$を計算する組み合わせ的手法を紹介することが本論文の目的である.
-
-
-
-
-
-\subsection{GKM条件によるSchubert Classの特徴づけ}
-
-$\text{Gr}_k(\complex^n)$の$T$作用における固定点は$\{\complex^\lambda\}_{\lambda\in\binom{n}{k}}$であるから，[GKM]より$H^*_T(\text{Gr}_k(\complex^n))$は$\bigoplus_{\lambda\in\binom{n}{k}}H^*_T(\text{pt})$の部分代数である．GKMの定理を適用するために$\text{Gr}_k(\complex^n)$の$T$不変な$\mathbb{CP}^1$を計算する．
-
-\begin{prop}
-  $\lambda,\mu\in\binom{n}{k}$に対して$\complex^\lambda$と$\complex^\mu$を結ぶ$T$不変な$\mathbb{CP}^1$が存在するための必要十分条件は，ある$(i, j)\in\text{inv}(\lambda)$に対して$\mu = (i, j)\lambda$
-  となっていることである．\footnote{Grassmannの点を標準形で書いて，T-orbitが2次元以上になってしまう条件をみる}
-\end{prop}
-
-\begin{proof}
-  $\lambda\in\binom{n}{k}$, $\mu=(i, j)\lambda$ (for $(i,j)\in\text{inv}(\lambda))$に対して，$\phi\colon \mathbb{CP}^1\rightarrow \text{Gr}_k(\complex^n)$を
-\end{proof}
-
-$\lambda,\lambda'=(i,j)\lambda\in\binom{n}{k}$，$((i,j)\in\text{inv}(\lambda))$に対して，$\complex^\lambda$と$\complex^{\lambda'}$を結ぶ$T$不変な$\mathbb{CP}^1$を$Z$とする．$Z$における$\complex^\lambda$の接空間を$T_\lambda Z$とする．$T$の$T_\lambda Z$への作用のウェイトを$w_\lambda$とする．
-
-\begin{eg}
-  $n=4$，$k=2$，$\lambda=0110$，$\lambda'=0101$とする．このとき
-  \[
-  Z=\set{
-    \left(\begin{array}{cccc}
-      0 & 1 & 0 & 0\\
-      0 & 0 & u & v
-    \end{array}\right)\in\text{Gr}_2(\complex^4)
-  }{[u:v]\in\mathbb{CP}^1}
-  \]
-  である．$t=(t_1,t_2,t_3,t_4)\in T$に対して，
-  \[
-  t\cdot\left(\begin{array}{cccc}
-    0 & 1 & 0 & 0\\
-    0 & 0 & 1 & v
-  \end{array}\right)=\left(\begin{array}{cccc}
-    0 & 1 & 0 & 0\\
-    0 & 0 & t_3 & t_4v
-  \end{array}\right)=\left(\begin{array}{cccc}
-    0 & 1 & 0 & 0\\
-    0 & 0 & 1 & t_4t_3^{-1}v
-  \end{array}\right)
-  \]
-  $\Lie (T)$の基底$X_1,\cdots,X_4$を$\text{Exp}(X_i)=(0,\cdots,\overbrace{1}^{i\text{-th}},\cdots,0)$となるように取り，その双対基底を$y_1,\cdots,y_4$とする．このとき$w_\lambda=y_4-y_3$である．
-\end{eg}
-
-
-\cite{GKM}より
-\[
-H^*_T(\text{Gr}_k(\complex^n))=\set{(f_\lambda)_{\lambda\in\binom{n}{k}}\in\bigoplus_{\lambda\in\binom{n}{k}}H^*_T(\text{pt})}{f_\lambda-f_{\lambda'}\text{ is divisible by $w_\lambda$ for $\lambda' = (i,j)\lambda$, $(i,j)\in$ inv$(\lambda)$}}
-\]
-
-
-
-
-
-
-
+\section{同変Schubert計算における組合せ論}
 \subsection{Schubert puzzleによる方法}
 
 \begin{defin}
@@ -317,7 +165,7 @@ H^*_T(\text{Gr}_k(\complex^n))=\set{(f_\lambda)_{\lambda\in\binom{n}{k}}\in\bigo
     \node[font=\large] at (6.5,-0.3) {$7$};
     \node[font=\large] at (7.5,-0.3) {$8$};
   \end{tikzpicture}
-  \caption{equivariant pieceのウェイトの定義．図のequivariant pieceについて$\text{wt}(p)=y_6-y_2$である．}\label{puzzle weight}
+  \caption{equivariant pieceのウェイトの定義．図のequivariant pieceのウェイトは$\text{wt}(p)=y_6-y_2$である．}\label{puzzle weight}
 \end{figure}
 
 
@@ -1306,7 +1154,7 @@ i_a=m-\lambda_a+a,\quad \text{for }a=1,\cdots,k
 
 \begin{theo}(Thomas-Yong \cite{thomas yong})
   \[
-  C^{\nu}_{\lambda,\mu}=\sum_{\substack{T\in\text{EqSYT}(\nu/\lambda, |\mu|) \\ \text{EqRect}(T)=T_\mu}}\text{wt}(T)
+  C^{\nu}_{\lambda,\mu}=\sum_{\substack{T\in\text{EqSYT}(\nu/\lambda, |\mu|) \\ \text{EqRect}(T)=T_\mu \\ \text{wt}(T)\neq 0}}\text{wt}(T)
   \]
   が成り立つ．
 \end{theo}
@@ -1316,7 +1164,7 @@ i_a=m-\lambda_a+a,\quad \text{for }a=1,\cdots,k
 
 \subsection{weight preserving bijectionの構成}
 
-このセクションではセクション3.3と3.4で構成した計算方法が，本質的に同じものであることを証明する．すなわち，$\mathcal{P}^\nu_{\lambda\mu}=\set{P:\text{puzzle}}{\partial P = \Delta^\nu_{\lambda\mu}}$，$\mathcal{T}^\nu_{\lambda\mu}=\set{T\in\text{EqSYT(\nu/\lambda,|\mu|)}}{\text{EqRect}(T)=T_\mu}$とするとき，全単射$\varphi\colon \mathcal{P}^\nu_{\lambda\mu}\rightarrow \mathcal{T}^\nu_{\lambda\mu}$であって次の性質を満たすものを構成する．
+このセクションではセクション3.3と3.4で構成した計算方法が，本質的に同じものであることを証明する．すなわち，$\mathcal{P}^\nu_{\lambda\mu}=\set{P:\text{puzzle}}{\partial P = \Delta^\nu_{\lambda\mu}}$，$\mathcal{T}^\nu_{\lambda\mu}=\set{T\in\text{EqSYT(\nu/\lambda,|\mu|)}}{\text{EqRect}(T)=T_\mu,\: \text{wt}(T)\neq 0}$とするとき，全単射$\varphi\colon \mathcal{P}^\nu_{\lambda\mu}\rightarrow \mathcal{T}^\nu_{\lambda\mu}$であって次の性質を満たすものを構成する．
 \begin{equation}
   \text{wt}(\varphi(P))=\text{wt}(P)\quad\text{for all }P\in\mathcal{P}^\nu_{\lambda\mu}
 \end{equation}
@@ -1680,7 +1528,7 @@ $\Lambda=\overbrace{(n,\cdots,n)}^{k\text{-copies}}$の$k$行目に次のよう�
     &|s_{i,1}| = |s_{i+1,1}^{\text{bg}}|\label{segment condition 2}\quad \text{if } i < k\\
     &|s_{i,k-i+1}| = n_i + |s_{i+1, k-i}^{\text{y}}| \quad \text{if } i < k\label{segment condition 3}\\
     &|s_{k,1}| = n_k\label{segment condition 4}\\
-    &|s_{1,i}^{\text{bg}}| + |s_{1,i-1}^{\text{y}}| = l_{k-i+1}\quad \text{if i > 1}\label{segment condition 5}\\
+    &|s_{1,i}^{\text{bg}}| + |s_{1,i-1}^{\text{y}}| = l_{k-i+1}\quad \text{if } i > 1\label{segment condition 5}\\
     &|s_{1,1}^{\text{bg}}| = l_{k} 
   \end{align}
   である(図\ref{generic puzzle})．
@@ -1724,9 +1572,7 @@ $\Lambda=\overbrace{(n,\cdots,n)}^{k\text{-copies}}$の$k$行目に次のよう�
     \fill[cyan] (0,0)--(0.25,0.42)--(0.5,0)--(0.25,-0.42)--cycle;
     \protect\draw[thick] (0,0)--(0.25,0.42)--(0.5,0)--(0.25,-0.42)--cycle;
   \end{tikzpicture}
-  を$|\mu|$個含んでいることを示せばよい．
-
-  path $p_i$に含まれる
+  を$|\mu|$個含んでいることを示せばよい．path $p_i$に含まれる
   \begin{tikzpicture}[baseline=2pt]
     \fill[yellow] (0,0)-- ++(0.5,0)-- ++(0.25,0.42)-- ++(-0.5,0)--cycle;
     \protect\draw[thick](0,0)-- ++(0.5,0)-- ++(0.25,0.42)-- ++(-0.5,0)--cycle;
@@ -1750,17 +1596,17 @@ $\Lambda=\overbrace{(n,\cdots,n)}^{k\text{-copies}}$の$k$行目に次のよう�
   \input{./sections/figures/figure7.tex}
 \end{proof}
 
-\begin{proposition}
-  $\varphi$は単射である．
-\end{proposition}
-
-\begin{proof}
-  $P,P'\in\mathcal{P}^\nu_{\lambda\mu}$に対して，$\varphi(P)=\varphi(P')$である場合，
-\end{proof}
-
 \begin{prop}
   $P\in\mathcal{P}^\nu_{\lambda\mu}$に対して$\text{EqRect}(\varphi(P))=T_\mu$である．
 \end{prop}
+
+\begin{proof}
+  $I_{\mu} = \set{(\lambda,\nu)}{\lambda,\mu \leq \nu}$とする．$I_{\mu}$には辞書式順序で順序を定める．$(\varnothing,\mu)$は$I_{\mu}$の最小限であり，$\mathcal{P}^\mu_{\varnothing,\mu}$はただ一つのpuzzle $P_0$からなり(図\ref{})，$\varphi(P_0)=T_\mu$である．
+  
+  次に$P\in\mathcal{P}^\nu_{\lambda\mu}$に対して，$x$を$T:=\varphi(P)$のequivariant rectification で最初に動かす内隅であるとする．$T'=\text{EqJdt}_{x}(T)\in \text{EqSYT}(\nu'/\lambda',|\mu|)$とおくと，$(\lambda',\nu')\in I_{\mu}$かつ$(\lambda',\nu') < (\lambda,\nu)$である．よって，ある$P'\in\mathcal{P}^{\nu'}_{\lambda'\mu}$であって$T' = \varphi(P')$をみたすようなものが存在することを示せば帰納法により主張が従う．
+
+
+\end{proof}
 
 \begin{prop}
   $\varphi\colon\mathcal{P}^\nu_{\lambda\mu}\rightarrow\mathcal{T}^\nu_{\lambda\mu}$は全単射である．

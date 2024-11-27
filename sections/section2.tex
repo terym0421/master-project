@@ -1,4 +1,224 @@
-\section{GKMの定理}
-\subsection{equivariantly formality}
-
+\section{GKMの定理と同変Schubert計算}
 \subsection{GKMの定理}
+同変コホモロジーに関するいくつかの定理を援用する．
+$T=(\complex^\times)^n$とする．$Y$をなめらかな射影多様体とし$T$は$Y$に代数的に作用し，さらに固定点は孤立していると仮定する．このとき次が成り立つ
+
+\begin{theo}(Knutson-Tao\cite{knutson tao})\label{restriction to fixed point}
+  \begin{enumerate}
+    \item $H^*_T(Y)$は自由$H^*_T(\text{pt})$加群である．
+    \item $Y$の胞体分割$\{X_f\}_{f\in Y^T}$であって$\overline{X_f}$の定める同変コホモロジー類$\{[\overline{X_f}]\}_{f\in Y^T}$が$H^*_T(Y)$の基底をなすようなものがあるとき，$[\overline{X_f}]|_f\in H^*_T(\text{pt})$は$f$での$X_f$の法束のウェイトの積に等しい
+    \item $H^*_T(Y)\rightarrow H^*_T(Y^T) \simeq \bigoplus_{f\in Y^T}H^*_T(\text{pt})$は単射である．
+  \end{enumerate}
+\end{theo}
+
+\begin{theo}(Goresky-Kottwitz-MacPherson\cite{GKM})\label{gkm theorem}
+  $Y^T$が有限であり，$1$次元の$T$軌道も有限個であるとする．このとき各$T$軌道$E$は$\complex^\times$に同型であり，$\overline{E}$は$2$つの固定点$x_0,x_\infty$を持っている．したがって$\overline{E}$は$\mathbb{CP}^1$に同型である．$T$の表現$T_Ex_0$のウェイトを$w$とするとき，任意の$\alpha\in H^*_T(Y)\subset \bigoplus_{f\in Y^T}H^*_T(\text{pt})$に対して
+  $\alpha|_{x_0} - \alpha|_{x_\infty}\in H^*_T(\text{pt})$は$w$で割り切れる．
+  
+  逆に$\alpha\in \bigoplus_{f\in Y^T}H^*_T(\text{pt})$について，すべての$1$次元$T$軌道$E$に対して，$\alpha|_{x_0} - \alpha|_{x_\infty}\in H^*_T(\text{pt})$が$w$で割り切れるならば，$\alpha\in H^*_T(Y)$である．
+\end{theo}
+
+
+\subsection{Grassmann多様体の同変コホモロジー}
+$\text{Gr}_k(\complex^n)=\set{V\subset \complex^n}{\dim V = k}$をGrassmann多様体という．$T=(\complex^*)^n$とするとき，$T$は$\complex^n$に
+\[
+(t_1,\cdots,t_n)\cdot(x_1,\cdots,x_n)=(t_1x_1,\cdots,t_nx_n)
+\]
+によって左から作用する.この作用は自然に$\text{Gr}_k(\complex^n)$への作用を誘導し，$\text{Gr}_k(\complex^n)$は$T$空間となる.$\text{Gr}_k(\complex^n)$の$T$同変コホモロジーの構造は組み合わせ的に決定することができる.
+$\binom{n}{k}$を$0$と$1$からなる$n$文字の文字列のうち，$1$が$k$個使われている文字列の集合とする．$\lambda=\lambda_1\cdots \lambda_n\in\binom{n}{k}$に対して置換$\sigma\in\mathfrak{S}_n$の作用を$\sigma\lambda=\lambda_{\inv{\sigma}(1)}\cdots\lambda_{\inv{\sigma}(n)}$で定める．
+$\lambda=\lambda_1\cdots \lambda_n\in\binom{n}{k}$に対して，
+\[
+\Omega_\lambda^\circ=\set{V\in \text{Gr}_k(\complex^n)}{\dim(V\cap F_i)= \dim(\complex^{\lambda}\cap F_i),\quad \forall i\in \{1,\cdots n\}}
+\]
+をSchubert cellという．ここで，$\complex^{\lambda}=\langle\lambda_{1}e_{1},\cdots,\lambda_ne_n\rangle$， $F_i=\langle e_{1},\cdots,e_i\rangle$である. 
+
+\begin{prop}
+  $\text{inv}(\lambda)=\set{(i,j)}{\lambda_i=1, \lambda_j=0, i<j}$とすると$\Omega_\lambda^\circ$は$\complex^{\binom{n}{k}-|\text{inv}(\lambda)|}$に同相であり
+\begin{equation}\label{CW str of grassmannian}
+\text{Gr}_k(\complex^n)=\bigsqcup_{\lambda\in\binom{n}{k}}\Omega_\lambda^\circ
+\end{equation}
+　となる．またこれによって$\text{Gr}_k(\complex^n)$はCW-複体の構造をもつ．
+\end{prop}
+
+\begin{proof}
+  $M(k,n)$をランク$k$の$k\times n$複素行列全体のなす集合とする．$\text{GL}_k(\complex)$は自然に$M(k, n)$に左作用するが$\text{Gr}_k(\complex^n)$は自然に$M(k,n)/\text{GL}_k(\complex)$と同一視される．$\lambda$を左から読んで$1\leq i_1<\cdots<i_k\leq n$番目に$1$が現れるとする．
+  このとき$\Omega_\lambda^\circ$は次の形の行列で代表される$M(k,n)/\text{GL}_k(\complex)$の点の集合と同一視できる．
+  \small
+  \begin{equation}\label{row echelon form}
+  \left(\begin{array}{ccc}
+    {\begin{array}{ccccccccccc}
+    * & \cdots & * & \overbrace{1}^{i_1\text{-th column}} & 0 & \cdots & 0 & \overbrace{0}^{i_{2}\text{-th column}} & 0 & \cdots & 0\\
+    * & \cdots & * & 0 & * & \cdots & * & 1 & 0 & \cdots & 0\\
+    \vdots & \ddots & \vdots & \vdots & \vdots & \ddots & \vdots & \vdots & \vdots & \ddots & \vdots\\
+    * & \cdots & * & 0 & * & \cdots & * & 0 & * & \cdots & * 
+    \end{array}} & \cdots & 
+    {\begin{array}{ccccccc}
+    0 & \cdots & 0 & \overbrace{0}^{i_{k}\text{-th column}} & 0 &\cdots & 0\\
+    \vdots & \ddots & \vdots & \vdots & \vdots & \ddots & \vdots\\
+    0 & \cdots & 0 & 0 & 0 & \cdots & 0\\
+    * & \cdots & * & 1 & 0 & \cdots & 0
+    \end{array}}
+  \end{array}\right)
+  \end{equation}
+  \normalsize
+  ここで$*$は任意の複素数である．また，各cellは$T$不変であることもわかる．
+
+  次に(\ref{CW str of grassmannian})が$\text{Gr}_k(\complex^n)$のCW構造となることを示す．$E_\lambda\subset M(k, n)$を次の形の行列のなす集合とする．
+  \small
+  \begin{equation}\label{orthonormal form}
+  \left(\begin{array}{ccc}
+    {\begin{array}{ccccccccccc}
+    * & \cdots & * & \overbrace{x_1}^{i_1\text{-th column}} & 0 & \cdots & 0 & \overbrace{0}^{i_{2}\text{-th column}} & 0 & \cdots & 0\\
+    * & \cdots & * & * & * & \cdots & * & x_2 & 0 & \cdots & 0\\
+    \vdots & \ddots & \vdots & \vdots & \vdots & \ddots & \vdots & \vdots & \vdots & \ddots & \vdots\\
+    * & \cdots & * & * & * & \cdots & * & * & * & \cdots & * 
+    \end{array}} & \cdots & 
+    {\begin{array}{ccccccc}
+    0 & \cdots & 0 & \overbrace{0}^{i_{k}\text{-th column}} & 0 &\cdots & 0\\
+    \vdots & \ddots & \vdots & \vdots & \vdots & \ddots & \vdots\\
+    0 & \cdots & 0 & 0 & 0 & \cdots & 0\\
+    * & \cdots & * & x_k & 0 & \cdots & 0
+    \end{array}}
+  \end{array}\right)
+\end{equation}
+\normalsize
+  ここで，$x_i\geq 0$であり，行ベクトルは正規直交であるとする．
+  
+  $E_\lambda$がclosed ballに同相であることを示す．$H_{a}=\set{(z_1,\cdots,z_{a},0,\cdots,0)\in\complex^n}{\sum|z_j|^2=1,z_{a}\geq 0}$とする．$\pi\colon E_\lambda\rightarrow H_{i_1}$を$1$行目を取り出す写像とし，
+  $v=(0,\cdots,0,\overbrace{1}^{i_1\text{-th}},0,\cdots,0)$とおく．このとき$E_\lambda\approx H_{i_1}\times\inv{\pi}(v)$が成り立つ(\cite{hatcher VB})．さらに$\lambda'\in\binom{n-1}{k-1}$を$i_2-1,\cdots,i_k-1$番目に$1$が現れる文字列とすると$\inv{\pi}(v)=E_{\lambda'}$であるから
+  \[
+  E_\lambda\approx H_{i_1}\times E_{\lambda'}
+  \]
+  となる．よって帰納的に$E_\lambda$がclosed ballに同相であるとわかる．
+
+  自然な写像$\varphi\colon E_\lambda\rightarrow\text{Gr}_k(\complex^n)$によって$E_\lambda^\circ$は$\Omega_\lambda^\circ$に写されるが，$\varphi\colon E_\lambda^\circ\rightarrow\Omega_\lambda^\circ$は全単射である．実際(\ref{row echelon form})の行ベクトルにSchmidtの直交化法を施せば(\ref{orthonormal form})の形が得られ，逆の手順を施せば(\ref{orthonormal form})から(\ref{row echelon form})が得られる．したがって$\varphi$は同相である．また$\varphi(\partial E_\lambda)\subset \bigcup_{\mu < \lambda} \Omega_{\mu}^\circ$であることも明らか．ただし$\mu \leq \lambda \Leftrightarrow \sum_{i=1}^j\mu_i \leq \sum_{i=1}^j \lambda_i$である．
+\end{proof}
+
+したがって$H^*(\text{Gr}_k(\complex^n))$はSchubert cellの定めるホモロジー類のPoincare双対$\sigma_\lambda$たちで$\integer$上生成される．
+
+$T$空間$X$に対して$H^*_T(X)$は$ET\times_TX$のコホモロジーであったが，$ET$は有限次元近似$ET_r$を持っている(§1.1)．$\Omega_\lambda=\overline{\Omega_\lambda^\circ}$は$T$不変な既約代数多様体であるから，$ET_r\times_T\overline{\Omega_\lambda^\circ}$は$H_*(ET_r\times_T\text{Gr}_k(\complex^n))$においてホモロジー類$[\Omega_\lambda]$を定める(\cite{fulton young tableaux})．このPoincare dualを$S_{\lambda,r}\in H^{2|\text{inv}(\lambda)|}(ET_r\times_T\text{Gr}_k(\complex^n))$とおく．$S_{\lambda,r+1}|_{ET_r\times_T\text{Gr}_k(\complex^n)} = S_{\lambda,r}$であるから，極限$S_\lambda\in H^{2|\text{inv}(\lambda)|}(ET_r\times_T\text{Gr}_k(\complex^n))$が定まる．これをSchubert classという．
+
+$\text{Gr}_k(\complex^n)$はequivariantly formalであるから同型
+$\phi\colon H^*_T(\text{Gr}_k(\complex^n))\simeq H^*(\text{Gr}_k(\complex^n))\otimes H^*_T(\text{pt})$が存在する．$S_\lambda\in H^*(ET\times_T\text{Gr}_k(\complex))$は各ファイバーに制限すると$\sigma_\lambda$に一致するから
+\[
+\phi(S_\lambda) = \sigma_\lambda + \sum_{I}c_Iy^I
+\]
+と展開できる．ここで$c_I\in H^*(\text{Gr}_k(\complex^n))$の次数は$|\lambda|$より小さい．よって帰納的に$\sigma_\lambda$が$\{\phi(S_\lambda)\}_\lambda$の線形結合で表せることがわかるので，$\{S_\lambda\}_\lambda$は$H^*_T(\text{Gr}_k(\complex^n))$の基底となる．
+
+
+$2$つのSchubert classの積$S_\lambda S_\mu$を$\{S_\nu\}_{\nu\in\binom{n}{k}}$の$\integer[y_1,\cdots,y_n]$係数の線形結合で
+\begin{equation}\label{LRcoeff}
+  S_\lambda S_\mu=\sum_{\nu\in\binom{n}{k}}C^\nu_{\lambda\mu}S_\nu
+\end{equation}
+このように表したとき，係数$C^{\nu}_{\lambda\mu}$を計算する組み合わせ的手法を紹介することが本論文の目的である.
+
+
+
+
+
+\subsection{GKM条件によるSchubert Classの特徴づけ}
+
+$\text{Gr}_k(\complex^n)$の$T$作用における固定点は$\{\complex^\lambda\}_{\lambda\in\binom{n}{k}}$であるから，[GKM]より$H^*_T(\text{Gr}_k(\complex^n))$は$\bigoplus_{\lambda\in\binom{n}{k}}H^*_T(\text{pt})$の部分代数である．GKMの定理を適用するために$\text{Gr}_k(\complex^n)$の$T$不変な$\mathbb{CP}^1$を計算する．
+
+\begin{prop}
+  $\lambda,\mu\in\binom{n}{k}$に対して$\complex^\lambda$と$\complex^\mu$を結ぶ$T$不変な$\mathbb{CP}^1$が存在するための必要十分条件は，ある$(i, j)\in\text{inv}(\lambda)$に対して$\mu = (i, j)\lambda$
+  となっていることである．
+\end{prop}
+
+\begin{proof}
+  $\mu = (i,j)\lambda$となっているとする．文字列$\lambda$を左から読んだとき，$a_1<\cdots<a_k$番目に$1$が現れるとする．$e_1,\cdots,e_n\in\complex^n$を標準基底とする．$a_p = i$であるとして，$Y\subset \text{Gr}_k(\complex^n)$を
+  \begin{equation}\label{1dim orbit}
+  Y=\set{\langle e_{a_1},e_{a_2},\cdots, xe_{a_p}+ye_j,\cdots,e_{a_k} \rangle}{[x:y]\in\mathbb{CP}^1}
+  \end{equation}
+  とする．$Y$は$T$不変かつ$\mathbb{CP}^1$に同型であり，$\complex^\lambda$と$\complex^\mu$固定点にもつ．
+
+  逆に$Z\subset\text{Gr}_k(\complex^n)$を(複素)$1$次元の$T$軌道であって$\complex^\lambda,\complex^\mu\in\overline{Z}$となるようなものとする．$Z=T\cdot p$となる点$p\in\text{Gr}_k(\complex^n)$をとる．$1\leq i_1<\cdots <i_k\leq n$に対して$U_{i_1,\cdots i_k}\subset\text{Gr}_k(\complex^n)$を次の形の行列で代表される点の集合とする．
+  \[
+    \left(\begin{array}{ccc}
+      {\begin{array}{ccccccccccc}
+      * & \cdots & * & \overbrace{1}^{i_1\text{-th column}} & * & \cdots & * & \overbrace{0}^{i_{2}\text{-th column}} & * & \cdots & *\\
+      * & \cdots & * & 0 & * & \cdots & * & 1 & * & \cdots & *\\
+      \vdots & \ddots & \vdots & \vdots & \vdots & \ddots & \vdots & \vdots & \vdots & \ddots & \vdots\\
+      * & \cdots & * & 0 & * & \cdots & * & 0 & * & \cdots & * 
+      \end{array}} & \cdots & 
+      {\begin{array}{ccccccc}
+      * & \cdots & * & \overbrace{0}^{i_{k}\text{-th column}} & * &\cdots & *\\
+      \vdots & \ddots & \vdots & \vdots & \vdots & \ddots & \vdots\\
+      * & \cdots & * & 0 & * & \cdots & *\\
+      * & \cdots & * & 1 & * & \cdots & *
+      \end{array}}
+    \end{array}\right)
+  \]
+  $U_{i_1,\cdots,i_k}$は$T$不変であり，$\text{Gr}_k(\complex^n)=\bigcup_{1\leq i_1<\cdots<i_k\leq n}U_{i_1,\cdots,i_k}$である．よって$p\in U_{i_1,\cdots i_k}$であるとすれば$Z\subset U_{i_1,\cdots,i_k}$である．$\overline{Z}$が(\ref{1dim orbit})の形になることを示す．簡単のため，$k=2,n=4,i_1=1,i_2=3$の場合に示す．このとき$p$は
+  \[
+  p=\left(\begin{array}{cccc}
+    1 & x & 0 & y \\
+    0 & z & 1 & w
+  \end{array}\right)
+  \]
+  となるが，$t=(t_1,t_2,t_3,t_4)\in T$に対して，
+  \[
+  t\cdot p = \left(\begin{array}{cccc}
+    1 & t_2\inv{t_1}x & 0 & t_4\inv{t_1}y \\
+    0 & t_2\inv{t_3}z & 1 & t_4\inv{t_3}w 
+  \end{array}\right)
+  \]
+  であるから$\dim Z=1$であるためには$x,y,z,w$は$1$つをのぞき$0$でなければならない．たとえば$x$以外すべて$0$であるとして，$Z$は
+  \[
+  Z=\set{\left(\begin{array}{cccc}
+    t_1 & t_2x & 0 & 0 \\
+    0 & 0 & 1 & 0 
+  \end{array}\right)\in\text{Gr}_k(\complex^n)}{t_1,t_2\in\complex^\times}
+  \]
+  となる．したがって
+  \[
+  \overline{Z} = \set{\left(\begin{array}{cccc}
+    a & b & 0 & 0 \\
+    0 & 0 & 1 & 0
+  \end{array}\right)\in\text{Gr}_k(\complex^n)}{[a:b]\in\mathbb{CP}^1}
+  \]
+  である．
+\end{proof}
+
+$\lambda,\lambda'=(i,j)\lambda\in\binom{n}{k}$，$((i,j)\in\text{inv}(\lambda))$に対して，$\complex^\lambda$と$\complex^{\lambda'}$を結ぶ$T$不変な$\mathbb{CP}^1$を$Z$とする．$Z$における$\complex^\lambda$の接空間を$T_\lambda Z$とする．$T$の$T_\lambda Z$への作用のウェイトを$w_\lambda$とする．
+\[
+w_\lambda = y_j-y_i
+\]
+である．ただし，  $\Lie (T)$の基底$X_1,\cdots,X_n$を$\text{Exp}(X_i)=(0,\cdots,\overbrace{1}^{i\text{-th}},\cdots,0)$となるように取り，その双対基底を$y_1,\cdots,y_n$とする．
+
+\begin{eg}
+  $n=4$，$k=2$，$\lambda=0110$，$\lambda'=0101$とする．このとき
+  \[
+  Z=\set{
+    \left(\begin{array}{cccc}
+      0 & 1 & 0 & 0\\
+      0 & 0 & u & v
+    \end{array}\right)\in\text{Gr}_2(\complex^4)
+  }{[u:v]\in\mathbb{CP}^1}
+  \]
+  である．$t=(t_1,t_2,t_3,t_4)\in T$に対して，
+  \[
+  t\cdot\left(\begin{array}{cccc}
+    0 & 1 & 0 & 0\\
+    0 & 0 & 1 & v
+  \end{array}\right)=\left(\begin{array}{cccc}
+    0 & 1 & 0 & 0\\
+    0 & 0 & t_3 & t_4v
+  \end{array}\right)=\left(\begin{array}{cccc}
+    0 & 1 & 0 & 0\\
+    0 & 0 & 1 & t_4t_3^{-1}v
+  \end{array}\right)
+  \]
+  このとき$w_\lambda=y_4-y_3$である．
+\end{eg}
+
+
+定理\ref{gkm theorem}より
+\[
+H^*_T(\text{Gr}_k(\complex^n))=\set{(f_\lambda)_{\lambda\in\binom{n}{k}}\in\bigoplus_{\lambda\in\binom{n}{k}}H^*_T(\text{pt})}{f_\lambda-f_{\lambda'}\text{ is divisible by $w_\lambda$ for $\lambda' = (i,j)\lambda$, $(i,j)\in$ inv$(\lambda)$}}
+\]
+である．
+
+\begin{eg}
+  $\text{Gr}_2(\complex^4)$のSchubert classを計算する．
+\end{eg}

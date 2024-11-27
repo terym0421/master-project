@@ -577,7 +577,6 @@ def equal(T, U):
 #print(T)
 #print(T.diagram)
 #print(weight)
-#
 
 
 
