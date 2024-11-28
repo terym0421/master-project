@@ -12,10 +12,10 @@ $T=(\complex^\times)^n$とする．$Y$をなめらかな射影多様体とし$T$
 \end{theo}
 
 \begin{theo}(Goresky-Kottwitz-MacPherson\cite{GKM})\label{gkm theorem}
-  $Y^T$が有限であり，$1$次元の$T$軌道も有限個であるとする．このとき各$T$軌道$E$は$\complex^\times$に同型であり，$\overline{E}$は$2$つの固定点$x_0,x_\infty$を持っている．したがって$\overline{E}$は$\mathbb{CP}^1$に同型である．$T$の表現$T_Ex_0$のウェイトを$w$とするとき，任意の$\alpha\in H^*_T(Y)\subset \bigoplus_{f\in Y^T}H^*_T(\text{pt})$に対して
+  $Y^T$が有限であり，$1$次元の$T$軌道も有限個であるとする．このとき各$T$軌道$E$は$\complex^\times$に同型であり，$\overline{E}$は$2$つの固定点$x_0,x_\infty$を持っている．したがって$\overline{E}$は$\mathbb{CP}^1$に同型である．$T$の表現$T_{x_0}\overline{E}$のウェイトを$w$とするとき，任意の$\alpha\in H^*_T(Y)\subset \bigoplus_{f\in Y^T}H^*_T(\text{pt})$に対して
   $\alpha|_{x_0} - \alpha|_{x_\infty}\in H^*_T(\text{pt})$は$w$で割り切れる．
   
-  逆に$\alpha\in \bigoplus_{f\in Y^T}H^*_T(\text{pt})$について，すべての$1$次元$T$軌道$E$に対して，$\alpha|_{x_0} - \alpha|_{x_\infty}\in H^*_T(\text{pt})$が$w$で割り切れるならば，$\alpha\in H^*_T(Y)$である．
+  逆に$\alpha\in \bigoplus_{f\in Y^T}H^*_T(\text{pt})$について，すべての$1$次元$T$軌道$E$に対して，$\alpha|_{x_0} - \alpha|_{x_\infty}\in H^*_T(\text{pt})$が$w$で割り切れるならば，$\alpha\in H^*_T(Y)$である．また，この条件をGKM条件と呼ぶ．
 \end{theo}
 
 
@@ -25,7 +25,7 @@ $\text{Gr}_k(\complex^n)=\set{V\subset \complex^n}{\dim V = k}$をGrassmann多�
 (t_1,\cdots,t_n)\cdot(x_1,\cdots,x_n)=(t_1x_1,\cdots,t_nx_n)
 \]
 によって左から作用する.この作用は自然に$\text{Gr}_k(\complex^n)$への作用を誘導し，$\text{Gr}_k(\complex^n)$は$T$空間となる.$\text{Gr}_k(\complex^n)$の$T$同変コホモロジーの構造は組み合わせ的に決定することができる.
-$\binom{n}{k}$を$0$と$1$からなる$n$文字の文字列のうち，$1$が$k$個使われている文字列の集合とする．$\lambda=\lambda_1\cdots \lambda_n\in\binom{n}{k}$に対して置換$\sigma\in\mathfrak{S}_n$の作用を$\sigma\lambda=\lambda_{\inv{\sigma}(1)}\cdots\lambda_{\inv{\sigma}(n)}$で定める．
+$\binom{n}{k}$を$0$と$1$からなる$n$文字の文字列のうち，$1$が$k$個使われている文字列の集合とする．$\lambda=\lambda_1\cdots \lambda_n\in\binom{n}{k}$に対して置換$\sigma\in\mathfrak{S}_n$の作用を$\sigma\lambda=\lambda_{\inv{\sigma}(1)}\cdots\lambda_{\inv{\sigma}(n)}$で定める．また，$\binom{n}{k}$に順序を$\lambda\geq\mu\Leftrightarrow \sum_{i=1}^s\lambda_i\geq\sum_{i=1}^s\mu_i$によって定める．
 $\lambda=\lambda_1\cdots \lambda_n\in\binom{n}{k}$に対して，
 \[
 \Omega_\lambda^\circ=\set{V\in \text{Gr}_k(\complex^n)}{\dim(V\cap F_i)= \dim(\complex^{\lambda}\cap F_i),\quad \forall i\in \{1,\cdots n\}}
@@ -91,12 +91,12 @@ $\lambda=\lambda_1\cdots \lambda_n\in\binom{n}{k}$に対して，
   \]
   となる．よって帰納的に$E_\lambda$がclosed ballに同相であるとわかる．
 
-  自然な写像$\varphi\colon E_\lambda\rightarrow\text{Gr}_k(\complex^n)$によって$E_\lambda^\circ$は$\Omega_\lambda^\circ$に写されるが，$\varphi\colon E_\lambda^\circ\rightarrow\Omega_\lambda^\circ$は全単射である．実際(\ref{row echelon form})の行ベクトルにSchmidtの直交化法を施せば(\ref{orthonormal form})の形が得られ，逆の手順を施せば(\ref{orthonormal form})から(\ref{row echelon form})が得られる．したがって$\varphi$は同相である．また$\varphi(\partial E_\lambda)\subset \bigcup_{\mu < \lambda} \Omega_{\mu}^\circ$であることも明らか．ただし$\mu \leq \lambda \Leftrightarrow \sum_{i=1}^j\mu_i \leq \sum_{i=1}^j \lambda_i$である．
+  自然な写像$\varphi\colon E_\lambda\rightarrow\text{Gr}_k(\complex^n)$によって$E_\lambda^\circ$は$\Omega_\lambda^\circ$に写されるが，$\varphi\colon E_\lambda^\circ\rightarrow\Omega_\lambda^\circ$は全単射である．実際(\ref{row echelon form})の行ベクトルにSchmidtの直交化法を施せば(\ref{orthonormal form})の形が得られ，逆の手順を施せば(\ref{orthonormal form})から(\ref{row echelon form})が得られる．したがって$\varphi$は同相である．また$\varphi(\partial E_\lambda)\subset \bigcup_{\mu > \lambda} \Omega_{\mu}^\circ$であることも明らか．
 \end{proof}
 
 したがって$H^*(\text{Gr}_k(\complex^n))$はSchubert cellの定めるホモロジー類のPoincare双対$\sigma_\lambda$たちで$\integer$上生成される．
 
-$T$空間$X$に対して$H^*_T(X)$は$ET\times_TX$のコホモロジーであったが，$ET$は有限次元近似$ET_r$を持っている(§1.1)．$\Omega_\lambda=\overline{\Omega_\lambda^\circ}$は$T$不変な既約代数多様体であるから，$ET_r\times_T\overline{\Omega_\lambda^\circ}$は$H_*(ET_r\times_T\text{Gr}_k(\complex^n))$においてホモロジー類$[\Omega_\lambda]$を定める(\cite{fulton young tableaux})．このPoincare dualを$S_{\lambda,r}\in H^{2|\text{inv}(\lambda)|}(ET_r\times_T\text{Gr}_k(\complex^n))$とおく．$S_{\lambda,r+1}|_{ET_r\times_T\text{Gr}_k(\complex^n)} = S_{\lambda,r}$であるから，極限$S_\lambda\in H^{2|\text{inv}(\lambda)|}(ET_r\times_T\text{Gr}_k(\complex^n))$が定まる．これをSchubert classという．
+$T$空間$X$に対して$H^*_T(X)$は$ET\times_TX$のコホモロジーであったが，$ET$は有限次元近似$ET_r$を持っている(§1.1)．$\Omega_\lambda:=\overline{\Omega_\lambda^\circ}=\bigcup_{\mu\leq\lambda}\Omega_\mu^\circ$(\cite{fulton young tableaux})は$T$不変な既約代数多様体であるから，$ET_r\times_T\overline{\Omega_\lambda^\circ}$は$H_*(ET_r\times_T\text{Gr}_k(\complex^n))$においてホモロジー類$[\Omega_\lambda]$を定める(\cite{fulton young tableaux})．このPoincare dualを$S_{\lambda,r}\in H^{2|\text{inv}(\lambda)|}(ET_r\times_T\text{Gr}_k(\complex^n))$とおく．$S_{\lambda,r+1}|_{ET_r\times_T\text{Gr}_k(\complex^n)} = S_{\lambda,r}$であるから，極限$S_\lambda\in H^{2|\text{inv}(\lambda)|}(ET_r\times_T\text{Gr}_k(\complex^n))$が定まる．これをSchubert classという．
 
 $\text{Gr}_k(\complex^n)$はequivariantly formalであるから同型
 $\phi\colon H^*_T(\text{Gr}_k(\complex^n))\simeq H^*(\text{Gr}_k(\complex^n))\otimes H^*_T(\text{pt})$が存在する．$S_\lambda\in H^*(ET\times_T\text{Gr}_k(\complex))$は各ファイバーに制限すると$\sigma_\lambda$に一致するから
@@ -133,7 +133,7 @@ $\text{Gr}_k(\complex^n)$の$T$作用における固定点は$\{\complex^\lambda
   とする．$Y$は$T$不変かつ$\mathbb{CP}^1$に同型であり，$\complex^\lambda$と$\complex^\mu$固定点にもつ．
 
   逆に$Z\subset\text{Gr}_k(\complex^n)$を(複素)$1$次元の$T$軌道であって$\complex^\lambda,\complex^\mu\in\overline{Z}$となるようなものとする．$Z=T\cdot p$となる点$p\in\text{Gr}_k(\complex^n)$をとる．$1\leq i_1<\cdots <i_k\leq n$に対して$U_{i_1,\cdots i_k}\subset\text{Gr}_k(\complex^n)$を次の形の行列で代表される点の集合とする．
-  \[
+  \begin{equation}\label{chart of grassmannian}
     \left(\begin{array}{ccc}
       {\begin{array}{ccccccccccc}
       * & \cdots & * & \overbrace{1}^{i_1\text{-th column}} & * & \cdots & * & \overbrace{0}^{i_{2}\text{-th column}} & * & \cdots & *\\
@@ -148,7 +148,7 @@ $\text{Gr}_k(\complex^n)$の$T$作用における固定点は$\{\complex^\lambda
       * & \cdots & * & 1 & * & \cdots & *
       \end{array}}
     \end{array}\right)
-  \]
+  \end{equation}
   $U_{i_1,\cdots,i_k}$は$T$不変であり，$\text{Gr}_k(\complex^n)=\bigcup_{1\leq i_1<\cdots<i_k\leq n}U_{i_1,\cdots,i_k}$である．よって$p\in U_{i_1,\cdots i_k}$であるとすれば$Z\subset U_{i_1,\cdots,i_k}$である．$\overline{Z}$が(\ref{1dim orbit})の形になることを示す．簡単のため，$k=2,n=4,i_1=1,i_2=3$の場合に示す．このとき$p$は
   \[
   p=\left(\begin{array}{cccc}
@@ -219,6 +219,43 @@ H^*_T(\text{Gr}_k(\complex^n))=\set{(f_\lambda)_{\lambda\in\binom{n}{k}}\in\bigo
 \]
 である．
 
+また，定理\ref{restriction to fixed point}より，$S_\lambda|_{\complex^\lambda}$は$\complex^\lambda$における$\Omega_\lambda\subset\text{Gr}_k(\complex^n)$の法束のウェイトの積に等しい．(\ref{row echelon form})と(\ref{chart of grassmannian})より，
+\begin{equation}\label{restriction of schubert class}
+S_\lambda|_{\complex^\lambda} =\left\{\begin{array}{cc}
+  \prod_{(i,j)\in\text{inv}(\lambda)}(y_j-y_i) & \text{if } \lambda\neq 0^{n-k}1^k\\
+  1 & \text{if }\lambda = 0^{n-k}1^k
+\end{array}\right. 
+\end{equation}
+である．さらに，$\complex^\mu\in\Omega_\lambda\Leftrightarrow\mu\geq\lambda$であるから，$S_\lambda|_{\complex^\mu}\neq0$であるなら$\mu\geq\lambda$である．また$S_\lambda\in H^*_T(\text{Gr}_k(\complex^n))$の次数は$2|\text{inv}(\lambda)|$だから$S_\lambda|_{\complex^\mu}$は$y_i$に関して次数$|\text{inv}(\lambda)|$の同次式である($y_i\in H^*_T(\text{pt})$の次数は$2$である．)．逆に次が成り立つ．
+
+\begin{prop}
+  各$\lambda\in\binom{n}{k}$に対して次の3つの条件をみたす$\alpha_\lambda=(\alpha_\lambda|_\mu)_{\mu\in\binom{n}{k}}\in\bigoplus_{\mu\in\binom{n}{k}}H^*_T(\text{pt})$はただ一つである．
+  \begin{enumerate}
+    \item $\alpha_\lambda$はGKM条件を満たす．すなわち$\alpha_\lambda\in H^*_T(\text{Gr}_k(\complex^n))$
+    \item $\alpha_\lambda|_\mu\neq0$ならば$\mu\geq\lambda$かつ$\alpha_\lambda|_\mu$は次数$|\text{inv}(\lambda)|$の同次式である．
+    \item $\alpha_\lambda|_\lambda = \prod_{(i,j)\in\text{inv}(\lambda)}(y_j-y_i)$ for $\lambda\neq 0^{n-k}1^k$，$\alpha_{w}|_w = 1$ for $w = 0^{n-k}1^k$
+  \end{enumerate}
+  このとき$\{\alpha_\lambda\}_{\lambda\in\binom{n}{k}}$は$H^*_T(\text{Gr}_k(\complex^n))$の$H^*_T(\text{pt})$-基底をなす．
+\end{prop}
+
+\begin{proof}
+  $\alpha,\beta\in H^*_T(\text{Gr}_k(\complex^n))$がともに(i)から(iii)を満たしたとする．$f=\alpha-\beta$とし，もし$f_\mu\neq 0$となる$\mu$が存在したとする．$\mu$をそのようなものの中で極小のものとする．(ii)，(iii)より$\mu > \lambda$である．GKM条件と$\mu$の極小性から，$f|_\mu$は$y_j - y_i,\:((i,j)\in\text{inv}(\mu))$で割り切れる．よって$f|_\mu$は$|\text{inv}(\mu)|$以上の次数をもつが，$\mu > \lambda$より(ii)に矛盾する．
+
+  $\{\alpha_\lambda\}_{\lambda\in\binom{n}{k}}$の一次独立性を示す．$f=\sum_{\lambda\in\binom{n}{k}}c_\lambda\alpha_\lambda$とおき，$f=0$であるとする．(ii)より
+  \[
+  f|_\mu
+  =\sum_{\lambda\in\binom{n}{k}}c_\lambda\alpha_\lambda|_\mu
+  =\sum_{\lambda \leq \mu}c_\lambda\alpha_\lambda|_\mu
+  \]
+  よって特に，$f|_w=c_w\alpha_w|_w$だから$c_w = 0$．したがって帰納的にすべての$\lambda$に対して$c_\lambda = 0$である．
+
+  次に$\{\alpha_\lambda\}_{\lambda\in\binom{n}{k}}$が$H^*_T(\text{Gr}_k(\complex^n))$を生成することを示す．
+\end{proof}
+
 \begin{eg}
   $\text{Gr}_2(\complex^4)$のSchubert classを計算する．
+  \[
+  \binom{4}{2} = \{1100,1010,1001,0110,0101,0011\}
+  \]
+
 \end{eg}
