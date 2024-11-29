@@ -249,7 +249,11 @@ S_\lambda|_{\complex^\lambda} =\left\{\begin{array}{cc}
   \]
   よって特に，$f|_w=c_w\alpha_w|_w$だから$c_w = 0$．したがって帰納的にすべての$\lambda$に対して$c_\lambda = 0$である．
 
-  次に$\{\alpha_\lambda\}_{\lambda\in\binom{n}{k}}$が$H^*_T(\text{Gr}_k(\complex^n))$を生成することを示す．
+  次に$\{\alpha_\lambda\}_{\lambda\in\binom{n}{k}}$が$H^*_T(\text{Gr}_k(\complex^n))$を生成することを示す．$f\in H^*_T(\text{Gr}_k(\complex^n))$について，$f|_\mu \neq 0$となる極小の$\mu$をとる．このときGKM条件より$f|_\mu$は，ある$c\in H^*_T(\text{pt})$で
+  \[
+  f|_\mu = c\prod_{(i,j)\in\text{inv}(\mu)}(y_j-y_i) = c \alpha_\mu|_\mu
+  \]
+  と表せる．よって$f - c\alpha_\mu$は$\mu$以下の$\lambda$においてすべて消えている．この操作を繰り返せば$f - (\sum_{\lambda\in\binom{n}{k}}c_\lambda\alpha_\lambda)=0$を満たすように$c_\lambda$を定めることができる．
 \end{proof}
 
 \begin{eg}
