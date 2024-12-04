@@ -3,16 +3,16 @@
 同変コホモロジーに関するいくつかの定理を援用する．
 $T=(\complex^\times)^n$とする．$Y$をなめらかな射影多様体とし$T$は$Y$に代数的に作用し，さらに固定点は孤立していると仮定する．このとき次が成り立つ
 
-\begin{theo}(Knutson-Tao\cite{knutson tao})\label{restriction to fixed point}
+\begin{theo}(Goresky-Kottwitz-MacpPherson)\label{restriction to fixed point}
   \begin{enumerate}
     \item $H^*_T(Y)$は自由$H^*_T(\text{pt})$加群である．
-    \item $Y$の胞体分割$\{X_f\}_{f\in Y^T}$であって$\overline{X_f}$の定める同変コホモロジー類$\{[\overline{X_f}]\}_{f\in Y^T}$が$H^*_T(Y)$の基底をなすようなものがあるとき，$[\overline{X_f}]|_f\in H^*_T(\text{pt})$は$f$での$X_f$の法束のウェイトの積に等しい
+    \item $[\overline{X_f}]|_f\in H^*_T(\text{pt})$は$f$での$X_f$の法束のウェイトの積に等しい\footnote{equivariant euler classのfixed pointへの制限がその表現のウェイトの積になる．1点のequiariant euler classを計算する．セクション１に書く？}
     \item $H^*_T(Y)\rightarrow H^*_T(Y^T) \simeq \bigoplus_{f\in Y^T}H^*_T(\text{pt})$は単射である．
   \end{enumerate}
 \end{theo}
 
 \begin{theo}(Goresky-Kottwitz-MacPherson\cite{GKM})\label{gkm theorem}
-  $Y^T$が有限であり，$1$次元の$T$軌道も有限個であるとする．このとき各$T$軌道$E$は$\complex^\times$に同型であり，$\overline{E}$は$2$つの固定点$x_0,x_\infty$を持っている．したがって$\overline{E}$は$\mathbb{CP}^1$に同型である．$T$の表現$T_{x_0}\overline{E}$のウェイトを$w$とするとき，任意の$\alpha\in H^*_T(Y)\subset \bigoplus_{f\in Y^T}H^*_T(\text{pt})$に対して
+  $Y^T$が有限であり，$1$次元の$T$軌道も有限個であるとする．このとき各$1$次元$T$軌道$E$は$\complex^\times$に同型であり，$\overline{E}$は$2$つの固定点$x_0,x_\infty$を持っている．したがって$\overline{E}$は$\mathbb{CP}^1$に同型である．$T$の表現$T_{x_0}\overline{E}$のウェイトを$w$とするとき，任意の$\alpha\in H^*_T(Y)\subset \bigoplus_{f\in Y^T}H^*_T(\text{pt})$に対して
   $\alpha|_{x_0} - \alpha|_{x_\infty}\in H^*_T(\text{pt})$は$w$で割り切れる．
   
   逆に$\alpha\in \bigoplus_{f\in Y^T}H^*_T(\text{pt})$について，すべての$1$次元$T$軌道$E$に対して，$\alpha|_{x_0} - \alpha|_{x_\infty}\in H^*_T(\text{pt})$が$w$で割り切れるならば，$\alpha\in H^*_T(Y)$である．また，この条件をGKM条件と呼ぶ．
@@ -25,7 +25,7 @@ $\text{Gr}_k(\complex^n)=\set{V\subset \complex^n}{\dim V = k}$をGrassmann多�
 (t_1,\cdots,t_n)\cdot(x_1,\cdots,x_n)=(t_1x_1,\cdots,t_nx_n)
 \]
 によって左から作用する.この作用は自然に$\text{Gr}_k(\complex^n)$への作用を誘導し，$\text{Gr}_k(\complex^n)$は$T$空間となる.$\text{Gr}_k(\complex^n)$の$T$同変コホモロジーの構造は組み合わせ的に決定することができる.
-$\binom{n}{k}$を$0$と$1$からなる$n$文字の文字列のうち，$1$が$k$個使われている文字列の集合とする．$\lambda=\lambda_1\cdots \lambda_n\in\binom{n}{k}$に対して置換$\sigma\in\mathfrak{S}_n$の作用を$\sigma\lambda=\lambda_{\inv{\sigma}(1)}\cdots\lambda_{\inv{\sigma}(n)}$で定める．また，$\binom{n}{k}$に順序を$\lambda\geq\mu\Leftrightarrow \sum_{i=1}^s\lambda_i\geq\sum_{i=1}^s\mu_i$によって定める．
+$\binom{n}{k}$を$0$と$1$からなる$n$文字の文字列のうち，$1$が$k$個使われている文字列の集合とする．$\lambda=\lambda_1\cdots \lambda_n\in\binom{n}{k}$に対して置換$\sigma\in\mathfrak{S}_n$の作用を$\sigma\lambda=\lambda_{\inv{\sigma}(1)}\cdots\lambda_{\inv{\sigma}(n)}$で定める．また，$\binom{n}{k}$に順序を$\lambda\geq\mu\Leftrightarrow \sum_{i=1}^s\lambda_i\geq\sum_{i=1}^s\mu_i,\:(\forall s = 1,\cdots,n)$によって定める．
 $\lambda=\lambda_1\cdots \lambda_n\in\binom{n}{k}$に対して，
 \[
 \Omega_\lambda^\circ=\set{V\in \text{Gr}_k(\complex^n)}{\dim(V\cap F_i)= \dim(\complex^{\lambda}\cap F_i),\quad \forall i\in \{1,\cdots n\}}
@@ -118,10 +118,11 @@ $2$つのSchubert classの積$S_\lambda S_\mu$を$\{S_\nu\}_{\nu\in\binom{n}{k}}
 
 \subsection{GKM条件によるSchubert Classの特徴づけ}
 
-$\text{Gr}_k(\complex^n)$の$T$作用における固定点は$\{\complex^\lambda\}_{\lambda\in\binom{n}{k}}$であるから，[GKM]より$H^*_T(\text{Gr}_k(\complex^n))$は$\bigoplus_{\lambda\in\binom{n}{k}}H^*_T(\text{pt})$の部分代数である．GKMの定理を適用するために$\text{Gr}_k(\complex^n)$の$T$不変な$\mathbb{CP}^1$を計算する．
+$p_\lambda = \complex^\lambda\in\text{Gr}_k(\complex^n)$とする．
+$\text{Gr}_k(\complex^n)$の$T$作用における固定点は$\{p_\lambda\}_{\lambda\in\binom{n}{k}}$であるから，[GKM]より$H^*_T(\text{Gr}_k(\complex^n))$は$\bigoplus_{\lambda\in\binom{n}{k}}H^*_T(\text{pt})$の部分代数である．GKMの定理を適用するために$\text{Gr}_k(\complex^n)$の$T$不変な$\mathbb{CP}^1$を計算する．
 
 \begin{prop}
-  $\lambda,\mu\in\binom{n}{k}$に対して$\complex^\lambda$と$\complex^\mu$を結ぶ$T$不変な$\mathbb{CP}^1$が存在するための必要十分条件は，ある$(i, j)\in\text{inv}(\lambda)$に対して$\mu = (i, j)\lambda$
+  $\lambda,\mu\in\binom{n}{k}$に対して$p_\lambda$と$p_\mu$を結ぶ$T$不変な$\mathbb{CP}^1$が存在するための必要十分条件は，ある$(i, j)\in\text{inv}(\lambda)$に対して$\mu = (i, j)\lambda$，またはある$(i,j)\text{inv}(\mu)$に対して$\lambda = (i, j)\mu$
   となっていることである．
 \end{prop}
 
@@ -130,9 +131,9 @@ $\text{Gr}_k(\complex^n)$の$T$作用における固定点は$\{\complex^\lambda
   \begin{equation}\label{1dim orbit}
   Y=\set{\langle e_{a_1},e_{a_2},\cdots, xe_{a_p}+ye_j,\cdots,e_{a_k} \rangle}{[x:y]\in\mathbb{CP}^1}
   \end{equation}
-  とする．$Y$は$T$不変かつ$\mathbb{CP}^1$に同型であり，$\complex^\lambda$と$\complex^\mu$固定点にもつ．
+  とする．$Y$は$T$不変かつ$\mathbb{CP}^1$に同型であり，$p_\lambda$と$p_\mu$固定点にもつ．
 
-  逆に$Z\subset\text{Gr}_k(\complex^n)$を(複素)$1$次元の$T$軌道であって$\complex^\lambda,\complex^\mu\in\overline{Z}$となるようなものとする．$Z=T\cdot p$となる点$p\in\text{Gr}_k(\complex^n)$をとる．$1\leq i_1<\cdots <i_k\leq n$に対して$U_{i_1,\cdots i_k}\subset\text{Gr}_k(\complex^n)$を次の形の行列で代表される点の集合とする．
+  逆に$Z\subset\text{Gr}_k(\complex^n)$を(複素)$1$次元の$T$軌道であって$p_\lambda,p_\mu\in\overline{Z}$となるようなものとする．$Z=T\cdot p$となる点$p\in\text{Gr}_k(\complex^n)$をとる．$1\leq i_1<\cdots <i_k\leq n$に対して$U_{i_1,\cdots i_k}\subset\text{Gr}_k(\complex^n)$を次の形の行列で代表される点の集合とする．
   \begin{equation}\label{chart of grassmannian}
     \left(\begin{array}{ccc}
       {\begin{array}{ccccccccccc}
@@ -180,11 +181,11 @@ $\text{Gr}_k(\complex^n)$の$T$作用における固定点は$\{\complex^\lambda
   である．
 \end{proof}
 
-$\lambda,\lambda'=(i,j)\lambda\in\binom{n}{k}$，$((i,j)\in\text{inv}(\lambda))$に対して，$\complex^\lambda$と$\complex^{\lambda'}$を結ぶ$T$不変な$\mathbb{CP}^1$を$Z$とする．$Z$における$\complex^\lambda$の接空間を$T_\lambda Z$とする．$T$の$T_\lambda Z$への作用のウェイトを$w_\lambda$とする．
+$\lambda,\lambda'=(i,j)\lambda\in\binom{n}{k}$，$((i,j)\in\text{inv}(\lambda))$に対して，$p_\lambda$と$\complex^{\lambda'}$を結ぶ$T$不変な$\mathbb{CP}^1$を$Z$とする．$Z$における$p_\lambda$の接空間を$T_\lambda Z$とする．$T$の$T_\lambda Z$への作用のウェイトを$w_\lambda$とする．
 \[
 w_\lambda = y_j-y_i
 \]
-である．ただし，  $\Lie (T)$の基底$X_1,\cdots,X_n$を$\text{Exp}(X_i)=(0,\cdots,\overbrace{1}^{i\text{-th}},\cdots,0)$となるように取り，その双対基底を$y_1,\cdots,y_n$とする．
+である．ただし，  $\Lie (T)$の基底$X_1,\cdots,X_n$を$X_i=(0,\cdots,\overbrace{1}^{i\text{-th}},\cdots,0)$となるように取り，その双対基底を$y_1,\cdots,y_n$とする．
 
 \begin{eg}
   $n=4$，$k=2$，$\lambda=0110$，$\lambda'=0101$とする．このとき
@@ -219,35 +220,35 @@ H^*_T(\text{Gr}_k(\complex^n))=\set{(f_\lambda)_{\lambda\in\binom{n}{k}}\in\bigo
 \]
 である．
 
-また，定理\ref{restriction to fixed point}より，$S_\lambda|_{\complex^\lambda}$は$\complex^\lambda$における$\Omega_\lambda\subset\text{Gr}_k(\complex^n)$の法束のウェイトの積に等しい．(\ref{row echelon form})と(\ref{chart of grassmannian})より，
+また，定理\ref{restriction to fixed point}より，$S_\lambda|_{p_\lambda}$は$p_\lambda$における$\Omega_\lambda\subset\text{Gr}_k(\complex^n)$の法束のウェイトの積に等しい．(\ref{row echelon form})と(\ref{chart of grassmannian})より，
 \begin{equation}\label{restriction of schubert class}
-S_\lambda|_{\complex^\lambda} =\left\{\begin{array}{cc}
+S_\lambda|_{p_\lambda} =\left\{\begin{array}{cc}
   \prod_{(i,j)\in\text{inv}(\lambda)}(y_j-y_i) & \text{if } \lambda\neq 0^{n-k}1^k\\
   1 & \text{if }\lambda = 0^{n-k}1^k
 \end{array}\right. 
 \end{equation}
-である．さらに，$\complex^\mu\in\Omega_\lambda\Leftrightarrow\mu\geq\lambda$であるから，$S_\lambda|_{\complex^\mu}\neq0$であるなら$\mu\geq\lambda$である．また$S_\lambda\in H^*_T(\text{Gr}_k(\complex^n))$の次数は$2|\text{inv}(\lambda)|$だから$S_\lambda|_{\complex^\mu}$は$y_i$に関して次数$|\text{inv}(\lambda)|$の同次式である($y_i\in H^*_T(\text{pt})$の次数は$2$である．)．逆に次が成り立つ．
+である．さらに，$p_\mu\in\Omega_\lambda\Leftrightarrow\mu\geq\lambda$であるから，$S_\lambda|_{p_\mu}\neq0$であるなら$\mu\geq\lambda$である．また$S_\lambda\in H^*_T(\text{Gr}_k(\complex^n))$の次数は$2|\text{inv}(\lambda)|$だから$S_\lambda|_{p_\mu}$は$y_i$に関して次数$|\text{inv}(\lambda)|$の同次式である($y_i\in H^*_T(\text{pt})$の次数は$2$である．)．逆に次が成り立つ．
 
-\begin{prop}
-  各$\lambda\in\binom{n}{k}$に対して次の3つの条件をみたす$\alpha_\lambda=(\alpha_\lambda|_\mu)_{\mu\in\binom{n}{k}}\in\bigoplus_{\mu\in\binom{n}{k}}H^*_T(\text{pt})$はただ一つである．
+\begin{prop}[Knutson-Tao\cite{knutson tao}]
+  各$\lambda\in\binom{n}{k}$に対して次の3つの条件をみたす$\alpha_\lambda=(\alpha_\lambda|_{p_\mu})_{\mu\in\binom{n}{k}}\in\bigoplus_{\mu\in\binom{n}{k}}H^*_T(\text{pt})$はただ一つである．
   \begin{enumerate}
     \item $\alpha_\lambda$はGKM条件を満たす．すなわち$\alpha_\lambda\in H^*_T(\text{Gr}_k(\complex^n))$
-    \item $\alpha_\lambda|_\mu\neq0$ならば$\mu\geq\lambda$かつ$\alpha_\lambda|_\mu$は次数$|\text{inv}(\lambda)|$の同次式である．
-    \item $\alpha_\lambda|_\lambda = \prod_{(i,j)\in\text{inv}(\lambda)}(y_j-y_i)$ for $\lambda\neq 0^{n-k}1^k$，$\alpha_{w}|_w = 1$ for $w = 0^{n-k}1^k$
+    \item $\alpha_\lambda|_{p_\mu}\neq0$ならば$\mu\geq\lambda$かつ$\alpha_\lambda|_{p_\mu}$は次数$|\text{inv}(\lambda)|$の同次式である．
+    \item $\alpha_\lambda|_{p_\lambda} = \prod_{(i,j)\in\text{inv}(\lambda)}(y_j-y_i)$ for $\lambda\neq 0^{n-k}1^k$，$\alpha_{\lambda}|_{p_\lambda} = 1$ for $\lambda = 0^{n-k}1^k$
   \end{enumerate}
   このとき$\{\alpha_\lambda\}_{\lambda\in\binom{n}{k}}$は$H^*_T(\text{Gr}_k(\complex^n))$の$H^*_T(\text{pt})$-基底をなす．
 \end{prop}
 
 \begin{proof}
-  $\alpha,\beta\in H^*_T(\text{Gr}_k(\complex^n))$がともに(i)から(iii)を満たしたとする．$f=\alpha-\beta$とし，もし$f_\mu\neq 0$となる$\mu$が存在したとする．$\mu$をそのようなものの中で極小のものとする．(ii)，(iii)より$\mu > \lambda$である．GKM条件と$\mu$の極小性から，$f|_\mu$は$y_j - y_i,\:((i,j)\in\text{inv}(\mu))$で割り切れる．よって$f|_\mu$は$|\text{inv}(\mu)|$以上の次数をもつが，$\mu > \lambda$より(ii)に矛盾する．
+  $\alpha,\beta\in H^*_T(\text{Gr}_k(\complex^n))$がともに(i)から(iii)を満たしたとする．$f=\alpha-\beta$とし，もし$f|_{p_\mu}\neq 0$となる$\mu$が存在したとする．$\mu$をそのようなものの中で極小のものとする．(ii)，(iii)より$\mu > \lambda$である．GKM条件と$\mu$の極小性から，$f|_{p_\mu}$は$y_j - y_i,\:((i,j)\in\text{inv}(\mu))$で割り切れる．よって$f|_{p_\mu}$は$|\text{inv}(\mu)|$以上の次数をもつが，$\mu > \lambda$より(ii)に矛盾する．
 
   $\{\alpha_\lambda\}_{\lambda\in\binom{n}{k}}$の一次独立性を示す．$f=\sum_{\lambda\in\binom{n}{k}}c_\lambda\alpha_\lambda$とおき，$f=0$であるとする．(ii)より
   \[
-  f|_\mu
-  =\sum_{\lambda\in\binom{n}{k}}c_\lambda\alpha_\lambda|_\mu
-  =\sum_{\lambda \leq \mu}c_\lambda\alpha_\lambda|_\mu
+  f|_{p_\mu}
+  =\sum_{\lambda\in\binom{n}{k}}c_\lambda\alpha_\lambda|_{p_\mu}
+  =\sum_{\lambda \leq \mu}c_\lambda\alpha_\lambda|_{p_\mu}
   \]
-  よって特に，$f|_w=c_w\alpha_w|_w$だから$c_w = 0$．したがって帰納的にすべての$\lambda$に対して$c_\lambda = 0$である．
+  よって特に，$w=0^{n-k}1^k$として$f|_{p_w}=c_w\alpha_w|_{p_w}$だから$c_w = 0$．したがって帰納的にすべての$\lambda$に対して$c_\lambda = 0$である．
 
   次に$\{\alpha_\lambda\}_{\lambda\in\binom{n}{k}}$が$H^*_T(\text{Gr}_k(\complex^n))$を生成することを示す．$f\in H^*_T(\text{Gr}_k(\complex^n))$について，$f|_\mu \neq 0$となる極小の$\mu$をとる．このときGKM条件より$f|_\mu$は，ある$c\in H^*_T(\text{pt})$で
   \[
