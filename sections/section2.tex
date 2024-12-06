@@ -1,26 +1,25 @@
 \section{GKMの定理と同変Schubert計算}
 \subsection{GKMの定理}
 同変コホモロジーに関するいくつかの定理を援用する．
-$T=(\complex^\times)^n$とする．$Y$をなめらかな射影多様体とし$T$は$Y$に代数的に作用し，さらに固定点は孤立していると仮定する．このとき次が成り立つ
-
-\begin{theo}(Goresky-Kottwitz-MacpPherson)\label{restriction to fixed point}
-  \begin{enumerate}
-    \item $H^*_T(Y)$は自由$H^*_T(\text{pt})$加群である．
-    \item $[\overline{X_f}]|_f\in H^*_T(\text{pt})$は$f$での$X_f$の法束のウェイトの積に等しい\footnote{equivariant euler classのfixed pointへの制限がその表現のウェイトの積になる．1点のequiariant euler classを計算する．セクション１に書く？}
-    \item $H^*_T(Y)\rightarrow H^*_T(Y^T) \simeq \bigoplus_{f\in Y^T}H^*_T(\text{pt})$は単射である．
-  \end{enumerate}
-\end{theo}
+$T=(S^1)^n$とする．$Y$をなめらかな射影多様体とし$T$は$Y$に代数的に作用し，さらに固定点は孤立していると仮定する．このとき次が成り立つ
 
 \begin{theo}(Goresky-Kottwitz-MacPherson\cite{GKM})\label{gkm theorem}
-  $Y^T$が有限であり，$1$次元の$T$軌道も有限個であるとする．このとき各$1$次元$T$軌道$E$は$\complex^\times$に同型であり，$\overline{E}$は$2$つの固定点$x_0,x_\infty$を持っている．したがって$\overline{E}$は$\mathbb{CP}^1$に同型である．$T$の表現$T_{x_0}\overline{E}$のウェイトを$w$とするとき，任意の$\alpha\in H^*_T(Y)\subset \bigoplus_{f\in Y^T}H^*_T(\text{pt})$に対して
-  $\alpha|_{x_0} - \alpha|_{x_\infty}\in H^*_T(\text{pt})$は$w$で割り切れる．
+  \begin{enumerate}
+    \item $H^*_T(Y)$は自由$H^*_T(\text{pt})$加群であり，$H^*_T(\text{pt})$加群の同型$\phi\colon H^*_T(Y)\simeq H^*(Y)\otimes H^*_T(\text{pt})$が存在する．
+    
+    \item $H^*_T(Y)\rightarrow H^*_T(Y^T) \simeq \bigoplus_{f\in Y^T}H^*_T(\text{pt})$は単射である．
+
+    \item $Y^T$が有限であり，$1$次元の$T$軌道も有限個であるとする．このとき各$1$次元$T$軌道$E$は$\complex^\times$に同型であり，$\overline{E}$は$2$つの固定点$x_0,x_\infty$を持っている．したがって$\overline{E}$は$\mathbb{CP}^1$に同型である．$T$の表現$T_{x_0}\overline{E}$のウェイトを$w$とするとき，任意の$\alpha\in H^*_T(Y)\subset \bigoplus_{f\in Y^T}H^*_T(\text{pt})$に対して
+    $\alpha|_{x_0} - \alpha|_{x_\infty}\in H^*_T(\text{pt})$は$w$で割り切れる．
   
-  逆に$\alpha\in \bigoplus_{f\in Y^T}H^*_T(\text{pt})$について，すべての$1$次元$T$軌道$E$に対して，$\alpha|_{x_0} - \alpha|_{x_\infty}\in H^*_T(\text{pt})$が$w$で割り切れるならば，$\alpha\in H^*_T(Y)$である．また，この条件をGKM条件と呼ぶ．
+    \item 逆に$\alpha\in \bigoplus_{f\in Y^T}H^*_T(\text{pt})$について，すべての$1$次元$T$軌道$E$に対して，$\alpha|_{x_0} - \alpha|_{x_\infty}\in H^*_T(\text{pt})$が$w$で割り切れるならば，$\alpha\in H^*_T(Y)$である．また，この条件をGKM条件と呼ぶ．
+  \end{enumerate}
+  
 \end{theo}
 
 
 \subsection{Grassmann多様体の同変コホモロジー}
-$\text{Gr}_k(\complex^n)=\set{V\subset \complex^n}{\dim V = k}$をGrassmann多様体という．$T=(\complex^*)^n$とするとき，$T$は$\complex^n$に
+$\text{Gr}_k(\complex^n)=\set{V\subset \complex^n}{\dim V = k}$をGrassmann多様体という．$T$は$\complex^n$に
 \[
 (t_1,\cdots,t_n)\cdot(x_1,\cdots,x_n)=(t_1x_1,\cdots,t_nx_n)
 \]
@@ -95,10 +94,8 @@ $\lambda=\lambda_1\cdots \lambda_n\in\binom{n}{k}$に対して，
 \end{proof}
 
 したがって$H^*(\text{Gr}_k(\complex^n))$はSchubert cellの定めるホモロジー類のPoincare双対$\sigma_\lambda$たちで$\integer$上生成される．
-
-$T$空間$X$に対して$H^*_T(X)$は$ET\times_TX$のコホモロジーであったが，$ET$は有限次元近似$ET_r$を持っている(§1.1)．$\Omega_\lambda:=\overline{\Omega_\lambda^\circ}=\bigcup_{\mu\leq\lambda}\Omega_\mu^\circ$(\cite{fulton young tableaux})は$T$不変な既約代数多様体であるから，$ET_r\times_T\overline{\Omega_\lambda^\circ}$は$H_*(ET_r\times_T\text{Gr}_k(\complex^n))$においてホモロジー類$[\Omega_\lambda]$を定める(\cite{fulton young tableaux})．このPoincare dualを$S_{\lambda,r}\in H^{2|\text{inv}(\lambda)|}(ET_r\times_T\text{Gr}_k(\complex^n))$とおく．$S_{\lambda,r+1}|_{ET_r\times_T\text{Gr}_k(\complex^n)} = S_{\lambda,r}$であるから，極限$S_\lambda\in H^{2|\text{inv}(\lambda)|}(ET_r\times_T\text{Gr}_k(\complex^n))$が定まる．これをSchubert classという．
-
-$\text{Gr}_k(\complex^n)$はequivariantly formalであるから同型
+$\Omega_\lambda:=\overline{\Omega_\lambda^\circ}=\bigcup_{\mu\leq\lambda}\Omega_\mu^\circ$は$T$不変な既約代数多様体である\cite{fulton young tableaux}から，$\Omega_\lambda$の定める同変コホモロジー類を$S_\lambda$とし，これをSchubert classという．
+定理\ref{gkm theorem}より同型
 $\phi\colon H^*_T(\text{Gr}_k(\complex^n))\simeq H^*(\text{Gr}_k(\complex^n))\otimes H^*_T(\text{pt})$が存在する．$S_\lambda\in H^*(ET\times_T\text{Gr}_k(\complex))$は各ファイバーに制限すると$\sigma_\lambda$に一致するから
 \[
 \phi(S_\lambda) = \sigma_\lambda + \sum_{I}c_Iy^I
@@ -220,7 +217,7 @@ H^*_T(\text{Gr}_k(\complex^n))=\set{(f_\lambda)_{\lambda\in\binom{n}{k}}\in\bigo
 \]
 である．
 
-また，定理\ref{restriction to fixed point}より，$S_\lambda|_{p_\lambda}$は$p_\lambda$における$\Omega_\lambda\subset\text{Gr}_k(\complex^n)$の法束のウェイトの積に等しい．(\ref{row echelon form})と(\ref{chart of grassmannian})より，
+また，命題\ref{restriction to fixed point}より，$S_\lambda|_{p_\lambda}$は$p_\lambda$における$\Omega_\lambda\subset\text{Gr}_k(\complex^n)$の法束のウェイトの積に等しい．(\ref{row echelon form})と(\ref{chart of grassmannian})より，
 \begin{equation}\label{restriction of schubert class}
 S_\lambda|_{p_\lambda} =\left\{\begin{array}{cc}
   \prod_{(i,j)\in\text{inv}(\lambda)}(y_j-y_i) & \text{if } \lambda\neq 0^{n-k}1^k\\
@@ -258,9 +255,40 @@ S_\lambda|_{p_\lambda} =\left\{\begin{array}{cc}
 \end{proof}
 
 \begin{eg}
-  $\text{Gr}_2(\complex^4)$のSchubert classを計算する．
+  $\text{Gr}_2(\complex^4)$のSchubert classを書き出す．
   \[
   \binom{4}{2} = \{1100,1010,1001,0110,0101,0011\}
   \]
+  である．各固定点$\lambda$に対応するSchuber class $S_\lambda$の$\mu$への制限$S_\lambda|_{p_\mu}$は次の表のとおりになる． 
 
+\begin{table}[H]
+  \center
+  \footnotesize
+  \begin{tabular}{c|cccccc}
+    $\lambda\backslash\mu$ & 1100 & 1010 & 1001 & 0110 & 0101 & 0011\\ \hline
+    1100 & 
+    \begin{tabular}{c}
+      $(y_4-y_2)(y_4-y_1)$ \\
+      $(y_3-y_2)(y_3-y_1)$
+    \end{tabular}
+    & $0$ & $0$ & $0$ & $0$ & $0$\\ 
+    1010 & \begin{tabular}{c}
+      $(y_4-y_2)(y_4-y_1)$\\
+      $(y_3-y_1)$
+    \end{tabular} & \begin{tabular}{c}
+      $(y_4-y_3)(y_4-y_1)$ \\
+      $(y_2-y_1)$
+    \end{tabular} & $0$ & $0$ & $0$ & $0$ \\
+    1001 &$(y_4-y_1)(y_3-y_1)$ & $(y_4-y_1)(y_2-y_1)$ & $(y_3-y_1)(y_2-y_1)$ & $0$ & $0$ & $0$ \\
+    0110 & \begin{tabular}{c}
+      $(y_4-y_3)(y_4+y_3-y_2-y_1)$\\
+      $ + (y_3-y_2)(y_3-y_1)$
+    \end{tabular} & $(y_4-y_3)(y_4-y_1)$ & $0$ & $(y_4-y_3)(y_4-y_2)$ & $0$ & $0$\\
+    0101 & $y_4+y_3-y_2-y_1$ & $y_4-y_1$ & $y_3-y_1$ & $y_4-y_2$ & $y_3-y_2$ & $0$\\
+    0011 & $1$ & $1$ & $1$ & $1$ & $1$ & $1$
+  \end{tabular}
+  \caption{$\text{Gr}_2(\complex^4)$のSchubert class}
+\end{table}
+  
+\normalsize
 \end{eg}

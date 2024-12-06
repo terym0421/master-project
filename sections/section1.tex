@@ -1,7 +1,7 @@
 \section{同変コホモロジー}
-\subsection{Borel構成}
+\subsection{universal bundle}
 
-$G$をコンパクトLie群とする．以下考える位相空間はすべて$CW$複体であるとする．本論文では特に断らない限りコホモロジーの係数はすべて$\integer$である．
+$G$をコンパクトLie群とする．以下考える位相空間はすべてCW複体であるとする．本論文では特に断らない限りコホモロジーの係数はすべて$\integer$である．
 
 \begin{defin}
   次の2つの条件を満たす主$G$束$f\colon EG\rightarrow BG$をuniversal $G$ bundleという．
@@ -11,24 +11,74 @@ $G$をコンパクトLie群とする．以下考える位相空間はすべて$C
   \end{enumerate}
 \end{defin}
 
-\begin{theo}(Steenrod \cite{steenrod})
+\begin{theo}(Steenrod \cite{steenrod})\label{steenrod}
   主$G$束$E\rightarrow B$がuniversal $G$ bundleであるための必要十分条件は$E$が弱可縮であることである．
 \end{theo}
 
 \begin{eg}
-  $S^\infty$\footnote{入る位相について明記?}は可縮であるので，$T=\complex^*$に対して$S^\infty\rightarrow \mathbb{CP}^\infty$はuniversal $T$ bundleである．
+  $S^\infty$\footnote{入る位相について明記?}は可縮であるので，$T=S^1$に対して$S^\infty\rightarrow \mathbb{CP}^\infty$はuniversal $T$ bundleである．
 \end{eg}
 
 $G$がコンパクトLie群の場合，universal $G$ bundleは直交群$O(k)$のuniversal bundleから構成できる．
 
-$V_k(\real^n)$を$\real^n$の$k$個の正規直交なベクトル$(v_1,\cdots,v_k)$のなす空間とし，$\text{Gr}_k(\real^n)$を$\real^n$の$k$次元部分空間全体のなす空間とする．$V_k(\real^n)$をStiefel多様体，$\text{Gr}_k(\real^n)$をGrassmann多様体という．
+$V_k(\real^n)$を$\real^n$の$k$個の正規直交なベクトル$(v_1,\cdots,v_k)$のなす空間とし，$\text{Gr}_k(\real^n)$を$\real^n$の$k$次元部分空間全体のなす空間とする．$V_k(\real^n)$をStiefel多様体，$\text{Gr}_k(\real^n)$をGrassmann多様体という．$(v_1,\cdots,v_k)\in V_k(\real^n)$を$n\times k$行列とみなすことで，$O(k)$は$V_k(\real^n)$に自由に右作用する．また$(v_1,\cdots,v_k)\in V_k(\real^n)$に対して，$v_1,\cdots,v_k$の生成する部分空間を対応させることで写像$V_k(\real^n)\rightarrow \text{Gr}_k(\real^n)$が定まる．
 
 \begin{prop}
-  $V_k(\real^n)\rightarrow \text{Gr}_k(\real^n)$は主$O(k)$束であり，$\pi_i(V_k(\real^n))=0$ for $i=0,1,\cdots,n-k-1$である．
+  $V_k(\real^n)\rightarrow \text{Gr}_k(\real^n)$は主$O(k)$束である．
 \end{prop}
 
 \begin{proof}
+  簡単のため，$k=2,n=4$の場合に示す．$U_{1,2}\subset \text{Gr}_2(\real^4)$を
+  \begin{equation}\label{basis}
+    \left(\begin{array}{c}
+      1\\0\\ * \\ *
+    \end{array}\right),\quad \left(\begin{array}{c}
+      0\\1\\ * \\ *
+    \end{array}\right)
+  \end{equation}
+  の形のベクトルで生成される部分空間のなす集合とする．ここで$*$は任意の実数である．(\ref{basis})にSchmidtの直交化法を施して得られるベクトルを$v_1,v_2$とし，(\ref{basis})に$(v_1,v_2)$を対応させれば，切断$s_{1,2}\colon U_{1,2}\rightarrow V_k(\real^n)$
+  得られる．$\phi_{1,2}\colon U_{1,2}\times O(2)\rightarrow V_{2}(\real^4)|_{U_{1,2}}$を
+  \[
+  \phi_{1,2}(\left\langle
+    \left(\begin{array}{c}
+      1\\0\\ * \\ *
+    \end{array}\right),\:\left(\begin{array}{c}
+      0\\1\\ * \\ *
+    \end{array}\right)
+  \right\rangle, P) = (v_1,v_2)P
+  \]
+  とすれば$\phi_{1,2}$は像への同相であり，$O(2)$の右作用と可換である．
   
+  同様に$U_{i,j},s_{i,j},\phi_{i,j}$を$1\leq i<j\leq 4$に対して定義すれば$G$の作用と可換な局所自明化が得られる．
+\end{proof}
+
+\begin{prop}
+  $V_{k+1}(\real^{n+1})\rightarrow S^{n}$を$(v_0,\cdots,v_{k})\mapsto v_{0}$とすると，$V_{k}(\real^{n})$をファイバーとするファイバー束となり，
+  $\pi_i(V_k(\real^n))=0$ for $i=0,1,\cdots,n-k-1$である．
+\end{prop}
+
+\begin{proof}
+  $U_i=\set{(x_0,\cdots,x_n)\in S^n}{x_i\neq 0}$とすると，$x=(x_0,\cdots,x_n)\in U_i$の直交補空間の正規直交基底$u_1,\cdots,u_n$を$x_0,\cdots,x_n$に関してなめらかにとることができる．行列$U(x)$を$U(x)=(u_1,\cdots,u_n)$とする．$\phi_i\colon U_i\times V_k(\real^n)\rightarrow V_{k+1}(\real^{n+1})|_{U_i}$を
+  \[
+  \phi_i(x,(v_1,\cdots,v_k)) = (x,U(x)v_1,\cdots,U(x)v_k)
+  \]
+  とすれば$\phi_i$は像への同相である．
+
+  ホモトピー完全列
+  \[
+  \xymatrix{
+    \cdots \ar[r] & \pi_{q+1}(S^n) \ar[r] & \pi_q(V_k(\real^n)) \ar[r] &
+    \pi_q(V_{k+1}(\real^{n+1})) \ar[r] & \pi_q(S^n) \ar[r] & \cdots
+  }
+  \]
+  において，$\pi_{q+1}(S^n) = 0,\:(q+1 < n)$であるから，
+  \[
+  \pi_q(V_{k+1}(\real^{n+1}))\simeq \pi_q(V_{k}(\real^{n}))
+  \]
+  よって$q<n-k$のとき
+  \[
+  \pi_q(V_k(\real^n))\simeq \pi_q(V_1(\real^{n-k+1}))\simeq \pi_q(S^{n-k})=0
+  \]
 \end{proof}
 
 $V_k(\real^\infty)=\varinjlim V_k(\real^n)$, $\text{Gr}_k(\real^\infty)=\varinjlim \text{Gr}_k(\real^n)$とする．
@@ -38,7 +88,7 @@ $V_k(\real^\infty)=\varinjlim V_k(\real^n)$, $\text{Gr}_k(\real^\infty)=\varinjl
 \end{prop}
 
 \begin{proof}
-  
+  $f\colon S^q\rightarrow V_k(\real^\infty)$を連続写像とする．$V_k(\real^\infty)$は各$V_k(\real^n)$を部分複体にもつようなCW複体の構造をもつ．$f(S^q)$はコンパクトであるから$f(S^q)\subset V_k(\real^n)$となる$n$が存在する\cite{hatcher Top}．十分大きく$n$をとれば$\pi_q(V_k(\real^n))=0$であるから$f$のホモトピー類も$0$である．
 \end{proof}
 
 \begin{theo}\label{universal bundle for subgroup}
@@ -46,24 +96,30 @@ $V_k(\real^\infty)=\varinjlim V_k(\real^n)$, $\text{Gr}_k(\real^\infty)=\varinjl
 \end{theo}
 
 \begin{proof}
-  
+  $H$が閉部分群のとき$G\rightarrow G/H$は主$H$束になり，$EG\rightarrow EG/H$は局所的に$U\times G\rightarrow U\times(G/H)$の形をしている($U$は$BG$の開集合)から，$EG\rightarrow EG/H$は主$H$束である．$EG$は弱可縮であるから，定理\ref{steenrod}より$EG\rightarrow EG/H$はuniversal $H$ bundleである．
 \end{proof}
 
-任意のコンパクトLie群$G$は十分大きい$n$に対して$O(n)$に埋め込めることが知られている()．従って定理\ref{universal O(k) bundle}と定理\ref{universal bundle for subgroup}から，$V_n(\real^\infty)\rightarrow V_n(\real^\infty)/G$はuniversal $G$ bundleである．
+任意のコンパクトLie群$G$は十分大きい$n$に対して$O(n)$に埋め込めることが知られている\cite{representation}．従って定理\ref{universal O(k) bundle}と定理\ref{universal bundle for subgroup}から，$V_n(\real^\infty)\rightarrow V_n(\real^\infty)/G$はuniversal $G$ bundleである．
+
+
+
+
+
+\subsection{Borel構成}
 
 \begin{defin}
-  $G$が$X$に左から作用しているとき，$G$の$X\times EG$への左作用を
+  $G$が$X$に左から作用しているとき，$G$の$EG\times X$への左作用を
   \[
   g(x, e):=(gx, e\inv{g}) \quad \text{for } g\in G, x\in X, e\in EG 
   \]
-  によって定める．$X\times_GEG\colon=(X\times EG)/G$としこれを$X$のhomotopy quotient という．このとき
-  $H^*_G(X):=H^*(X\times_GEG)$を$X$の$G$同変コホモロジーという．
+  によって定める．$EG\times_GX:=(EG\times X)/G$としこれを$X$のhomotopy quotient という．このとき
+  $H^*_G(X):=H^*(EG\times_GX)$を$X$の$G$同変コホモロジーという．
 \end{defin}
 
 \begin{eg}
   1点集合$\text{pt}$の$G$同変コホモロジーは
   \[
-  \text{pt}\times_GEG=(\text{pt}\times EG)/G\approx BG
+  EG\times_G\text{pt}=(EG\times \text{pt})/G\approx BG
   \]
   より
   \[
@@ -77,7 +133,7 @@ $V_k(\real^\infty)=\varinjlim V_k(\real^n)$, $\text{Gr}_k(\real^\infty)=\varinjl
 
 
 $X$の$G$同変コホモロジーは主$G$束$EG\rightarrow BG$の取り方に拠らないことを示そう．
-写像$p\colon X\times EG\rightarrow X\times_GEG$と $p_X\colon X\times_GEG\rightarrow BG$を
+写像$p\colon EG\times X\rightarrow EG\times_GX$と $p_X\colon EG\times_GX\rightarrow BG$を
 \begin{align*}
   &p(x, e):=[x, e]\\
   &p_X([x, e]):=\pi(e)
@@ -87,14 +143,19 @@ $X$の$G$同変コホモロジーは主$G$束$EG\rightarrow BG$の取り方に�
 \begin{prop}
   \:
   \begin{enumerate}
-    \item $p\colon X\times EG\rightarrow X\times_GEG$は主$G$束である
-    \item $p_X\colon X\times_GEG\rightarrow BG$は$X$をファイバーとするファイバー束である
+    \item $p\colon EG\times X\rightarrow EG\times_GX$は主$G$束である
+    \item $p_X\colon EG\times_GX\rightarrow BG$は$X$をファイバーとするファイバー束である
   \end{enumerate}
 \end{prop}
 
 \begin{proof}
+  \:
   \begin{enumerate}
-    \item $EG\rightarrow BG$は主$G$束であるので，
+    \item $EG\rightarrow BG$は主$G$束であるので，局所的に$U\times G\rightarrow U$の形をしている($U$は$BG$の開集合)．よって$EG\times X\rightarrow EG\times_G X$は局所的に$(U\times G)\times X\rightarrow (U\times G)\times_GX$である．$(U\times G)\times_GX\rightarrow U\times X$を
+    \[
+    [(u,g),x] \mapsto (u,gx)
+    \]
+    とすればこれは同相である．合成$(U\times G)\times X\rightarrow U\times X$, $((u,g),x)\mapsto (u,gx)$は自明束である．実際
   \end{enumerate}
 \end{proof}
 
@@ -120,19 +181,17 @@ f_*\colon\pi_q(X, x)\rightarrow \pi_q(Y, f(x))\quad\text{for } x\in X, q>0
   
 \end{proof}
 
-\begin{theo}(Hatcher \cite{hatcher})\label{weak homotopy to cohomology}
+\begin{theo}(Hatcher \cite{hatcher Top})\label{weak homotopy to cohomology}
   弱ホモトピー同値$f\colon X\rightarrow Y$は同型$f^*\colon H^*(Y)\rightarrow H^*(X)$を誘導する
 \end{theo}
 
-定理\ref{existance weak homotopy eq}と定理\ref{weak homotopy to cohomology}より， $EG\rightarrow BG$， $EG'\rightarrow BG'$が事実\ref{universal G bundle}の主$G$束であるとき、
+定理\ref{existance weak homotopy eq}と定理\ref{weak homotopy to cohomology}より， $EG\rightarrow BG$， $EG'\rightarrow BG'$がuniversal $G$-bundleであるとき、
 \[
-H^*(X\times_GEG)\simeq H^*(X\times_GEG')
+H^*(EG\times_GX)\simeq H^*(EG\times_GX')
 \]
 であることがわかる。
 
-\subsection{$H^*_G(X)$の代数的構造}
-
-$X, Y$を$G$空間， $f\colon X\rightarrow Y$を$G$写像とする。$f_G\colon X\times_GEG\rightarrow Y\times_GEG$を
+$X, Y$を$G$空間， $f\colon X\rightarrow Y$を$G$写像とする。$f_G\colon EG\times_GX\rightarrow EG\times_GY$を
 \[
 f_G([x, e])=[f(x), e]
 \]
@@ -151,19 +210,43 @@ f_G^*\colon H^*_G(Y)\rightarrow H^*_G(X)
 任意の$G$空間$X$に対して、1点集合$\text{pt}$への自明な$G$写像は，準同型$H^*(BG)\simeq H^*_G(\text{pt})\rightarrow H^*_G(X)$を誘導するから、$H^*_G(X)$は$H^*(BG)$代数の構造を持つ．
 
 
-\subsection{同変Euler類}
+
+\subsection{同変コホモロジーの有限次元近似}
+
+セクション1.1より，$G$がコンパクトLie群の場合，$G$のuniversal bundle $EG$に対して，有限次元多様体からなる主$G$束の族$EG_r\rightarrow BG_r, (r=1,2,\cdots)$であって$EG_r\subset EG_{r+1}$，$BG_r\subset BG_{r+1}$かつ$EG_{r+1}|_{BG_r} = EG_r$となるようなものが存在する．
 
 
+$M$を非特異射影多様体とし$G$は$M$に左から作用しているとする．$X\subset M$を$G$不変な既約代数多様体で$\codim X =k$とする．$M_{G,r}=EG_r\times_GM$とすると$X_{G,r}\subset M_{G,r}$はコホモロジー類$[X_{G,r}]\in H^k(M_{G,r})$を定める\cite{fulton young tableaux}．$[X_{G,r+1}]|_{M_{G,r}} = [X_{G,r}]$が成り立つから，その極限$[X]\in H^k_G(M)$が定まる．
 
-\begin{prop}
-  $G$をコンパクト連結Lie群，$M$を向き付けられたなめらかなコンパクト多様体，$G$は$M$に作用し$N\subset M$を$G$-invariantな部分多様体で$\codim N=k$とする．$N$の定めるequivariant cohomology classを$[N]\in H^k_G(M)$とおく．このとき$[N]|_p\in H^k_G(M)$は$N$のnormal bundleの$p$におけるウェイトの積に等しい
+
+\begin{prop}\label{restriction to fixed point}
+  $G=(S^1)^n$とし，$p\in X^{sm}$を$G$固定点とする．$[X]|_p\in H^k_G(p)$は$X\subset M$の法束の$p$におけるウェイトの積に等しい．
 \end{prop}
 
 \begin{proof}
-  
+  $[X]|_p$を計算するために，その有限次元近似$[X_{G,r}]|_{p_{G,r}}\in H^k(p_{G,r}=BG_r)$を計算する．$[X_{G,r}]|_{p_{G,r}}$は$X_{G,r}\subset M_{G,r}$の法束$\mathcal{N}_{G,r}$を$p_{G,r}$に制限したベクトル束$\mathcal{N}_{G,r}|_{p_{G,r}}$のEuler類に他ならない．
+
+  よって$G$の表現$V$に対して，ベクトル束$V_{G,r}\rightarrow p_{G,r}=BG_r$のEuler類を計算する．簡単のため，$n=1$，$V=\complex$で$G$の$V$への作用が
+  \[
+  t\cdot v := t^mv \quad \text{for }t\in G,v\in\complex
+  \]
+  となっているとする．このとき，$V_{G,r} = S^{2r+1}\times_G V$，$BG_r = \mathbb{CP}^r$である．$U_i = \set{[z_0:\cdots:z_r]\in\mathbb{CP}^r}{z_i\neq 0}$とし，$\phi_i:U_i\times \complex\rightarrow V_{G,r}|_{U_i}$を
+  \[
+  \phi_i([z_0:\cdots:z_i:\cdots:z_r],v) = \left[\left(\frac{z_0|z_i|}{z_iN},\cdots,\frac{|z_i|}{N},\cdots,\frac{z_r|z_i|}{z_iN}\right), v \right]
+  \]
+  とする．ここで$N=\sqrt{|z_0|^2+\cdots+|z_i|^2+\cdots+|z_r|^2}$である．$\phi_i$は同相であり，変換関数$\inv{\phi_i}\phi_j:U_i\cap U_j\rightarrow \complex^\times$を計算すると，
+  \begin{align*}
+    \inv{\phi_j}\phi_i([z_0:\cdots:z_r],v)
+    &= \inv{\phi_j}\left[\left(\frac{z_0|z_i|}{z_iN},\cdots,\frac{|z_i|}{N},\cdots,\frac{z_j|z_i|}{z_iN},\cdots\frac{z_r|z_i|}{z_iN}\right), v \right]\\
+    &=\inv{\phi_j}\left[\left(\frac{z_0|z_j|}{z_jN},\cdots,\frac{z_i|z_j|}{z_jN},\cdots,\frac{|z_j|}{N},\cdots\frac{z_r|z_j|}{z_jN}\right)\cdot \frac{z_j|z_i|}{|z_j|z_i},v\right]\\
+    &=\inv{\phi_j}\left[\left(\frac{z_0|z_j|}{z_jN},\cdots,\frac{z_i|z_j|}{z_jN},\cdots,\frac{|z_j|}{N},\cdots\frac{z_r|z_j|}{z_jN}\right) , \left(\frac{z_i|z_j|}{|z_i|z_j}\right)^mv\right]\\
+    &=\left([z_0:\cdots:z_r],\left(\frac{z_i|z_j|}{|z_i|z_j}\right)^mv\right)
+  \end{align*}
+  したがって$\tau$を$\mathbb{CP}^r$のtautological bundleとすると，$V_{G,r}\simeq \tau^{\otimes m}$であることがわかる．よって
+  \[
+  e(V_{G,r}) = m e(\tau)
+  \]
 \end{proof}
-
-
 
 
 \subsection{Weil/Cartanモデル}
