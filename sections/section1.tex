@@ -6,9 +6,13 @@ $G$をコンパクトLie群とする．以下考える位相空間はすべてCW
 \begin{defin}
   次の2つの条件を満たす主$G$束$f\colon EG\rightarrow BG$をuniversal $G$ bundleという．
   \begin{enumerate}
-    \item 任意の主$G$束$h\colon E\rightarrow B$に対して連続写像$h\colon B\rightarrow EB$が存在して$E\simeq h^*EG$が成り立つ．
+    \item 任意の主$G$束$E\rightarrow B$に対して連続写像$h\colon B\rightarrow EB$が存在して$E\simeq h^*EG$が成り立つ．
     \item $h_0,h_1\colon B\rightarrow EB$に対して$h_0^*EG\simeq h_1^*EG$ならば$h_0,h_1$はホモトピックである．
   \end{enumerate}
+\end{defin}
+
+\begin{defin}
+  連続写像$f\colon X\rightarrow Y$が弱ホモトピー同値であるとは，$f$が同型$f_*\colon\pi_q(X)\rightarrow \pi_q(Y)$をすべての$q=0,1,\cdots$に対して誘導することをいう．特に，$1$点への自明な写像$X\rightarrow \text{pt}$が弱ホモトピー同値になるような空間$X$を弱可縮であるという．
 \end{defin}
 
 \begin{theo}(Steenrod \cite{steenrod})\label{steenrod}
@@ -88,7 +92,7 @@ $V_k(\real^\infty)=\varinjlim V_k(\real^n)$, $\text{Gr}_k(\real^\infty)=\varinjl
 \end{prop}
 
 \begin{proof}
-  $f\colon S^q\rightarrow V_k(\real^\infty)$を連続写像とする．$V_k(\real^\infty)$は各$V_k(\real^n)$を部分複体にもつようなCW複体の構造をもつ．$f(S^q)$はコンパクトであるから$f(S^q)\subset V_k(\real^n)$となる$n$が存在する\cite{hatcher Top}．十分大きく$n$をとれば$\pi_q(V_k(\real^n))=0$であるから$f$のホモトピー類も$0$である．
+  $f\colon S^q\rightarrow V_k(\real^\infty)$を連続写像とする．$V_k(\real^\infty)$は各$V_k(\real^n)$を部分複体にもつようなCW複体の構造をもつ．$f(S^q)$はコンパクトであるから$f(S^q)\subset V_k(\real^n)$となる$n$が存在する\cite{hatcher Top}．十分大きく$n$をとれば$\pi_q(V_k(\real^n))=0$であるから$f$のホモトピー類も$0$である．よって定理\ref{steenrod}より$V_k(\real^\infty)\rightarrow \text{Gr}_k(\real^\infty)$はuniversal $O(k)$ bundleになる．
 \end{proof}
 
 \begin{theo}\label{universal bundle for subgroup}
@@ -127,7 +131,7 @@ $V_k(\real^\infty)=\varinjlim V_k(\real^n)$, $\text{Gr}_k(\real^\infty)=\varinjl
   \]
   である。よって
   \[
-  H^*_{\complex^*}(\text{pt})\simeq H^*(\mathbb{CP}^\infty)\simeq \integer[y]
+  H^*_{S^1}(\text{pt})\simeq H^*(\mathbb{CP}^\infty)\simeq \integer[y]
   \]
 \end{eg}
 
@@ -155,22 +159,24 @@ $X$の$G$同変コホモロジーは主$G$束$EG\rightarrow BG$の取り方に�
     \[
     [(u,g),x] \mapsto (u,gx)
     \]
-    とすればこれは同相である．合成$(U\times G)\times X\rightarrow U\times X$, $((u,g),x)\mapsto (u,gx)$は自明束である．実際
+    とすればこれは同相である．合成$(U\times G)\times X\rightarrow (U\times G)\times_GX\rightarrow U\times X$，$((u,g),x)\mapsto (u,gx)$は切断$U\times X\rightarrow (U\times G)\times X$，$(u,x)\mapsto((u,e),x)$を持つので自明束である．
+
+    \item $EG\rightarrow BG$は局所的に$U\times G\rightarrow U$の形であり，$(U\times G)\times_GX\approx U\times X$であるから，$p_X$は局所的に$U\times X\rightarrow U$である．
   \end{enumerate}
 \end{proof}
 
-連続写像$f\colon X\rightarrow Y$がホモトピー群の同型
-\[
-f_*\colon\pi_q(X, x)\rightarrow \pi_q(Y, f(x))\quad\text{for } x\in X, q>0 
-\]
-を誘導するとき、$f$を弱ホモトピー同値\footnote{弱可縮よりも先に書く?}という。
-
-\begin{lemm}
-  $E$を弱可縮な$G$空間とし、$P\rightarrow B$を主$G$束とする。このとき$(E\times P)/G\rightarrow B$は弱ホモトピー同値である。
+\begin{lemm}\label{borel const is weak hotmotopy equiv}
+  $E$を弱可縮な$G$空間とし、$P\rightarrow B$を主$G$束とする。このとき$P\times_GE\rightarrow B$は弱ホモトピー同値である。
 \end{lemm}
 
 \begin{proof}
-  
+  $E$をファイバーとするファイバー束$p\colon E\times_GP\rightarrow B$のホモトピー完全列
+  \[
+  \xymatrix{
+    \cdots \ar[r] & \pi_{q+1}(E) \ar[r] & \pi_{q+1}(P\times_GE) \ar[r]^{p_*} & \pi_{q+1}(B) \ar[r] & \pi_q(E) \ar[r] & \cdots
+  }
+  \]
+  において，$E$は弱可縮であるから，$\pi_{q+1}(E)=\pi_{q}(E) = 0$．よって$p_*\colon\pi_q(P\times_GE)\rightarrow \pi_q(B)$は同型である．
 \end{proof}
 
 \begin{theo}\label{existance weak homotopy eq}
@@ -182,7 +188,7 @@ f_*\colon\pi_q(X, x)\rightarrow \pi_q(Y, f(x))\quad\text{for } x\in X, q>0
 \end{proof}
 
 \begin{theo}(Hatcher \cite{hatcher Top})\label{weak homotopy to cohomology}
-  弱ホモトピー同値$f\colon X\rightarrow Y$は同型$f^*\colon H^*(Y)\rightarrow H^*(X)$を誘導する
+  $X,Y$をCW複体とする．弱ホモトピー同値$f\colon X\rightarrow Y$は同型$f^*\colon H^*(Y)\rightarrow H^*(X)$を誘導する
 \end{theo}
 
 定理\ref{existance weak homotopy eq}と定理\ref{weak homotopy to cohomology}より， $EG\rightarrow BG$， $EG'\rightarrow BG'$がuniversal $G$-bundleであるとき、
@@ -207,24 +213,25 @@ f_G^*\colon H^*_G(Y)\rightarrow H^*_G(X)
   \end{enumerate}
 \end{prop}
 
-任意の$G$空間$X$に対して、1点集合$\text{pt}$への自明な$G$写像は，準同型$H^*(BG)\simeq H^*_G(\text{pt})\rightarrow H^*_G(X)$を誘導するから、$H^*_G(X)$は$H^*(BG)$代数の構造を持つ．
+任意の$G$空間$X$に対して、1点集合$\text{pt}$への自明な$G$写像は，準同型$H^*(BG)\simeq H^*_G(\text{pt})\rightarrow H^*_G(X)$を誘導する．したがって$H^*_G(X)$は$H^*(BG)$代数の構造を持つ．
 
 
 
-\subsection{同変コホモロジーの有限次元近似}
+\subsection{有限次元近似}
 
 セクション1.1より，$G$がコンパクトLie群の場合，$G$のuniversal bundle $EG$に対して，有限次元多様体からなる主$G$束の族$EG_r\rightarrow BG_r, (r=1,2,\cdots)$であって$EG_r\subset EG_{r+1}$，$BG_r\subset BG_{r+1}$かつ$EG_{r+1}|_{BG_r} = EG_r$となるようなものが存在する．
 
 
 $M$を非特異射影多様体とし$G$は$M$に左から作用しているとする．$X\subset M$を$G$不変な既約代数多様体で$\codim X =k$とする．$M_{G,r}=EG_r\times_GM$とすると$X_{G,r}\subset M_{G,r}$はコホモロジー類$[X_{G,r}]\in H^k(M_{G,r})$を定める\cite{fulton young tableaux}．$[X_{G,r+1}]|_{M_{G,r}} = [X_{G,r}]$が成り立つから，その極限$[X]\in H^k_G(M)$が定まる．
 
+$X^{sm}$を$X$の非特異点のなす部分多様体とする．
 
 \begin{prop}\label{restriction to fixed point}
-  $G=(S^1)^n$とし，$p\in X^{sm}$を$G$固定点とする．$[X]|_p\in H^k_G(p)$は$X\subset M$の法束の$p$におけるウェイトの積に等しい．
+  $G=(S^1)^n$とし，$p$を$X$の非特異な点で$G$固定点とする．$[X]|_p\in H^k_G(p)$は$X^{sm}\subset M$の法束の$p$におけるウェイトの積に等しい．
 \end{prop}
 
 \begin{proof}
-  $[X]|_p$を計算するために，その有限次元近似$[X_{G,r}]|_{p_{G,r}}\in H^k(p_{G,r}=BG_r)$を計算する．$[X_{G,r}]|_{p_{G,r}}$は$X_{G,r}\subset M_{G,r}$の法束$\mathcal{N}_{G,r}$を$p_{G,r}$に制限したベクトル束$\mathcal{N}_{G,r}|_{p_{G,r}}$のEuler類に他ならない．
+  $[X]|_p$を計算するために，その有限次元近似$[X_{G,r}]|_{p_{G,r}}\in H^k(p_{G,r}=BG_r)$を計算する．$[X_{G,r}]|_{p_{G,r}}$は$X^{sm}_{G,r}\subset M_{G,r}$の法束$\mathcal{N}_{G,r}$を$p_{G,r}$に制限したベクトル束$\mathcal{N}_{G,r}|_{p_{G,r}}$のEuler類に他ならない．
 
   よって$G$の表現$V$に対して，ベクトル束$V_{G,r}\rightarrow p_{G,r}=BG_r$のEuler類を計算する．簡単のため，$n=1$，$V=\complex$で$G$の$V$への作用が
   \[
@@ -242,16 +249,211 @@ $M$を非特異射影多様体とし$G$は$M$に左から作用していると�
     &=\inv{\phi_j}\left[\left(\frac{z_0|z_j|}{z_jN},\cdots,\frac{z_i|z_j|}{z_jN},\cdots,\frac{|z_j|}{N},\cdots\frac{z_r|z_j|}{z_jN}\right) , \left(\frac{z_i|z_j|}{|z_i|z_j}\right)^mv\right]\\
     &=\left([z_0:\cdots:z_r],\left(\frac{z_i|z_j|}{|z_i|z_j}\right)^mv\right)
   \end{align*}
-  したがって$\tau$を$\mathbb{CP}^r$のtautological bundleとすると，$V_{G,r}\simeq \tau^{\otimes m}$であることがわかる．よって
+  したがって$\tau$を$\mathbb{CP}^r$のtautological bundleとすると，$V_{G,r}\simeq \tau^{\otimes m}$であることがわかる．よって$e(\tau)$を$\tau$のEuler類とすると，
   \[
   e(V_{G,r}) = m e(\tau)
   \]
 \end{proof}
 
 
-\subsection{Weil/Cartanモデル}
 
 
+
+
+\subsection{Weil model/Cartan model}
+
+\begin{defin}
+  $\mathfrak{g}$を$\real$上のLie代数とする．可換な次数付き$\real$代数$A=\bigoplus_{k=0}^\infty A^k$と線形写像
+  \begin{align*}
+    &d\colon A^k\rightarrow A^{k+1}\\
+    &\iota_X\colon A^k\rightarrow A^{k-1},\quad \forall X\in\mathfrak{g}\\
+    &\mathcal{L}_X\colon A^k\rightarrow A^{k},\quad \text\forall X\in\mathfrak{g}
+  \end{align*}
+  の組$(A,d,\iota,\mathcal{L})$が$\mathfrak{g}$-differential graded algebraであるとは，
+  \begin{enumerate}
+    \item $d^2=0$かつ$d$は反微分．すなわち
+    $
+    d(ab) = (da)b + (-1)^{\deg a}a (db)
+    $
+    を満たす．
+    \item $\iota_A^2=0$かつ$\iota_A$は反微分．
+    \item $\mathcal{L}_A$はCartanのhomotopy formulaを満たす．すなわち$\mathcal{L}_A = \delta\circ \iota_A + \iota_A + \delta$．
+  \end{enumerate}
+  が成り立つことをいう．ここで$A$が可換であるとは，
+  $
+  ab = (-1)^{(\deg a)(\deg b)}ba
+  $
+  が成り立つことをいう．
+\end{defin}
+
+\begin{eg}
+  $G$を連結なコンパクトLie群，$\mathfrak{g}$を$G$のLie代数，$M$を$G$が作用するなめらかな多様体とする．$\Omega(M)=\bigoplus_{k=0}^\infty\Omega^k(M)$を$M$のde Rham複体，$d\colon\Omega^k(M)\rightarrow\Omega^{k+1}(M)$を外微分とする．
+
+  $A\in\mathfrak{g}$に対して，$\iota_A\colon\Omega^k(M)\rightarrow \Omega^{k-1}(M)$を
+  \[
+  \iota_A\omega(X_1,\cdots,X_{k-1}) = \omega(\underline{A},X_1,\cdots,X_{k-1})
+  \]
+  とする．ここで$\underline{A}$は$A$の基本ベクトル場である．すなわち，$p\in M$に対して
+  \[
+  \underline{A}_p = \left.\frac{d}{dt}\exp(-At)p\right|_{t=0}
+  \]
+  で定まるベクトル場である．
+
+  $\mathcal{L}_A := d\circ\iota_A + \iota_A\circ d$として，$(\Omega(M),d,\iota,\mathcal{L})$は$\mathfrak{g}$-differential graded algebraになる．
+\end{eg}
+
+\begin{eg}
+$\mathfrak{g}$をLie代数とする．$\mathfrak{g}$の基底$X_1,\cdots,X_n$を固定し，その双対基底を$\alpha_1,\cdots,\alpha_n$とおく．$\bigwedge(\mathfrak{g}^\vee)=\bigoplus_{k=0}^{n}\bigwedge^k(\mathfrak{g}^\vee)$を$\mathfrak{g}^\vee$の交代テンソル空間，$S(\mathfrak{g})=\bigoplus_{k=0}^\infty S^k(\mathfrak{g}^\vee)$を$\mathfrak{g}^\vee$の対称テンソル空間とする．$W(\mathfrak{g})=\bigwedge(\mathfrak{g}^\vee)\otimes S(\mathfrak{g}^\vee)$とし，
+\begin{align*}
+  &\theta_i = \alpha_i\otimes 1 \in\bigwedge(\mathfrak{g}^\vee)\otimes S(\mathfrak{g}^\vee)\\
+  &u_i = 1\otimes\alpha_i \in\bigwedge(\mathfrak{g}^\vee)\otimes S(\mathfrak{g}^\vee)
+\end{align*}
+とおく．積の記号$\otimes$を省略して，$\theta_i$を$\alpha_i\in\bigwedge(\mathfrak{g}^\vee)$と同一視し，$u_i$を$\alpha_i\in S(\mathfrak{g}^\vee)$と同一視する．$\bigwedge(\mathfrak{g}^\vee)$は$\theta_1,\cdots,\theta_n$で生成される交代テンソル代数$\bigwedge(\theta_1,\cdots,\theta_n)$に同型であり，$S(\mathfrak{g}^\vee)$は$u_1,\cdots,u_n$で生成される多項式環$\real[u_1,\cdots,u_n]$に同型である．$\theta_i$の次数は$1$，$u_i$の次数は$2$であるから，$W(\mathfrak{g})$は次のような次数付き代数の構造をもつ．
+\[
+W(\mathfrak{g})= \bigoplus_{k=0}^\infty W^k(\mathfrak{g}) \simeq\bigoplus_{k=0}^\infty\bigoplus_{p+2q=k}\bigwedge^p(\theta_1,\cdots,\theta_n)\otimes S^q(u_1,\cdots,u_n)
+\]
+
+$c^k_{ij}$を$\mathfrak{g}$の$X_1,\cdots,X_n$に関する構造定数とする．すなわち，$[X_i,X_j]=\sum_{k=1}^nc^k_{ij}X_k$とする．線形写像$\delta\colon W^m(\mathfrak{g})\rightarrow W^{m+1}(\mathfrak{g})$を
+\[
+\delta\theta_k := u_k - \frac{1}{2}\sum_{i,j}c^k_{ij}\theta_i\theta_j,\quad \delta u_k := \sum_{i,j}c^k_{ij}u_i\theta_j
+\]
+として，$p+2q=m$なる$p,q$に対して
+\begin{align*}
+  \delta(\theta_{i_1}\cdots\theta_{i_p}\cdot u_{j_1}\cdots u_{j_q}) := \sum_{x=1}^p(-1)^{x-1}\theta_{i_1}&\cdots(\delta\theta_{i_x})\cdots\theta_{i_p}\cdot u_{j_1}\cdots u_{j_q} \notag \\ 
+  &+ (-1)^p\sum_{y=1}^q\theta_{i_1}\cdots\theta_{i_p}\cdot u_{j_1}\cdots(\delta u_{j_y})\cdots u_{j_q}
+\end{align*}
+によって定義する．
+
+次に$A\in\mathfrak{g}$に対して，線形写像$\iota_A\colon W^m(\mathfrak{g})\rightarrow W^{m-1}(\mathfrak{g})$を
+\[
+\iota_A(\theta_i):=\alpha_i(A),\quad \iota_A(u_i)=0
+\]
+として，$p+2q=m$なる$p,q$に対して
+\begin{align*}
+  \iota_A(\theta_{i_1}\cdots\theta_{i_p}\cdot u_{j_1}\cdots u_{j_q}) := \sum_{x=1}^p(-1)^{x-1}\theta_{i_1}&\cdots(\iota_A\theta_{i_x})\cdots\theta_{i_p}\cdot u_{j_1}\cdots u_{j_q} \notag \\ 
+  &+ (-1)^p\sum_{y=1}^q\theta_{i_1}\cdots\theta_{i_p}\cdot u_{j_1}\cdots(\iota_A u_{j_y})\cdots u_{j_q}
+\end{align*}
+によって定義する．
+
+最後に$A\in\mathfrak{g}$に対して$\mathcal{L}_A\colon W^m(\mathfrak{g})\rightarrow W^m(\mathfrak{g})$を
+$
+\mathcal{L}_A:=\delta\circ\iota_A + \iota_A\circ\delta
+$
+として，$(W(\mathfrak{g}),\delta,\iota,\mathcal{L})$は$\mathfrak{g}$-differential graded algebraになる．
+\end{eg}
+
+\begin{eg}\label{tonsor of g-dga}
+  $(A_1,d_1,\iota_1,\mathcal{L}_1),(A_2,d_2,\iota_2,\mathcal{L}_2)$を$\mathfrak{g}$-differential graded algebraとする．$A_1\otimes A_2$に
+  \[
+  (a_1\otimes a_2)\cdot (b_1\otimes b_2):=(-1)^{(\deg a_2)(\deg b_1)}a_1b_1\otimes a_2b_2
+  \]
+  によって積を入れ，次数を$\deg(a_1\otimes a_2) := \deg a_1 + \deg a_2$とすると$A_1\otimes A_2$は可換な次数付き代数の構造をもつ．
+  $d(a_1\otimes a_2) := d_1a_1\otimes a_2 + (-1)^{\deg a_1}a_1\otimes d_2a_2$，$\iota_X(a_1\otimes a_2) := \iota_{1,X}a_1\otimes a_2 + (-1)^{\deg a_1}a_1\otimes\iota_{2,X}a_2$，$\mathcal{L}_X := d\circ \iota_X + \iota_X \circ d$によってそれぞれを定義すれば，$(A_1\otimes A_2,d,\iota,\mathcal{L})$は$\mathfrak{g}$-differential graded algbraとなる．
+\end{eg}
+
+\begin{defin}
+  $(A,d,\iota,\mathcal{L})$を$\mathfrak{g}$-differential graded algebraとする．$\alpha\in A$がbasicであるとは，
+  \[
+  \iota_X(\alpha) = 0,\quad\mathcal{L}_X(\alpha) = 0,\quad \forall X\in\mathfrak{g}
+  \]
+  が成り立つことをいう．$A_{bas}=\set{\alpha\in A}{\alpha\text{ is basic}}$とおき，$d,\iota,\mathcal{L}$をすべて$A_{bas}$に制限すると，$(A_{bas},d,\iota,\mathcal{L})$は$\mathfrak{g}$-differential graded algebraになる．
+\end{defin}
+
+\begin{defin}
+  $M$を$G$が作用するなめらかな多様体とする．$\mathfrak{g}$-differential graded algebra $(W(\mathfrak{g})\otimes\Omega(M))_{bas}$をWeil modelと呼ぶ．
+\end{defin}
+
+\begin{theo}(Equivariant de Rhamの定理\cite{tu equivariant})
+  $G$が連結なコンパクトLie群の場合，次数付き代数の同型
+  \[
+  H^*_G(M;\real)\simeq H^*(\{(W(\mathfrak{g})\otimes\Omega(M))_{bas},d\})
+  \]
+  が存在する．
+\end{theo}
+
+\begin{eg}
+  $G=S^1$とする．$\mathfrak{g}$の基底$X$を固定すると$\mathfrak{g}=\real X$であり，構造定数$c^k_{ij}$はすべて$0$である．よって
+  \begin{align*}
+    &d\theta = u,\quad du = 0\\
+    &\iota_X\theta = 1,\quad\iota_Xu = 0\\
+    &\mathcal{L}_X\theta = 0,\quad\mathcal{L}_Xu=0
+  \end{align*}
+  である．
+  \[
+  W(\mathfrak{g})\simeq \bigwedge(\theta)\otimes S(u) \simeq \real[u]\oplus \real[u]\theta
+  \]
+  より，
+  \[
+  W(\mathfrak{g})\otimes\Omega(M)\simeq \Omega(M)[u]\oplus\Omega(M)[u]\theta
+  \]
+  である．$\alpha\in W(\mathfrak{g})$を$\alpha = f(u) + \theta g(u)$とおく．ただし$f(u),g(u)\in\Omega(M)[u]$($\Omega(M)$を係数とする$u$の多項式環)である．
+  \begin{align*}
+    \iota_X(\alpha) = \iota_Xf(u) + g(u) - \theta(\iota_Xg(u))
+  \end{align*}
+  であるから，$\iota_X\alpha = 0$ならば，
+  \[
+  g(u) = -\iota_Xf(u),\quad \iota_Xg(u) = 0
+  \]
+  である．逆に$g(u) = -\iota_Xf(u)$なら自動的に$\iota_Xg(u)=0$であるので，
+  \[
+  \iota_X\alpha = 0\Leftrightarrow g(u) = -\iota_Xf(u)
+  \]
+  また，
+  \[
+  \mathcal{L}_X\alpha = \mathcal{L}_Xf(u) + \theta\mathcal{L}_Xg(u)
+  \]
+  より，$\mathcal{L}_X\alpha = 0$ならば
+  \[
+  \mathcal{L}_Xf(u) = 0,\quad \mathcal{L}_Xg(u)=0
+  \]
+  である．ここで，$\iota_X\alpha = 0$であるとき，$g(u) = -\iota_Xf(u)$だから，
+  \[
+  \mathcal{L}_Xg(u) = -\iota_X\mathcal{L}_Xf(u)=0
+  \]
+  したがって，
+  \[
+  \alpha\text{ is basic }\Leftrightarrow g(u) = -\iota_Xf(u),\quad \mathcal{L}_Xf(u) = 0
+  \]
+  そこで，$\Omega(M)^G$を$\mathcal{L}_X\eta = 0$を満たす微分形式のなす部分複体とすれば，
+  \[
+  (W(\mathfrak{g})\otimes\Omega(M))_{bas} = \set{(1-\theta\iota_X)f(u)}{f(u)\in\Omega(M)^G[u]}
+  \]
+  である．とくに$F\colon (W(\mathfrak{g})\otimes\Omega(M))_{bas}\rightarrow \Omega(M)^G[u]$を$F((1-\theta\iota_X)f(u)) = f(u)$とすれば，$F$は次数付き代数の同型になる\cite{tu equivariant}．
+  このとき，
+  \begin{align*}
+    F\circ d\circ \inv{F}(f(u))
+    &=F\circ d(f(u) - \theta\iota_Xf(u))\\
+    &=F(df(u) - u\iota_Xf(u) + \theta d\iota_Xf(u))\\
+    &=F(df(u) - u\iota_Xf(u)-\theta\iota_Xdf(u))\\
+    &=F((1-\theta\iota_X)(df(u) - u\iota_Xf(u)))\\
+    &=(d-u\iota_X)f(u)
+  \end{align*}
+  であるから，$d_X\colon\Omega^G(M)[u]\rightarrow \Omega^G(M)[u]$を
+  \[
+  d_X(f(u)) = (d-u\iota_X)f(u)
+  \]
+  $(\Omega^G(M)[u],d_X)$はdifferential graded algebraとして$(W(\mathfrak{g})\otimes\Omega(M))_{bas}$と同型である．これをCartan modelと呼び，$f(u)\in\Omega^G(M)[u]$をequvariant differential formと呼ぶ．
+\end{eg}
+
+\begin{eg}
+  同様に$G=(S^1)^n$の場合，$d_{X_1,\cdots,X_n}\colon\Omega^G(M)[u_1,\cdots,u_n]\rightarrow\Omega^G(M)[u]$を
+  \[
+  d_{X_1,\cdots,X_n}f(u_1,\cdots,u_n) =(d-\sum_{i}u_i\iota_{X_i})f(u_1,\cdots,u_n) 
+  \]
+  とし，
+  $
+  F\colon (W(\mathfrak{g})\otimes\Omega(M))_{bas}\rightarrow \Omega^G(M)[u_1,\cdots,u_n]
+  $
+  を
+  \[
+  F(f(u_1,\cdots,u_n) + \sum_{I}\theta_If(u)) = f(u),\quad I=(i_1<\cdots<i_p),\theta_I = \theta_{i_1}\cdots\theta_{i_p}
+  \]
+  とすれば$F$はdifferential graded algebraの同型となる．
+\end{eg}
+
+\begin{eg}
+  $G=(S^1)^n$，$M=\text{pt}$とすると，$\Omega(M)\simeq\real$，$d_{X_1,\cdots,X_n} = 0$であるから，$H^*_G(M)\simeq\Omega^G(M)[u_1,\cdots,u_n]\simeq \real[u_1,\cdots,u_n]$
+\end{eg}
 
 
 

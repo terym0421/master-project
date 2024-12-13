@@ -343,6 +343,15 @@ class Tableau:
         if mode == "int":
             T = self.copy()
             return T.equivariantRectification(searchRange, n)
+    
+    def nextInnerCorner(self):
+        b = self.elements[0][0]
+        while not b.isInnerCorner():
+            if b.rightBox.isVacant():
+                b = b.rightBox
+            elif b.lowerBox.isVacant():
+                b = b.lowerBox
+        return b
 
 
 def swapLabel(boxX, boxY):
