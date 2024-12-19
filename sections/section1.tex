@@ -137,6 +137,9 @@ $V_k(\real^\infty)=\varinjlim V_k(\real^n)$, $\text{Gr}_k(\real^\infty)=\varinjl
 
 
 $X$の$G$同変コホモロジーは主$G$束$EG\rightarrow BG$の取り方に拠らないことを示そう．
+
+$P\rightarrow B$を主$G$束とする．
+
 写像$p\colon EG\times X\rightarrow EG\times_GX$と $p_X\colon EG\times_GX\rightarrow BG$を
 \begin{align*}
   &p(x, e):=[x, e]\\
@@ -170,7 +173,7 @@ $X$の$G$同変コホモロジーは主$G$束$EG\rightarrow BG$の取り方に�
 \end{lemm}
 
 \begin{proof}
-  $E$をファイバーとするファイバー束$p\colon E\times_GP\rightarrow B$のホモトピー完全列
+  $E$をファイバーとするファイバー束$p\colon P\times_GE\rightarrow B$のホモトピー完全列
   \[
   \xymatrix{
     \cdots \ar[r] & \pi_{q+1}(E) \ar[r] & \pi_{q+1}(P\times_GE) \ar[r]^{p_*} & \pi_{q+1}(B) \ar[r] & \pi_q(E) \ar[r] & \cdots
@@ -253,6 +256,8 @@ $X^{sm}$を$X$の非特異点のなす部分多様体とする．
   \[
   e(V_{G,r}) = m e(\tau)
   \]
+
+  
 \end{proof}
 
 
@@ -260,7 +265,7 @@ $X^{sm}$を$X$の非特異点のなす部分多様体とする．
 
 
 
-\subsection{Weil model/Cartan model}
+\subsection{Weil model/Cartan model}\label{weil/cartan}
 
 \begin{defin}
   $\mathfrak{g}$を$\real$上のLie代数とする．可換な次数付き$\real$代数$A=\bigoplus_{k=0}^\infty A^k$と線形写像
@@ -457,5 +462,24 @@ $
 
 
 
+
 \subsection{localization theorem}
+
+
+$G=(S^1)^n$とし，$M$を$G$が作用する向き付けられたコンパクト多様体とする．
+
+\begin{defin}
+  $\alpha\in\Omega^G(M)[u_1,\cdots,u_n]$に対して，$\int_M\alpha\colon\mathfrak{g}\rightarrow\real$を
+  \[
+  \left(\int_M\alpha\right)(X) := \int_M\alpha(X)
+  \]
+  によって定義する．
+\end{defin}
+
+\begin{theo}[Atiyah-Bott]
+  $M$の固定点の集合$M^G$が有限であるとする．$G$の表現$T_pM$
+  \[
+  \int_M\alpha = \sum_{p\in M^G}\frac{\alpha|_p}{\prod_{}}
+  \]
+\end{theo}
 
