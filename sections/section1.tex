@@ -187,7 +187,27 @@ $P\rightarrow B$を主$G$束とする．
 \end{theo}
 
 \begin{proof}
+  主$G$束$E\times M\rightarrow E\times_GM$に補題\ref{borel const is weak hotmotopy equiv}を用いて弱ホモトピー同値$(E\times M)\times_GE'\rightarrow E\times_GM$を得る．$E$と$E'$の役割を入れ替えて弱ホモトピー同値$(E'\times M)\times_GE\rightarrow E'\times_GM$を得る．また$(E\times M)\times_GE'\rightarrow (E'\times M)\times_GE$を
+  \[
+  [(e,m),e']\mapsto [(e',m),e]
+  \]
+  とすればこれは同相である．
+
+  $E'\rightarrow B'$は定理\ref{steenrod}よりuniversal $G$ bundleであるから，$G$ equivariantな写像$h\colon E\rightarrow E'$であって各ファイバー上同型であるようなものが存在する．そこで$E\times_GM\rightarrow (E\times M)\times_GE'$を
+  \[
+  [e,m]\mapsto [(e,m),h(e)]
+  \]
+  とする．このとき合成
+  \[
+  E\times_GM\rightarrow (E\times M)\times_GE'\rightarrow E\times_GM
+  \]
+  は恒等写像であり，$(E\times M)\times_GE'\rightarrow E\times_GM$は弱ホモトピー同値だから，$E\times_GM\rightarrow (E\times M)\times_GE'$も弱ホモトピー同値である．
   
+  合成
+  \[
+  E\times_GM\rightarrow (E\times M)\times_GE'\approx (E'\times M)\times_GE\rightarrow E'\times_GM
+  \]
+  を考えれば，これは弱ホモトピー同値である．
 \end{proof}
 
 \begin{theo}(Hatcher \cite{hatcher Top})\label{weak homotopy to cohomology}
@@ -256,8 +276,7 @@ $X^{sm}$を$X$の非特異点のなす部分多様体とする．
   \[
   e(V_{G,r}) = m e(\tau)
   \]
-
-  
+  セクション$\ref{weil/cartan}$より，$u=e(\tau)$とおくと$H^*(BG)\simeq S(\mathfrak{g}^\vee)\simeq \integer[u]$である．$e(V_{G,r})=mu\in S(\mathfrak{g}^\vee)$だから$e(V_{G,r})$は表現$V$のウェイトに等しい．
 \end{proof}
 
 
@@ -437,7 +456,7 @@ $
   \[
   d_X(f(u)) = (d-u\iota_X)f(u)
   \]
-  $(\Omega^G(M)[u],d_X)$はdifferential graded algebraとして$(W(\mathfrak{g})\otimes\Omega(M))_{bas}$と同型である．これをCartan modelと呼び，$f(u)\in\Omega^G(M)[u]$をequvariant differential formと呼ぶ．
+  $(\Omega^G(M)[u],d_X)$はdifferential graded algebraとして$(W(\mathfrak{g})\otimes\Omega(M))_{bas}$と同型である．これをCartan modelと呼び，$f(u)\in\Omega^G(M)[u]$をequvariant differential formと呼ぶ．また，$\alpha\in \Omega^G(M)[u]$が$d_X\alpha = 0$をみたすとき，$\alpha$をequivariantly closedであるという．
 \end{eg}
 
 \begin{eg}
@@ -456,17 +475,17 @@ $
   とすれば$F$はdifferential graded algebraの同型となる．
 \end{eg}
 
-\begin{eg}
-  $G=(S^1)^n$，$M=\text{pt}$とすると，$\Omega(M)\simeq\real$，$d_{X_1,\cdots,X_n} = 0$であるから，$H^*_G(M)\simeq\Omega^G(M)[u_1,\cdots,u_n]\simeq \real[u_1,\cdots,u_n]$
+\begin{eg}\label{equiv cohomology of point}
+  $G=(S^1)^n$，$M=\text{pt}$とすると，$\Omega(M)\simeq\real$，$d_{X_1,\cdots,X_n} = 0$であるから，$H^*_G(M)\simeq\Omega^G(M)[u_1,\cdots,u_n]\simeq \real[u_1,\cdots,u_n]\simeq S(\mathfrak{g}^\vee)$
 \end{eg}
 
 
 
 
-\subsection{localization theorem}
+\subsection{Atiyah-Bottのlocalization}
 
 
-$G=(S^1)^n$とし，$M$を$G$が作用する向き付けられたコンパクト多様体とする．
+$G=(S^1)^n$とし，$M$を$G$が作用する向き付けられたコンパクト多様体で，$\dim M = 2d$とする．
 
 \begin{defin}
   $\alpha\in\Omega^G(M)[u_1,\cdots,u_n]$に対して，$\int_M\alpha\colon\mathfrak{g}\rightarrow\real$を
@@ -476,10 +495,11 @@ $G=(S^1)^n$とし，$M$を$G$が作用する向き付けられたコンパクト
   によって定義する．
 \end{defin}
 
-\begin{theo}[Atiyah-Bott]
-  $M$の固定点の集合$M^G$が有限であるとする．$G$の表現$T_pM$
+\begin{theo}[Atiyah-Bott]\label{localization}
+  $M$の固定点の集合$M^G$が有限であるとする．$G$の表現$T_pM$のウェイトを$w_{1,p},\cdots,w_{d,p}\in S(\mathfrak{g}^\vee)$とおく．equivariantly closed form $\alpha\in S(\mathfrak{g}^\vee)\otimes\Omega^G(M)$に対して，
   \[
-  \int_M\alpha = \sum_{p\in M^G}\frac{\alpha|_p}{\prod_{}}
+  \int_M\alpha = \sum_{p\in M^G}\frac{\alpha|_p}{w_{1,p}\cdots w_{d,p}}
   \]
+  が成り立つ．
 \end{theo}
 

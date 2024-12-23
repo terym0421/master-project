@@ -1582,7 +1582,7 @@ $\Lambda=\overbrace{(n,\cdots,n)}^{k\text{-copies}}$の$k$行目に次のよう�
     \fill[cyan] (0,0)--(0.25,0.42)--(0.5,0)--(0.25,-0.42)--cycle;
     \protect\draw[thick] (0,0)--(0.25,0.42)--(0.5,0)--(0.25,-0.42)--cycle;
   \end{tikzpicture}
-  の個数は$m_{i}+\cdots+m_{k}$に等しい(図)から，$P$に含まれる
+  の個数は$m_{i}+\cdots+m_{k}$に等しい(図\ref{generic puzzle})から，$P$に含まれる
   \begin{tikzpicture}[baseline=2pt]
     \fill[yellow] (0,0)-- ++(0.5,0)-- ++(0.25,0.42)-- ++(-0.5,0)--cycle;
     \protect\draw[thick](0,0)-- ++(0.5,0)-- ++(0.25,0.42)-- ++(-0.5,0)--cycle;
@@ -1607,8 +1607,22 @@ $\Lambda=\overbrace{(n,\cdots,n)}^{k\text{-copies}}$の$k$行目に次のよう�
 
   次に$P\in\mathcal{P}^\nu_{\lambda\mu}$に対して，$x$を$T:=\varphi(P)$のequivariant rectification で最初に動かす内隅であるとする．$T'=\text{EqJdt}_{x}(T)\in \text{EqSYT}(\nu'/\lambda',|\mu|)$とおくと，$(\lambda',\nu')\in I_{\mu}$かつ$(\lambda',\nu') < (\lambda,\nu)$である．よって，ある$P'\in\mathcal{P}^{\nu'}_{\lambda'\mu}$であって$T' = \varphi(P')$をみたすようなものが存在することを示せば帰納法により主張が従う．
 
-  
+  $\lambda$を左から読んで初めて現れる$10$に注目する．このとき$P$の左下部分を拡大すると，図\ref{south west puzzle}のようになっている．赤枠で囲われた領域を$P$のstripeと呼ぶ．
 
+  \input{./sections/figures/figure8.tex}
+
+  stripeは，図\ref{stripe parts}にある5種類のパーツから構成されている．
+
+  \input{./sections/figures/figure9.tex}
+  
+  それぞれのパーツに対してパーツの変形を図\ref{parts deformation}によって定義する．
+  stripeを次の規則に従って変形して得られるpuzzleを$P'$とする．
+  $P$のstripeを構成するパーツを左上から順に$X_1,\cdots,X_m$とき，$X_1$から順に図\ref{parts deformation}の変形を施していく．ただし$X_i$が$A,A',D$のいずれかであった場合，$X_{i+1}$以降は何もせず変形を終了する．
+
+  \input{./sections/figures/figure10.tex}
+
+
+  
 
 
 \end{proof}
