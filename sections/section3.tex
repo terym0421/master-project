@@ -1506,12 +1506,12 @@ $\Lambda=\overbrace{(n,\cdots,n)}^{k\text{-copies}}$の$k$行目に次のよう�
   \end{align*}
   とおく．同様に$\mu$に対しても$m_1,\cdots,m_{k}$，$\nu$に対しても$n_1,\cdots,n_{k}$を定義する．
 
-  puzzle $P\in\mathcal{P}^\nu_{\lambda\mu}$のpathを左から順に$p_1,\cdots,p_k$，$p_i$のsegmentを上から順に$s_{i1},\cdots,s_{i,k-i+1}$，さらに$s_{ij}$の
+  puzzle $P\in\mathcal{P}^\nu_{\lambda\mu}$のpathを左から順に$p_1,\cdots,p_k$とし，$p_i$のsegmentを上から順に$s_{i1},\cdots,s_{i,k-i+1}$とする．さらに$s_{ij}$の
   \begin{tikzpicture}[baseline=2pt]
     \fill[yellow] (0,0)-- ++(0.5,0)-- ++(0.25,0.42)-- ++(-0.5,0)--cycle;
     \protect\draw[thick](0,0)-- ++(0.5,0)-- ++(0.25,0.42)-- ++(-0.5,0)--cycle;
   \end{tikzpicture}
-  の部分を$s_{ij}^{\text{y}}$，
+  の部分を$s_{ij}^{\text{y}}$とし，
   \begin{tikzpicture}[baseline=-1pt]
     \fill[cyan] (0,0)--(0.25,0.42)--(0.5,0)--(0.25,-0.42)--cycle;
     \protect\draw[thick] (0,0)--(0.25,0.42)--(0.5,0)--(0.25,-0.42)--cycle;
@@ -1607,7 +1607,7 @@ $\Lambda=\overbrace{(n,\cdots,n)}^{k\text{-copies}}$の$k$行目に次のよう�
 
   次に$P\in\mathcal{P}^\nu_{\lambda\mu}$に対して，$x$を$T:=\varphi(P)$のequivariant rectification で最初に動かす内隅であるとする．$T'=\text{EqJdt}_{x}(T)\in \text{EqSYT}(\nu'/\lambda',|\mu|)$とおくと，$(\lambda',\nu')\in I_{\mu}$かつ$(\lambda',\nu') < (\lambda,\nu)$である．よって，ある$P'\in\mathcal{P}^{\nu'}_{\lambda'\mu}$であって$T' = \varphi(P')$をみたすようなものが存在することを示せば帰納法により主張が従う．
 
-  $\lambda$を左から読んで初めて現れる$10$に注目する．このとき$P$の左下部分を拡大すると，図\ref{south west puzzle}のようになっている．赤枠で囲われた領域を$P$のstripeと呼ぶ．
+  $\lambda=00\cdots011\cdots10\cdots$とする．このとき$P$の左下部分を拡大すると，図\ref{south west puzzle}のようになっている．赤枠で囲われた領域を$P$のstripeと呼ぶ．
 
   \input{./sections/figures/figure8.tex}
 
@@ -1620,9 +1620,9 @@ $\Lambda=\overbrace{(n,\cdots,n)}^{k\text{-copies}}$の$k$行目に次のよう�
 
   \input{./sections/figures/figure10.tex}
 
-  $\varphi(P') = T'=\text{Eqjdt}_x(T)$となることを示す．
-  
+  $\varphi(P') =\text{Eqjdt}_x(T)$となることを示す．
 
+  
 
 \end{proof}
 

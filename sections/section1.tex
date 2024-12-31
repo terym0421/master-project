@@ -20,7 +20,7 @@ $G$をコンパクトLie群とする．以下考える位相空間はすべてCW
 \end{theo}
 
 \begin{eg}
-  $S^\infty$\footnote{入る位相について明記?}は可縮であるので，$T=S^1$に対して$S^\infty\rightarrow \mathbb{CP}^\infty$はuniversal $T$ bundleである．
+  $S^\infty=\varinjlim S^n$は可縮であるので，$T=S^1$に対して$S^\infty\rightarrow \mathbb{CP}^\infty$はuniversal $T$ bundleである．
 \end{eg}
 
 $G$がコンパクトLie群の場合，universal $G$ bundleは直交群$O(k)$のuniversal bundleから構成できる．
@@ -193,7 +193,7 @@ $P\rightarrow B$を主$G$束とする．
   \]
   とすればこれは同相である．
 
-  $E'\rightarrow B'$は定理\ref{steenrod}よりuniversal $G$ bundleであるから，$G$ equivariantな写像$h\colon E\rightarrow E'$であって各ファイバー上同型であるようなものが存在する．そこで$E\times_GM\rightarrow (E\times M)\times_GE'$を
+  $E'\rightarrow B'$は定理\ref{steenrod}よりuniversal $G$ bundleであるから，$G$ equivariantな写像$h\colon E\rightarrow E'$が存在する．そこで$E\times_GM\rightarrow (E\times M)\times_GE'$を
   \[
   [e,m]\mapsto [(e,m),h(e)]
   \]
@@ -210,7 +210,7 @@ $P\rightarrow B$を主$G$束とする．
   を考えれば，これは弱ホモトピー同値である．
 \end{proof}
 
-\begin{theo}(Hatcher \cite{hatcher Top})\label{weak homotopy to cohomology}
+\begin{theo}\cite{hatcher Top}\label{weak homotopy to cohomology}
   $X,Y$をCW複体とする．弱ホモトピー同値$f\colon X\rightarrow Y$は同型$f^*\colon H^*(Y)\rightarrow H^*(X)$を誘導する
 \end{theo}
 
@@ -495,7 +495,7 @@ $G=(S^1)^n$とし，$M$を$G$が作用する向き付けられたコンパクト
   によって定義する．
 \end{defin}
 
-\begin{theo}[Atiyah-Bott]\label{localization}
+\begin{theo}[Atiyah-Bott\cite{atiyah-bott}, Berline-Vergne\cite{berline-vergne}]\label{localization}
   $M$の固定点の集合$M^G$が有限であるとする．$G$の表現$T_pM$のウェイトを$w_{1,p},\cdots,w_{d,p}\in S(\mathfrak{g}^\vee)$とおく．equivariantly closed form $\alpha\in S(\mathfrak{g}^\vee)\otimes\Omega^G(M)$に対して，
   \[
   \int_M\alpha = \sum_{p\in M^G}\frac{\alpha|_p}{w_{1,p}\cdots w_{d,p}}
