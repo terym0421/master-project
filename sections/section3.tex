@@ -270,16 +270,17 @@
 \end{eg}
 
 \begin{defin}
-  $\lambda$の箱$x$が$T\in\text{EqSYT}(\mu/\lambda, n)$の内隅であるとは，$x$のすぐ右とすぐ下の箱が$\lambda$の箱でないことをいう．また$\mu/\lambda$の箱$x$が外隅であるとは，$x$のすぐ右とすぐ下の箱が存在しないことをいう．$T$の内隅$x$に対して，次の操作を考える：
+  $\lambda$の箱$x$が$T\in\text{EqSYT}(\mu/\lambda, n)$の内隅であるとは，$x$のすぐ右とすぐ下の箱が$\lambda$の箱でないことをいう．また$\mu/\lambda$の箱$x$が外隅であるとは，$x$のすぐ右とすぐ下の箱が存在しないことをいう．$T$の内隅$x$に対して，$x$のすぐ右の箱を$y$，すぐ下の箱を$z$とする．また$x$の下辺のラベルを$l$とする．次の操作を考える：
   \begin{enumerate}
-    \item $x$の下辺のラベル$l$が空でないなら，$l$の最小値を$x$のラベルに移す
-    \item $x$の下辺のラベルが空であるとし，$x$のすぐ右の箱を$y$，すぐ下の箱を$z$とする．$y$と$z$のうち，ラベルの小さい方の箱を$x$と交換する(このとき辺のラベルは交換しない)．
+    \item $l$が空でないとし，$y$のラベルより$l$の最小値の方が小さいとき，$l$の最小値を$x$のラベルに移す．
+    \item $l$が空でないとし，$y$のラベルより$l$の最小値の方が大きいとき，$x$と$y$を交換する．このとき辺のラベルは交換しない．
+    \item $l$が空であるとき，$y$と$z$のうち，ラベルの小さい方の箱を$x$と交換する．このとき辺のラベルは交換しない．
   \end{enumerate}
-  (i)の操作が行われる，もしくは$x$が外隅になるまで(i),(ii)を繰り返してできるtableauxを$T$の$x$によるequivariant jeu de taquin といい，$\text{EqJdt}_x(T)$と書く．
+  (i)の操作が行われる，もしくは$x$が外隅になるまで(i),(ii),(iii)を繰り返してできるtableauxを$T$の$x$によるequivariant jeu de taquin といい，$\text{EqJdt}_x(T)$と書く．
 \end{defin}
 
 \begin{defin}
-  $\lambda$の箱を各列に沿って下から上に，右から左に数えて$x_1,\cdots,x_m$とする．$T\in\text{EqSYT}(\mu/\lambda, n)$に対して，$T$のequivariant rectificationを$x_1$から順に$x_m$までequivariant jeu de taquinを行って得られるtableauxとする．すなわち
+  $\lambda$の箱を右の列から左の列へ順に，各列に沿って下から上に数えて$x_1,\cdots,x_m$とする．$T\in\text{EqSYT}(\mu/\lambda, n)$に対して，$T$のequivariant rectificationを$x_1$から順に$x_m$までequivariant jeu de taquinを行って得られるtableauxとする．すなわち
   \[
   \text{EqRect}(T):=\text{EqJdt}_{x_m}(\text{EqJdt}_{x_{m-1}}(\cdots(\text{EqJdt}_{x_1}(T))\cdots))
   \]
@@ -1141,7 +1142,7 @@
     };
     \node[font=\large] at (0.4,-2.8) {$11$};
   \end{tikzpicture}
-  \caption{$T_{(4,3,3,1)}$の図示．}\label{superstandard}
+  \caption{$T_{(4,3,3,1)}$．}\label{superstandard}
 \end{figure}
 
 正の整数$m,k$を固定する．分割$\lambda\leq\Lambda=\overbrace{(m,\cdots,m)}^{k\text{-copies}}$に対して，
@@ -1616,7 +1617,7 @@ $\Lambda=\overbrace{(n,\cdots,n)}^{k\text{-copies}}$の$k$行目に次のよう�
   \input{./sections/figures/figure9.tex}
   
   stripeを次の規則に従って変形して得られるpuzzleを$P'$とする．
-  $P$のstripeを構成するパーツを左上から順に$X_1,\cdots,X_m$とおき，$X_1$から順に図\ref{parts deformation}にあるようにパーツの変形を施していく．ただし$X_i$が$A,A',C'$のいずれかであった場合，$X_{i+1}$以降は何もせず変形を終了する．
+  $P$のstripeを構成するパーツを左上から順に$X_1,\cdots,X_m$とおき，$X_1$から順に図\ref{parts deformation}にあるようにパーツの変形を施していく．ただし$X_i$が$A,A',C'$のいずれかであった場合，$X_{i+1}$以降は何もせず変形を終了する．この変形をpuzzleに対するjeu de taquinと呼ぶ．
 
   \input{./sections/figures/figure10.tex}
 
@@ -1629,19 +1630,74 @@ $\Lambda=\overbrace{(n,\cdots,n)}^{k\text{-copies}}$の$k$行目に次のよう�
 
   \input{./sections/figures/figure12.tex}
 
-  このとき$\varphi(P)$の$x$に関するje deu taquinにおいて，$x$は図\ref{rect of varphi}の箱を通る．実際，
+  このとき$\varphi(P)$の$x$に関するjeu de taquinにおいて，$x$は図\ref{rect of varphi}の箱を通る．実際，$x$のすぐ右にある箱は，存在するならば$t^1_1+\cdots+t^1_{a_1}+1$以上の番号のpathから来ている．したがってそのラベルは$y^1_1$よりも大きい．同様の理由で，jeu de taquinをすると$x$は$y^1_1,\cdots,y^{s-1}_{b_{s-1}}$を通る．また$y^s_1,\cdots,y^s_{t^s_{a_s}}$のすぐ下にある行の箱はより大きい番号のpathから来るはずなので，$y^s_1,\cdots,y^s_{t^s_{a_s}}$のラベルの方が小さい．
 
+  よってこの場合$\text{EqRect}_x(\varphi(P))$によって変化するのは図\ref{rect of varphi}の部分だけであり，これは$\varphi(P')$に等しい．
 
-  
-
+  次に$P$のstripeが$A,A'$のパーツを含んでいる場合のequivariant jeu de taquinについて考察する．このときも$P$のstripeを構成するパーツを左上から数えて，初めて現れる$A$または$A'$のequivariant pieceに対応する箱を$z$とすれば，$x$は$z$までを通り，$z$のedge labelがbox labelに入る．この場合も$\text{EqRect}_x(\varphi(P))$によって変化するのはこの部分だけであり，これは$\varphi(P')$に等しい．
 \end{proof}
 
 \begin{prop}
   $\varphi\colon\mathcal{P}^\nu_{\lambda\mu}\rightarrow\mathcal{T}^\nu_{\lambda\mu}$は全単射である．
 \end{prop}
 
+\begin{proof}
+  $\varphi$が単射であることを示す．$\varphi(P)=\varphi(P')$であるとして，$P,P'$のpathがすべて等しいことを示せばよい．
+\end{proof}
+
+\begin{lemm}\label{weight lemma}
+  $P\in\mathcal{P}^\nu_{\lambda\mu}$，$T=\varphi(P)$とする．$p$を$P$を構成するpuzzle pieceのうち
+  \begin{tikzpicture}[baseline=-1pt]
+    \fill[cyan] (0,0)--(0.25,0.42)--(0.5,0)--(0.25,-0.42)--cycle;
+    \draw[thick] (0,0)--(0.25,0.42)--(0.5,0)--(0.25,-0.42)--cycle;
+  \end{tikzpicture}
+  \begin{tikzpicture}[baseline=2pt]
+    \fill[lightgray] (0,0)-- ++(0.5,0)-- ++(-0.25,0.42)-- ++(-0.5,0)--cycle;
+    \draw[thick](0,0)-- ++(0.5,0)-- ++(-0.25,0.42)-- ++(-0.5,0)--cycle;
+  \end{tikzpicture}
+  \begin{tikzpicture}[baseline=2pt]
+    \fill[yellow] (0,0)-- ++(0.5,0)-- ++(0.25,0.42)-- ++(-0.5,0)--cycle;
+    \draw[thick](0,0)-- ++(0.5,0)-- ++(0.25,0.42)-- ++(-0.5,0)--cycle;
+  \end{tikzpicture}
+  のいずれかであるとする．$p$が
+  \begin{tikzpicture}[baseline=-1pt]
+    \fill[cyan] (0,0)--(0.25,0.42)--(0.5,0)--(0.25,-0.42)--cycle;
+    \draw[thick] (0,0)--(0.25,0.42)--(0.5,0)--(0.25,-0.42)--cycle;
+  \end{tikzpicture}
+  もしくは
+  \begin{tikzpicture}[baseline=2pt]
+    \fill[lightgray] (0,0)-- ++(0.5,0)-- ++(-0.25,0.42)-- ++(-0.5,0)--cycle;
+    \draw[thick](0,0)-- ++(0.5,0)-- ++(-0.25,0.42)-- ++(-0.5,0)--cycle;
+  \end{tikzpicture}
+  ならば，$p$の重心から右下に図\ref{puzzle weight}のように直線をおろしたときの$P$の下辺との交点の位置を$m$とおく．$p$が
+  \begin{tikzpicture}[baseline=2pt]
+    \fill[yellow] (0,0)-- ++(0.5,0)-- ++(0.25,0.42)-- ++(-0.5,0)--cycle;
+    \draw[thick](0,0)-- ++(0.5,0)-- ++(0.25,0.42)-- ++(-0.5,0)--cycle;
+  \end{tikzpicture}
+  であるなら，$p$の右辺の中点から右下に直線をおろし，同様に$m$を定める．$p$に対応する$T$の箱を$x$とおくと，$m$は$x$のManhattan距離(図\ref{manhattan})に等しい．
+\end{lemm}
+
+\begin{proof}
+  
+\end{proof}
+
 \begin{prop}
   $\text{wt}(\varphi(P))=\text{wt}(P)$である．
 \end{prop}
+
+\begin{proof}
+  $p$を$P$に含まれるequivariant pieceとし，$\varphi(P)$において$p$に対応するedge labelを$l$とし，その箱を$x$とする．$\text{wt}(p)=\text{factor}(l)$であることを示せばよい．$\text{wt}(p) = y_a-y_b$，$\text{factor}(l)=y_c-y_d$とおく．
+  必要ならばpuzzleとtableauxにjeu de taquinを施して$p$は$P$のstripeに含まれるとして良い(図\ref{south west puzzle})．定義より$a$は$p$の重心から右下に直線をおろしたときの$P$の下辺との交点の位置である(\ref{puzzle weight})．$\varphi(P)$ (図\ref{varphi of generic puzzle})とManhattan距離の定義(図\ref{manhattan})の定義から，$a$は$x$のManhattan距離$+1$になっており，すなわち$a=c$である．
+
+  次に$b=d$を示す．$\varphi(P)$において$l$が含まれる列をrectificationしたtableauxを$T'$とおく．$T'$において$l$が入っている箱を$y$とし，$y$と同じ行で最も右にある箱を$z$とする．定義から$d$は$z$のManhattan距離であり，$b$は$p$の重心から左下に直線をおろしたときの$P$の下辺との交点の位置である．
+  
+  $\lambda = \overbrace{00\cdots0}^{i\text{-copies}}\overbrace{11\cdots1}^{j\text{-copies}}$とする．$P$を$j$回jeu de taquinしたものを$P'$とすれば$\varphi(P')=T'$である．$p$が左から$m$番目のpathに含まれているとする．$P$を$j$回jeu de taquinすると$p$は
+  \begin{tikzpicture}[baseline=2pt]
+    \fill[yellow] (0,0)-- ++(0.5,0)-- ++(0.25,0.42)-- ++(-0.5,0)--cycle;
+    \draw[thick](0,0)-- ++(0.5,0)-- ++(0.25,0.42)-- ++(-0.5,0)--cycle;
+  \end{tikzpicture}
+  に変わり$s_{m,k-m+1}$の最も上のpieceに位置し，対応する箱は$y$である．よって$z$に対応するpieceは$s_{m,k-m+1}$の最も下にあるpieceである．これを$q$とおくと，
+
+\end{proof}
 
 
