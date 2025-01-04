@@ -1,0 +1,65 @@
+\documentclass{ltjsarticle}
+\input{../../setting.tex}
+
+\title{aaa}
+\author{}
+\date{}
+
+
+\begin{document}
+\maketitle
+
+\begin{figure}[H]
+  \centering
+  \begin{tikzpicture}
+    \draw (0,0) rectangle ++(0.8,-0.8);
+    \node[font=\large] at (0.4,-0.4) {$x$};
+
+
+    \node[font=\large] at (0.4, -1.2) {$y^1_1$};
+    \node[font=\large] at (0.4, -2.4) {$\vdots$};
+    \draw (0,-0.8) rectangle ++(0.8, -0.8);
+    \draw (0,-1.6) rectangle ++(0.8, -1.6);
+    \draw (0, -3.2) rectangle ++(0.8, -0.8);
+    \node[font=\large] at (0.4, -3.6) {$y^1_{b_1}$};
+    \draw[|-|] (-0.2, -0.8)-- ++(0,-3);
+    \node[font=\large] at (-0.5,-2.4) {$b_1$};
+
+
+    \node[font=\large] at (0.4, -4.4) {$y^2_{1}$};
+    \node[font=\large] at (0.4, -5.6) {$\vdots$};
+    \draw (0, -4) rectangle ++(0.8, -0.8);
+    \draw (0,-4.8) rectangle ++(0.8, -1.6);
+    \draw (0, -6.4) rectangle ++(0.8, -0.8);
+    \node[font=\large] at (0.4, -6.8) {$y^2_{b_2}$};
+    \draw[|-|] (-0.2, -4.1)-- ++(0,-3);
+    \node[font=\large] at (-0.5,-5.6) {$b_2$};
+
+
+    \draw (0,-7.2) rectangle ++(0.8,-2.4);
+    \node[font=\large] at (0.4, -8.4) {$\vdots$};
+
+
+    \node[font=\large] at (0.4, -10) {$y^{s-1}_{1}$};
+    \node[font=\large] at (0.4, -11.2) {$\vdots$};
+    \draw (0, -9.6) rectangle ++(0.8,-0.8);
+    \draw (0, -10.4) rectangle ++(0.8, -1.6);
+    \draw (0, -12) rectangle ++(0.8, -0.8);
+    \node[font=\large] at (0.4, -12.4) {$y^{s-1}_{b_{s-1}}$};
+    \draw[|-|] (-0.2, -9.7)-- ++(0,-3.1);
+    \node[font=\large] at (-0.6,-11.2) {$b_{s-1}$};
+
+
+    \node[font=\large] at (1.2, -12.4) {$y^s_1$};
+    \node[font=\large] at (3.2, -12.4) {$\cdots$};
+    \draw (0.8, -12) rectangle ++(0.8, -0.8);
+    \draw (1.6, -12) rectangle ++(3.2, -0.8);
+    \draw (4.8, -12) rectangle ++(0.8, -0.8);
+    \node[font=\large] at (5.2, -12.4) {$y^s_{t^s_{a_s}}$};
+    \draw[|-|] (0.8, -13) -- ++(4.8,0);
+    \node[font=\large] at (3.2, -14.2) {$t^s_{a_s}$};
+  \end{tikzpicture}
+  \caption{$\varphi(P)$の内隅$x$周辺の様子} \label{rect of varphi}
+\end{figure}
+
+\end{document}

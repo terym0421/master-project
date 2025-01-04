@@ -1511,7 +1511,7 @@ $\Lambda=\overbrace{(n,\cdots,n)}^{k\text{-copies}}$の$k$行目に次のよう�
     \fill[yellow] (0,0)-- ++(0.5,0)-- ++(0.25,0.42)-- ++(-0.5,0)--cycle;
     \protect\draw[thick](0,0)-- ++(0.5,0)-- ++(0.25,0.42)-- ++(-0.5,0)--cycle;
   \end{tikzpicture}
-  の部分を$s_{ij}^{\text{y}}$とし，
+  からなる部分を$s_{ij}^{\text{y}}$とし，
   \begin{tikzpicture}[baseline=-1pt]
     \fill[cyan] (0,0)--(0.25,0.42)--(0.5,0)--(0.25,-0.42)--cycle;
     \protect\draw[thick] (0,0)--(0.25,0.42)--(0.5,0)--(0.25,-0.42)--cycle;
@@ -1521,7 +1521,7 @@ $\Lambda=\overbrace{(n,\cdots,n)}^{k\text{-copies}}$の$k$行目に次のよう�
     \fill[lightgray] (0,0)-- ++(0.5,0)-- ++(-0.25,0.42)-- ++(-0.5,0)--cycle;
     \protect\draw[thick](0,0)-- ++(0.5,0)-- ++(-0.25,0.42)-- ++(-0.5,0)--cycle;
   \end{tikzpicture}
-  の部分を$s_{i,j}^{\text{bg}}$とおく．
+  からなる部分を$s_{i,j}^{\text{bg}}$とおく．
   このとき
   \begin{align}
     &|s_{i,j}| = |s_{i+1,j}^{\text{bg}}| + |s_{i+1,j-1}^{\text{y}}| \quad \text{if } 1 < j < k-i+1\label{segment condition 1}\\
@@ -1620,7 +1620,17 @@ $\Lambda=\overbrace{(n,\cdots,n)}^{k\text{-copies}}$の$k$行目に次のよう�
 
   \input{./sections/figures/figure10.tex}
 
-  $\varphi(P') =\text{Eqjdt}_x(T)$となることを示す．
+  $\varphi(P') =\text{Eqjdt}_x(T)$となることを示す．$P$のstripeに$A,A'$が現れない場合を考える．$P$のstripeを構成するパーツを左上から順に$C_{t^1_1}\cdots C_{t^1_{a_1}}\overbrace{B\cdots B}^{b_1\text{-copies}} C_{t^2_1}\cdots C_{t^2_{a_2}} \overbrace{B\cdots B}^{b_2\text{-copies}}\cdots \overbrace{B\cdots B}^{b_{s-1}\text{-copies}} C_{t^s_1}\cdots C'_{t^s_{a_s}}$とする．ただし$a_1\geq 0$，$a_2,\cdots,a_s>0$，$b_1\geq 0$，$b_2,\cdots,b_{s-1}>0$である．このとき，stripeに含まれる
+  \begin{tikzpicture}[baseline=2pt]
+    \fill[yellow] (0,0)-- ++(0.5,0)-- ++(0.25,0.42)-- ++(-0.5,0)--cycle;
+    \protect\draw[thick](0,0)-- ++(0.5,0)-- ++(0.25,0.42)-- ++(-0.5,0)--cycle;
+  \end{tikzpicture}
+  は$\varphi$によって図\ref{rect of varphi}の箱$y^i_j$に対応する．
+
+  \input{./sections/figures/figure12.tex}
+
+  このとき$\varphi(P)$の$x$に関するje deu taquinにおいて，$x$は図\ref{rect of varphi}の箱を通る．実際，
+
 
   
 
