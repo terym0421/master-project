@@ -137,10 +137,10 @@
   \end{figure}
 \end{eg}
 
-\begin{defin}
-  $1$辺の長さが$n$のpuzzle $P$に含まれるequivariant piece $p$に対して，そのウェイト$\text{wt}(p)\in\integer[y_1,\cdots,y_n]$を次のように定義する．$p$の重心から，$P$の下辺に向かって$P$の左上の辺と平行な直線を引き，その交点が位置するpuzzle pieceの辺が左から数えて$i$番目にあるとする．次に$p$の重心から，$P$の下辺に向かって$P$の右上の辺と平行な直線を引き，その交点が位置するpuzzle pieceの辺が左から数えて$j$番目にあるとする．このとき
+\begin{defin}\label{weight of piece}
+  $1$辺の長さが$n$のpuzzle $P$に含まれるequivariant piece $p$に対して，そのウェイト$\text{wt}(p) \in\integer[y_1,\cdots,y_n]$を次のように定義する．$p$の重心から，$P$の下辺に向かって$P$の左上の辺と平行な直線を引き，その交点が位置するpuzzle pieceの辺が左から数えて$l(p)$番目にあるとする．次に$p$の重心から，$P$の下辺に向かって$P$の右上の辺と平行な直線を引き，その交点が位置するpuzzle pieceの辺が左から数えて$r(p)$番目にあるとする．このとき
   \[
-  \text{wt}(p)=y_j-y_i
+  \text{wt}(p)=y_{r(p)}-y_{l(p)}
   \]
   とする(図\ref{puzzle weight})．
 \end{defin}
@@ -1646,7 +1646,7 @@ $\Lambda=\overbrace{(n,\cdots,n)}^{k\text{-copies}}$の$k$行目に次のよう�
 \end{proof}
 
 \begin{lemm}\label{weight lemma}
-  $P\in\mathcal{P}^\nu_{\lambda\mu}$，$T=\varphi(P)$とする．$p$を$P$を構成するpuzzle pieceのうち
+  $P\in\mathcal{P}^\nu_{\lambda\mu}$，$T=\varphi(P)$とする．$p$を$P$に含まれるpuzzle pieceのうち
   \begin{tikzpicture}[baseline=-1pt]
     \fill[cyan] (0,0)--(0.25,0.42)--(0.5,0)--(0.25,-0.42)--cycle;
     \draw[thick] (0,0)--(0.25,0.42)--(0.5,0)--(0.25,-0.42)--cycle;
@@ -1659,7 +1659,7 @@ $\Lambda=\overbrace{(n,\cdots,n)}^{k\text{-copies}}$の$k$行目に次のよう�
     \fill[yellow] (0,0)-- ++(0.5,0)-- ++(0.25,0.42)-- ++(-0.5,0)--cycle;
     \draw[thick](0,0)-- ++(0.5,0)-- ++(0.25,0.42)-- ++(-0.5,0)--cycle;
   \end{tikzpicture}
-  のいずれかであるとする．$p$が
+  のいずれかであるとする．整数$r(p)$を次のように定める．$p$が
   \begin{tikzpicture}[baseline=-1pt]
     \fill[cyan] (0,0)--(0.25,0.42)--(0.5,0)--(0.25,-0.42)--cycle;
     \draw[thick] (0,0)--(0.25,0.42)--(0.5,0)--(0.25,-0.42)--cycle;
@@ -1669,12 +1669,12 @@ $\Lambda=\overbrace{(n,\cdots,n)}^{k\text{-copies}}$の$k$行目に次のよう�
     \fill[lightgray] (0,0)-- ++(0.5,0)-- ++(-0.25,0.42)-- ++(-0.5,0)--cycle;
     \draw[thick](0,0)-- ++(0.5,0)-- ++(-0.25,0.42)-- ++(-0.5,0)--cycle;
   \end{tikzpicture}
-  ならば，$p$の重心から右下に図\ref{puzzle weight}のように直線をおろしたときの$P$の下辺との交点の位置を$m$とおく．$p$が
+  ならば，$p$の重心から右下に図\ref{puzzle weight}のように直線をおろす．この直線と$P$の下辺との交点が，左から$r(p)$番目のpieceの辺に位置しているとする．$p$が
   \begin{tikzpicture}[baseline=2pt]
     \fill[yellow] (0,0)-- ++(0.5,0)-- ++(0.25,0.42)-- ++(-0.5,0)--cycle;
     \draw[thick](0,0)-- ++(0.5,0)-- ++(0.25,0.42)-- ++(-0.5,0)--cycle;
   \end{tikzpicture}
-  であるなら，$p$の右辺の中点から右下に直線をおろし，同様に$m$を定める．$p$に対応する$T$の箱を$x$とおくと，$m$は$x$のManhattan距離(図\ref{manhattan})に等しい．
+  であるなら，$p$の右辺の中点から右下に直線をおろし，同様に$r(p)$を定める．$p$に対応する$T$の箱を$x$とおき，$x$のManhattan距離(図\ref{manhattan})を$d(x)$とする．$r(p)=d(x)+1$が成り立つ．
 \end{lemm}
 
 \begin{proof}
@@ -1686,18 +1686,23 @@ $\Lambda=\overbrace{(n,\cdots,n)}^{k\text{-copies}}$の$k$行目に次のよう�
 \end{prop}
 
 \begin{proof}
-  $p$を$P$に含まれるequivariant pieceとし，$\varphi(P)$において$p$に対応するedge labelを$l$とし，その箱を$x$とする．$\text{wt}(p)=\text{factor}(l)$であることを示せばよい．$\text{wt}(p) = y_a-y_b$，$\text{factor}(l)=y_c-y_d$とおく．
-  必要ならばpuzzleとtableauxにjeu de taquinを施して$p$は$P$のstripeに含まれるとして良い(図\ref{south west puzzle})．定義より$a$は$p$の重心から右下に直線をおろしたときの$P$の下辺との交点の位置である(\ref{puzzle weight})．$\varphi(P)$ (図\ref{varphi of generic puzzle})とManhattan距離の定義(図\ref{manhattan})の定義から，$a$は$x$のManhattan距離$+1$になっており，すなわち$a=c$である．
+  $p$を$P$に含まれるequivariant pieceとし，$\varphi(P)$において$p$に対応するedge labelを$l$とし，$l$を下辺のedge labelにもつ箱を$x$とする．$\text{wt}(p)=\text{factor}(l)$であることを示せばよい．$\text{wt}(p) = y_a-y_b$，$\text{factor}(l)=y_c-y_d$とおく．定義より$a=r(p)$，$c=d(x)+1$だから，補題\ref{weight lemma}より$a=c$である．
 
-  次に$b=d$を示す．$\varphi(P)$において$l$が含まれる列をrectificationしたtableauxを$T'$とおく．$T'$において$l$が入っている箱を$y$とし，$y$と同じ行で最も右にある箱を$z$とする．定義から$d$は$z$のManhattan距離であり，$b$は$p$の重心から左下に直線をおろしたときの$P$の下辺との交点の位置である．
+  $b=d$を示す．必要なら$P$と$\varphi(P)$にjeu de taquinを施して$p$は$P$のstripeに含まれているとしてよい．
   
-  $\lambda = \overbrace{00\cdots0}^{i\text{-copies}}\overbrace{11\cdots1}^{j\text{-copies}}$とする．$P$を$j$回jeu de taquinしたものを$P'$とすれば$\varphi(P')=T'$である．$p$が左から$m$番目のpathに含まれているとする．$P$を$j$回jeu de taquinすると$p$は
+  $\varphi(P)$において$l$が含まれる列をrectificationしたtableauxを$T'$とおく．$T'$において$l$が入っている箱を$y$とし，$y$と同じ行で最も右にある箱を$z$とする．定義から$d$は$z$のManhattan距離であり，$b$は$p$の重心から左下に直線をおろしたときの$P$の下辺との交点の位置である．
+  
+  $\lambda = \overbrace{00\cdots0}^{i\text{-copies}}\overbrace{11\cdots1}^{j\text{-copies}}00\cdots$とする．$P$を$j$回jeu de taquinしたものを$P'$とすれば$\varphi(P')=T'$である．$p$が左から$m$番目のpathに含まれているとする．$P$を$j$回jeu de taquinすると$p$は
   \begin{tikzpicture}[baseline=2pt]
     \fill[yellow] (0,0)-- ++(0.5,0)-- ++(0.25,0.42)-- ++(-0.5,0)--cycle;
     \draw[thick](0,0)-- ++(0.5,0)-- ++(0.25,0.42)-- ++(-0.5,0)--cycle;
   \end{tikzpicture}
-  に変わり$s_{m,k-m+1}$の最も上のpieceに位置し，対応する箱は$y$である．よって$z$に対応するpieceは$s_{m,k-m+1}$の最も下にあるpieceである．これを$q$とおくと，
+  に変わり$s_{m,k-m+1}$の最も上のpieceに位置し，$p$に対応する箱は$y$である．よって$z$に対応するpieceは$s_{m,k-m+1}$の最も下にあるpieceである．これを$q$とおくと，\[
+  b = l(p) = r(q) - 1 = d(z) = d
+  \]
+  となる(図\ref{weight preserving})．
 
+  \input{./sections/figures/figure13.tex}
 \end{proof}
 
 
