@@ -1382,7 +1382,7 @@ $\Lambda=\overbrace{(n,\cdots,n)}^{k\text{-copies}}$の$k$行目に次のよう�
   図\ref{path,segment}のpathに対する処理．青い領域のboxの下辺にedge labelが入り，黄色い領域のboxにはbox labelが入っている．灰色の領域のboxには何も書かれていない．また，$s_3$の長さが$0$であるから，図のように下から$3$行目に対する処理をスキップする．}\label{process for path}
 \end{figure}
 
-次に$p_2$に対して同じ操作を行う．ただし$p_1$に対する操作で最後に書き入れたラベルを$l$とすると，$p_2$に対する操作で書き入れるlabelは$l+1$から始める．すべてのpathに対して同様の操作を行い，box labelの入った領域を含む左上の部分を$\varphi(P)$とする．作り方から$\varphi(P)$が定義\ref{label condition}にあるラベルに関する条件を満たすことは明らかである．
+次に$p_2$に対して同じ操作を行う．ただし$p_1$に対する操作で最後に書き入れたラベルを$l$とすると，$p_2$に対する操作で書き入れるlabelは$l+1$から始める．すべてのpathに対して同様の操作を行い，処理を行ったboxすべてを含む左上の部分を$\varphi(P)$とする．作り方から$\varphi(P)$が定義\ref{label condition}にあるラベルに関する条件を満たす．
 
 \begin{eg}
   図\ref{eg of varphi}のpuzzle $P$に対して$\varphi(P)$を計算する．
@@ -1637,14 +1637,6 @@ $\Lambda=\overbrace{(n,\cdots,n)}^{k\text{-copies}}$の$k$行目に次のよう�
   次に$P$のstripeが$A,A'$のパーツを含んでいる場合のequivariant jeu de taquinについて考察する．このときも$P$のstripeを構成するパーツを左上から数えて，初めて現れる$A$または$A'$のequivariant pieceに対応する箱を$z$とすれば，$x$は$z$までを通り，$z$のedge labelがbox labelに入る．この場合も$\text{EqRect}_x(\varphi(P))$によって変化するのはこの部分だけであり，これは$\varphi(P')$に等しい．
 \end{proof}
 
-\begin{prop}
-  $\varphi\colon\mathcal{P}^\nu_{\lambda\mu}\rightarrow\mathcal{T}^\nu_{\lambda\mu}$は全単射である．
-\end{prop}
-
-\begin{proof}
-  $\varphi$が単射であることを示す．$\varphi(P)=\varphi(P')$であるとして，$P,P'$のpathがすべて等しいことを示せばよい．
-\end{proof}
-
 \begin{lemm}\label{weight lemma}
   $P\in\mathcal{P}^\nu_{\lambda\mu}$，$T=\varphi(P)$とする．$p$を$P$に含まれるpuzzle pieceのうち
   \begin{tikzpicture}[baseline=-1pt]
@@ -1678,7 +1670,7 @@ $\Lambda=\overbrace{(n,\cdots,n)}^{k\text{-copies}}$の$k$行目に次のよう�
 \end{lemm}
 
 \begin{proof}
-  
+  各pathに含まれるpiece $p$を上から順に追っていけば，つねに$r(p) = d(x) + 1$であることがわかる．
 \end{proof}
 
 \begin{prop}
@@ -1706,3 +1698,10 @@ $\Lambda=\overbrace{(n,\cdots,n)}^{k\text{-copies}}$の$k$行目に次のよう�
 \end{proof}
 
 
+\begin{prop}
+  $\varphi\colon\mathcal{P}^\nu_{\lambda\mu}\rightarrow\mathcal{T}^\nu_{\lambda\mu}$は全単射である．
+\end{prop}
+
+\begin{proof}
+  $\varphi$が単射であることを示す．$\varphi(P)=\varphi(P')=:T$であるとして，$P,P'$のpathがすべて等しいことを示せばよい．
+\end{proof}
