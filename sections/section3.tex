@@ -213,7 +213,7 @@
 
 
 \begin{defin}\label{label condition}
-  分割$\lambda, \mu$に対して，$\lambda\leq\mu\Leftrightarrow \lambda_i\leq\mu_i\:(\forall i)$によって順序を定める．$\lambda<\mu$を満たすYoung図形に対して，$\mu$のYoung図形から$\lambda$に相当する部分を取り除いた図形を歪Young図形といい$\mu/\lambda$で表す．整数$n>0$を固定する. 歪Young図形の各箱に$1$から$n$までの数字を書き入れ，水平方向の各辺に$\{1,\cdots,n\}$の部分集合(空でもよい)を書き入れたものを， equivariant fillingという．equivariant fillingのうち，次の条件を満たすものをequivariant standard tableauxという．
+  分割$\lambda, \mu$に対して，$\lambda\leq\mu\Leftrightarrow \lambda_i\leq\mu_i\:(\forall i)$によって順序を定める．$\lambda<\mu$を満たすYoung図形に対して，$\mu$のYoung図形から$\lambda$に相当する部分を取り除いた図形を歪Young図形といい$\mu/\lambda$で表す．整数$n>0$を固定する. 歪Young図形の各箱に$1$から$n$までの数字を書き入れ，$\lambda$と$\nu$の境界から下にある水平方向の各辺に$\{1,\cdots,n\}$の部分集合(空でもよい)を書き入れたものを， equivariant fillingという．equivariant fillingのうち，次の条件を満たすものをequivariant standard tableauxという．
   \begin{itemize}
     \item $1$から$n$までの各数字が，いずれかの箱のラベルに現れるか，またはいずれかの辺のラベルの要素になっている．また$1$から$n$までの各数字がちょうど1回現れる．
     \item 各箱のラベルについて，左隣の箱のラベルよりも大きい．
@@ -224,7 +224,7 @@
 \end{defin}
 
 \begin{eg}\label{example of EqSYT}
-  図\ref{eg of 4331/221}は$(4,3,3,1)/(2,2,1)$上のequivariant standard tableauxの例と$(4,4,2)/(3,3,1)$上のequivariant standard tableauxの例である．
+  図\ref{eg of EqSYT}equivariant standard tableauxとそうでないものの例．
   \begin{figure}
     \centering
     \begin{tikzpicture}
@@ -248,7 +248,19 @@
         \node at (0.4,-2.4) {$7$};
         \node at (2,-1.6) {$3,5$};
       \end{scope}
-      \begin{scope}[xshift=4cm]
+      \begin{scope}[xshift=4.2cm]
+        \fill[gray] (0,0) rectangle ++(0.8,-2.4);
+        \draw (0,0) rectangle ++(0.8,-3.2);
+        \draw (0,-0.8) -- ++(0.8,0);
+        \draw (0,-1.6) -- ++(0.8,0);
+        \draw (0,-2.4) -- ++(0.8,0);
+        
+        \node at (0.4,-0.8) {$1$};
+        \node at (0.4,-1.6) {$2$};
+        \node at (0.4,-2.4) {$3$};
+        \node at (0.4,-2.8) {$4$};
+      \end{scope}
+      \begin{scope}[xshift=6cm]
         \fill[gray] (0,0)--(2.4,0)--(2.4,-1.6)--(0.8,-1.6)--(0.8,-2.4)--(0,-2.4)--cycle;
         \draw (0,0)--(3.2,0)--(3.2,-1.6)--(1.6,-1.6)--(1.6,-2.4)--(0,-2.4)--cycle;
         \draw (0.8,0)-- +(0,-2.4);
@@ -265,7 +277,7 @@
         \node at (2,-1.6) {$3$};
       \end{scope}
     \end{tikzpicture}
-    \caption{$(4,3,3,1)/(2,2,1)$上のequivariant standard tableauxの例(左)と$(4,4,2)/(3,3,1)$上のequivariant standard tableauxの例(右)}\label{eg of 4331/221}
+    \caption{左図は$\{3,5\}$が$\lambda=(2,2,1)$の境界から下にないためequivariant fillingでない．中央の図は$1$と$2$が$\lambda=(1,1,1)$の境界から下にないためequivariant fillingでない．右図は$(4,4,2)/(3,3,1)$上のequivariant standard tableauxの例である．}\label{eg of EqSYT}
   \end{figure}
 \end{eg}
 
@@ -288,465 +300,8 @@
 \end{defin}
 
 \begin{eg}\label{fst calculation}
-  図\ref{eg of 4331/221}左のtableauxのequivariant rectificationを図示する(図\ref{rect of 4331/221})．
-  \begin{figure}[H]
-    \centering
-    \begin{tikzpicture}
-      \begin{scope}
-        \fill[gray] (0,0)--(1.6,0)--(1.6,-1.6)--(0.8,-1.6)--(0.8,-2.4)--(0,-2.4)--cycle;
-        \draw (0,0)--(0,-3.2)--(0.8,-3.2)--(0.8,-2.4)--(2.4,-2.4)--(2.4,-0.8)--(3.2,-0.8)--(3.2,0)--cycle;
-        \draw (0,-0.8)--(2.4,-0.8);
-        \draw (0,-1.6)--(2.4,-1.6);
-        \draw (0,-2.4)--(0.8,-2.4);
-        \draw (0.8,0)--(0.8,-2.4);
-        \draw (1.6,0)--(1.6,-2.4);
-        \draw (2.4,0)--(2.4,-0.8);
-  
-        \node at (2,-0.4) {$1$};
-        \node at (2.8,-0.4) {$9$};
-        \node at (2,-1.2) {$2$};
-        \node at (1.2,-2) {$4$};
-        \node at (2,-2) {$6$};
-        \node at (0.4,-2.8) {$8$};
-  
-        \node at (0.4,-2.4) {$7$};
-        \node at (2,-1.6) {$3,5$};
-
-        \node at (1.2,-1.2) {$x_1$};
-        \node at (1.2,-0.4) {$x_2$};
-        \node at (0.4,-2) {$x_3$};
-        \node at (0.4,-1.2) {$x_4$};
-        \node at (0.4,-0.4) {$x_5$};
-        \node at (3.8,-1.6) {$\rightarrow$};
-      \end{scope}
-      \begin{scope}[xshift=5cm]
-        \fill[gray] (0,0)--(1.6,0)--(1.6,-0.8)--(0.8,-0.8)--(0.8,-2.4)--(0,-2.4)--cycle;
-        \fill[gray] (1.6,-0.8) rectangle (2.4,-1.6);
-        \draw (0,0)--(0,-3.2)--(0.8,-3.2)--(0.8,-2.4)--(2.4,-2.4)--(2.4,-0.8)--(3.2,-0.8)--(3.2,0)--cycle;
-        \draw (0,-0.8)--(2.4,-0.8);
-        \draw (0,-1.6)--(2.4,-1.6);
-        \draw (0,-2.4)--(0.8,-2.4);
-        \draw (0.8,0)--(0.8,-2.4);
-        \draw (1.6,0)--(1.6,-2.4);
-        \draw (2.4,0)--(2.4,-0.8);
-  
-        \node at (2,-0.4) {$1$};
-        \node at (2.8,-0.4) {$9$};
-        \node at (2,-1.2) {$x_1$};
-        \node at (1.2,-2) {$4$};
-        \node at (2,-2) {$6$};
-        \node at (0.4,-2.8) {$8$};
-  
-        \node at (0.4,-2.4) {$7$};
-        \node at (2,-1.6) {$3,5$};
-        \node at (1.2,-1.2) {$2$};
-
-        \node at (1.2,-0.4) {$x_2$};
-        \node at (0.4,-2) {$x_3$};
-        \node at (0.4,-1.2) {$x_4$};
-        \node at (0.4,-0.4) {$x_5$};
-
-        \node at (3.8,-1.6) {$\rightarrow$};
-      \end{scope}
-      \begin{scope}[xshift=10cm]
-        \fill[gray] (0,0)--(1.6,0)--(1.6,-0.8)--(0.8,-0.8)--(0.8,-2.4)--(0,-2.4)--cycle;
-        \draw (0,0)--(0,-3.2)--(0.8,-3.2)--(0.8,-2.4)--(2.4,-2.4)--(2.4,-0.8)--(3.2,-0.8)--(3.2,0)--cycle;
-        \draw (0,-0.8)--(2.4,-0.8);
-        \draw (0,-1.6)--(2.4,-1.6);
-        \draw (0,-2.4)--(0.8,-2.4);
-        \draw (0.8,0)--(0.8,-2.4);
-        \draw (1.6,0)--(1.6,-2.4);
-        \draw (2.4,0)--(2.4,-0.8);
-  
-        \node at (2,-0.4) {$1$};
-        \node at (2.8,-0.4) {$9$};
-        \node at (2,-1.2) {$3$};
-        \node at (1.2,-2) {$4$};
-        \node at (2,-2) {$6$};
-        \node at (0.4,-2.8) {$8$};
-  
-        \node at (0.4,-2.4) {$7$};
-        \node at (2,-1.6) {$5$};
-        \node at (1.2,-1.2) {$2$};
-        
-        \node at (1.2,-0.4) {$x_2$};
-        \node at (0.4,-2) {$x_3$};
-        \node at (0.4,-1.2) {$x_4$};
-        \node at (0.4,-0.4) {$x_5$};
-      \end{scope}
-    \end{tikzpicture}
-
-    \begin{tikzpicture}
-      \begin{scope}
-        \fill[gray] (0,0)--(0.8,0)--(0.8,-2.4)--(0,-2.4)--cycle;
-        \fill[gray] (1.6,0) rectangle (2.4,-0.8);
-        \draw (0,0)--(0,-3.2)--(0.8,-3.2)--(0.8,-2.4)--(2.4,-2.4)--(2.4,-0.8)--(3.2,-0.8)--(3.2,0)--cycle;
-        \draw (0,-0.8)--(2.4,-0.8);
-        \draw (0,-1.6)--(2.4,-1.6);
-        \draw (0,-2.4)--(0.8,-2.4);
-        \draw (0.8,0)--(0.8,-2.4);
-        \draw (1.6,0)--(1.6,-2.4);
-        \draw (2.4,0)--(2.4,-0.8);
-  
-        \node at (2,-0.4) {$x_2$};
-        \node at (2.8,-0.4) {$9$};
-        \node at (2,-1.2) {$3$};
-        \node at (1.2,-2) {$4$};
-        \node at (2,-2) {$6$};
-        \node at (0.4,-2.8) {$8$};
-  
-        \node at (0.4,-2.4) {$7$};
-        \node at (2,-1.6) {$5$};
-        \node at (1.2,-1.2) {$2$};
-        
-        \node at (1.2,-0.4) {$1$};
-        \node at (0.4,-2) {$x_3$};
-        \node at (0.4,-1.2) {$x_4$};
-        \node at (0.4,-0.4) {$x_5$};
-        \node at (-1.2,-1.6) {$\rightarrow $};
-        \node at (3.8,-1.6) {$\rightarrow $};
-      \end{scope}
-      \begin{scope}[xshift=5cm]
-        \fill[gray] (0,0)--(0.8,0)--(0.8,-2.4)--(0,-2.4)--cycle;
-        \fill[gray] (1.6,-0.8) rectangle (2.4,-1.6);
-        \draw (0,0)--(0,-3.2)--(0.8,-3.2)--(0.8,-2.4)--(2.4,-2.4)--(2.4,-0.8)--(3.2,-0.8)--(3.2,0)--cycle;
-        \draw (0,-0.8)--(2.4,-0.8);
-        \draw (0,-1.6)--(2.4,-1.6);
-        \draw (0,-2.4)--(0.8,-2.4);
-        \draw (0.8,0)--(0.8,-2.4);
-        \draw (1.6,0)--(1.6,-2.4);
-        \draw (2.4,0)--(2.4,-0.8);
-  
-        \node at (2,-0.4) {$3$};
-        \node at (2.8,-0.4) {$9$};
-        \node at (2,-1.2) {$x_2$};
-        \node at (1.2,-2) {$4$};
-        \node at (2,-2) {$6$};
-        \node at (0.4,-2.8) {$8$};
-  
-        \node at (0.4,-2.4) {$7$};
-        \node at (2,-1.6) {$5$};
-        \node at (1.2,-1.2) {$2$};
-        
-        \node at (1.2,-0.4) {$1$};
-        \node at (0.4,-2) {$x_3$};
-        \node at (0.4,-1.2) {$x_4$};
-        \node at (0.4,-0.4) {$x_5$};
-        \node at (3.8,-1.6) {$\rightarrow $};
-      \end{scope}
-      \begin{scope}[xshift=10cm]
-        \fill[gray] (0,0)--(0.8,0)--(0.8,-2.4)--(0,-2.4)--cycle;
-        \draw (0,0)--(0,-3.2)--(0.8,-3.2)--(0.8,-2.4)--(2.4,-2.4)--(2.4,-0.8)--(3.2,-0.8)--(3.2,0)--cycle;
-        \draw (0,-0.8)--(2.4,-0.8);
-        \draw (0,-1.6)--(2.4,-1.6);
-        \draw (0,-2.4)--(0.8,-2.4);
-        \draw (0.8,0)--(0.8,-2.4);
-        \draw (1.6,0)--(1.6,-2.4);
-        \draw (2.4,0)--(2.4,-0.8);
-  
-        \node at (2,-0.4) {$3$};
-        \node at (2.8,-0.4) {$9$};
-        \node at (2,-1.2) {$5$};
-        \node at (1.2,-2) {$4$};
-        \node at (2,-2) {$6$};
-        \node at (0.4,-2.8) {$8$};
-  
-        \node at (0.4,-2.4) {$7$};
-        \node at (1.2,-1.2) {$2$};
-        
-        \node at (1.2,-0.4) {$1$};
-        \node at (0.4,-2) {$x_3$};
-        \node at (0.4,-1.2) {$x_4$};
-        \node at (0.4,-0.4) {$x_5$};
-      \end{scope}
-    \end{tikzpicture}
-
-    \begin{tikzpicture}
-      \begin{scope}
-        \fill[gray] (0,0) rectangle (0.8,-1.6);
-        \fill[gray] (0.8,-1.6) rectangle (1.6,-2.4);
-        \draw (0,0)--(0,-3.2)--(0.8,-3.2)--(0.8,-2.4)--(2.4,-2.4)--(2.4,-0.8)--(3.2,-0.8)--(3.2,0)--cycle;
-        \draw (0,-0.8)--(2.4,-0.8);
-        \draw (0,-1.6)--(2.4,-1.6);
-        \draw (0,-2.4)--(0.8,-2.4);
-        \draw (0.8,0)--(0.8,-2.4);
-        \draw (1.6,0)--(1.6,-2.4);
-        \draw (2.4,0)--(2.4,-0.8);
-  
-        \node at (2,-0.4) {$3$};
-        \node at (2.8,-0.4) {$9$};
-        \node at (2,-1.2) {$5$};
-        \node at (1.2,-2) {$x_3$};
-        \node at (2,-2) {$6$};
-        \node at (0.4,-2.8) {$8$};
-  
-        \node at (1.2,-1.2) {$2$};
-        
-        \node at (1.2,-0.4) {$1$};
-        \node at (0.4,-2) {$4$};
-        \node at (0.4,-2.4) {$7$};
-        \node at (0.4,-1.2) {$x_4$};
-        \node at (0.4,-0.4) {$x_5$};
-        \node at (-1.2,-1.6) {$\rightarrow $};
-        \node at (3.8,-1.6) {$\rightarrow $};
-      \end{scope}
-      \begin{scope}[xshift=5cm]
-        \fill[gray] (0,0) rectangle (0.8,-1.6);
-        \fill[gray] (1.6,-1.6) rectangle (2.4,-2.4);
-        \draw (0,0)--(0,-3.2)--(0.8,-3.2)--(0.8,-2.4)--(2.4,-2.4)--(2.4,-0.8)--(3.2,-0.8)--(3.2,0)--cycle;
-        \draw (0,-0.8)--(2.4,-0.8);
-        \draw (0,-1.6)--(2.4,-1.6);
-        \draw (0,-2.4)--(0.8,-2.4);
-        \draw (0.8,0)--(0.8,-2.4);
-        \draw (1.6,0)--(1.6,-2.4);
-        \draw (2.4,0)--(2.4,-0.8);
-  
-        \node at (2,-0.4) {$3$};
-        \node at (2.8,-0.4) {$9$};
-        \node at (2,-1.2) {$5$};
-        \node at (1.2,-2) {$6$};
-        \node at (2,-2) {$x_3$};
-        \node at (0.4,-2.8) {$8$};
-  
-        \node at (1.2,-1.2) {$2$};
-        
-        \node at (1.2,-0.4) {$1$};
-        \node at (0.4,-2) {$4$};
-        \node at (0.4,-2.4) {$7$};
-        \node at (0.4,-1.2) {$x_4$};
-        \node at (0.4,-0.4) {$x_5$};
-        \node at (3.8,-1.6) {$\rightarrow $};
-      \end{scope}
-      \begin{scope}[xshift=10cm]
-        \fill[gray] (0,0) rectangle (0.8,-0.8);
-        \fill[gray] (0.8,-0.8) rectangle (1.6,-1.6);
-        \draw (0,0)--(0,-3.2)--(0.8,-3.2)--(0.8,-2.4)--(1.6,-2.4)--(1.6,-1.6)--(2.4,-1.6)--(2.4,-0.8)--(3.2,-0.8)--(3.2,0)--cycle;
-        \draw (0,-0.8)--(2.4,-0.8);
-        \draw (0,-1.6)--(2.4,-1.6);
-        \draw (0,-2.4)--(0.8,-2.4);
-        \draw (0.8,0)--(0.8,-2.4);
-        \draw (1.6,0)--(1.6,-2.4);
-        \draw (2.4,0)--(2.4,-0.8);
-  
-        \node at (2,-0.4) {$3$};
-        \node at (2.8,-0.4) {$9$};
-        \node at (2,-1.2) {$5$};
-        \node at (1.2,-2) {$6$};
-        \node at (0.4,-2.8) {$8$};
-  
-        \node at (1.2,-1.2) {$x_4$};
-        
-        \node at (1.2,-0.4) {$1$};
-        \node at (0.4,-2) {$4$};
-        \node at (0.4,-2.4) {$7$};
-        \node at (0.4,-1.2) {$2$};
-        \node at (0.4,-0.4) {$x_5$};
-      \end{scope}
-    \end{tikzpicture}
-
-    \begin{tikzpicture}
-      \begin{scope}
-        \fill[gray] (0,0) rectangle (0.8,-0.8);
-        \fill[gray] (1.6,-0.8) rectangle (2.4,-1.6);
-        \draw (0,0)--(0,-3.2)--(0.8,-3.2)--(0.8,-2.4)--(1.6,-2.4)--(1.6,-1.6)--(2.4,-1.6)--(2.4,-0.8)--(3.2,-0.8)--(3.2,0)--cycle;
-        \draw (0,-0.8)--(2.4,-0.8);
-        \draw (0,-1.6)--(2.4,-1.6);
-        \draw (0,-2.4)--(0.8,-2.4);
-        \draw (0.8,0)--(0.8,-2.4);
-        \draw (1.6,0)--(1.6,-2.4);
-        \draw (2.4,0)--(2.4,-0.8);
-  
-        \node at (2,-0.4) {$3$};
-        \node at (2.8,-0.4) {$9$};
-        \node at (2,-1.2) {$x_4$};
-        \node at (1.2,-2) {$6$};
-        \node at (0.4,-2.8) {$8$};
-  
-        \node at (1.2,-1.2) {$5$};
-        
-        \node at (1.2,-0.4) {$1$};
-        \node at (0.4,-2) {$4$};
-        \node at (0.4,-2.4) {$7$};
-        \node at (0.4,-1.2) {$2$};
-        \node at (0.4,-0.4) {$x_5$};
-
-        \node at (-1.2,-1.6) {$\rightarrow $};
-        \node at (3.8,-1.6) {$\rightarrow $};
-      \end{scope}
-      \begin{scope}[xshift=5cm]
-        \fill[gray] (0.8,0) rectangle (1.6,-0.8);
-        \draw (0,0)--(0,-3.2)--(0.8,-3.2)--(0.8,-2.4)--(1.6,-2.4)--(1.6,-0.8)--(3.2,-0.8)--(3.2,0)--cycle;
-        \draw (0,-0.8)--(2.4,-0.8);
-        \draw (0,-1.6)--(1.6,-1.6);
-        \draw (0,-2.4)--(0.8,-2.4);
-        \draw (0.8,0)--(0.8,-2.4);
-        \draw (1.6,0)--(1.6,-2.4);
-        \draw (2.4,0)--(2.4,-0.8);
-  
-        \node at (2,-0.4) {$3$};
-        \node at (2.8,-0.4) {$9$};
-        \node at (1.2,-2) {$6$};
-        \node at (0.4,-2.8) {$8$};
-  
-        \node at (1.2,-1.2) {$5$};
-        
-        \node at (1.2,-0.4) {$x_5$};
-        \node at (0.4,-2) {$4$};
-        \node at (0.4,-2.4) {$7$};
-        \node at (0.4,-1.2) {$2$};
-        \node at (0.4,-0.4) {$1$};
-
-        \node at (3.8,-1.6) {$\rightarrow $};
-      \end{scope}
-      \begin{scope}[xshift=10cm]
-        \fill[gray] (1.6,0) rectangle (2.4,-0.8);
-        \draw (0,0)--(0,-3.2)--(0.8,-3.2)--(0.8,-2.4)--(1.6,-2.4)--(1.6,-0.8)--(3.2,-0.8)--(3.2,0)--cycle;
-        \draw (0,-0.8)--(2.4,-0.8);
-        \draw (0,-1.6)--(1.6,-1.6);
-        \draw (0,-2.4)--(0.8,-2.4);
-        \draw (0.8,0)--(0.8,-2.4);
-        \draw (1.6,0)--(1.6,-2.4);
-        \draw (2.4,0)--(2.4,-0.8);
-  
-        \node at (2,-0.4) {$x_5$};
-        \node at (2.8,-0.4) {$9$};
-        \node at (1.2,-2) {$6$};
-        \node at (0.4,-2.8) {$8$};
-  
-        \node at (1.2,-1.2) {$5$};
-        
-        \node at (1.2,-0.4) {$3$};
-        \node at (0.4,-2) {$4$};
-        \node at (0.4,-2.4) {$7$};
-        \node at (0.4,-1.2) {$2$};
-        \node at (0.4,-0.4) {$1$};
-      \end{scope}
-    \end{tikzpicture}
-
-    \begin{tikzpicture}
-      \begin{scope}
-        \fill[gray] (2.4,0) rectangle (3.2,-0.8);
-        \draw (0,0)--(0,-3.2)--(0.8,-3.2)--(0.8,-2.4)--(1.6,-2.4)--(1.6,-0.8)--(3.2,-0.8)--(3.2,0)--cycle;
-        \draw (0,-0.8)--(2.4,-0.8);
-        \draw (0,-1.6)--(1.6,-1.6);
-        \draw (0,-2.4)--(0.8,-2.4);
-        \draw (0.8,0)--(0.8,-2.4);
-        \draw (1.6,0)--(1.6,-2.4);
-        \draw (2.4,0)--(2.4,-0.8);
-  
-        \node at (2,-0.4) {$9$};
-        \node at (2.8,-0.4) {$x_5$};
-        \node at (1.2,-2) {$6$};
-        \node at (0.4,-2.8) {$8$};
-  
-        \node at (1.2,-1.2) {$5$};
-        
-        \node at (1.2,-0.4) {$3$};
-        \node at (0.4,-2) {$4$};
-        \node at (0.4,-2.4) {$7$};
-        \node at (0.4,-1.2) {$2$};
-        \node at (0.4,-0.4) {$1$};
-        
-        \node at (-1.2,-1.6) {$\rightarrow $};
-        \node at (3.8,-1.6) {$\rightarrow $};
-      \end{scope}
-      \begin{scope}[xshift=5cm]
-        \draw (0,0)--(0,-3.2)--(0.8,-3.2)--(0.8,-2.4)--(1.6,-2.4)--(1.6,-0.8)--(2.4,-0.8)--(2.4,0)--cycle;
-        \draw (0,-0.8)--(2.4,-0.8);
-        \draw (0,-1.6)--(1.6,-1.6);
-        \draw (0,-2.4)--(0.8,-2.4);
-        \draw (0.8,0)--(0.8,-2.4);
-        \draw (1.6,0)--(1.6,-2.4);
-        \draw (2.4,0)--(2.4,-0.8);
-  
-        \node at (2,-0.4) {$9$};
-        \node at (1.2,-2) {$6$};
-        \node at (0.4,-2.8) {$8$};
-  
-        \node at (1.2,-1.2) {$5$};
-        
-        \node at (1.2,-0.4) {$3$};
-        \node at (0.4,-2) {$4$};
-        \node at (0.4,-2.4) {$7$};
-        \node at (0.4,-1.2) {$2$};
-        \node at (0.4,-0.4) {$1$};
-      \end{scope}
-    \end{tikzpicture}
-    \caption{図\ref{eg of 4331/221}左のtableauxのrectification．}\label{rect of 4331/221}
-  \end{figure}
-  \end{eg}
-
-次に$T\in\text{EdSYT}(\mu/\lambda, n)$に対してそのウェイトを定義する．
-
-\begin{defin}
-  正の整数$m, k$を固定する．$\Lambda=\overbrace{(m,\cdots,m)}^{k\text{-copies}}$とする．$\Lambda$の箱$x$に対して
-  \[
-  \beta(x)=y_{i+1}-y_i\in \integer[y_1,\cdots,y_{m+k}]
-  \]
-  とする．ここで$i$は$\Lambda$の右上の隅の箱から$x$までのManhattan距離である(図\ref{manhattan})．
-  \[
-  \begin{ytableau}
-    4 & 3 & 2 & 1\\
-    5 & 4 & 3 & 2\\
-    6 & 5 & 4 & 3
-  \end{ytableau}
-  \]
-  \begin{figure}[H]
-    \centering
-    \caption{$k=3,m=4$における$\Lambda$の各箱のManhattan距離．}\label{manhattan}
-  \end{figure}
-\end{defin}
-
-\begin{defin}
-  $T\in\text{EqSYT}(\mu/\lambda, n), (\mu\leq\Lambda=\overbrace{(m,\cdots,m)}^{k\text{-copies}})$を固定し，$l$を$T$の辺のラベルに含まれる要素とする．$\text{factor}(l)\in\integer[y_1,\cdots,y_{m+k}]$を次のように定義する．$\text{EqRect}(T)$を計算する過程において，
-  \begin{enumerate}
-    \item $l$が含まれる列にある$\lambda$の箱をすべてequivariant jeu de taquinしたあとも，$l$が辺のラベルであるなら$\text{factor}(l)=0$とする．また$l$が含まれる列に$\lambda$の箱がない場合も$\text{factor}(l)=0$とする．
-    \item $l$が含まれる列にある$\lambda$の箱をすべてequivariant jeu de taquinするとき，$l$が通った箱を下から順に$x_1,\cdots,x_s$とする．$x_s$と同じ行で$x_s$の右側にある$T$の箱を左から順に$y_1,\cdots,y_t$とする．このとき$\text{factor}(l)=\beta(x_1)+\cdots+\beta(x_s)+\beta(y_1)+\cdots+\beta(y_t)$とする．
-  \end{enumerate}
-\end{defin}
-
-\begin{defin}
-  $T\in\text{EqSYT}(\mu/\lambda, n)$に対して
-  \[
-  \text{wt}(T)=\prod_{l:\text{ edge label}}\text{factor}(l)
-  \]
-  とする．
-\end{defin}
-
-\begin{eg}
-  例\ref{fst calculation}の計算より，
-  \begin{center}
-    \begin{tikzpicture}
-      \fill[gray] (0,0)--(1.6,0)--(1.6,-1.6)--(0.8,-1.6)--(0.8,-2.4)--(0,-2.4)--cycle;
-        \draw (0,0)--(0,-3.2)--(0.8,-3.2)--(0.8,-2.4)--(2.4,-2.4)--(2.4,-0.8)--(3.2,-0.8)--(3.2,0)--cycle;
-        \draw (0,-0.8)--(2.4,-0.8);
-        \draw (0,-1.6)--(2.4,-1.6);
-        \draw (0,-2.4)--(0.8,-2.4);
-        \draw (0.8,0)--(0.8,-2.4);
-        \draw (1.6,0)--(1.6,-2.4);
-        \draw (2.4,0)--(2.4,-0.8);
-  
-        \node at (2,-0.4) {$1$};
-        \node at (2.8,-0.4) {$9$};
-        \node at (2,-1.2) {$2$};
-        \node at (1.2,-2) {$4$};
-        \node at (2,-2) {$6$};
-        \node at (0.4,-2.8) {$8$};
-  
-        \node at (0.4,-2.4) {$7$};
-        \node at (2,-1.6) {$3,5$};
-    \end{tikzpicture}
-  \end{center}
-  のウェイトは
-  \[
-  \text{factor}(3)=\text{factor}(5)=\text{factor}(7)=0
-  \]
-  より$0$である．
-\end{eg}
-
-\begin{eg}
-  図\ref{eg of 4331/221}右のtableauxのequivariant rectificationを図示する(図\ref{rect of 442})．
-  \begin{figure}[H]
+  図\ref{eg of EqSYT}右のtableauxのequivariant rectificationを計算すると図\ref{fst calculation}のようになる．
+  \begin{figure}[ht]
     \centering
     \begin{tikzpicture}
       \begin{scope}
@@ -1103,9 +658,49 @@
         \node at (0.4,-0.4) {$1$};
       \end{scope}
     \end{tikzpicture}
-    \caption{図\ref{eg of 4331/221}右のtableauxのrectification．}\label{rect of 442}
+    \caption{図\ref{eg of EqSYT}右のtableauxのrectification．}\label{rect of 442}
   \end{figure}
-  $T\leq (4,4,4)$とみなして$\text{wt}(T)$を計算すると，上記の計算過程より
+\end{eg}
+
+次に$T\in\text{EdSYT}(\mu/\lambda, n)$に対してそのウェイトを定義する．
+
+\begin{defin}
+  正の整数$m, k$を固定する．$\Lambda=\overbrace{(m,\cdots,m)}^{k\text{-copies}}$とする．$\Lambda$の箱$x$に対して
+  \[
+  \beta(x)=y_{i+1}-y_i\in \integer[y_1,\cdots,y_{m+k}]
+  \]
+  とする．ここで$i$は$\Lambda$の右上の隅の箱から$x$までのManhattan距離である(図\ref{manhattan})．
+  \[
+  \begin{ytableau}
+    4 & 3 & 2 & 1\\
+    5 & 4 & 3 & 2\\
+    6 & 5 & 4 & 3
+  \end{ytableau}
+  \]
+  \begin{figure}[H]
+    \centering
+    \caption{$k=3,m=4$における$\Lambda$の各箱のManhattan距離．}\label{manhattan}
+  \end{figure}
+\end{defin}
+
+\begin{defin}
+  $T\in\text{EqSYT}(\mu/\lambda, n), (\mu\leq\Lambda=\overbrace{(m,\cdots,m)}^{k\text{-copies}})$を固定し，$l$を$T$の辺のラベルに含まれる要素とする．$\text{factor}(l)\in\integer[y_1,\cdots,y_{m+k}]$を次のように定義する．$\text{EqRect}(T)$を計算する過程において，
+  \begin{enumerate}
+    \item $l$が含まれる列にある$\lambda$の箱をすべてequivariant jeu de taquinしたあとも，$l$が辺のラベルであるなら$\text{factor}(l)=0$とする．また$l$が含まれる列に$\lambda$の箱がない場合も$\text{factor}(l)=0$とする．
+    \item $l$が含まれる列にある$\lambda$の箱をすべてequivariant jeu de taquinするとき，$l$が通った箱を下から順に$x_1,\cdots,x_s$とする．$x_s$と同じ行で$x_s$の右側にある$T$の箱を左から順に$y_1,\cdots,y_t$とする．このとき$\text{factor}(l)=\beta(x_1)+\cdots+\beta(x_s)+\beta(y_1)+\cdots+\beta(y_t)$とする．
+  \end{enumerate}
+\end{defin}
+
+\begin{defin}
+  $T\in\text{EqSYT}(\mu/\lambda, n)$に対して
+  \[
+  \text{wt}(T)=\prod_{l:\text{ edge label}}\text{factor}(l)
+  \]
+  とする．
+\end{defin}
+
+\begin{eg}
+  例\ref{eg of EqSYT}右のtableauxを$T$とする．$T\leq (4,4,4)$とみなすと例\ref{fst calculation}より，
 \begin{align*}
   &\text{factor}(3)=y_4-y_1\\
   &\text{factor}(5)=y_6-y_3\\
@@ -1522,7 +1117,12 @@ $\Lambda=\overbrace{(n,\cdots,n)}^{k\text{-copies}}$の$k$行目に次のよう�
     \fill[lightgray] (0,0)-- ++(0.5,0)-- ++(-0.25,0.42)-- ++(-0.5,0)--cycle;
     \protect\draw[thick](0,0)-- ++(0.5,0)-- ++(-0.25,0.42)-- ++(-0.5,0)--cycle;
   \end{tikzpicture}
-  からなる部分を$s_{i,j}^{\text{bg}}$とおく．
+  からなる部分を$s_{i,j}^{\text{bg}}$とおき，$s_{i,j}$に含まれる
+  \begin{tikzpicture}[baseline=-1pt]
+    \fill[cyan] (0,0)--(0.25,0.42)--(0.5,0)--(0.25,-0.42)--cycle;
+    \protect\draw[thick] (0,0)--(0.25,0.42)--(0.5,0)--(0.25,-0.42)--cycle;
+  \end{tikzpicture}
+  の個数を$|s_{i,j}^{\text{b}}|$とおく．
   このとき
   \begin{align}
     &|s_{i,j}| = |s_{i+1,j}^{\text{bg}}| + |s_{i+1,j-1}^{\text{y}}| \quad \text{if } 1 < j < k-i+1\label{segment condition 1}\\
@@ -1530,7 +1130,8 @@ $\Lambda=\overbrace{(n,\cdots,n)}^{k\text{-copies}}$の$k$行目に次のよう�
     &|s_{i,k-i+1}| = n_i + |s_{i+1, k-i}^{\text{y}}| \quad \text{if } i < k\label{segment condition 3}\\
     &|s_{k,1}| = n_k\label{segment condition 4}\\
     &|s_{1,i}^{\text{bg}}| + |s_{1,i-1}^{\text{y}}| = l_{k-i+1}\quad \text{if } i > 1\label{segment condition 5}\\
-    &|s_{1,1}^{\text{bg}}| = l_{k}\label{segment condition 6}
+    &|s_{1,1}^{\text{bg}}| = l_{k}\label{segment condition 6}\\
+    &\sum_{j=1}^{k-i+1}(|s_{i,j}^{\text{y}}|+|s_{i,j}^{\text{b}}|) = m_{i}+m_{i+1}+\cdots+m_{k}\label{segment condition 7}
   \end{align}
   である(図\ref{generic puzzle})．
 
@@ -1563,41 +1164,18 @@ $\Lambda=\overbrace{(n,\cdots,n)}^{k\text{-copies}}$の$k$行目に次のよう�
   同様に$i$行目の長さは$n_{i}$になっていることがわかる．また式(\ref{segment condition 5})と(\ref{segment condition 6})より$\varphi(P)$のbox labelの入っていない領域の形が$\lambda$になっていることもわかる(図\ref{shape of phi P})．
   \input{./sections/figures/figure6.tex}
 
-  次に$\varphi(P)$のラベルが$1$から$|\mu|$までであることを示す．$\varphi(P)$の構成方法から，$P$が
-  \begin{tikzpicture}[baseline=2pt]
+  最後に式(\ref{segment condition 7})より，$P$に含まれる\begin{tikzpicture}[baseline=2pt]
     \fill[yellow] (0,0)-- ++(0.5,0)-- ++(0.25,0.42)-- ++(-0.5,0)--cycle;
     \protect\draw[thick](0,0)-- ++(0.5,0)-- ++(0.25,0.42)-- ++(-0.5,0)--cycle;
   \end{tikzpicture}
-  と
   \begin{tikzpicture}[baseline=-1pt]
     \fill[cyan] (0,0)--(0.25,0.42)--(0.5,0)--(0.25,-0.42)--cycle;
     \protect\draw[thick] (0,0)--(0.25,0.42)--(0.5,0)--(0.25,-0.42)--cycle;
   \end{tikzpicture}
-  を$|\mu|$個含んでいることを示せばよい．path $p_i$に含まれる
-  \begin{tikzpicture}[baseline=2pt]
-    \fill[yellow] (0,0)-- ++(0.5,0)-- ++(0.25,0.42)-- ++(-0.5,0)--cycle;
-    \protect\draw[thick](0,0)-- ++(0.5,0)-- ++(0.25,0.42)-- ++(-0.5,0)--cycle;
-  \end{tikzpicture}
-  と
-  \begin{tikzpicture}[baseline=-1pt]
-    \fill[cyan] (0,0)--(0.25,0.42)--(0.5,0)--(0.25,-0.42)--cycle;
-    \protect\draw[thick] (0,0)--(0.25,0.42)--(0.5,0)--(0.25,-0.42)--cycle;
-  \end{tikzpicture}
-  の個数は$m_{i}+\cdots+m_{k}$に等しい(図\ref{generic puzzle})から，$P$に含まれる
-  \begin{tikzpicture}[baseline=2pt]
-    \fill[yellow] (0,0)-- ++(0.5,0)-- ++(0.25,0.42)-- ++(-0.5,0)--cycle;
-    \protect\draw[thick](0,0)-- ++(0.5,0)-- ++(0.25,0.42)-- ++(-0.5,0)--cycle;
-  \end{tikzpicture}
-  と
-  \begin{tikzpicture}[baseline=-1pt]
-    \fill[cyan] (0,0)--(0.25,0.42)--(0.5,0)--(0.25,-0.42)--cycle;
-    \protect\draw[thick] (0,0)--(0.25,0.42)--(0.5,0)--(0.25,-0.42)--cycle;
-  \end{tikzpicture}
-  の個数は$|\mu|$である．
-  %\input{./sections/figures/figure8.tex}
+  の個数は$|\mu|$に等しいから，$\varphi(P)$のラベルは$1$から$|\mu|$までである．
 \end{proof}
 
-\begin{prop}
+\begin{prop}\label{main theorem 1}
   $P\in\mathcal{P}^\nu_{\lambda\mu}$に対して$\text{EqRect}(\varphi(P))=T_\mu$である．
 \end{prop}
 
@@ -1697,11 +1275,43 @@ $\Lambda=\overbrace{(n,\cdots,n)}^{k\text{-copies}}$の$k$行目に次のよう�
   \input{./sections/figures/figure13.tex}
 \end{proof}
 
+最後に$\varphi$が全単射であることを示す．そのために$T\in\mathcal{T}^\nu_{\lambda\mu}$からpath $p_1,\cdots,p_k$を復元する手順を構成する．path のsegmentについて，segmentを構成するpiece を上から順に見ていって，$3$種類のpiece \begin{tikzpicture}[baseline=-1pt]
+  \fill[cyan] (0,0)--(0.25,0.42)--(0.5,0)--(0.25,-0.42)--cycle;
+  \draw[thick] (0,0)--(0.25,0.42)--(0.5,0)--(0.25,-0.42)--cycle;
+\end{tikzpicture}
+\begin{tikzpicture}[baseline=2pt]
+  \fill[lightgray] (0,0)-- ++(0.5,0)-- ++(-0.25,0.42)-- ++(-0.5,0)--cycle;
+  \draw[thick](0,0)-- ++(0.5,0)-- ++(-0.25,0.42)-- ++(-0.5,0)--cycle;
+\end{tikzpicture}
+\begin{tikzpicture}[baseline=2pt]
+  \fill[yellow] (0,0)-- ++(0.5,0)-- ++(0.25,0.42)-- ++(-0.5,0)--cycle;
+  \draw[thick](0,0)-- ++(0.5,0)-- ++(0.25,0.42)-- ++(-0.5,0)--cycle;
+\end{tikzpicture}
+それぞれを文字b，g，yとみなすことで，segment をb，g，yからなる文字列と同一視する．
+
+まず$s_{11}$を決定する．$x$を$T$の$k$行目の最も左にある箱とし，$\alpha = 1$とする．また$s_{11}$ははじめ空の文字列であるとする．$x$の下辺のedge labelを$l$，box labelを$c$とする．$c$が存在しない場合は$c=0$とみなす．
+\begin{enumerate}
+  \item $\alpha \in l$ならば$s_{11}$の右にbを付け加え$\alpha$を$\alpha+1$で置き換える．
+  \item $\alpha = c$ ならば$s_{11}$の右にyを付け加え$\alpha$を$\alpha+1$で置き換える．
+  \item $\alpha > c$かつ$\alpha\notin l$ならば$s_{11}$の右にgを付け加える．
+  \item $\alpha < c$かつ$\alpha\notin l$ならば$s_{11}$には何もせず，$x$を$x$の上にある箱で置き換え，操作を終了する．
+\end{enumerate}
+(i),(ii),(iii)のいずれかを実行した場合，$x$の右に箱が存在するならば，$x$を$x$の右の箱で置き換え，(i)から(iv)のいずれかを実行する．$x$の右に箱が存在しないならば，$x$を$x$の一つ右かつ一つ上にある箱で置き換えて操作を終了する．
+
+次に$s_{12}$を決定する．$s_{11}$を決定したときの$x$と$\alpha$を引き継いで，まったく同じ手順で$s_{12}$の文字列を決定する．同様に$s_{1k}$まで決定できたら，$x$を再び$T$の$k$行目の最も左にある箱として$s_{21}$から$s_{2,k-1}$までを決定する．
+
+このようにして$p_1,\cdots,p_k$を定めることができるが，これを$\psi(T)$とおく．
+
+\begin{eg}
+  
+\end{eg}
 
 \begin{prop}
   $\varphi\colon\mathcal{P}^\nu_{\lambda\mu}\rightarrow\mathcal{T}^\nu_{\lambda\mu}$は全単射である．
 \end{prop}
 
 \begin{proof}
-  $\varphi$が単射であることを示す．$\varphi(P)=\varphi(P')=:T$であるとして，$P,P'$のpathがすべて等しいことを示せばよい．
+  $\psi(\varphi(P))=P$であるから$\varphi(P)$は単射である．全射であることを示すためには，任意の$T\in\mathcal{T}^\nu_{\lambda\mu}$に対して$\psi(T)$がpuzzleを定めることを示せばよい．
+
+  
 \end{proof}
