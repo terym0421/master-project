@@ -1289,7 +1289,7 @@ $\Lambda=\overbrace{(n,\cdots,n)}^{k\text{-copies}}$の$k$行目に次のよう�
 \end{tikzpicture}
 それぞれを文字b，g，yとみなすことで，segment をb，g，yからなる文字列と同一視する．
 
-まず$s_{11}$を決定する．$x$を$T$の$k$行目の最も左にある箱とし，$\alpha = 1$とする．また$s_{11}$ははじめ空の文字列であるとする．$x$の下辺のedge labelを$l$，box labelを$c$とする．$c$が存在しない場合は$c=0$とみなす．
+まず$s_{11}$を決定する．$x$を$T$の$k$行目の最も左にある箱とし，$\alpha = 1$とする．また$s_{11}$は，はじめ空の文字列であるとする．$x$の下辺のedge labelを$l$，box labelを$c$とする．$c$が存在しない場合は$c=0$とみなす．
 \begin{enumerate}
   \item $\alpha \in l$ならば$s_{11}$の右にbを付け加え$\alpha$を$\alpha+1$で置き換える．
   \item $\alpha = c$ ならば$s_{11}$の右にyを付け加え$\alpha$を$\alpha+1$で置き換える．
@@ -1300,18 +1300,23 @@ $\Lambda=\overbrace{(n,\cdots,n)}^{k\text{-copies}}$の$k$行目に次のよう�
 
 次に$s_{12}$を決定する．$s_{11}$を決定したときの$x$と$\alpha$を引き継いで，まったく同じ手順で$s_{12}$の文字列を決定する．同様に$s_{1k}$まで決定できたら，$x$を再び$T$の$k$行目の最も左にある箱として$s_{21}$から$s_{2,k-1}$までを決定する．
 
-このようにして$p_1,\cdots,p_k$を定めることができるが，これを$\psi(T)$とおく．
+このようにして$p_1,\cdots,p_k$を定めることができるが，$\psi(T)=(p_1,\cdots,p_k)$とおく．
 
-\begin{eg}
-  
-\end{eg}
 
 \begin{prop}
   $\varphi\colon\mathcal{P}^\nu_{\lambda\mu}\rightarrow\mathcal{T}^\nu_{\lambda\mu}$は全単射である．
 \end{prop}
 
 \begin{proof}
-  $\psi(\varphi(P))=P$であるから$\varphi(P)$は単射である．全射であることを示すためには，任意の$T\in\mathcal{T}^\nu_{\lambda\mu}$に対して$\psi(T)$がpuzzleを定めることを示せばよい．
+  $\psi(\varphi(P))=(p_1,\cdots,p_k)$は$P$のpathと一致する．したがって$(p_1,\cdots,p_k)$を図\ref{generic puzzle}のように配置すれば，$P$と同じpuzzleが定まる．よって$\varphi$は単射である．全射であることを示すためには，任意の$T\in\mathcal{T}^\nu_{\lambda\mu}$に対して$\psi(T)$がpuzzleを定めることを示せばよい．
+
+  $\text{EqRect}(T)=T_\mu$であることと$\text{wt}(T)\neq 0$であることから次が成り立つ．
+  \begin{enumerate}
+    \item 各$i=1,\cdots,k$に対して，整数列$\mu_{i-1}+1=r_0\leq r_{1}<\cdots<r_{k-i}\leq r_{k-i+1}=\mu_i+1$が存在して次を満たす．$r_{j-1},r_{j-1}+1,\cdots,r_{j}-1$は$T$の$j$行目のboxのbox labelか下辺のedge labelに，左からこの順番で現れる．ただし$\mu_0=0$とする．
+    \item $T$のすべてのedge labelは$r_{j},r_{j}+1,\cdots,r_{j+1}-1$をたかだか$1$つ含む．
+  \end{enumerate}
+  
+  したがって$\psi(T)=(p_1,\cdots,p_k)$はsegmentに関する条件式(\ref{segment condition 1})から(\ref{segment condition 7})を満たすことがわかる．よって$(p_1,\cdots,p_k)$がpuzzleを定めることを示すためには，$(p_1,\cdots,p_k)$を図\ref{generic puzzle}のように配置したとき，重なってしまうpieceが存在しないことを示せばよい．
 
   
 \end{proof}

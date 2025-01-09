@@ -57,3 +57,43 @@ skew puzzleに対しても$\varphi$によってedge labeled tableauxを対応さ
 
   $\varphi(P)=\varphi(P')$であるならば，$P$と$P'$に含まれるpathは等しいから，$P=P'$でなければならない．
 \end{proof}
+
+
+
+% k=1の場合はwt(T)\neq 0であるということから\varphi(P) = Tなる$P$が存在することがわかる．
+
+$k$に関する帰納法で示す．$k=1$として，$\lambda=(l)$，$\mu=(m)$，$\nu=(n)$とする．$\text{EqRect}(T)=T_{(m)}$と$\text{wt}(T)\neq 0$より，次が成り立つ．
+  \begin{enumerate}
+    \item box labelの入った箱はedge labelを持たない．
+    \item $T$のすべてのedge labelはたかだか$1$つの要素しか持たない．
+    \item ある$r\in\integer$が存在して$1,\cdots,r$はすべて$T$のedge labelに現れ，$r+1,\cdots,m$はすべて$T$のbox labelに現れる．
+    \item $T$のlabelを左から順に読んでいくとちょうど$1,2,\cdots,m$の順で並ぶ．
+  \end{enumerate}
+  
+  したがって$T$は図\ref{1 row tableaux}のような形になる．
+  \begin{figure}[h]
+    \centering
+    \begin{tikzpicture}
+      \draw (0,0) rectangle ++(12 * 0.8, 0.8);
+      \foreach \x in {1,2,3,5,6,7,8,9,11} {
+        \draw (\x * 0.8, 0) -- (\x * 0.8, 0.8);
+      } 
+
+      \draw[|-|] (0, -0.3) -- ++(7 * 0.8, 0);
+      \node at (2.8, -0.6) {$l$};
+
+      \draw[|-|] (0, 1.1) -- ++(12 * 0.8, 0);
+      \node at (4.8, 1.4) {$n$};
+
+      \node at (1.2, 0) {$1$};
+      \node at (2, 0) {$2$};
+      \node at (5.2, 0) {$r$};
+      \node at (3.2, 0.4) {$\cdots$};
+      \node at (6,0.4) {$r+1$};
+      \node at (6.8,0.4) {$r+2$};
+      \node at (8,0.4) {$\cdots$};
+      \node at (9.2,0.4) {$m$};
+    \end{tikzpicture}
+    \caption{}\label{1 row tableaux}
+  \end{figure}
+  よって$\psi(T)=p_1$はpuzzleを定め，$\varphi(\psi(T))=T$である．
