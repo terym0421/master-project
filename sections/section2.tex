@@ -1,15 +1,17 @@
 \section{GKMの定理と同変Schubert計算}
 \subsection{GKMの定理}
 同変コホモロジーに関するいくつかの定理を援用する．
-$T=(S^1)^n$とする．$Y$をなめらかな射影多様体とし$T$は$Y$に代数的に作用し，さらに固定点は孤立していると仮定する．このとき次が成り立つ
+$T$を$(S^1)^n$の複素化とする．$Y$をなめらかな射影多様体とし$T$は$Y$に代数的に作用し，さらに固定点は孤立していると仮定する．このとき次が成り立つ
 
 \begin{theo}(Goresky-Kottwitz-MacPherson\cite{GKM})\label{gkm theorem}
   \begin{enumerate}
     \item $H^*_T(Y)$は自由$H^*_T(\text{pt})$加群であり，$H^*_T(\text{pt})$加群の同型$\phi\colon H^*_T(Y)\simeq H^*(Y)\otimes H^*_T(\text{pt})$が存在する．
     
     \item $H^*_T(Y)\rightarrow H^*_T(Y^T) \simeq \bigoplus_{f\in Y^T}H^*_T(\text{pt})$は単射である．
-
-    \item $Y^T$が有限であり，$1$次元の$T$軌道も有限個であるとする．このとき各$1$次元$T$軌道$E$は$\complex^\times$に同型であり，$\overline{E}$は$2$つの固定点$x_0,x_\infty$を持っている．したがって$\overline{E}$は$\mathbb{CP}^1$に同型である．$T$の表現$T_{x_0}\overline{E}$のウェイトを$w$とするとき，任意の$\alpha\in H^*_T(Y)\subset \bigoplus_{f\in Y^T}H^*_T(\text{pt})$に対して
+  \end{enumerate}
+  さらに$Y^T$が有限であり，$1$次元の$T$軌道も有限個であるとき，次が成り立つ．
+  \begin{enumerate}
+    \item このとき各$1$次元$T$軌道$E$は$\complex^\times$に同型であり，$\overline{E}$は$2$つの固定点$x_0,x_\infty$を持っている．したがって$\overline{E}$は$\mathbb{CP}^1$に同型である．$T$の表現$T_{x_0}\overline{E}$のウェイトを$w$とするとき，任意の$\alpha\in H^*_T(Y)\subset \bigoplus_{f\in Y^T}H^*_T(\text{pt})$に対して
     $\alpha|_{x_0} - \alpha|_{x_\infty}\in H^*_T(\text{pt})$は$w$で割り切れる．
   
     \item 逆に$\alpha\in \bigoplus_{f\in Y^T}H^*_T(\text{pt})$について，すべての$1$次元$T$軌道$E$に対して，$\alpha|_{x_0} - \alpha|_{x_\infty}\in H^*_T(\text{pt})$が$w$で割り切れるならば，$\alpha\in H^*_T(Y)$である．また，この条件をGKM条件と呼ぶ．
@@ -124,7 +126,7 @@ $p_\lambda = \complex^\lambda\in\text{Gr}_k(\complex^n)$とする．
 $\text{Gr}_k(\complex^n)$の$T$作用における固定点は$\{p_\lambda\}_{\lambda\in\binom{n}{k}}$であるから，[GKM]より$H^*_T(\text{Gr}_k(\complex^n))$は$\bigoplus_{\lambda\in\binom{n}{k}}H^*_T(\text{pt})$の部分代数である．GKMの定理を適用するために$\text{Gr}_k(\complex^n)$の$T$不変な$\mathbb{CP}^1$を計算する．
 
 \begin{prop}
-  $\lambda,\mu\in\binom{n}{k}$に対して$p_\lambda$と$p_\mu$を結ぶ$T$不変な$\mathbb{CP}^1$が存在するための必要十分条件は，ある$(i, j)\in\text{inv}(\lambda)$に対して$\mu = (i, j)\lambda$，またはある$(i,j)\text{inv}(\mu)$に対して$\lambda = (i, j)\mu$
+  $\lambda,\mu\in\binom{n}{k}$に対して$p_\lambda$と$p_\mu$を結ぶ$T$不変な$\mathbb{CP}^1$が存在するための必要十分条件は，ある$(i, j)\in\text{inv}(\lambda)$に対して$\mu = (i, j)\lambda$，またはある$(i,j)\in\text{inv}(\mu)$に対して$\lambda = (i, j)\mu$
   となっていることである．
 \end{prop}
 

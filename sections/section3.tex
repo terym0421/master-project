@@ -179,7 +179,7 @@
 
 式(\ref{LRcoeff})の係数$C^\nu_{\lambda\mu}$に関して次が成り立つ．
 
-\begin{theo}(Knutson-Tao \cite{knutson tao})
+\begin{theo}(Knutson-Tao \cite{knutson tao})\label{puzzle calculation}
   \[
   C^\nu_{\lambda\mu}=\prod_{\substack{P:\text{ puzzle} \\ \partial P = \Delta^\nu_{\lambda\mu}}}\text{wt}(P)
   \]
@@ -224,7 +224,7 @@
 \end{defin}
 
 \begin{eg}\label{example of EqSYT}
-  図\ref{eg of EqSYT}equivariant standard tableauxとそうでないものの例．
+  equivariant standard tableauxとそうでないものの例を図\ref{eg of EqSYT}で与えた．
   \begin{figure}
     \centering
     \begin{tikzpicture}
@@ -748,7 +748,7 @@ i_a=m-\lambda_a+a,\quad \text{for }a=1,\cdots,k
 
 式(\ref{LRcoeff})の係数$C^\nu_{\lambda\mu}$に関して次が成り立つ．
 
-\begin{theo}(Thomas-Yong \cite{thomas yong})
+\begin{theo}(Thomas-Yong \cite{thomas yong})\label{tableaux calculation}
   \[
   C^{\nu}_{\lambda,\mu}=\sum_{\substack{T\in\text{EqSYT}(\nu/\lambda, |\mu|) \\ \text{EqRect}(T)=T_\mu \\ \text{wt}(T)\neq 0}}\text{wt}(T)
   \]
@@ -758,9 +758,9 @@ i_a=m-\lambda_a+a,\quad \text{for }a=1,\cdots,k
 
 
 
-\subsection{weight preserving bijectionの構成}
+\subsection{weight preserving bijection}
 
-このセクションではセクション3.3と3.4で構成した計算方法が，本質的に同じものであることを証明する．すなわち，$\mathcal{P}^\nu_{\lambda\mu}=\set{P:\text{puzzle}}{\partial P = \Delta^\nu_{\lambda\mu}}$，$\mathcal{T}^\nu_{\lambda\mu}=\set{T\in\text{EqSYT(\nu/\lambda,|\mu|)}}{\text{EqRect}(T)=T_\mu,\: \text{wt}(T)\neq 0}$とするとき，全単射$\varphi\colon \mathcal{P}^\nu_{\lambda\mu}\rightarrow \mathcal{T}^\nu_{\lambda\mu}$であって次の性質を満たすものを構成する．
+このセクションではセクション3.3と3.4で紹介した計算方法が本質的に同じであることを示す．すなわち，$\mathcal{P}^\nu_{\lambda\mu}=\set{P:\text{puzzle}}{\partial P = \Delta^\nu_{\lambda\mu}}$，$\mathcal{T}^\nu_{\lambda\mu}=\set{T\in\text{EqSYT(\nu/\lambda,|\mu|)}}{\text{EqRect}(T)=T_\mu,\: \text{wt}(T)\neq 0}$とするとき，全単射$\varphi\colon \mathcal{P}^\nu_{\lambda\mu}\rightarrow \mathcal{T}^\nu_{\lambda\mu}$であって次の性質を満たすものを構成する．
 \begin{equation}
   \text{wt}(\varphi(P))=\text{wt}(P)\quad\text{for all }P\in\mathcal{P}^\nu_{\lambda\mu}
 \end{equation}
@@ -1251,7 +1251,7 @@ $\Lambda=\overbrace{(n,\cdots,n)}^{k\text{-copies}}$の$k$行目に次のよう�
   各pathに含まれるpiece $p$を上から順に追っていけば，つねに$r(p) = d(x) + 1$であることがわかる．
 \end{proof}
 
-\begin{prop}
+\begin{prop}\label{main theorem 2}
   $\text{wt}(\varphi(P))=\text{wt}(P)$である．
 \end{prop}
 
@@ -1275,7 +1275,7 @@ $\Lambda=\overbrace{(n,\cdots,n)}^{k\text{-copies}}$の$k$行目に次のよう�
   \input{./sections/figures/figure13.tex}
 \end{proof}
 
-最後に$\varphi$が全単射であることを示す．そのために$T\in\mathcal{T}^\nu_{\lambda\mu}$からpath $p_1,\cdots,p_k$を復元する手順を構成する．path のsegmentについて，segmentを構成するpiece を上から順に見ていって，$3$種類のpiece \begin{tikzpicture}[baseline=-1pt]
+次に$T\in\mathcal{T}^\nu_{\lambda\mu}$からpath $p_1,\cdots,p_k$を復元する手順を構成する．path のsegmentについて，segmentを構成するpiece を上から順に見ていって，$3$種類のpiece \begin{tikzpicture}[baseline=-1pt]
   \fill[cyan] (0,0)--(0.25,0.42)--(0.5,0)--(0.25,-0.42)--cycle;
   \draw[thick] (0,0)--(0.25,0.42)--(0.5,0)--(0.25,-0.42)--cycle;
 \end{tikzpicture}
@@ -1303,20 +1303,20 @@ $\Lambda=\overbrace{(n,\cdots,n)}^{k\text{-copies}}$の$k$行目に次のよう�
 このようにして$p_1,\cdots,p_k$を定めることができるが，$\psi(T)=(p_1,\cdots,p_k)$とおく．
 
 
-\begin{prop}
+\begin{prop}\label{main theorem 3}
   $\varphi\colon\mathcal{P}^\nu_{\lambda\mu}\rightarrow\mathcal{T}^\nu_{\lambda\mu}$は全単射である．
 \end{prop}
 
 \begin{proof}
   $\psi(\varphi(P))=(p_1,\cdots,p_k)$は$P$のpathと一致する．したがって$(p_1,\cdots,p_k)$を図\ref{generic puzzle}のように配置すれば，$P$と同じpuzzleが定まる．よって$\varphi$は単射である．
 
-  全射であることを示すためには，任意の$T\in\mathcal{T}^\nu_{\lambda\mu}$に対して$\psi(T)$がpuzzleを定めることを示せばよい．$\text{EqRect}(T)=T_\mu$であることと$\text{wt}(T)\neq 0$であることから次が成り立つ．
-  \begin{enumerate}
-    \item 各$i=1,\cdots,k$に対して，整数列$\mu_{i-1}+1=r_0\leq r_{1}\leq\cdots\leq r_{k-i}\leq r_{k-i+1}=\mu_i+1$が存在して次を満たす．$r_{j-1},r_{j-1}+1,\cdots,r_{j}-1$は$T$の$k-j+1$行目のboxのbox labelか下辺のedge labelに，左からこの順番で現れる．ただし$\mu_0=0$とする．
-    \item $T$のすべてのedge labelは$r_{j},r_{j}+1,\cdots,r_{j+1}-1$をたかだか$1$つ含む．
-  \end{enumerate}
-  したがって$\psi(T)=(p_1,\cdots,p_k)$はsegmentに関する条件式(\ref{segment condition 1})から(\ref{segment condition 7})を満たすことがわかる．よって$(p_1,\cdots,p_k)$がpuzzleを定めることを示すためには，$(p_1,\cdots,p_k)$を図\ref{generic puzzle}のように配置したとき，重なってしまうpieceが存在しないことを示せばよい．
-
-  各$p_i$を文字列と同一視したとき，$p_i$を左から$j$個とりだした部分列に含まれるbとyの個数を$N_{ij}$とおく．
-  $c_{ij} =(\mu_i - \mu_{i+1}) + N_{i+1,j} - N_{ij}, \:(i=1,\cdots,k-1)$とすると，$(p_1,\cdots,p_k)$に重なってしまうpieceが存在しないことと$c_{ij}$が常に非負であることは同値である．
+  定理\ref{tableaux calculation}，定理\ref{puzzle calculation}より，
+  \begin{align*}
+    C^\nu_{\lambda\mu} = \sum_{T\in\mathcal{T}^\nu_{\lambda\mu}}\text{wt}(T)
+    &= \sum_{T\in\varphi(\mathcal{P}^\nu_{\lambda\mu})}\text{wt}(T) + \sum_{T\notin\varphi(\mathcal{P}^\nu_{\lambda\mu})}\text{wt}(T)\\
+    &= \sum_{T\in\mathcal{P}^\nu_{\lambda\mu}}\text{wt}(P) + \sum_{T\notin\varphi(\mathcal{P}^\nu_{\lambda\mu})}\text{wt}(T)\\
+    &=C^\nu_{\lambda\mu} + \sum_{T\notin\varphi(\mathcal{P}^\nu_{\lambda\mu})}\text{wt}(T)
+  \end{align*}
+  よって$\sum_{T\notin\varphi(\mathcal{P}^\nu_{\lambda\mu})}\text{wt}(T)=0$である．$\text{wt}(T)$は定義から，$y_2-y_1,\cdots,y_{m+k}-y_{m+k-1}$の多項式で表した時の係数がすべて正である．したがって$\varphi(\mathcal{P}^\nu_{\lambda\mu})=\mathcal{P}^\nu_{\lambda\mu}$でなければならない．すなわち$\varphi$は全射である．
 \end{proof}
+
