@@ -58,7 +58,7 @@ $V_k(\real^n)$を$\real^n$の$k$個の正規直交なベクトル$(v_1,\cdots,v_
 
 \begin{prop}
   $V_{k+1}(\real^{n+1})\rightarrow S^{n}$を$(v_0,\cdots,v_{k})\mapsto v_{0}$とすると，$V_{k}(\real^{n})$をファイバーとするファイバー束となり，
-  $\pi_i(V_k(\real^n))=0$ for $i=0,1,\cdots,n-k-1$である．
+  $\pi_i(V_k(\real^n))=0, \:(i=0,1,\cdots,n-k-1)$である．
 \end{prop}
 
 \begin{proof}
@@ -242,7 +242,7 @@ f_G^*\colon H^*_G(Y)\rightarrow H^*_G(X)
 
 \subsection{有限次元近似}
 
-セクション1.1より，$G$がコンパクトLie群の場合，$G$のuniversal bundle $EG$に対して，有限次元多様体からなる主$G$束の族$EG_r\rightarrow BG_r, (r=1,2,\cdots)$であって$EG_r\subset EG_{r+1}$，$BG_r\subset BG_{r+1}$かつ$EG_{r+1}|_{BG_r} = EG_r$となるようなものが存在する．このとき，各$k$に対して$H^k_G(M)\simeq \varinjlim H^k(EG_r\times_GM)$が成り立つ．
+セクション1.1より，$G$がコンパクトLie群の場合，$G$のuniversal bundle $EG$に対して，有限次元多様体からなる主$G$束の族$EG_r\rightarrow BG_r, (r=1,2,\cdots)$であって$EG_r\subset EG_{r+1}$，$BG_r\subset BG_{r+1}$かつ$EG_{r+1}|_{BG_r} = EG_r$となるようなものが存在する．このとき，各$k$に対して$H^k_G(M)\simeq \varprojlim H^k(EG_r\times_GM)$が成り立つ．
 
 
 $M$を非特異射影多様体とし$G$は$M$に左から作用しているとする．$X\subset M$を$G$不変な既約代数多様体で$\codim X =k$とする．$M_{G,r}=EG_r\times_GM$とすると$X_{G,r}\subset M_{G,r}$はコホモロジー類$[X_{G,r}]\in H^k(M_{G,r})$を定める\cite{fulton young tableaux}．$[X_{G,r+1}]|_{M_{G,r}} = [X_{G,r}]$が成り立つから，その極限$[X]\in H^k_G(M)$が定まる．
@@ -301,7 +301,7 @@ $X^{sm}$を$X$の非特異点のなす部分多様体とする．
     $
     を満たす．
     \item $\iota_A^2=0$かつ$\iota_A$は反微分．
-    \item $\mathcal{L}_A$はCartanのhomotopy formulaを満たす．すなわち$\mathcal{L}_A = \delta\circ \iota_A + \iota_A + \delta$．
+    \item $\mathcal{L}_A$はCartanのhomotopy formulaを満たす．すなわち$\mathcal{L}_A = \delta\circ\iota_A + \iota_A\circ\delta$．
   \end{enumerate}
   が成り立つことをいう．ここで$A$が可換であるとは，
   $
@@ -346,13 +346,13 @@ $c^k_{ij}$を$\mathfrak{g}$の$X_1,\cdots,X_n$に関する構造定数とする�
   \delta(\theta_{i_1}\cdots\theta_{i_p}\cdot u_{j_1}\cdots u_{j_q}) := \sum_{x=1}^p(-1)^{x-1}\theta_{i_1}&\cdots(\delta\theta_{i_x})\cdots\theta_{i_p}\cdot u_{j_1}\cdots u_{j_q} \notag \\ 
   &+ (-1)^p\sum_{y=1}^q\theta_{i_1}\cdots\theta_{i_p}\cdot u_{j_1}\cdots(\delta u_{j_y})\cdots u_{j_q}
 \end{align*}
-によって定義する．
+によって定義する．ここで$1\leq i_1<\cdots<i_p\leq n$，$1\leq j_1\leq\cdots\leq j_q\leq n$である．
 
 次に$A\in\mathfrak{g}$に対して，線形写像$\iota_A\colon W^m(\mathfrak{g})\rightarrow W^{m-1}(\mathfrak{g})$を
 \[
 \iota_A(\theta_i):=\alpha_i(A),\quad \iota_A(u_i)=0
 \]
-として，$p+2q=m$なる$p,q$に対して
+として，同様に，$p+2q=m$なる$p,q$に対して
 \begin{align*}
   \iota_A(\theta_{i_1}\cdots\theta_{i_p}\cdot u_{j_1}\cdots u_{j_q}) := \sum_{x=1}^p(-1)^{x-1}\theta_{i_1}&\cdots(\iota_A\theta_{i_x})\cdots\theta_{i_p}\cdot u_{j_1}\cdots u_{j_q} \notag \\ 
   &+ (-1)^p\sum_{y=1}^q\theta_{i_1}\cdots\theta_{i_p}\cdot u_{j_1}\cdots(\iota_A u_{j_y})\cdots u_{j_q}
@@ -387,7 +387,7 @@ $
   $M$を$G$が作用するなめらかな多様体とする．$\mathfrak{g}$-differential graded algebra $(W(\mathfrak{g})\otimes\Omega(M))_{bas}$をWeil modelと呼ぶ．
 \end{defin}
 
-\begin{theo}(Equivariant de Rhamの定理\cite{cartan1},\cite{cartan2})
+\begin{theo}(Equivariant de Rhamの定理\cite{cartan2})
   $G$が連結なコンパクトLie群の場合，次数付き代数の同型
   \[
   H^*_G(M;\real)\simeq H^*(\{(W(\mathfrak{g})\otimes\Omega(M))_{bas},d\})

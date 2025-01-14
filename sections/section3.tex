@@ -884,9 +884,9 @@ $P$の
 \end{figure}
 
 \newpage
-puzzle $P$のpathを左側から順に$p_1,\cdots,p_t$とする．次の操作を行って得られるedge labeled tableauxを$\varphi(P)$とする．
+puzzle $P$のpathを左側から順に$p_1,\cdots,p_k$とする．次の操作を行って得られるedge labeled tableauxを$\varphi(P)$とする．
 
-$p_1$のsegmentを上から順に$s_1,\cdots,s_a$, $(a\leq k)$とする．$s_1$に
+$p_1$のsegmentを上から順に$s_1,\cdots,s_k$とする．$s_1$に
 \begin{tikzpicture}[baseline=-1pt]
   \fill[cyan] (0,0)--(0.25,0.42)--(0.5,0)--(0.25,-0.42)--cycle;
   \draw[thick] (0,0)--(0.25,0.42)--(0.5,0)--(0.25,-0.42)--cycle;
@@ -1095,7 +1095,7 @@ $\Lambda=\overbrace{(n,\cdots,n)}^{k\text{-copies}}$の$k$行目に次のよう�
 \end{prop}
 
 \begin{proof}
-  文字列$\lambda$は左から読んで$i_1,\cdots,i_k$番目に$1$が現れるとする．このとき
+  文字列$\lambda$は左から読んで$i_1<\cdots<i_k$番目に$1$が現れるとする．このとき
   \begin{align*}
     &l_j = i_{j+1} - i_{j} - 1,\quad (j=1,\cdots,k-1)\\
     &l_k = n - i_k
@@ -1180,7 +1180,7 @@ $\Lambda=\overbrace{(n,\cdots,n)}^{k\text{-copies}}$の$k$行目に次のよう�
 \end{prop}
 
 \begin{proof}
-  $I_{\mu} = \set{(\lambda,\nu)}{\lambda,\mu \leq \nu}$とする．$I_{\mu}$には辞書式順序で順序を定める．$\varnothing:=0^{n-k}1^k$とおくと，$(\varnothing,\mu)$は$I_{\mu}$の最小限であり，$\mathcal{P}^\mu_{\varnothing,\mu}$はただ一つのpuzzle $P_0$からなり(図\ref{unique puzzle})，$\varphi(P_0)=T_\mu$である．
+  $I_{\mu} = \set{(\lambda,\nu)}{\lambda,\mu \leq \nu}$とする．$I_{\mu}$には辞書式順序で順序を定める．$\varnothing:=0^{n-k}1^k$とおくと，$(\varnothing,\mu)$は$I_{\mu}$の最小元であり，$\mathcal{P}^\mu_{\varnothing,\mu}$はただ一つのpuzzle $P_0$からなり(図\ref{unique puzzle})，$\varphi(P_0)=T_\mu$である．
   
   \input{./sections/figures/figure7.tex}
 
@@ -1310,13 +1310,14 @@ $\Lambda=\overbrace{(n,\cdots,n)}^{k\text{-copies}}$の$k$行目に次のよう�
 \begin{proof}
   $\psi(\varphi(P))=(p_1,\cdots,p_k)$は$P$のpathと一致する．したがって$(p_1,\cdots,p_k)$を図\ref{generic puzzle}のように配置すれば，$P$と同じpuzzleが定まる．よって$\varphi$は単射である．
 
-  定理\ref{tableaux calculation}，定理\ref{puzzle calculation}より，
+  定理\ref{puzzle calculation}，定理\ref{tableaux calculation}より，
   \begin{align*}
     C^\nu_{\lambda\mu} = \sum_{T\in\mathcal{T}^\nu_{\lambda\mu}}\text{wt}(T)
     &= \sum_{T\in\varphi(\mathcal{P}^\nu_{\lambda\mu})}\text{wt}(T) + \sum_{T\notin\varphi(\mathcal{P}^\nu_{\lambda\mu})}\text{wt}(T)\\
-    &= \sum_{T\in\mathcal{P}^\nu_{\lambda\mu}}\text{wt}(P) + \sum_{T\notin\varphi(\mathcal{P}^\nu_{\lambda\mu})}\text{wt}(T)\\
+    &= \sum_{P\in\mathcal{P}^\nu_{\lambda\mu}}\text{wt}(P) + \sum_{T\notin\varphi(\mathcal{P}^\nu_{\lambda\mu})}\text{wt}(T)\\
     &=C^\nu_{\lambda\mu} + \sum_{T\notin\varphi(\mathcal{P}^\nu_{\lambda\mu})}\text{wt}(T)
   \end{align*}
-  よって$\sum_{T\notin\varphi(\mathcal{P}^\nu_{\lambda\mu})}\text{wt}(T)=0$である．$\text{wt}(T)$は定義から，$y_2-y_1,\cdots,y_{m+k}-y_{m+k-1}$の多項式で表した時の係数がすべて正である．したがって$\varphi(\mathcal{P}^\nu_{\lambda\mu})=\mathcal{P}^\nu_{\lambda\mu}$でなければならない．すなわち$\varphi$は全射である．
+  よって$\sum_{T\notin\varphi(\mathcal{P}^\nu_{\lambda\mu})}\text{wt}(T)=0$である．$\text{wt}(T)$は定義から，$y_2-y_1,\cdots,y_{m+k}-y_{m+k-1}$の多項式で表した時の係数がすべて正である．$\text{wt}(T)\neq 0$であるから$\sum_{T\notin\varphi(\mathcal{P}^\nu_{\lambda\mu})}\text{wt}(T)=0$であるためには，
+  $\varphi(\mathcal{P}^\nu_{\lambda\mu})=\mathcal{P}^\nu_{\lambda\mu}$でなければならない．すなわち$\varphi$は全射である．
 \end{proof}
 
