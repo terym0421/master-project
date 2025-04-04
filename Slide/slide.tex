@@ -43,7 +43,7 @@
 
 %2
 \begin{frame}{概要}
-  $2$つのSchubert類の積を展開したときの係数はLittlewood-Richardson数と呼ばれ，その計算アルゴリズムがいくつも知られている．同変コホモロジーにおいてもSchubert多様体は同変コホモロジー環の基底を定める．このときの構造定数，すなわち，
+  $2$つのSchubert類の積を展開したときの係数はLittlewood-Richardson数と呼ばれ，その計算アルゴリズムがいくつも知られている．同変コホモロジーにおいてもSchubert多様体は同変コホモロジー環の基底を定める．このときの構造定数，すなわち，$S_\lambda$を同変Schubert類とし，
   \[
   S_\lambda S_\mu = \sum_{\nu\in\binom{n}{k}}C^\nu_{\lambda\mu}S_\nu,\quad C^\nu_{\lambda\mu}\in\integer[y_1,\cdots,y_n]
   \]
@@ -68,30 +68,22 @@
 
 
 
-\section[]{同変コホモロジーの復習}
-
-%5
-\begin{frame}{同変コホモロジーの復習}
-  $G$を位相群，$X$を$G$空間とする．$G$が自由に作用する空間であって弱可縮なもの$EG$を一つ固定し，$H^*((EG\times X)/G)$を$X$の$G$同変コホモロジーといい，$H^*_G(X)$と書く．
-    \begin{eg}
-      $X=\text{pt}$の場合$H^*_G(\text{pt})=H^*(EG/G)= H^*(BG)$．
-      よって$G$が$n$次元トーラスなら$H^*_G(\text{pt})\simeq\integer[y_1,\cdots,y_n]$である．
-    \end{eg}
-\end{frame}
+\section[]{同変Schubert類}
 
 %6
-\begin{frame}{同変コホモロジーの復習}
+\begin{frame}{同変Schubert類}
+  $\text{Gr}_k(\complex^n)=\set{V\subset\complex^n}{\dim V = k}$とする．
   $\binom{n}{k}$を$0$と$1$からなる文字列で，$k$個の$1$を含んでいるようなもの全体とする．$\lambda\in\binom{n}{k}$に対して
   \[
-  \Omega_\lambda = \set{V\in \text{Gr}_k(\complex^n)}{\dim V\cap F^i \geq \dim C^\lambda\cap F^i}
+  \Omega_\lambda = \set{V\in \text{Gr}_k(\complex^n)}{\dim V\cap F^i \geq \dim \complex^\lambda\cap F^i}
   \]
   をSchubert多様体という．ここで$F^i = \langle e_{n-i+1},\cdots,e_n \rangle$，$\complex^\lambda = \langle \lambda_1e_1,\cdots,\lambda_ne_n \rangle$．$|\lambda| = \#\set{(i, j)}{\lambda_i = 1,\lambda_j = 0, i < j}$とすると$\codim\Omega_\lambda=|\lambda|$である．
 \end{frame}
 
 %7
-\begin{frame}{同変コホモロジーの復習}
+\begin{frame}{同変Schubert類}
   $T=(\complex^\times)^n$は自然に$\text{Gr}_k(\complex^n)$に作用し$\Omega_\lambda$は$T$不変．
-  通常のコホモロジーと同様$\Omega_\lambda$は$|\lambda|$次の同変コホモロジー類を定める．これを$S_\lambda$と置き，同変Schubert類と呼ぶ．
+  通常のコホモロジーと同様$\Omega_\lambda$は$2|\lambda|$次の同変コホモロジー類を定める．これを$S_\lambda$と置き，同変Schubert類と呼ぶ．
   \begin{prop}\label{basis theorem}
     $\{S_\lambda\}_{\lambda\in\binom{n}{k}}$は$H^*_T(\text{Gr}_k(\complex^n))$の$H^*_T(\text{pt})\simeq\integer[y_1,\cdots,y_n]$上の基底をなす．
   \end{prop}
@@ -395,7 +387,7 @@
   \begin{defin}[equivariant filling]
     分割$\lambda, \nu$に対して，$\lambda_i\leq\nu_i$がすべての$i$で成り立つとき，$\lambda\leq\nu$とする．このとき$\nu$の箱であって$\lambda$の箱でないもの全体を歪Young図形といい$\nu/\lambda$と書く．
 
-  $\nu/\lambda$の各箱に$1$から$m$までの数字を$1$つ書き入れ，$\lambda$の水平方向の境界から下にある水平方向の各辺に$\{1,\cdots,m\}$の空でもよい部分集合を書き入れたものをequivariant fillingという．
+  $\nu/\lambda$の各箱に$1$から$m$までの数字を$1$つ書き入れ，$\lambda$のよりも下にある水平方向の各辺に$\{1,\cdots,m\}$の空でもよい部分集合を書き入れたものをequivariant fillingという．
   \end{defin}
 \end{frame}
 
@@ -728,41 +720,9 @@
   \end{eg}
 \end{frame}
 
-%22
-\begin{frame}{edge labeled tableauxによる方法}
-  $T\in\text{EqSYT}(\nu/\lambda)$に対して，次のようにweightを定義する．
-  \begin{defin}[Manhattan距離]
-    $\Lambda = ((n-k)^k)$の各箱$x$に対して，$d(x)$を図のように定める．すなわち$d(x)$は$\Lambda$の右上の隅の箱と$x$とのManhattan距離(に$1$を加えたもの)に等しい．
-    \[
-  \begin{ytableau}
-    4 & 3 & 2 & 1\\
-    5 & 4 & 3 & 2\\
-    6 & 5 & 4 & 3
-  \end{ytableau}
-  \]
-  \end{defin}
-\end{frame}
-
-%23
-\begin{frame}{edge labeled tableauxによる方法}
-  \begin{defin}[tableauxのweight]
-    \small
-    $l\in\integer$が$T$の辺のラベルに現れるとする．$l$を含む列に存在する$\lambda$の箱をすべてjeu de taquinする課程で$l$が通る箱を下から順に$z_{1},\cdots,z_{s}$とし，$z_{s}$と同じ行にある箱のうち最も右にある箱を$w$とする．$i = d(z_1) + 1$, $j = d(w)$として
-    \[
-    \text{factor}(l) = y_i - y_j
-    \]
-    とする．$l$が箱のラベルに入らないときは$\text{factor}(l) = 0$とする．
-    $T$のweightを
-    \[
-    \text{wt}(T) = \prod_{l:\text{ edge label of }T} \text{factor}(l)
-    \]
-    と定義する．
-  \end{defin}
-  \normalsize
-\end{frame}
-
 %24
 \begin{frame}{edge labeled tableauxによる方法}
+  $T\in\text{EqSYT}(\nu/\lambda, m)$に対してもそのweightを定義することができ，
   \begin{theo}[Knutson-Tao]
     同変Littlewood-Richardson係数$C^\nu_{\lambda\mu}$について
     \[
@@ -782,7 +742,7 @@
 
 %25
 \begin{frame}{等価性}
-  本論文では紹介した2つの数え上げは本質的に同じであることを示した．すなわち，
+  論文では紹介した2つの数え上げは本質的に同じであることを示した．すなわち，
   $\mathcal{P}^\nu_{\lambda\mu}=\set{P:\text{ puzzle}}{\partial P = \Delta^\nu_{\lambda\mu}}$，$\mathcal{T}^\nu_{\lambda\mu} = \set{T\in\text{EqSYT}(\nu/\lambda,|\mu|)}{\text{EqRect}(T)=T_\mu,\text{wt}(T)\neq 0}$としたとき，次を証明した．
   \begin{theo}\label{main theorem}
     全単射$\varphi:\mathcal{P}^\nu_{\lambda\mu}\rightarrow \mathcal{T}^\nu_{\lambda\mu}$であって$\text{wt}(\varphi(P))=\text{wt}(P)$を満たすものが存在する．
